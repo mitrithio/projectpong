@@ -1,9 +1,9 @@
 //
 //  PPM_ViewController.m
-//  projectpong
+//  ProjectPong
 //
-//  Created by Andrea Cavicchia on 24/12/13.
-//  Copyright (c) 2013 ALF. All rights reserved.
+//  Created by Andrea Cavicchia on 17/12/13.
+//  Copyright (c) 2013 Andrea Cavicchia. All rights reserved.
 //
 
 #import "PPM_ViewController.h"

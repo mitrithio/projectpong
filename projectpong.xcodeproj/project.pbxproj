@@ -22,6 +22,34 @@
 		98F479DE186A1B920048D3D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F479BD186A1B920048D3D3 /* UIKit.framework */; };
 		98F479E6186A1B920048D3D3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98F479E4186A1B920048D3D3 /* InfoPlist.strings */; };
 		98F479E8186A1B920048D3D3 /* projectpongTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F479E7186A1B920048D3D3 /* projectpongTests.m */; };
+		98F47A08186A1CD60048D3D3 /* PPM_Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F479F3186A1CD60048D3D3 /* PPM_Ball.m */; };
+		98F47A09186A1CD60048D3D3 /* PPM_Bar.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F479F5186A1CD60048D3D3 /* PPM_Bar.m */; };
+		98F47A0A186A1CD60048D3D3 /* PPM_MainLogicClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F479F7186A1CD60048D3D3 /* PPM_MainLogicClass.m */; };
+		98F47A0B186A1CD60048D3D3 /* PPM_CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F479F9186A1CD60048D3D3 /* PPM_CreditsViewController.m */; };
+		98F47A0C186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F479FB186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m */; };
+		98F47A0D186A1CD60048D3D3 /* PPM_InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F479FD186A1CD60048D3D3 /* PPM_InfoViewController.m */; };
+		98F47A0E186A1CD60048D3D3 /* PPM_iPhoneGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F479FF186A1CD60048D3D3 /* PPM_iPhoneGameViewController.m */; };
+		98F47A0F186A1CD60048D3D3 /* PPM_iPhoneStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F47A01186A1CD60048D3D3 /* PPM_iPhoneStartViewController.m */; };
+		98F47A10186A1CD60048D3D3 /* PPM_RICPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F47A03186A1CD60048D3D3 /* PPM_RICPageViewController.m */; };
+		98F47A11186A1CD60048D3D3 /* PPM_RuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F47A05186A1CD60048D3D3 /* PPM_RuleViewController.m */; };
+		98F47A12186A1CD60048D3D3 /* PPM_WebThemesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F47A07186A1CD60048D3D3 /* PPM_WebThemesViewController.m */; };
+		98F47A29186A1CE70048D3D3 /* ACCropImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F47A15186A1CE70048D3D3 /* ACCropImages.m */; };
+		98F47A2A186A1CE70048D3D3 /* ACPopupViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F47A17186A1CE70048D3D3 /* ACPopupViewManager.m */; };
+		98F47A2B186A1CE70048D3D3 /* button-play-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A19186A1CE70048D3D3 /* button-play-pause.png */; };
+		98F47A2C186A1CE70048D3D3 /* DownloadIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A1A186A1CE70048D3D3 /* DownloadIcon.png */; };
+		98F47A2D186A1CE70048D3D3 /* PlasticBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A1C186A1CE70048D3D3 /* PlasticBackground.png */; };
+		98F47A2E186A1CE70048D3D3 /* PlasticBall.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A1D186A1CE70048D3D3 /* PlasticBall.png */; };
+		98F47A2F186A1CE70048D3D3 /* PlasticBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A1E186A1CE70048D3D3 /* PlasticBar.png */; };
+		98F47A30186A1CE70048D3D3 /* PlasticGameBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A1F186A1CE70048D3D3 /* PlasticGameBackground.png */; };
+		98F47A31186A1CE70048D3D3 /* PlasticPlayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A20186A1CE70048D3D3 /* PlasticPlayButton.png */; };
+		98F47A32186A1CE70048D3D3 /* PlasticRuleButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A21186A1CE70048D3D3 /* PlasticRuleButton.png */; };
+		98F47A33186A1CE70048D3D3 /* PlasticScoreButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A22186A1CE70048D3D3 /* PlasticScoreButton.png */; };
+		98F47A34186A1CE70048D3D3 /* PlasticSettingsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A23186A1CE70048D3D3 /* PlasticSettingsButton.png */; };
+		98F47A35186A1CE70048D3D3 /* PlasticTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A24186A1CE70048D3D3 /* PlasticTitle.png */; };
+		98F47A36186A1CE70048D3D3 /* PlasticUser.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A25186A1CE70048D3D3 /* PlasticUser.png */; };
+		98F47A37186A1CE70048D3D3 /* LocalIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A26186A1CE70048D3D3 /* LocalIcon.png */; };
+		98F47A38186A1CE70048D3D3 /* PlasticAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A27186A1CE70048D3D3 /* PlasticAdd.png */; };
+		98F47A39186A1CE70048D3D3 /* SocialIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A28186A1CE70048D3D3 /* SocialIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +83,47 @@
 		98F479E3186A1B920048D3D3 /* projectpongTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "projectpongTests-Info.plist"; sourceTree = "<group>"; };
 		98F479E5186A1B920048D3D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		98F479E7186A1B920048D3D3 /* projectpongTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = projectpongTests.m; sourceTree = "<group>"; };
+		98F479F2186A1CD60048D3D3 /* PPM_Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_Ball.h; sourceTree = "<group>"; };
+		98F479F3186A1CD60048D3D3 /* PPM_Ball.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_Ball.m; sourceTree = "<group>"; };
+		98F479F4186A1CD60048D3D3 /* PPM_Bar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_Bar.h; sourceTree = "<group>"; };
+		98F479F5186A1CD60048D3D3 /* PPM_Bar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_Bar.m; sourceTree = "<group>"; };
+		98F479F6186A1CD60048D3D3 /* PPM_MainLogicClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_MainLogicClass.h; sourceTree = "<group>"; };
+		98F479F7186A1CD60048D3D3 /* PPM_MainLogicClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_MainLogicClass.m; sourceTree = "<group>"; };
+		98F479F8186A1CD60048D3D3 /* PPM_CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_CreditsViewController.h; sourceTree = "<group>"; };
+		98F479F9186A1CD60048D3D3 /* PPM_CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_CreditsViewController.m; sourceTree = "<group>"; };
+		98F479FA186A1CD60048D3D3 /* PPM_GameLogicAccessClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_GameLogicAccessClass.h; sourceTree = "<group>"; };
+		98F479FB186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_GameLogicAccessClass.m; sourceTree = "<group>"; };
+		98F479FC186A1CD60048D3D3 /* PPM_InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_InfoViewController.h; sourceTree = "<group>"; };
+		98F479FD186A1CD60048D3D3 /* PPM_InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_InfoViewController.m; sourceTree = "<group>"; };
+		98F479FE186A1CD60048D3D3 /* PPM_iPhoneGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_iPhoneGameViewController.h; sourceTree = "<group>"; };
+		98F479FF186A1CD60048D3D3 /* PPM_iPhoneGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_iPhoneGameViewController.m; sourceTree = "<group>"; };
+		98F47A00186A1CD60048D3D3 /* PPM_iPhoneStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_iPhoneStartViewController.h; sourceTree = "<group>"; };
+		98F47A01186A1CD60048D3D3 /* PPM_iPhoneStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_iPhoneStartViewController.m; sourceTree = "<group>"; };
+		98F47A02186A1CD60048D3D3 /* PPM_RICPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_RICPageViewController.h; sourceTree = "<group>"; };
+		98F47A03186A1CD60048D3D3 /* PPM_RICPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_RICPageViewController.m; sourceTree = "<group>"; };
+		98F47A04186A1CD60048D3D3 /* PPM_RuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_RuleViewController.h; sourceTree = "<group>"; };
+		98F47A05186A1CD60048D3D3 /* PPM_RuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_RuleViewController.m; sourceTree = "<group>"; };
+		98F47A06186A1CD60048D3D3 /* PPM_WebThemesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_WebThemesViewController.h; sourceTree = "<group>"; };
+		98F47A07186A1CD60048D3D3 /* PPM_WebThemesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_WebThemesViewController.m; sourceTree = "<group>"; };
+		98F47A14186A1CE70048D3D3 /* ACCropImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACCropImages.h; sourceTree = "<group>"; };
+		98F47A15186A1CE70048D3D3 /* ACCropImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACCropImages.m; sourceTree = "<group>"; };
+		98F47A16186A1CE70048D3D3 /* ACPopupViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPopupViewManager.h; sourceTree = "<group>"; };
+		98F47A17186A1CE70048D3D3 /* ACPopupViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPopupViewManager.m; sourceTree = "<group>"; };
+		98F47A19186A1CE70048D3D3 /* button-play-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-play-pause.png"; sourceTree = "<group>"; };
+		98F47A1A186A1CE70048D3D3 /* DownloadIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownloadIcon.png; sourceTree = "<group>"; };
+		98F47A1C186A1CE70048D3D3 /* PlasticBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticBackground.png; sourceTree = "<group>"; };
+		98F47A1D186A1CE70048D3D3 /* PlasticBall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticBall.png; sourceTree = "<group>"; };
+		98F47A1E186A1CE70048D3D3 /* PlasticBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticBar.png; sourceTree = "<group>"; };
+		98F47A1F186A1CE70048D3D3 /* PlasticGameBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticGameBackground.png; sourceTree = "<group>"; };
+		98F47A20186A1CE70048D3D3 /* PlasticPlayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticPlayButton.png; sourceTree = "<group>"; };
+		98F47A21186A1CE70048D3D3 /* PlasticRuleButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticRuleButton.png; sourceTree = "<group>"; };
+		98F47A22186A1CE70048D3D3 /* PlasticScoreButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticScoreButton.png; sourceTree = "<group>"; };
+		98F47A23186A1CE70048D3D3 /* PlasticSettingsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticSettingsButton.png; sourceTree = "<group>"; };
+		98F47A24186A1CE70048D3D3 /* PlasticTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticTitle.png; sourceTree = "<group>"; };
+		98F47A25186A1CE70048D3D3 /* PlasticUser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticUser.png; sourceTree = "<group>"; };
+		98F47A26186A1CE70048D3D3 /* LocalIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LocalIcon.png; sourceTree = "<group>"; };
+		98F47A27186A1CE70048D3D3 /* PlasticAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticAdd.png; sourceTree = "<group>"; };
+		98F47A28186A1CE70048D3D3 /* SocialIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SocialIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +183,24 @@
 		98F479BF186A1B920048D3D3 /* projectpong */ = {
 			isa = PBXGroup;
 			children = (
+				98F47A13186A1CE70048D3D3 /* Resources */,
+				98F479F1186A1CD60048D3D3 /* Logic */,
+				98F479F8186A1CD60048D3D3 /* PPM_CreditsViewController.h */,
+				98F479F9186A1CD60048D3D3 /* PPM_CreditsViewController.m */,
+				98F479FA186A1CD60048D3D3 /* PPM_GameLogicAccessClass.h */,
+				98F479FB186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m */,
+				98F479FC186A1CD60048D3D3 /* PPM_InfoViewController.h */,
+				98F479FD186A1CD60048D3D3 /* PPM_InfoViewController.m */,
+				98F479FE186A1CD60048D3D3 /* PPM_iPhoneGameViewController.h */,
+				98F479FF186A1CD60048D3D3 /* PPM_iPhoneGameViewController.m */,
+				98F47A00186A1CD60048D3D3 /* PPM_iPhoneStartViewController.h */,
+				98F47A01186A1CD60048D3D3 /* PPM_iPhoneStartViewController.m */,
+				98F47A02186A1CD60048D3D3 /* PPM_RICPageViewController.h */,
+				98F47A03186A1CD60048D3D3 /* PPM_RICPageViewController.m */,
+				98F47A04186A1CD60048D3D3 /* PPM_RuleViewController.h */,
+				98F47A05186A1CD60048D3D3 /* PPM_RuleViewController.m */,
+				98F47A06186A1CD60048D3D3 /* PPM_WebThemesViewController.h */,
+				98F47A07186A1CD60048D3D3 /* PPM_WebThemesViewController.m */,
 				98F479C8186A1B920048D3D3 /* PPM_AppDelegate.h */,
 				98F479C9186A1B920048D3D3 /* PPM_AppDelegate.m */,
 				98F479CB186A1B920048D3D3 /* Main_iPhone.storyboard */,
@@ -153,6 +240,61 @@
 				98F479E4186A1B920048D3D3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		98F479F1186A1CD60048D3D3 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				98F479F2186A1CD60048D3D3 /* PPM_Ball.h */,
+				98F479F3186A1CD60048D3D3 /* PPM_Ball.m */,
+				98F479F4186A1CD60048D3D3 /* PPM_Bar.h */,
+				98F479F5186A1CD60048D3D3 /* PPM_Bar.m */,
+				98F479F6186A1CD60048D3D3 /* PPM_MainLogicClass.h */,
+				98F479F7186A1CD60048D3D3 /* PPM_MainLogicClass.m */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		98F47A13186A1CE70048D3D3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				98F47A14186A1CE70048D3D3 /* ACCropImages.h */,
+				98F47A15186A1CE70048D3D3 /* ACCropImages.m */,
+				98F47A16186A1CE70048D3D3 /* ACPopupViewManager.h */,
+				98F47A17186A1CE70048D3D3 /* ACPopupViewManager.m */,
+				98F47A18186A1CE70048D3D3 /* images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		98F47A18186A1CE70048D3D3 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				98F47A19186A1CE70048D3D3 /* button-play-pause.png */,
+				98F47A1A186A1CE70048D3D3 /* DownloadIcon.png */,
+				98F47A1B186A1CE70048D3D3 /* GameView_UI */,
+				98F47A26186A1CE70048D3D3 /* LocalIcon.png */,
+				98F47A27186A1CE70048D3D3 /* PlasticAdd.png */,
+				98F47A28186A1CE70048D3D3 /* SocialIcon.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		98F47A1B186A1CE70048D3D3 /* GameView_UI */ = {
+			isa = PBXGroup;
+			children = (
+				98F47A1C186A1CE70048D3D3 /* PlasticBackground.png */,
+				98F47A1D186A1CE70048D3D3 /* PlasticBall.png */,
+				98F47A1E186A1CE70048D3D3 /* PlasticBar.png */,
+				98F47A1F186A1CE70048D3D3 /* PlasticGameBackground.png */,
+				98F47A20186A1CE70048D3D3 /* PlasticPlayButton.png */,
+				98F47A21186A1CE70048D3D3 /* PlasticRuleButton.png */,
+				98F47A22186A1CE70048D3D3 /* PlasticScoreButton.png */,
+				98F47A23186A1CE70048D3D3 /* PlasticSettingsButton.png */,
+				98F47A24186A1CE70048D3D3 /* PlasticTitle.png */,
+				98F47A25186A1CE70048D3D3 /* PlasticUser.png */,
+			);
+			path = GameView_UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +374,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98F47A38186A1CE70048D3D3 /* PlasticAdd.png in Resources */,
+				98F47A32186A1CE70048D3D3 /* PlasticRuleButton.png in Resources */,
+				98F47A36186A1CE70048D3D3 /* PlasticUser.png in Resources */,
+				98F47A34186A1CE70048D3D3 /* PlasticSettingsButton.png in Resources */,
+				98F47A31186A1CE70048D3D3 /* PlasticPlayButton.png in Resources */,
+				98F47A30186A1CE70048D3D3 /* PlasticGameBackground.png in Resources */,
+				98F47A33186A1CE70048D3D3 /* PlasticScoreButton.png in Resources */,
+				98F47A2C186A1CE70048D3D3 /* DownloadIcon.png in Resources */,
+				98F47A2B186A1CE70048D3D3 /* button-play-pause.png in Resources */,
 				98F479D0186A1B920048D3D3 /* Main_iPad.storyboard in Resources */,
+				98F47A2D186A1CE70048D3D3 /* PlasticBackground.png in Resources */,
 				98F479D5186A1B920048D3D3 /* Images.xcassets in Resources */,
+				98F47A2E186A1CE70048D3D3 /* PlasticBall.png in Resources */,
 				98F479CD186A1B920048D3D3 /* Main_iPhone.storyboard in Resources */,
+				98F47A39186A1CE70048D3D3 /* SocialIcon.png in Resources */,
+				98F47A35186A1CE70048D3D3 /* PlasticTitle.png in Resources */,
+				98F47A2F186A1CE70048D3D3 /* PlasticBar.png in Resources */,
+				98F47A37186A1CE70048D3D3 /* LocalIcon.png in Resources */,
 				98F479C4186A1B920048D3D3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,8 +411,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98F47A0F186A1CD60048D3D3 /* PPM_iPhoneStartViewController.m in Sources */,
+				98F47A08186A1CD60048D3D3 /* PPM_Ball.m in Sources */,
+				98F47A0D186A1CD60048D3D3 /* PPM_InfoViewController.m in Sources */,
+				98F47A11186A1CD60048D3D3 /* PPM_RuleViewController.m in Sources */,
+				98F47A0C186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m in Sources */,
+				98F47A10186A1CD60048D3D3 /* PPM_RICPageViewController.m in Sources */,
+				98F47A0E186A1CD60048D3D3 /* PPM_iPhoneGameViewController.m in Sources */,
+				98F47A0B186A1CD60048D3D3 /* PPM_CreditsViewController.m in Sources */,
 				98F479CA186A1B920048D3D3 /* PPM_AppDelegate.m in Sources */,
+				98F47A09186A1CD60048D3D3 /* PPM_Bar.m in Sources */,
 				98F479D3186A1B920048D3D3 /* PPM_ViewController.m in Sources */,
+				98F47A12186A1CD60048D3D3 /* PPM_WebThemesViewController.m in Sources */,
+				98F47A0A186A1CD60048D3D3 /* PPM_MainLogicClass.m in Sources */,
+				98F47A2A186A1CE70048D3D3 /* ACPopupViewManager.m in Sources */,
+				98F47A29186A1CE70048D3D3 /* ACCropImages.m in Sources */,
 				98F479C6186A1B920048D3D3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

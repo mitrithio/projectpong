@@ -1,9 +1,9 @@
 //
 //  PPM_AppDelegate.m
-//  projectpong
+//  ProjectPong
 //
-//  Created by Andrea Cavicchia on 24/12/13.
-//  Copyright (c) 2013 ALF. All rights reserved.
+//  Created by Andrea Cavicchia on 17/12/13.
+//  Copyright (c) 2013 Andrea Cavicchia. All rights reserved.
 //
 
 #import "PPM_AppDelegate.h"
@@ -12,6 +12,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [application setStatusBarHidden:YES withAnimation:NO];
+    
     // Override point for customization after application launch.
     return YES;
 }
