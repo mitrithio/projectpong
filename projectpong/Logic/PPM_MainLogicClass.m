@@ -32,7 +32,7 @@
     self = [super init];
     if (self) {
         self.field = field;
-        self.difficulty = medium;
+        self.difficulty = easy;
     }
     return self;
 }

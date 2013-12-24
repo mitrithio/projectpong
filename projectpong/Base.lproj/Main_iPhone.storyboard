@@ -149,7 +149,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZp-Jd-fH8">
-                                        <rect key="frame" x="106" y="225" width="69" height="30"/>
+                                        <rect key="frame" x="99" y="225" width="83" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="end game">
@@ -191,6 +191,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="awayScore" destination="7fO-iM-blx" id="sIQ-EH-PaF"/>
+                        <outlet property="fieldView" destination="as2-AF-yc0" id="QjP-NE-Gkh"/>
                         <outlet property="gameView" destination="1Zd-Od-JEc" id="HUT-55-h8m"/>
                         <outlet property="homeScore" destination="RvB-d5-imA" id="Oz0-RY-DsU"/>
                         <outlet property="pauseButton" destination="R6Q-qf-CEY" id="Shw-bF-xq6"/>

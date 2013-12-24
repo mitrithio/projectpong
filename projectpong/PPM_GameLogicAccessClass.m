@@ -45,7 +45,8 @@
             
             // View of ball inizialization
             CGSize ballSize = CGSizeMake(20, 20);
-            UIImage *ballImage = [self getImageForKey:@"Ball"];
+            //UIImage *ballImage = [self getImageForKey:@"Ball"];
+            UIImage *ballImage = [UIImage imageNamed:@"PlasticBall.png"];
             CGPoint initialTopLeftBall = CGPointMake(self.gameView.center.x - (ballSize.width/2), self.gameView.center.y - (ballSize.height/2));
             self.ballView = [[UIImageView alloc] init];
             [self.ballView setImage:ballImage];
@@ -92,7 +93,8 @@
         
         // View of ball inizialization
         CGSize ballSize = CGSizeMake(20, 20);
-        UIImage *ballImage = [self getImageForKey:@"Ball"];
+        //UIImage *ballImage = [self getImageForKey:@"Ball"];
+        UIImage *ballImage = [UIImage imageNamed:@"PlasticBall.png"];
         CGPoint initialTopLeftBall = CGPointMake(self.gameView.center.x - (ballSize.width/2), self.gameView.center.y - (ballSize.height/2));
         self.ballView = [[UIImageView alloc] init];
         [self.ballView setImage:ballImage];
@@ -232,7 +234,7 @@ bool isArrivedToPoint = true;
 
 -(UIImage*)getImageForKey:(NSString*)key
 {
-    return [UIImage imageNamed:[NSString stringWithFormat:@"Pong%@.png",key]];
+    return [UIImage imageNamed:[NSString stringWithFormat:@"Plastic%@.png",key]];
 }
 
 
