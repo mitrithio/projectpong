@@ -15,10 +15,7 @@
 
 @interface PPM_Settings ()
 
-@property (nonatomic, readonly) Difficulty difficulty;
-@property (nonatomic, readonly) Theme theme;
-@property (nonatomic, readonly) BOOL isTimerSetted;
-@property (nonatomic, readonly) int timer;
+
 @property (nonatomic) NSUserDefaults *userDefaults;
 
 @end
@@ -48,6 +45,7 @@
 {
     NSMutableArray *defaults = [[NSMutableArray alloc] init];
     switch (_difficulty) {
+        case difficultyNotSetted:
         case easy:
         case medium:
         case hard:
@@ -106,12 +104,13 @@
 {
     NSMutableArray *defaults = [[NSMutableArray alloc] init];
     switch (_theme) {
+        case themeNotSetted:
         case classic:
         case plastic:
             defaults = [[self.userDefaults objectForKey:THEME] mutableCopy];
             if ([defaults count] == 0)
             {
-                _theme = classic;
+                _theme = plastic;
             }
             else
             {
@@ -262,7 +261,7 @@
     [self setTimer];
 }
 
--(void)saveDifficulty:(NSString*) difficulty theme:(NSString*)theme isTimerSetted:(BOOL)isTimerSetted timer:(int)timer
+-(void)saveDifficulty:(NSString*)difficulty theme:(NSString*)theme isTimerSetted:(BOOL)isTimerSetted timer:(int)timer
 {
     [self saveDifficulty:difficulty];
     [self saveTheme:theme];
@@ -270,7 +269,17 @@
     [self saveTimer:timer];
 }
 
-
-
+-(NSString*)settedThemeToString
+{
+    switch (_theme) {
+        case classic:
+            return @"Classic";
+        case plastic:
+            return @"Plastic";
+        default:
+            NSLog(@"Error in parsing Theme enumeration");
+            @throw [NSException exceptionWithName:@"themeOutOfRange" reason:@"Error in setting the theme" userInfo:nil];
+    }
+}
 
 @end

@@ -8,18 +8,37 @@
 
 #import <Foundation/Foundation.h>
 
+/*!
+ enumeration of possible difficulty
+ */
 typedef enum difficultyEnumerator {
+    difficultyNotSetted = 0,
     easy = 1,
     medium = 2,
     hard = 3
 } Difficulty;
 
+
+/*!
+ enumeration of possible themes
+ */
 typedef enum themeEnumerator {
-    classic = 0,
+    themeNotSetted = 0,
+    classic = 1,
     plastic = 2
 } Theme;
 
+/*!
+ this class is made to save and load user settings.
+ */
 @interface PPM_Settings : NSObject
+
+@property (nonatomic, readonly) Difficulty difficulty;
+@property (nonatomic, readonly) Theme theme;
+@property (nonatomic, readonly) BOOL isTimerSetted;
+@property (nonatomic, readonly) int timer;
+
+-(NSString*)settedThemeToString;
 
 // SETTING-TIME METHODS
 
@@ -80,6 +99,6 @@ typedef enum themeEnumerator {
  \param the value of isTimerSetted.
  \param the value of timer. Use only 30, 60 or 90.
  */
--(void)saveDifficulty:(NSString*) difficulty theme:(NSString*)theme isTimerSetted:(BOOL)isTimerSetted timer:(int)timer;
+-(void)saveDifficulty:(NSString*)difficulty theme:(NSString*)theme isTimerSetted:(BOOL)isTimerSetted timer:(int)timer;
 
 @end

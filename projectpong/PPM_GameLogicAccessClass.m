@@ -96,7 +96,8 @@
         UIImage *ballImage = [UIImage imageNamed:@"PlasticBall.png"];
         CGPoint initialTopLeftBall = CGPointMake(self.gameView.center.x - (ballSize.width/2), self.gameView.center.y - (ballSize.height/2));
         self.ballView = [[UIImageView alloc] init];
-        [self.ballView setImage:ballImage];
+        //[self.ballView setImage:ballImage];
+        [self setBackgroundForView:self.ballView withKey:@"Ball"];
         [self.ballView setAlpha:1.0];
         [self.ballView setFrame:CGRectMake(initialTopLeftBall.x, initialTopLeftBall.y, ballSize.width, ballSize.height)];
         [self.gameView addSubview:self.ballView];
@@ -231,9 +232,14 @@ bool isArrivedToPoint = true;
     }
 }
 
--(UIImage*)getImageForKey:(NSString*)key
+-(void)setBackgroundForView:(UIImageView*)view withKey:(NSString *)key
 {
-    return [UIImage imageNamed:[NSString stringWithFormat:@"Plastic%@.png",key]];
+    [view setImage:[self getThemeImageForKey:key]];
+}
+
+-(UIImage*)getThemeImageForKey:(NSString*)key
+{
+    return [UIImage imageNamed:[NSString stringWithFormat:@"%@%@.png",[self.logic.settings settedThemeToString],key]];
 }
 
 

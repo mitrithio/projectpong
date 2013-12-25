@@ -9,7 +9,6 @@
 #import "PPM_MainLogicClass.h"
 #import "PPM_Ball.h"
 #import "PPM_Bar.h"
-#import "PPM_Settings.h"
 
 @interface PPM_MainLogicClass ()
 
@@ -17,8 +16,6 @@
 @property (nonatomic, strong) PPM_Bar *enemyBar;
 @property (nonatomic, strong) PPM_Bar *userBar;
 @property (nonatomic) UIView *field;
-@property (nonatomic, assign) Difficulty difficulty;
-@property (nonatomic, strong) PPM_Settings *settings;
 
 @end
 
@@ -34,9 +31,7 @@
     self = [super init];
     if (self) {
         self.field = field;
-        self.difficulty = easy;
         self.settings = [[PPM_Settings alloc] init];
-        [self.settings setDifficulty];
     }
     return self;
 }
@@ -193,12 +188,12 @@ float arrivingParallelCoordinatePoint;
 
 -(CGFloat)getBallSpeed
 {
-    switch (self.difficulty) {
-        case 1:
+    switch ([self.settings difficulty]) {
+        case easy:
             return 5 + 0;
-        case 2:
+        case medium:
             return 5 + 2;
-        case 3:
+        case hard:
             return 5 + 4;
         default:
             NSLog(@"Error in parsing Difficulty enumeration");
@@ -213,12 +208,12 @@ float arrivingParallelCoordinatePoint;
 
 -(int)getBarDelta
 {
-    switch (self.difficulty) {
-        case 1:
+    switch ([self.settings difficulty]) {
+        case easy:
             return (int)self.enemyBar.size.width/4;
-        case 2:
+        case medium:
             return (int)self.enemyBar.size.width/6;
-        case 3:
+        case hard:
             return (int)self.enemyBar.size.width/12;
         default:
             NSLog(@"Error in parsing Difficulty enumeration");

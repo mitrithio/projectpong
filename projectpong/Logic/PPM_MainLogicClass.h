@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PPM_Settings.h"
 
 @interface PPM_MainLogicClass : NSObject
+
+@property (nonatomic, strong) PPM_Settings *settings;
 
 - (id)initWithGameField:(UIView*)field;
 
