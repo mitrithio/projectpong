@@ -9,6 +9,7 @@
 #import "PPM_MainLogicClass.h"
 #import "PPM_Ball.h"
 #import "PPM_Bar.h"
+#import "PPM_Settings.h"
 
 @interface PPM_MainLogicClass ()
 
@@ -17,6 +18,7 @@
 @property (nonatomic, strong) PPM_Bar *userBar;
 @property (nonatomic) UIView *field;
 @property (nonatomic, assign) Difficulty difficulty;
+@property (nonatomic, strong) PPM_Settings *settings;
 
 @end
 
@@ -33,6 +35,8 @@
     if (self) {
         self.field = field;
         self.difficulty = easy;
+        self.settings = [[PPM_Settings alloc] init];
+        [self.settings setDifficulty];
     }
     return self;
 }

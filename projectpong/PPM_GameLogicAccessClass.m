@@ -13,7 +13,6 @@
 @interface PPM_GameLogicAccessClass ()
 
 @property (nonatomic, retain) PPM_MainLogicClass *logic;
-@property (nonatomic) Difficulty difficulty;
 @property (nonatomic, retain) UIView * gameView;
 @property (nonatomic, retain) UIImageView * ballView;
 @property (nonatomic, retain) UIImageView * enemyBarView;

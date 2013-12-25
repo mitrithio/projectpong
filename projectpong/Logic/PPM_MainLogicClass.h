@@ -8,13 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
-typedef enum difficultyEnumerator {
-    easy = 1,
-    medium = 2,
-    hard = 3
-} Difficulty;
-
 @interface PPM_MainLogicClass : NSObject
 
 - (id)initWithGameField:(UIView*)field;

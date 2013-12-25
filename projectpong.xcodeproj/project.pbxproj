@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98E52AB9186A4FCF00EEB419 /* PPM_Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E52AB8186A4FCF00EEB419 /* PPM_Settings.m */; };
 		98F479BA186A1B920048D3D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F479B9186A1B920048D3D3 /* Foundation.framework */; };
 		98F479BC186A1B920048D3D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F479BB186A1B920048D3D3 /* CoreGraphics.framework */; };
 		98F479BE186A1B920048D3D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F479BD186A1B920048D3D3 /* UIKit.framework */; };
@@ -63,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		98E52AB7186A4FCF00EEB419 /* PPM_Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_Settings.h; sourceTree = "<group>"; };
+		98E52AB8186A4FCF00EEB419 /* PPM_Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_Settings.m; sourceTree = "<group>"; };
 		98F479B6186A1B920048D3D3 /* projectpong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectpong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98F479B9186A1B920048D3D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		98F479BB186A1B920048D3D3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -251,6 +254,8 @@
 				98F479F5186A1CD60048D3D3 /* PPM_Bar.m */,
 				98F479F6186A1CD60048D3D3 /* PPM_MainLogicClass.h */,
 				98F479F7186A1CD60048D3D3 /* PPM_MainLogicClass.m */,
+				98E52AB7186A4FCF00EEB419 /* PPM_Settings.h */,
+				98E52AB8186A4FCF00EEB419 /* PPM_Settings.m */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -415,6 +420,7 @@
 				98F47A08186A1CD60048D3D3 /* PPM_Ball.m in Sources */,
 				98F47A0D186A1CD60048D3D3 /* PPM_InfoViewController.m in Sources */,
 				98F47A11186A1CD60048D3D3 /* PPM_RuleViewController.m in Sources */,
+				98E52AB9186A4FCF00EEB419 /* PPM_Settings.m in Sources */,
 				98F47A0C186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m in Sources */,
 				98F47A10186A1CD60048D3D3 /* PPM_RICPageViewController.m in Sources */,
 				98F47A0E186A1CD60048D3D3 /* PPM_iPhoneGameViewController.m in Sources */,
@@ -645,6 +651,7 @@
 				98F479ED186A1B920048D3D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		98F479EE186A1B920048D3D3 /* Build configuration list for PBXNativeTarget "projectpongTests" */ = {
 			isa = XCConfigurationList;
@@ -653,6 +660,7 @@
 				98F479F0186A1B920048D3D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
