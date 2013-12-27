@@ -24,6 +24,12 @@
  \param the <Key> of the image
  \see PPM_Settings for theme settings. 
  */
+
+
 -(void)setBackgroundForView:(UIImageView*)view withKey:(NSString*)key;
+
+-(UIImage*)getThemeImageForKey:(NSString*)key;  
+
+
 
 @end
