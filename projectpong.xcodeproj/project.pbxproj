@@ -21,6 +21,7 @@
 		6861DAE8186C847800EDA5EC /* PlasticUser.png in Resources */ = {isa = PBXBuildFile; fileRef = 6861DADE186C847800EDA5EC /* PlasticUser.png */; };
 		6861DAEB186C873600EDA5EC /* PPM_ThemeSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6861DAEA186C873600EDA5EC /* PPM_ThemeSettingsViewController.m */; };
 		68B4F417186DC12F00C8567E /* PPM_UserAccountPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B4F416186DC12F00C8567E /* PPM_UserAccountPageViewController.m */; };
+		68E15160186F1661004B5B26 /* PPM_SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E1515F186F1661004B5B26 /* PPM_SettingsTableViewController.m */; };
 		982070E3186B8D62006CD73F /* PPM_GameSettingsAccessClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 982070E2186B8D62006CD73F /* PPM_GameSettingsAccessClass.m */; };
 		982070E6186B8F8D006CD73F /* PPM_SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 982070E5186B8F8D006CD73F /* PPM_SettingsViewController.m */; };
 		98E52AB9186A4FCF00EEB419 /* PPM_Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E52AB8186A4FCF00EEB419 /* PPM_Settings.m */; };
@@ -88,6 +89,8 @@
 		6861DAEA186C873600EDA5EC /* PPM_ThemeSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_ThemeSettingsViewController.m; sourceTree = "<group>"; };
 		68B4F415186DC12F00C8567E /* PPM_UserAccountPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_UserAccountPageViewController.h; sourceTree = "<group>"; };
 		68B4F416186DC12F00C8567E /* PPM_UserAccountPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_UserAccountPageViewController.m; sourceTree = "<group>"; };
+		68E1515E186F1661004B5B26 /* PPM_SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_SettingsTableViewController.h; sourceTree = "<group>"; };
+		68E1515F186F1661004B5B26 /* PPM_SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_SettingsTableViewController.m; sourceTree = "<group>"; };
 		982070E1186B8D62006CD73F /* PPM_GameSettingsAccessClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_GameSettingsAccessClass.h; sourceTree = "<group>"; };
 		982070E2186B8D62006CD73F /* PPM_GameSettingsAccessClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_GameSettingsAccessClass.m; sourceTree = "<group>"; };
 		982070E4186B8F8D006CD73F /* PPM_SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_SettingsViewController.h; sourceTree = "<group>"; };
@@ -259,6 +262,8 @@
 				6861DAEA186C873600EDA5EC /* PPM_ThemeSettingsViewController.m */,
 				68B4F415186DC12F00C8567E /* PPM_UserAccountPageViewController.h */,
 				68B4F416186DC12F00C8567E /* PPM_UserAccountPageViewController.m */,
+				68E1515E186F1661004B5B26 /* PPM_SettingsTableViewController.h */,
+				68E1515F186F1661004B5B26 /* PPM_SettingsTableViewController.m */,
 			);
 			path = projectpong;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				98F47A11186A1CD60048D3D3 /* PPM_RuleViewController.m in Sources */,
 				982070E6186B8F8D006CD73F /* PPM_SettingsViewController.m in Sources */,
 				98E52AB9186A4FCF00EEB419 /* PPM_Settings.m in Sources */,
+				68E15160186F1661004B5B26 /* PPM_SettingsTableViewController.m in Sources */,
 				98F47A0C186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m in Sources */,
 				68B4F417186DC12F00C8567E /* PPM_UserAccountPageViewController.m in Sources */,
 				98F47A10186A1CD60048D3D3 /* PPM_RICPageViewController.m in Sources */,

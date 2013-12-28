@@ -32,6 +32,8 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:request];
     [_webView setScalesPageToFit:YES];
+    
+   
 }
 
 - (void)didReceiveMemoryWarning

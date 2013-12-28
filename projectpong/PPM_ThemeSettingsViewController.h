@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentThemeLabel;
 
 
+@property (strong, nonatomic) IBOutlet UITableView *ThemeTable;
 
 @end

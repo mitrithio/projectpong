@@ -1,18 +1,18 @@
 //
-//  PPM_TimerSettingsViewController.m
+//  PPM_SettingsTableViewController.m
 //  projectpong
 //
-//  Created by Federico Freschi on 26/12/13.
+//  Created by Federico Freschi on 28/12/13.
 //  Copyright (c) 2013 ALF. All rights reserved.
 //
 
-#import "PPM_TimerSettingsViewController.h"
+#import "PPM_SettingsTableViewController.h"
 
-@interface PPM_TimerSettingsViewController ()
+@interface PPM_SettingsTableViewController ()
 
 @end
 
-@implementation PPM_TimerSettingsViewController
+@implementation PPM_SettingsTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,9 +28,9 @@
     [super viewDidLoad];
 
     UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PlasticBackground.png"]];
-    [tempImageView setFrame:self.TimerTable.frame];
+    [tempImageView setFrame:self.settingsTable.frame];
     
-    self.TimerTable.backgroundView = tempImageView;
+    self.settingsTable.backgroundView = tempImageView;
     
     //[tempImageView release]; da errore il release
 }
@@ -42,14 +42,6 @@
 }
 
 #pragma mark - Table view data source
-
-
-- (IBAction)TimerOn:(id)sender {
-    if (self.TimerSelector.enabled == TRUE){
-        self.TimerSelector.enabled = FALSE;}
-    else{
-        self.TimerSelector.enabled = TRUE;}
-}
 
 /*
 // Override to support conditional editing of the table view.
