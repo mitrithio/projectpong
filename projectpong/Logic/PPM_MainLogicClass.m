@@ -188,7 +188,7 @@ float arrivingParallelCoordinatePoint;
 
 -(CGFloat)getBallSpeed
 {
-    switch ([self.settings difficulty]) {
+    switch ([self.settings aiDifficulty]) {
         case easy:
             return 5 + 0;
         case medium:
@@ -208,7 +208,7 @@ float arrivingParallelCoordinatePoint;
 
 -(int)getBarDelta
 {
-    switch ([self.settings difficulty]) {
+    switch ([self.settings aiDifficulty]) {
         case easy:
             return (int)self.enemyBar.size.width/4;
         case medium:

@@ -33,7 +33,8 @@ typedef enum themeEnumerator {
  */
 @interface PPM_Settings : NSObject
 
-@property (nonatomic, readonly) Difficulty difficulty;
+@property (nonatomic, readonly) Difficulty aiDifficulty;
+@property (nonatomic, readonly) Difficulty ballSpeed;
 @property (nonatomic, readonly) Theme theme;
 @property (nonatomic, readonly) BOOL isTimerSetted;
 @property (nonatomic, readonly) int timer;
@@ -43,9 +44,14 @@ typedef enum themeEnumerator {
 // SETTING-TIME METHODS
 
 /*!
- set the difficulty property as saved in user defaults. If in user defaults difficulty is not setted, the property is authomatically setted as easy.
+ set the aiDifficulty property as saved in user defaults. If in user defaults aiDifficulty is not setted, the property is authomatically setted as easy.
  */
--(void)setDifficulty;
+-(void)setAIDifficulty;
+
+/*!
+ set the ballSpeed property as saved in user defaults. If in user defaults ballSpeed is not setted, the property is authomatically setted as easy.
+ */
+-(void)setBallSpeed;
 
 /*!
  set the theme property as saved in user defaults. If in user defaults theme is not setted, the property is authomatically setted as classic.
@@ -69,14 +75,20 @@ typedef enum themeEnumerator {
 // SAVING-TIME METHODS
 
 /*!
- this method saves the difficulty in user defaults.
- \param the string that rapresents the difficulty. It must be: easy, hard or medium.
+ this method saves the aiDifficulty in user defaults.
+ \param the string that rapresents the aiDifficulty. It must be: easy, hard or medium.
  */
--(void)saveDifficulty:(NSString*)difficulty;
+-(void)saveAIDifficulty:(NSString*)aiDifficulty;
+
+/*!
+ this method saves the ballSpeed in user defaults.
+ \param the string that rapresents the ballSpeed. It must be: easy, hard or medium.
+ */
+-(void)saveBallSpeed:(NSString*)ballSpeed;
 
 /*!
  this method saves the theme in user defaults.
- \param the string that rapresents the theme. It must be: classic or plastic.
+ \param the string that rapresents the theme. It must be: "Classic" or "Plastic".
  */
 -(void)saveTheme:(NSString*)theme;
 
@@ -92,13 +104,13 @@ typedef enum themeEnumerator {
  */
 -(void)saveTimer:(int)timer;
 
-/*!
+/*! DON'T USE - ONLY FOR TESTS
  this method saves all the settings at once.
  \param the string that rapresents the difficulty. It must be: easy, hard or medium.
- \param the string that rapresents the theme. It must be: classic or plastic.
+ \param the string that rapresents the theme. It must be: "Classic" or "Plastic".
  \param the value of isTimerSetted.
  \param the value of timer. Use only 30, 60 or 90.
  */
--(void)saveDifficulty:(NSString*)difficulty theme:(NSString*)theme isTimerSetted:(BOOL)isTimerSetted timer:(int)timer;
+//-(void)saveDifficulty:(NSString*)difficulty theme:(NSString*)theme isTimerSetted:(BOOL)isTimerSetted timer:(int)timer;
 
 @end

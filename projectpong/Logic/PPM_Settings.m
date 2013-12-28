@@ -9,6 +9,7 @@
 #import "PPM_Settings.h"
 
 #define DIFFICULTY @"difficultySetted"
+#define BALLSPEED @"ballSpeedSetted"
 #define THEME @"themeSetted"
 #define ISTIMER @"isTimerSetted"
 #define TIMER @"timerSetted"
@@ -23,7 +24,8 @@
 @implementation PPM_Settings
 
 @synthesize theme = _theme;
-@synthesize difficulty = _difficulty;
+@synthesize ballSpeed = _ballSpeed;
+@synthesize aiDifficulty = _aiDifficulty;
 @synthesize isTimerSetted = _isTimerSetted;
 @synthesize timer = _timer;
 
@@ -33,7 +35,7 @@
     self = [super init];
     if (self) {
         self.userDefaults = [NSUserDefaults standardUserDefaults];
-        [self setDifficulty];
+        [self setAIDifficulty];
         [self setTheme];
         [self setIsTimerSetted];
         [self setTimer];
@@ -41,10 +43,10 @@
     return self;
 }
 
--(void)setDifficulty
+-(void)setAIDifficulty
 {
     NSMutableArray *defaults = [[NSMutableArray alloc] init];
-    switch (_difficulty) {
+    switch (_aiDifficulty) {
         case difficultyNotSetted:
         case easy:
         case medium:
@@ -52,53 +54,113 @@
             defaults = [[self.userDefaults objectForKey:DIFFICULTY] mutableCopy];
             if ([defaults count] == 0)
             {
-                _difficulty = easy;
+                _aiDifficulty = easy;
             }
             else
             {
                 NSString *difficultyString = [defaults objectAtIndex:0];
                 if ([difficultyString isEqualToString:@"easy"])
                 {
-                    _difficulty = easy;
+                    _aiDifficulty = easy;
                 }
                 else if ([difficultyString isEqualToString:@"medium"])
                 {
-                    _difficulty = medium;
+                    _aiDifficulty = medium;
                 }
                 else if ([difficultyString isEqualToString:@"hard"])
                 {
-                    _difficulty = hard;
+                    _aiDifficulty = hard;
                 }
                 else
                 {
-                    NSLog(@"Error in parsing Difficulty enumeration");
-                    @throw [NSException exceptionWithName:@"difficultyOutOfRange" reason:@"Error in setting the difficulty" userInfo:nil];
+                    NSLog(@"Error in parsing AIDifficulty enumeration");
+                    @throw [NSException exceptionWithName:@"aidifficultyOutOfRange" reason:@"Error in setting the aidifficulty" userInfo:nil];
                 }
             }
             break;
             
         default:
-            NSLog(@"Error in parsing Difficulty enumeration");
-            @throw [NSException exceptionWithName:@"difficultyOutOfRange" reason:@"Error in setting the difficulty" userInfo:nil];
+            NSLog(@"Error in parsing AIDifficulty enumeration");
+            @throw [NSException exceptionWithName:@"aidifficultyOutOfRange" reason:@"Error in setting the aidifficulty" userInfo:nil];
             break;
     }
 }
 
--(void)saveDifficulty:(NSString*)difficulty
+-(void)saveAIDifficulty:(NSString*)aiDifficulty
 {
     NSMutableArray *defaults = [self.userDefaults objectForKey:DIFFICULTY];
     if ([defaults count] == 0)
     {
-        [self.userDefaults setObject:difficulty forKey:DIFFICULTY];
+        [self.userDefaults setObject:aiDifficulty forKey:DIFFICULTY];
     }
     else
     {
         [self.userDefaults removeObjectForKey:DIFFICULTY];
-        [self.userDefaults setObject:difficulty forKey:DIFFICULTY];
+        [self.userDefaults setObject:aiDifficulty forKey:DIFFICULTY];
     }
     [self.userDefaults synchronize];
-    [self setDifficulty];
+    [self setAIDifficulty];
 }
+
+-(void)setBallSpeed
+{
+    NSMutableArray *defaults = [[NSMutableArray alloc] init];
+    switch (_ballSpeed) {
+        case difficultyNotSetted:
+        case easy:
+        case medium:
+        case hard:
+            defaults = [[self.userDefaults objectForKey:BALLSPEED] mutableCopy];
+            if ([defaults count] == 0)
+            {
+                _ballSpeed = easy;
+            }
+            else
+            {
+                NSString *difficultyString = [defaults objectAtIndex:0];
+                if ([difficultyString isEqualToString:@"easy"])
+                {
+                    _ballSpeed = easy;
+                }
+                else if ([difficultyString isEqualToString:@"medium"])
+                {
+                    _ballSpeed = medium;
+                }
+                else if ([difficultyString isEqualToString:@"hard"])
+                {
+                    _ballSpeed = hard;
+                }
+                else
+                {
+                    NSLog(@"Error in parsing ballSpeed enumeration");
+                    @throw [NSException exceptionWithName:@"ballSpeedOutOfRange" reason:@"Error in setting the ballSpeed" userInfo:nil];
+                }
+            }
+            break;
+            
+        default:
+            NSLog(@"Error in parsing ballSpeed enumeration");
+            @throw [NSException exceptionWithName:@"ballSpeedOutOfRange" reason:@"Error in setting the ballSpeed" userInfo:nil];
+            break;
+    }
+}
+
+-(void)saveBallSpeed:(NSString*)ballSpeed
+{
+    NSMutableArray *defaults = [self.userDefaults objectForKey:BALLSPEED];
+    if ([defaults count] == 0)
+    {
+        [self.userDefaults setObject:ballSpeed forKey:BALLSPEED];
+    }
+    else
+    {
+        [self.userDefaults removeObjectForKey:BALLSPEED];
+        [self.userDefaults setObject:ballSpeed forKey:BALLSPEED];
+    }
+    [self.userDefaults synchronize];
+    [self setBallSpeed];
+}
+
 
 -(void)setTheme
 {
@@ -115,11 +177,11 @@
             else
             {
                 NSString *themeString = [defaults objectAtIndex:0];
-                if ([themeString isEqualToString:@"classic"])
+                if ([themeString isEqualToString:@"Classic"])
                 {
                     _theme = classic;
                 }
-                else if ([themeString isEqualToString:@"plastic"])
+                else if ([themeString isEqualToString:@"Plastic"])
                 {
                     _theme = plastic;
                 }
@@ -141,7 +203,7 @@
 -(void)saveTheme:(NSString*)theme
 {
     NSMutableArray *defaults = [self.userDefaults objectForKey:THEME];
-    if ([theme isEqualToString:@"classic"] || [theme isEqualToString:@"plastic"]) {
+    if ([theme isEqualToString:@"Classic"] || [theme isEqualToString:@"Plastic"]) {
         if ([defaults count] == 0)
         {
             [self.userDefaults setObject:theme forKey:THEME];
@@ -263,7 +325,7 @@
 
 -(void)saveDifficulty:(NSString*)difficulty theme:(NSString*)theme isTimerSetted:(BOOL)isTimerSetted timer:(int)timer
 {
-    [self saveDifficulty:difficulty];
+    [self saveAIDifficulty:difficulty];
     [self saveTheme:theme];
     [self saveIsTimerSetted:isTimerSetted];
     [self saveTimer:timer];

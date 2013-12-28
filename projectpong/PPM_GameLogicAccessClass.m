@@ -239,7 +239,8 @@ bool isArrivedToPoint = true;
 
 -(UIImage*)getThemeImageForKey:(NSString*)key
 {
-    return [UIImage imageNamed:[NSString stringWithFormat:@"%@%@.png",[self.logic.settings settedThemeToString],key]];
+    NSString *prova = [NSString stringWithFormat:@"%@%@.png",[self.logic.settings settedThemeToString],key];
+    return [UIImage imageNamed:prova];
 }
 
 
