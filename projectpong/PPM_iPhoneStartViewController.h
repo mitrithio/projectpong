@@ -21,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *titleImage;
 @property (weak, nonatomic) IBOutlet UIImageView *startBackground;
 
+@property (weak, nonatomic) IBOutlet UILabel *userLable;
+@property (weak, nonatomic) IBOutlet UIImageView *userImage;
+
 @property (nonatomic, retain) PPM_GameLogicAccessClass *gameLogicAccess; //da cancellare a meno che non servano espliciti riferimenti alla logica
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
 

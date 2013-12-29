@@ -14,12 +14,17 @@
 
 @implementation PPM_CreditsViewController
 
+@synthesize gameSettingsAccess;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.creditTextField.text = @"PROGRAMMING:\n Andrea Cavicchia \n Luca Dal Corso \n Federico Freschi \n \n GAME DESIGN:\n Andrea Cavicchia \n Luca Dal Corso \n Federico Freschi \n \n GRAPHIC DESIGN:\n Federico Freschi \n";
     
+    self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
+    
+    [self.gameSettingsAccess setBackgroundForView:self.creditsBackground withKey:@"Background"];
 	// Do any additional setup after loading the view.
 }
 

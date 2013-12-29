@@ -21,6 +21,8 @@
 @implementation PPM_UserAccountPageViewController
 
 @synthesize containerView = _containerView;
+@synthesize gameSettingsAccess;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +37,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
+    
+    [self.gameSettingsAccess setBackgroundForView:self.userBackground withKey:@"Background"];
     
 }
 

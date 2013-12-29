@@ -33,10 +33,6 @@
 	// Do any additional setup after loading the view.
     //self.gameLogicAccess = [[PPM_GameLogicAccessClass alloc] init];
     
-    
-    //dovrebbe funzionare se impostiamo un thema di default. se vogliamo ci metto poco a fare un terzo tema da usare di default o mettiamo il plastic come default.
-    
-    
     /******************
     UIImage *titleImageSelected = [self.gameLogicAccess getThemeImageForKey:@"Title"];
    // UIImage *titleImageSelected = [UIImage imageNamed:@"PlasticTitle.png"];
@@ -49,26 +45,42 @@
     
     [self.gameSettingsAccess setBackgroundForView:self.titleImage withKey:@"Title"];
     
+    /* non funziona il metodo con i bottoni ma solo con le imageview, anche se studiando il codice dovrebbe farlo... magari mi sono perso qualcosa.
+     
+    [self.gameSettingsAccess setBackgroundForView:self.playButton.imageView withKey:@"PlayButton"];
+    
+    [self.gameSettingsAccess setBackgroundForView:self.settingsButton.imageView withKey:@"SettingsButton"];
+    
+    [self.gameSettingsAccess setBackgroundForView:self.ruleButton.imageView withKey:@"RuleButton"];
+    
+    [self.gameSettingsAccess setBackgroundForView:self.scoreButton.imageView withKey:@"ScoreButton"];
+    */
+     
+    
+    [self.gameSettingsAccess setBackgroundForView:self.startBackground withKey:@"Background"];
     
     
-    UIImage *playImageSelected = [self.gameLogicAccess getThemeImageForKey:@"PlayButton"];
-    //UIImage *playImageSelected = [UIImage imageNamed:@"PlasticPlayButton.png"];
-    [self.playButton.imageView setImage:playImageSelected];
+    //NSString *currentTheme = self.gameSettingsAccess.getCurrentTheme;
     
-    UIImage *settingsImageSelected = [self.gameLogicAccess getThemeImageForKey:@"SettingsButton"];
-    //UIImage *settingsImageSelected = [UIImage imageNamed:@"PlasticSettingsButton.png"];
-    [self.settingsButton.imageView setImage:settingsImageSelected];
     
-    UIImage *ruleImageSelected = [self.gameLogicAccess getThemeImageForKey:@"RuleButton"];
-    //UIImage *ruleImageSelected = [UIImage imageNamed:@"PlasticRuleButton.png"];
-    [self.ruleButton.imageView setImage:ruleImageSelected];
+    //mi servono queste variabiliColore su una classe separata... la gameSettingsAccess dovrebbe andare bene mi serve nella stessa classe un metodo chiammiamolo "setColor" che prenda una nsstring tipo @Lable e setti il colore in base ai nomi delle variabili qui sotto. ovvero concateni il tema+laKEY+Color....   lo farei io ma non vuoi che scrivo sulle tue classi.
+    /*
+    UIColor *PlasticPrimaryColor = [UIColor redColor];
+    UIColor *PlasticSecondaryColor = [UIColor blueColor];
+    UIColor *PlasticElementColor = [UIColor blackColor];
+    UIcolor *PlasticBackgroundColor = [UIColor whiteColor];
     
-    UIImage *scoreImageSelected = [self.gameLogicAccess getThemeImageForKey:@"ScoreButton"];
-    //UIImage *scoreImageSelected = [UIImage imageNamed:@"PlasticScoreButton.png"];
-    [self.scoreButton.imageView setImage:scoreImageSelected];
+    
+    UIColor *ClassicPrimaryColor = [UIColor whiteColor];
+    UIColor *ClassicSecondaryColor = [UIColor greenColor];
+    UIColor *ClassicElementColor = [UIColor grayColor];
+    UIcolor *ClassicBackgroundColor = [UIColor blackColor];
+    */
+    
+    //self.userLable.textColor = self.gameSettingsAccess.setColor:withKey:@"Lable";
+    
+    //tutto questo per poter settare dinamicamente anche i colori delle scritte in base al theme inoltre così un ipotetico nuovo thema.
 
-    UIImage *backgroundImageSelected = [self.gameLogicAccess getThemeImageForKey:@"Background"];
-    [self.scoreButton.imageView setImage:backgroundImageSelected];
     
     NSLog(@"ViewDidLoad loaded");
 
