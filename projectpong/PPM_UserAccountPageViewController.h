@@ -11,6 +11,8 @@
 
 
 @interface PPM_UserAccountPageViewController : UIViewController
+
+
 @property (weak, nonatomic) IBOutlet UILabel *userTitle;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLable;
 @property (weak, nonatomic) IBOutlet UILabel *userEmailLable;
@@ -24,6 +26,10 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *userBackground;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveUser;
+
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
+
+
 
 @end

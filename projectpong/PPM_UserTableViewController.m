@@ -1,20 +1,18 @@
 //
-//  PPM_SettingsTableViewController.m
+//  PPM_UserTableViewController.m
 //  projectpong
 //
-//  Created by Federico Freschi on 28/12/13.
+//  Created by Federico Freschi on 30/12/13.
 //  Copyright (c) 2013 ALF. All rights reserved.
 //
 
-#import "PPM_SettingsTableViewController.h"
+#import "PPM_UserTableViewController.h"
 
-@interface PPM_SettingsTableViewController ()
+@interface PPM_UserTableViewController ()
 
 @end
 
-@implementation PPM_SettingsTableViewController
-
-
+@implementation PPM_UserTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,15 +26,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PlasticBackground.png"]];
-    [tempImageView setFrame:self.settingsTable.frame];
+    [tempImageView setFrame:self.userTable.frame];
     
-    self.settingsTable.backgroundView = tempImageView;
+    self.userTable.backgroundView = tempImageView;
     
-    //[tempImageView release]; da errore il release
-    
+    self.imageCell.backgroundColor = [UIColor clearColor];
+    self.button2Cell.backgroundColor = [UIColor clearColor];
+    self.buttonCell.backgroundColor = [UIColor clearColor];
 
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning

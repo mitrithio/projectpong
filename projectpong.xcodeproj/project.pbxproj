@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68270E55187183F100A071EA /* PPM_UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68270E54187183F100A071EA /* PPM_UserTableViewController.m */; };
 		6861DAD0186C7E0D00EDA5EC /* PPM_TimerSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6861DACF186C7E0D00EDA5EC /* PPM_TimerSettingsViewController.m */; };
 		6861DAD3186C7E4700EDA5EC /* PPM_DifficultySettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6861DAD2186C7E4700EDA5EC /* PPM_DifficultySettingsViewController.m */; };
 		6861DADF186C847800EDA5EC /* PlasticBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6861DAD5186C847800EDA5EC /* PlasticBackground.png */; };
@@ -71,6 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68270E53187183F100A071EA /* PPM_UserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_UserTableViewController.h; sourceTree = "<group>"; };
+		68270E54187183F100A071EA /* PPM_UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_UserTableViewController.m; sourceTree = "<group>"; };
 		6861DACE186C7E0D00EDA5EC /* PPM_TimerSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_TimerSettingsViewController.h; sourceTree = "<group>"; };
 		6861DACF186C7E0D00EDA5EC /* PPM_TimerSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_TimerSettingsViewController.m; sourceTree = "<group>"; };
 		6861DAD1186C7E4700EDA5EC /* PPM_DifficultySettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPM_DifficultySettingsViewController.h; path = ../PPM_DifficultySettingsViewController.h; sourceTree = "<group>"; };
@@ -264,6 +267,8 @@
 				68B4F416186DC12F00C8567E /* PPM_UserAccountPageViewController.m */,
 				68E1515E186F1661004B5B26 /* PPM_SettingsTableViewController.h */,
 				68E1515F186F1661004B5B26 /* PPM_SettingsTableViewController.m */,
+				68270E53187183F100A071EA /* PPM_UserTableViewController.h */,
+				68270E54187183F100A071EA /* PPM_UserTableViewController.m */,
 			);
 			path = projectpong;
 			sourceTree = "<group>";
@@ -461,6 +466,7 @@
 				98E52AB9186A4FCF00EEB419 /* PPM_Settings.m in Sources */,
 				68E15160186F1661004B5B26 /* PPM_SettingsTableViewController.m in Sources */,
 				98F47A0C186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m in Sources */,
+				68270E55187183F100A071EA /* PPM_UserTableViewController.m in Sources */,
 				68B4F417186DC12F00C8567E /* PPM_UserAccountPageViewController.m in Sources */,
 				98F47A10186A1CD60048D3D3 /* PPM_RICPageViewController.m in Sources */,
 				98F47A0E186A1CD60048D3D3 /* PPM_iPhoneGameViewController.m in Sources */,
