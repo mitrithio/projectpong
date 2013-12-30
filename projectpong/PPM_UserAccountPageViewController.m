@@ -40,7 +40,7 @@
     
     self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
     
-    [self.gameSettingsAccess setBackgroundForView:self.userBackground withKey:@"Background"];
+    [self.gameSettingsAccess setBackgroundForUIObject:self.userBackground withKey:@"Background"];
     
 }
 

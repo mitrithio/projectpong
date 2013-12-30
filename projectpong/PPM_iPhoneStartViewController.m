@@ -43,21 +43,21 @@
     
     self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
     
-    [self.gameSettingsAccess setBackgroundForView:self.titleImage withKey:@"Title"];
+    [self.gameSettingsAccess setBackgroundForUIObject:self.titleImage withKey:@"Title"];
     
-    /* non funziona il metodo con i bottoni ma solo con le imageview, anche se studiando il codice dovrebbe farlo... magari mi sono perso qualcosa.
-     
-    [self.gameSettingsAccess setBackgroundForView:self.playButton.imageView withKey:@"PlayButton"];
+    // Ora funziona coi bottoni anche. Ho corretto accettando il bottone intero e non solo la imageView a lui collegato. Ecco l'esempio.
+    [self.gameSettingsAccess setBackgroundForUIObject:self.playButton withKey:@"PlayButton"];
     
-    [self.gameSettingsAccess setBackgroundForView:self.settingsButton.imageView withKey:@"SettingsButton"];
+    /*
+    [self.gameSettingsAccess setBackgroundForUIObject:self.settingsButton.imageView withKey:@"SettingsButton"];
     
-    [self.gameSettingsAccess setBackgroundForView:self.ruleButton.imageView withKey:@"RuleButton"];
+    [self.gameSettingsAccess setBackgroundForUIObject:self.ruleButton.imageView withKey:@"RuleButton"];
     
-    [self.gameSettingsAccess setBackgroundForView:self.scoreButton.imageView withKey:@"ScoreButton"];
+    [self.gameSettingsAccess setBackgroundForUIObject:self.scoreButton.imageView withKey:@"ScoreButton"];
     */
      
     
-    [self.gameSettingsAccess setBackgroundForView:self.startBackground withKey:@"Background"];
+    [self.gameSettingsAccess setBackgroundForUIObject:self.startBackground withKey:@"Background"];
     
     
     //NSString *currentTheme = self.gameSettingsAccess.getCurrentTheme;

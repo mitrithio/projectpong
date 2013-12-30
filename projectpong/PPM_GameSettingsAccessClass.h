@@ -19,7 +19,7 @@
  \param the <Key> of the image
  \see PPM_Settings for theme settings.
  */
--(void)setBackgroundForView:(UIImageView*)view withKey:(NSString*)key;
+-(void)setBackgroundForUIObject:(id)view withKey:(NSString*)key;
 
 
 

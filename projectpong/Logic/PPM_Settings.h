@@ -28,6 +28,20 @@ typedef enum themeEnumerator {
     plastic = 2
 } Theme;
 
+@interface PPM_Colors : NSObject
+
+@property (nonatomic) UIColor *PlasticPrimaryColor;
+@property (nonatomic) UIColor *PlasticSecondaryColor;
+@property (nonatomic) UIColor *PlasticElementColor;
+@property (nonatomic) UIColor *PlasticBackgroundColor;
+@property (nonatomic) UIColor *ClassicPrimaryColor;
+@property (nonatomic) UIColor *ClassicSecondaryColor;
+@property (nonatomic) UIColor *ClassicElementColor;
+@property (nonatomic) UIColor *ClassicBackgroundColor;
+
+
+@end
+
 /*!
  this class is made to save and load user settings.
  */
@@ -112,5 +126,12 @@ typedef enum themeEnumerator {
  \param the value of timer. Use only 30, 60 or 90.
  */
 //-(void)saveDifficulty:(NSString*)difficulty theme:(NSString*)theme isTimerSetted:(BOOL)isTimerSetted timer:(int)timer;
+
+/*!
+ use this method if you have to set the color of a label, by theme.
+ \param the key: only "Primary", "Secondary", "Element", "Backround" are admitted.
+ \return the UIColor of the primary, secondary, element or background color of a label
+ */
+-(UIColor*)getThemeColorLabelForKey:(NSString*)key;
 
 @end

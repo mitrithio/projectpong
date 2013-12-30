@@ -23,7 +23,7 @@
         self.rulesText.text = @"c'mon is the fukking pong... you realy need me to tell you the rules? \n if so, you are realy dumb...";
     self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
     
-    [self.gameSettingsAccess setBackgroundForView:self.ruleBackground withKey:@"Background"];
+    [self.gameSettingsAccess setBackgroundForUIObject:self.ruleBackground withKey:@"Background"];
     
 }
 
