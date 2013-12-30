@@ -28,20 +28,6 @@ typedef enum themeEnumerator {
     plastic = 2
 } Theme;
 
-@interface PPM_Colors : NSObject
-
-@property (nonatomic) UIColor *PlasticPrimaryColor;
-@property (nonatomic) UIColor *PlasticSecondaryColor;
-@property (nonatomic) UIColor *PlasticElementColor;
-@property (nonatomic) UIColor *PlasticBackgroundColor;
-@property (nonatomic) UIColor *ClassicPrimaryColor;
-@property (nonatomic) UIColor *ClassicSecondaryColor;
-@property (nonatomic) UIColor *ClassicElementColor;
-@property (nonatomic) UIColor *ClassicBackgroundColor;
-
-
-@end
-
 /*!
  this class is made to save and load user settings.
  */

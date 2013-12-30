@@ -7,6 +7,7 @@
 //
 
 #import "PPM_Settings.h"
+#import "PPM_Colors.h"
 
 #define DIFFICULTY @"difficultySetted"
 #define BALLSPEED @"ballSpeedSetted"
@@ -39,15 +40,6 @@
         [self setTheme];
         [self setIsTimerSetted];
         [self setTimer];
-        self.colors = [[PPM_Colors alloc] init];
-        self.colors.PlasticPrimaryColor = [UIColor redColor];
-        self.colors.PlasticSecondaryColor = [UIColor blueColor];
-        self.colors.PlasticElementColor = [UIColor blackColor];
-        self.colors.PlasticBackgroundColor = [UIColor whiteColor];
-        self.colors.ClassicPrimaryColor = [UIColor whiteColor];
-        self.colors.ClassicSecondaryColor = [UIColor greenColor];
-        self.colors.ClassicElementColor = [UIColor grayColor];
-        self.colors.ClassicBackgroundColor = [UIColor blackColor];
     }
     return self;
 }
