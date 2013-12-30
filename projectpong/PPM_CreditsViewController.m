@@ -24,7 +24,7 @@
     
     self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
     
-    [self.gameSettingsAccess setBackgroundForView:self.creditsBackground withKey:@"Background"];
+    [self.gameSettingsAccess setBackgroundForUIObject:self.creditsBackground withKey:@"Background"];
 	// Do any additional setup after loading the view.
 }
 

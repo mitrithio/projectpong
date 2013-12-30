@@ -24,7 +24,7 @@
 	// Do any additional setup after loading the view.
     self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
     
-        [self.gameSettingsAccess setBackgroundForView:self.infoBackground withKey:@"Background"];
+        [self.gameSettingsAccess setBackgroundForUIObject:self.infoBackground withKey:@"Background"];
 }
 
 - (void)didReceiveMemoryWarning

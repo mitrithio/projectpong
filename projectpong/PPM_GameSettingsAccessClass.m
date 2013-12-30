@@ -113,9 +113,35 @@
     [self.settings saveTheme:currentThemeSetted.text];
 }
 
--(void)setBackgroundForView:(UIImageView*)view withKey:(NSString *)key
+-(void)setBackgroundForUIObject:(id)object withKey:(NSString *)key
 {
-    [view setImage:[self getThemeImageForKey:key]];
+    if ([object isKindOfClass:[UIButton class]])
+    {
+        UIButton *btn = object;
+        [btn setImage:[self getThemeImageForKey:key] forState:UIControlStateNormal];
+    }
+    else if ([object isKindOfClass:[UIImageView class]])
+    {
+        UIImageView *imgView = object;
+        [imgView setImage:[self getThemeImageForKey:key]];
+    }
+    else if ([object isKindOfClass:[UIView class]])
+    {
+        UIView *view = object;
+        [view setBackgroundColor:[UIColor colorWithPatternImage:[self getThemeImageForKey:key]]];
+    }
+    else if ([object isKindOfClass:[UITableView class]])
+    {
+        UITableView *tblView = object;
+        UIImageView *backgroundView = [[UIImageView alloc] init];
+        [backgroundView setImage:[self getThemeImageForKey:key]];
+        [tblView setBackgroundView:backgroundView];
+    }
+    else
+    {
+        NSLog(@"UI object not recognized. See references for more details.");
+        @throw [NSException exceptionWithName:@"OBJRejected" reason:@"UI object not recognized. See references for more details." userInfo:nil];
+    }
 }
 
 -(UIImage*)getThemeImageForKey:(NSString*)key

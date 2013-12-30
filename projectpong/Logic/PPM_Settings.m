@@ -10,13 +10,13 @@
 
 #define DIFFICULTY @"difficultySetted"
 #define BALLSPEED @"ballSpeedSetted"
-#define THEME @"themeSetted"
+#define THEMESETTED @"themeSetted"
 #define ISTIMER @"isTimerSetted"
 #define TIMER @"timerSetted"
 
 @interface PPM_Settings ()
 
-
+@property (nonatomic) PPM_Colors *colors;
 @property (nonatomic) NSUserDefaults *userDefaults;
 
 @end
@@ -39,6 +39,15 @@
         [self setTheme];
         [self setIsTimerSetted];
         [self setTimer];
+        self.colors = [[PPM_Colors alloc] init];
+        self.colors.PlasticPrimaryColor = [UIColor redColor];
+        self.colors.PlasticSecondaryColor = [UIColor blueColor];
+        self.colors.PlasticElementColor = [UIColor blackColor];
+        self.colors.PlasticBackgroundColor = [UIColor whiteColor];
+        self.colors.ClassicPrimaryColor = [UIColor whiteColor];
+        self.colors.ClassicSecondaryColor = [UIColor greenColor];
+        self.colors.ClassicElementColor = [UIColor grayColor];
+        self.colors.ClassicBackgroundColor = [UIColor blackColor];
     }
     return self;
 }
@@ -169,7 +178,7 @@
         case themeNotSetted:
         case classic:
         case plastic:
-            defaults = [[self.userDefaults objectForKey:THEME] mutableCopy];
+            defaults = [[self.userDefaults objectForKey:THEMESETTED] mutableCopy];
             if ([defaults count] == 0)
             {
                 _theme = plastic;
@@ -202,16 +211,16 @@
 
 -(void)saveTheme:(NSString*)theme
 {
-    NSMutableArray *defaults = [self.userDefaults objectForKey:THEME];
+    NSMutableArray *defaults = [self.userDefaults objectForKey:THEMESETTED];
     if ([theme isEqualToString:@"Classic"] || [theme isEqualToString:@"Plastic"]) {
         if ([defaults count] == 0)
         {
-            [self.userDefaults setObject:theme forKey:THEME];
+            [self.userDefaults setObject:theme forKey:THEMESETTED];
         }
         else
         {
-            [self.userDefaults removeObjectForKey:THEME];
-            [self.userDefaults setObject:theme forKey:THEME];
+            [self.userDefaults removeObjectForKey:THEMESETTED];
+            [self.userDefaults setObject:theme forKey:THEMESETTED];
         }
     } else {
         NSLog(@"Error in parsing Theme enumeration");
@@ -342,6 +351,70 @@
             NSLog(@"Error in parsing Theme enumeration");
             @throw [NSException exceptionWithName:@"themeOutOfRange" reason:@"Error in setting the theme" userInfo:nil];
     }
+}
+
+-(UIColor*)getThemeColorLabelForKey:(NSString*)key
+{
+    UIColor *themeColor = [[UIColor alloc] init];
+    switch (_theme) {
+        case classic:
+        {
+            if ([key isEqualToString:@"Primary"])
+            {
+                themeColor = self.colors.ClassicPrimaryColor;
+            }
+            else if ([key isEqualToString:@"Secondary"])
+            {
+                themeColor = self.colors.ClassicSecondaryColor;
+            }
+            else if ([key isEqualToString:@"Element"])
+            {
+                themeColor = self.colors.ClassicElementColor;
+            }
+            else if ([key isEqualToString:@"Background"])
+            {
+                themeColor = self.colors.ClassicBackgroundColor;
+            }
+            else
+            {
+                NSLog(@"Error in parsing color for label");
+                @throw [NSException exceptionWithName:@"colorOutOfRange" reason:@"Error in setting the color of label" userInfo:nil];
+            }
+        }
+        case plastic:
+        {
+            if ([key isEqualToString:@"Primary"])
+            {
+                themeColor = self.colors.PlasticPrimaryColor;
+            }
+            else if ([key isEqualToString:@"Secondary"])
+            {
+                themeColor = self.colors.PlasticSecondaryColor;
+            }
+            else if ([key isEqualToString:@"Element"])
+            {
+                themeColor = self.colors.PlasticElementColor;
+            }
+            else if ([key isEqualToString:@"Background"])
+            {
+                themeColor = self.colors.PlasticBackgroundColor;
+            }
+            else
+            {
+                NSLog(@"Error in parsing color for label");
+                @throw [NSException exceptionWithName:@"colorOutOfRange" reason:@"Error in setting the color of label" userInfo:nil];
+            }
+        }
+        default:
+            NSLog(@"Error in parsing Theme enumeration");
+            @throw [NSException exceptionWithName:@"themeOutOfRange" reason:@"Error in setting the theme" userInfo:nil];
+    }
+    return themeColor;
+}
+
+-(void)getColorsForLabel:(UILabel*)label
+{
+    //devo farla?? settando background color, text color, tint color e cos'altro?
 }
 
 @end

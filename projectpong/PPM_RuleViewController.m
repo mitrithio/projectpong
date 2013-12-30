@@ -23,7 +23,7 @@
         self.rulesText.text = @"pong rules... ";
     self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
     
-    [self.gameSettingsAccess setBackgroundForView:self.ruleBackground withKey:@"Background"];
+    [self.gameSettingsAccess setBackgroundForUIObject:self.ruleBackground withKey:@"Background"];
     
 }
 

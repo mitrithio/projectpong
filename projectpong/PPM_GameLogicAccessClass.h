@@ -21,5 +21,4 @@
 //Bisogna togliere solo da .h i seguenti metodi.
 -(void)setBackgroundForView:(UIImageView*)view withKey:(NSString *)key;
 
--(UIImage*)getThemeImageForKey:(NSString*)key;
 @end
