@@ -132,11 +132,17 @@
     }
     else if ([object isKindOfClass:[UITableView class]])
     {
+        /*
         UITableView *tblView = object;
         UIImageView *backgroundView = [[UIImageView alloc] init];
         [backgroundView setImage:[self getThemeImageForKey:key]];
         [tblView setBackgroundView:backgroundView];
-    }
+         */
+        UITableView *tblView = object;
+        UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[self getThemeImageForKey:key]];
+        [backgroundView setFrame:tblView.frame];
+        [tblView setBackgroundView:backgroundView];
+        }
     else
     {
         NSLog(@"UI object not recognized. See references for more details.");

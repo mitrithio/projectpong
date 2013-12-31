@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PPM_GameSettingsAccessClass.h"
 
 
 
-@interface PPM_SettingsTableViewController : UITableViewController
+@interface PPM_SettingsTableViewController : UITableViewController 
+
 @property (strong, nonatomic) IBOutlet UITableView *settingsTable;
+@property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
+
 
 @end
