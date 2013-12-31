@@ -373,6 +373,7 @@
                 @throw [NSException exceptionWithName:@"colorOutOfRange" reason:@"Error in setting the color of label" userInfo:nil];
             }
         }
+            break;
         case plastic:
         {
             if ([key isEqualToString:@"Primary"])
@@ -397,6 +398,7 @@
                 @throw [NSException exceptionWithName:@"colorOutOfRange" reason:@"Error in setting the color of label" userInfo:nil];
             }
         }
+            break;
         default:
             NSLog(@"Error in parsing Theme enumeration");
             @throw [NSException exceptionWithName:@"themeOutOfRange" reason:@"Error in setting the theme" userInfo:nil];

@@ -123,11 +123,11 @@ float deltaY;
         @throw [NSException exceptionWithName:@"hitDown" reason:@"hit the down" userInfo:nil];
     }
     if ((self.ball.position.y + self.ball.size.height) >= self.userBar.position.y && (self.ball.position.x + self.ball.size.width) >= self.userBar.position.x && self.ball.position.x <= (self.userBar.position.x + self.userBar.size.width)) {
-        @throw [NSException exceptionWithName:@"hitDown" reason:@"hit the down" userInfo:nil];
+        @throw [NSException exceptionWithName:@"hitUser" reason:@"hit the user bar" userInfo:nil];
     }
     
     if (self.ball.position.y <= (self.enemyBar.position.y + self.enemyBar.size.height) && (self.ball.position.x + self.ball.size.width) >= self.enemyBar.position.x && self.ball.position.x <= (self.enemyBar.position.x + self.enemyBar.size.width)) {
-        @throw [NSException exceptionWithName:@"hitUp" reason:@"hit the up" userInfo:nil];
+        @throw [NSException exceptionWithName:@"hitEnemy" reason:@"hit the enemy bar" userInfo:nil];
     }
 }
 
@@ -219,6 +219,12 @@ float arrivingParallelCoordinatePoint;
             NSLog(@"Error in parsing Difficulty enumeration");
             @throw [NSException exceptionWithName:@"difficultyOutOfRange" reason:@"Error in setting the difficulty" userInfo:nil];
     }
+}
+
+-(void)reloadBallInCenter:(UIImageView *)ballView
+{
+    [self.ball setPosition:CGPointMake(ballView.superview.center.x - (self.ball.size.width/2), ballView.superview.center.y - (self.ball.size.height/2))];
+    [ballView setFrame:CGRectMake(self.ball.position.x, self.ball.position.y, self.ball.size.width, self.ball.size.height)];
 }
 
 @end

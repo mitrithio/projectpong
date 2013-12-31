@@ -21,4 +21,6 @@
 //Bisogna togliere solo da .h i seguenti metodi.
 -(void)setBackgroundForView:(UIImageView*)view withKey:(NSString *)key;
 
+-(void)setScoreAway:(UILabel*)away andHome:(UILabel*)home;
+
 @end

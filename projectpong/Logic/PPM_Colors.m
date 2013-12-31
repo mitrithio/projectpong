@@ -8,11 +8,6 @@
 
 #import "PPM_Colors.h"
 
-@interface PPM_Colors()
-
-
-@end
-
 @implementation PPM_Colors
 
 - (id)init

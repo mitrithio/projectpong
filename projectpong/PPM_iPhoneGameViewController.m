@@ -48,7 +48,7 @@
     self.isGameInPause = TRUE;
     
     self.logic = [[PPM_GameLogicAccessClass alloc] initWithGameView:self.fieldView orientation:[[UIDevice currentDevice] orientation]];
-    
+    [self.logic setScoreAway:self.awayScore andHome:self.homeScore];
 }
 
 
