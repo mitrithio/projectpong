@@ -29,15 +29,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PlasticBackground.png"]];
-    [tempImageView setFrame:self.settingsTable.frame];
     
-    self.settingsTable.backgroundView = tempImageView;
+    self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
     
-
+    [self.gameSettingsAccess setBackgroundForUIObject:self.settingsTable withKey:@"Background"];
     
-   // [self.gameSettingsAccess setBackgroundForUIObject:self.settingsTable withKey:@"Background"];
+    self.settingsTable.separatorColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
+    
+    self.difficultyLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    
+    self.themeLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    
+    self.gameTimerLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    
+    self.userLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    
+    self.socialLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

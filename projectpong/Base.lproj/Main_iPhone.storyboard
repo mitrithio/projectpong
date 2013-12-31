@@ -222,7 +222,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bDK-bY-MRq">
                                 <rect key="frame" x="0.0" y="124" width="320" height="444"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Et1-xm-OwS">
@@ -576,11 +575,11 @@
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <segue destination="st3-Cn-MY9" kind="push" id="FyC-cz-GfQ"/>
                                         </connections>
@@ -596,11 +595,11 @@
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <segue destination="7Vj-Sc-2jQ" kind="push" id="9tA-tN-4Ic"/>
                                         </connections>
@@ -616,11 +615,11 @@
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <segue destination="blg-CY-VYR" kind="push" id="rTp-BF-B6x"/>
                                         </connections>
@@ -640,11 +639,11 @@
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <segue destination="I0Y-5B-knQ" kind="push" id="j1V-IJ-p0q"/>
                                         </connections>
@@ -660,11 +659,11 @@
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <segue destination="y8x-ZR-lKu" kind="push" id="zWI-mR-x5S"/>
                                         </connections>
@@ -681,9 +680,12 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="difficultyButton" destination="mEc-Sw-pqh" id="FPp-6r-PDw"/>
+                        <outlet property="difficultyLable" destination="2NZ-AW-WZg" id="tJy-dS-MrZ"/>
+                        <outlet property="gameTimerLable" destination="xVm-qo-iId" id="0fE-tX-pbY"/>
                         <outlet property="settingsTable" destination="dYh-FB-ZOZ" id="hZv-Zc-Upg"/>
-                        <outlet property="themeButton" destination="cAl-A0-3QZ" id="aXN-Mx-P2m"/>
+                        <outlet property="socialLable" destination="HC1-L8-7YJ" id="Acx-X6-3dO"/>
+                        <outlet property="themeLable" destination="dfW-gO-f1G" id="s5P-f8-dRT"/>
+                        <outlet property="userLable" destination="dvE-ue-USF" id="Dai-CB-u1l"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9s-Iu-cfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -717,10 +719,10 @@
                                                         <segment title="WORK"/>
                                                         <segment title="INSANE"/>
                                                     </segments>
-                                                    <color key="tintColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
                                                 </segmentedControl>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -741,10 +743,10 @@
                                                         <segment title="SOUND"/>
                                                         <segment title="LIGHT"/>
                                                     </segments>
-                                                    <color key="tintColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
                                                 </segmentedControl>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -789,7 +791,6 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="o2u-bP-Uhx">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                    <color key="onTintColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="TimerOn:" destination="blg-CY-VYR" eventType="valueChanged" id="mCR-YA-zTM"/>
                                                     </connections>
@@ -798,11 +799,11 @@
                                                     <rect key="frame" x="20" y="11" width="150" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -823,10 +824,10 @@
                                                         <segment title="60''"/>
                                                         <segment title="120''"/>
                                                     </segments>
-                                                    <color key="tintColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
                                                 </segmentedControl>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -843,6 +844,7 @@
                         <outlet property="TimerOnOff" destination="o2u-bP-Uhx" id="zgq-gd-Fe9"/>
                         <outlet property="TimerSelector" destination="SAU-Kd-gW3" id="nIL-uB-Nhn"/>
                         <outlet property="TimerTable" destination="vyd-bJ-T9b" id="I4q-7y-3UG"/>
+                        <outlet property="activateTimerLabel" destination="Lak-OQ-aO1" id="c6I-QB-SX6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Sj-21-Kgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -862,7 +864,6 @@
                             <rect key="frame" x="0.0" y="197" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <sections>
@@ -880,7 +881,6 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="Plastic Theme">
-                                                        <color key="titleColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -890,6 +890,7 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ch0-Qq-ZIC">
                                         <rect key="frame" x="0.0" y="143" width="320" height="44"/>
@@ -902,10 +903,7 @@
                                                     <rect key="frame" x="20" y="7" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <state key="normal" title="Classic Theme">
-                                                        <color key="titleColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
+                                                    <state key="normal" title="Classic Theme"/>
                                                     <connections>
                                                         <action selector="ClassicTheme" destination="7Vj-Sc-2jQ" eventType="touchUpInside" id="Boy-bu-QIF"/>
                                                         <action selector="ClassicTheme:" destination="7Vj-Sc-2jQ" eventType="touchUpInside" id="uXD-hB-YnG"/>
@@ -914,6 +912,7 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -925,7 +924,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="cRq-ie-iOg">
                         <barButtonItem key="rightBarButtonItem" title="Add new" id="Bab-ZU-uU1">
-                            <color key="tintColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="lxo-rk-rdX" kind="push" id="rLs-Jz-yiN"/>
                             </connections>
@@ -973,13 +971,14 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" minimumFontSize="17" id="d6F-F3-d02">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                                    <rect key="frame" x="20" y="0.0" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -993,13 +992,14 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" minimumFontSize="17" id="ARp-Pl-XAQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                                    <rect key="frame" x="20" y="0.0" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1018,6 +1018,7 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="26" id="Ekb-Qs-y0k">
                                         <rect key="frame" x="0.0" y="477" width="320" height="26"/>
@@ -1036,6 +1037,7 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="28" id="P5Q-N5-XbT">
                                         <rect key="frame" x="0.0" y="503" width="320" height="28"/>
@@ -1054,6 +1056,7 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>

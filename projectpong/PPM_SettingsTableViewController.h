@@ -13,9 +13,11 @@
 
 @interface PPM_SettingsTableViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UITableViewCell *difficultyButton;
-@property (weak, nonatomic) IBOutlet UITableViewCell *themeButton;
-
+@property (weak, nonatomic) IBOutlet UILabel *difficultyLable;
+@property (weak, nonatomic) IBOutlet UILabel *themeLable;
+@property (weak, nonatomic) IBOutlet UILabel *gameTimerLable;
+@property (weak, nonatomic) IBOutlet UILabel *userLable;
+@property (weak, nonatomic) IBOutlet UILabel *socialLable;
 
 @property (strong, nonatomic) IBOutlet UITableView *settingsTable;
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;

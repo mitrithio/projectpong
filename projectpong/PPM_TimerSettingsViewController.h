@@ -7,13 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PPM_GameSettingsAccessClass.h"
 
 @interface PPM_TimerSettingsViewController : UITableViewController
 
 @property (strong, nonatomic) IBOutlet UITableView *TimerTable;
 
+@property (weak, nonatomic) IBOutlet UILabel *activateTimerLabel;
+
 @property (weak, nonatomic) IBOutlet UISwitch *TimerOnOff;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *TimerSelector;
+
+@property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
 
 @end

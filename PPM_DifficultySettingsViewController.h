@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PPM_GameSettingsAccessClass.h"
 
 @interface PPM_DifficultySettingsViewController : UITableViewController
 
@@ -14,5 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *AIDifficultySelector;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *BallSpeedSelector;
+
+@property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
 
 @end
