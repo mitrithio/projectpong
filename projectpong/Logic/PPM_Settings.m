@@ -363,7 +363,6 @@
             else if ([key isEqualToString:@"Element"])
             {
                 themeColor = self.colors.ClassicElementColor;
-                
             }
             else if ([key isEqualToString:@"Background"])
             {

@@ -681,7 +681,9 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="difficultyButton" destination="mEc-Sw-pqh" id="FPp-6r-PDw"/>
                         <outlet property="settingsTable" destination="dYh-FB-ZOZ" id="hZv-Zc-Upg"/>
+                        <outlet property="themeButton" destination="cAl-A0-3QZ" id="aXN-Mx-P2m"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9s-Iu-cfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
