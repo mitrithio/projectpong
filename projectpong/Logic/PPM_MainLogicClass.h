@@ -30,4 +30,6 @@
 
 -(void)updateEnemyBarPositionForView:(UIImageView*)enemyBarView;
 
+-(void)reloadBallInCenter:(UIImageView*)ballView;
+
 @end
