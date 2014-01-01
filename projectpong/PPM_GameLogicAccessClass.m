@@ -124,6 +124,13 @@ float angle;
     
     
     @try {
+        if (firstBall) {
+            NSInvocation *invocationTimer = [NSInvocation invocationWithMethodSignature:[NSMethodSignature signatureWithObjCTypes:@encode(UIImageView)]];
+            [invocationTimer setTarget:self.logic];
+            [invocationTimer setSelector:@selector(updateBallPositionForView:)];
+            //[invocationTimer ]
+            //NSTimer scheduledTimerWithTimeInterval:1.0 invocation:<#(NSInvocation *)#> repeats:<#(BOOL)#>
+        }
         [self.logic updateBallPositionForView:self.ballView];
     }
     @catch (NSException *exception) {

@@ -108,9 +108,9 @@
     [self.settings saveTimer:timeSelectorToInt];
 }
 
--(void)saveTheme:(UILabel*)currentThemeSetted
+-(void)saveTheme:(UIButton*)currentThemeSetted
 {
-    [self.settings saveTheme:currentThemeSetted.text];
+    [self.settings saveTheme:currentThemeSetted.titleLabel.text];
 }
 
 -(void)setBackgroundForUIObject:(id)object withKey:(NSString *)key
