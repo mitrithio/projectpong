@@ -854,7 +854,7 @@
         <!--Theme Settings View Controller-->
         <scene sceneID="D4N-gl-qWn">
             <objects>
-                <tableViewController id="7Vj-Sc-2jQ" customClass="PPM_ThemeSettingsViewController" sceneMemberID="viewController">
+                <tableViewController autoresizesArchivedViewToFullSize="NO" id="7Vj-Sc-2jQ" customClass="PPM_ThemeSettingsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="aEt-ve-5K1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -926,7 +926,6 @@
                         <outlet property="classicCell" destination="ch0-Qq-ZIC" id="7gz-Hf-oXv"/>
                         <outlet property="classicTheme" destination="QFG-ZW-zji" id="g4w-NH-Dhf"/>
                         <outlet property="plasticCell" destination="ouR-f4-MAX" id="t4J-FB-qxp"/>
-                        <outlet property="plasticTableCell" destination="ouR-f4-MAX" id="WhP-do-y9y"/>
                         <outlet property="plasticTheme" destination="eFe-MO-dek" id="uQP-cP-z0f"/>
                         <outlet property="themeTable" destination="aEt-ve-5K1" id="DM1-Z5-bfd"/>
                     </connections>

@@ -23,4 +23,7 @@
 
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
 
+- (IBAction)plasticThemeActivator:(id)sender;
+- (IBAction)classicThemeActivator:(id)sender;
+
 @end

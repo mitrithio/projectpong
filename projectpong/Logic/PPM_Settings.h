@@ -46,27 +46,27 @@ typedef enum themeEnumerator {
 /*!
  set the aiDifficulty property as saved in user defaults. If in user defaults aiDifficulty is not setted, the property is authomatically setted as easy.
  */
--(void)setAIDifficulty;
+-(void)takeSettedAIDifficulty;
 
 /*!
  set the ballSpeed property as saved in user defaults. If in user defaults ballSpeed is not setted, the property is authomatically setted as easy.
  */
--(void)setBallSpeed;
+-(void)takeSettedBallSpeed;
 
 /*!
  set the theme property as saved in user defaults. If in user defaults theme is not setted, the property is authomatically setted as classic.
  */
--(void)setTheme;
+-(void)takeSettedTheme;
 
 /*!
  set the isTimerSetted property as saved in user defaults. If in user defaults isTimerSetted is not setted, the property is authomatically setted as false.
  */
--(void)setIsTimerSetted;
+-(void)takeSettedIsTimer;
 
 /*!
  set the timer property as saved in user defaults. If in user defaults timer is not setted, the property is authomatically setted as 30 seconds.
  */
--(void)setTimer;
+-(void)takeSettedTimer;
 
 
 // --------------------------------------------------- \\
