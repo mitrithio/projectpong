@@ -11,12 +11,13 @@
 
 @interface PPM_ThemeSettingsViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableViewCell *plasticTableCell;
-
 
 @end
 
 @implementation PPM_ThemeSettingsViewController
+
+@synthesize gameSettingsAccess;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,13 +32,19 @@
 {
     [super viewDidLoad];
 
-    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PlasticBackground.png"]];
-    [tempImageView setFrame:self.ThemeTable.frame];
+    self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
     
-    self.ThemeTable.backgroundView = tempImageView;
+    [self.gameSettingsAccess setBackgroundForUIObject:self.themeTable withKey:@"Background"];
     
-    //[tempImageView release]; da errore il release
-
+    self.plasticTheme.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    
+    self.classicTheme.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    
+    self.addNewTheme.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    
+    self.plasticCell.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    
+      self.classicCell.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,17 +55,20 @@
 
 #pragma mark - Table view data source
 
-
-- (IBAction)ClassicTheme:(id)sender {
-
-    self.currentThemeLabel.text = @"Current theme: Classic";
-  
+- (IBAction)plasticThemeActivator:(id)sender {
+    
+    [self.plasticCell setAccessoryType:(UITableViewCellAccessoryCheckmark)];
+    [self.classicCell setAccessoryType:(UITableViewCellAccessoryNone)];
+    
+    [self.gameSettingsAccess saveTheme:self.plasticTheme];
 }
-- (IBAction)PlasticTheme:(id)sender {
 
-    self.currentThemeLabel.text = @"Current theme: Plastic";
+- (IBAction)classicThemeActivator:(id)sender {
+    [self.classicCell setAccessoryType:(UITableViewCellAccessoryCheckmark)];
+    [self.plasticCell setAccessoryType:(UITableViewCellAccessoryNone)];
+    
+    [self.gameSettingsAccess saveTheme:self.classicTheme];
     
 }
-
 
 @end

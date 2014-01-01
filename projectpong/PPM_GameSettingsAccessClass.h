@@ -36,6 +36,6 @@
 -(void)saveBallSpeed:(UISegmentedControl*)ballSpeed;
 -(void)saveTimerOnOff:(UISwitch*)timerOnOff;
 -(void)saveTimerSelector:(UISegmentedControl*)timerSelector;
--(void)saveTheme:(UILabel*)currentThemeSetted;
+-(void)saveTheme:(UIButton*)currentThemeSetted;
 
 @end

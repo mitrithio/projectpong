@@ -25,6 +25,15 @@
     
     [self.gameSettingsAccess setBackgroundForUIObject:self.ruleBackground withKey:@"Background"];
     
+    self.ruleTitle.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    
+    self.rulesText.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
+    
+    self.rulePage.pageIndicatorTintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
+    
+    self.rulePage.currentPageIndicatorTintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+
+    
 }
 
 - (void)didReceiveMemoryWarning
