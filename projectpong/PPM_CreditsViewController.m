@@ -25,6 +25,15 @@
     self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
     
     [self.gameSettingsAccess setBackgroundForUIObject:self.creditsBackground withKey:@"Background"];
+    
+    self.creditsTitle.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    
+    self.creditTextField.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
+    
+    self.creditsPage.pageIndicatorTintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
+    
+    self.creditsPage.currentPageIndicatorTintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    
 	// Do any additional setup after loading the view.
 }
 

@@ -7,14 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PPM_GameSettingsAccessClass.h"
 
 @interface PPM_ThemeSettingsViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UIButton *PlasticTheme;
-@property (weak, nonatomic) IBOutlet UIButton *ClassicTheme;
-@property (weak, nonatomic) IBOutlet UILabel *currentThemeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *plasticTheme;
+@property (weak, nonatomic) IBOutlet UIButton *classicTheme;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addNewTheme;
 
-@property (strong, nonatomic) IBOutlet UITableView *ThemeTable;
+@property (strong, nonatomic) IBOutlet UITableView *themeTable;
+
+@property (weak, nonatomic) IBOutlet UITableViewCell *plasticCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *classicCell;
+
+@property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
 
 @end

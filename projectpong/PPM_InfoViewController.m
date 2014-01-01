@@ -25,6 +25,15 @@
     self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
     
         [self.gameSettingsAccess setBackgroundForUIObject:self.infoBackground withKey:@"Background"];
+    
+    self.infoTitle.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    
+    self.infoText.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
+    
+    self.infoPage.pageIndicatorTintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
+    
+    self.infoPage.currentPageIndicatorTintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    
 }
 
 - (void)didReceiveMemoryWarning
