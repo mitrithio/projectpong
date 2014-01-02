@@ -21,6 +21,7 @@
 @property (nonatomic, retain) UILabel *homeScore;
 
 @property (nonatomic, retain) NSTimer *timerForAnimation;
+@property (nonatomic, retain) NSTimer *timerFor2Animation;
 
 @end
 
@@ -124,13 +125,20 @@ float angle;
     
     
     @try {
-        if (firstBall) {
-            NSInvocation *invocationTimer = [NSInvocation invocationWithMethodSignature:[NSMethodSignature signatureWithObjCTypes:@encode(UIImageView)]];
-            [invocationTimer setTarget:self.logic];
-            [invocationTimer setSelector:@selector(updateBallPositionForView:)];
-            //[invocationTimer ]
-            //NSTimer scheduledTimerWithTimeInterval:1.0 invocation:<#(NSInvocation *)#> repeats:<#(BOOL)#>
-        }
+//        if (firstBall) {
+//            UIImageView *ballViewForInvocation = self.ballView;
+//            NSInvocation *invocationTimer = [NSInvocation invocationWithMethodSignature:[NSMethodSignature instanceMethodSignatureForSelector:@selector(updateBallPositionForView:)]];
+//            [invocationTimer setTarget:self.logic];
+//            [invocationTimer setSelector:@selector(updateBallPositionForView:)];
+//            [invocationTimer setArgument:&ballViewForInvocation atIndex:2];
+//            self.timerFor2Animation = [NSTimer scheduledTimerWithTimeInterval:1.0 invocation:invocationTimer repeats:FALSE];
+//        }
+//        else
+//        {
+//            [self.timerFor2Animation invalidate];
+//            [self.logic updateBallPositionForView:self.ballView];
+//        }
+        
         [self.logic updateBallPositionForView:self.ballView];
     }
     @catch (NSException *exception) {
@@ -146,12 +154,12 @@ float angle;
         }
         else if ([exception.name isEqualToString:@"hitUser"])
         {
-            angle = 2*M_PI - angle;
+            angle = [self newAngleFromHittedUserBar];
             [self.logic calculateArrivingParallelCoordinatePointForAngle:angle]; //da togliere quando implementiamo il movimento dell'user e il rimbalzo giusto sulla sua barretta
         }
         else if ([exception.name isEqualToString:@"hitEnemy"])
         {
-            angle = 2*M_PI - angle;
+            angle = [self newAngleFromHittedEnemyBar];
         }
         else if ([exception.name isEqualToString:@"hitUp"])
         {
@@ -165,6 +173,40 @@ float angle;
         }
         [self.logic calculateDeltasForAngle:angle];
     }
+}
+
+-(float)newAngleFromHittedUserBar
+{
+    float newAngle = 0;
+    CGFloat ballX = self.ballView.frame.origin.x + self.ballView.frame.size.width/2;
+    CGFloat barX = self.userBarView.frame.origin.x;
+    CGFloat hitPointX = ballX - barX;
+    if (hitPointX < 0 || hitPointX > self.userBarView.frame.size.width)
+    {
+        newAngle = M_PI - angle;
+    }
+    else
+    {
+        newAngle = 2*M_PI - angle;
+    }
+    return newAngle;
+}
+
+-(float)newAngleFromHittedEnemyBar
+{
+    float newAngle = 0;
+    CGFloat ballX = self.ballView.frame.origin.x + self.ballView.frame.size.width/2;
+    CGFloat barX = self.enemyBarView.frame.origin.x;
+    CGFloat hitPointX = ballX - barX;
+    if (hitPointX < 0 || hitPointX > self.enemyBarView.frame.size.width)
+    {
+        newAngle = M_PI - angle;
+    }
+    else
+    {
+        newAngle = 2*M_PI - angle;
+    }
+    return newAngle;
 }
 
 -(void)pointSigned:(NSString*)whoSigned
@@ -198,6 +240,7 @@ bool isArrivedToPoint = true;
 {
     if (firstBall)
     {
+        //self.timerFor2Animation = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(animateTheBall) userInfo:nil repeats:FALSE];
         [self animateTheBall];
         [self animateEnemyBar];
         firstBall = false;

@@ -95,6 +95,7 @@
 
 float deltaX;
 float deltaY;
+bool isABarHitted = false;
 
 -(void)calculateDeltasForAngle:(float)angle
 {
@@ -122,13 +123,31 @@ float deltaY;
     {
         @throw [NSException exceptionWithName:@"hitDown" reason:@"hit the down" userInfo:nil];
     }
-    if ((self.ball.position.y + self.ball.size.height) >= self.userBar.position.y && (self.ball.position.x + self.ball.size.width) >= self.userBar.position.x && self.ball.position.x <= (self.userBar.position.x + self.userBar.size.width)) {
-        @throw [NSException exceptionWithName:@"hitUser" reason:@"hit the user bar" userInfo:nil];
+    if (!isABarHitted)
+    {
+        if ((self.ball.position.y + self.ball.size.height) >= self.userBar.position.y && (self.ball.position.x + self.ball.size.width/2) >= self.userBar.position.x && (self.ball.position.x + self.ball.size.width/2) <= (self.userBar.position.x + self.userBar.size.width))
+        {
+            isABarHitted = true;
+            @throw [NSException exceptionWithName:@"hitUser" reason:@"hit the user bar" userInfo:nil];
+        }
+        if (self.ball.position.y <= (self.enemyBar.position.y + self.enemyBar.size.height) && (self.ball.position.x + self.ball.size.width/2) >= self.enemyBar.position.x && (self.ball.position.x + self.ball.size.width/2) <= (self.enemyBar.position.x + self.enemyBar.size.width))
+        {
+            isABarHitted = true;
+            @throw [NSException exceptionWithName:@"hitEnemy" reason:@"hit the enemy bar" userInfo:nil];
+        }
     }
-    
-    if (self.ball.position.y <= (self.enemyBar.position.y + self.enemyBar.size.height) && (self.ball.position.x + self.ball.size.width) >= self.enemyBar.position.x && self.ball.position.x <= (self.enemyBar.position.x + self.enemyBar.size.width)) {
-        @throw [NSException exceptionWithName:@"hitEnemy" reason:@"hit the enemy bar" userInfo:nil];
+    else
+    {
+        if ((self.ball.position.y + self.ball.size.height) < self.userBar.position.y && self.ball.position.y > (self.enemyBar.position.y + self.enemyBar.size.height))
+        {
+            isABarHitted = false;
+        }
     }
+}
+
+-(void)setFalseIsABarHitted
+{
+    isABarHitted = false;
 }
 
 float arrivingParallelCoordinatePoint;

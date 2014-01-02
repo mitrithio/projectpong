@@ -32,4 +32,6 @@
 
 -(void)reloadBallInCenter:(UIImageView*)ballView;
 
+-(void)setFalseIsABarHitted;
+
 @end
