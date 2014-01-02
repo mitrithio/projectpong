@@ -36,15 +36,33 @@
     
     [self.gameSettingsAccess setBackgroundForUIObject:self.themeTable withKey:@"Background"];
     
-    self.plasticTheme.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    self.plasticTheme.titleLabel.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
-    self.classicTheme.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    self.classicTheme.titleLabel.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
     self.addNewTheme.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
     self.plasticCell.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
-      self.classicCell.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    self.classicCell.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+
+    
+    switch (self.gameSettingsAccess.settings.theme){
+        case plastic:
+            [self.plasticCell setAccessoryType:(UITableViewCellAccessoryCheckmark)];
+            self.plasticTheme.enabled = FALSE;
+            self.plasticTheme.titleLabel.textColor = [UIColor grayColor];
+            break;
+        case classic:
+            [self.classicCell setAccessoryType:(UITableViewCellAccessoryCheckmark)];
+            self.classicTheme.enabled = FALSE;
+            self.classicTheme.titleLabel.textColor = [UIColor grayColor];
+            break;
+        default:
+            NSLog(@"Error in parsing Theme enumeration");
+            @throw [NSException exceptionWithName:@"themeOutOfRange" reason:@"Error in setting the theme checkmark" userInfo:nil];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,19 +74,20 @@
 #pragma mark - Table view data source
 
 - (IBAction)plasticThemeActivator:(id)sender {
-    
+    /*
     [self.plasticCell setAccessoryType:(UITableViewCellAccessoryCheckmark)];
     [self.classicCell setAccessoryType:(UITableViewCellAccessoryNone)];
-    
+    */
     [self.gameSettingsAccess saveTheme:self.plasticTheme];
+    
+    
 }
 
 - (IBAction)classicThemeActivator:(id)sender {
-    [self.classicCell setAccessoryType:(UITableViewCellAccessoryCheckmark)];
+    /*[self.classicCell setAccessoryType:(UITableViewCellAccessoryCheckmark)];
     [self.plasticCell setAccessoryType:(UITableViewCellAccessoryNone)];
-    
+    */
     [self.gameSettingsAccess saveTheme:self.classicTheme];
-    
 }
 
 @end

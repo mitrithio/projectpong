@@ -14,7 +14,7 @@
 
 @implementation PPM_iPhoneStartViewController
 
-@synthesize gameLogicAccess;
+//@synthesize gameLogicAccess;
 @synthesize gameSettingsAccess;
 
 
