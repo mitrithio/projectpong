@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PPM_GameLogicAccessClass.h"
+//#import "PPM_GameLogicAccessClass.h"
 #import "PPM_GameSettingsAccessClass.h"
 
-@interface PPM_iPhoneStartViewController : UIViewController <NSObject>{
-    PPM_GameLogicAccessClass *gameLogicAccess;
-}
+@interface PPM_iPhoneStartViewController : UIViewController //<NSObject>{
+  //  PPM_GameLogicAccessClass *gameLogicAccess;
+//}
 
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
@@ -24,7 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userLable;
 @property (weak, nonatomic) IBOutlet UIImageView *userImage;
 
-@property (nonatomic, retain) PPM_GameLogicAccessClass *gameLogicAccess; //da cancellare a meno che non servano espliciti riferimenti alla logica
+//@property (nonatomic, retain) PPM_GameLogicAccessClass *gameLogicAccess; //da cancellare a meno che non servano espliciti riferimenti alla logica
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
 
 @end
