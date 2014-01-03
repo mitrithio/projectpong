@@ -16,4 +16,8 @@
 
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
 
+- (IBAction)LoginOnTwitter:(id)sender;
+
+- (IBAction)LoginOnFacebook:(id)sender;
+
 @end
