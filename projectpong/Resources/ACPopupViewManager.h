@@ -13,7 +13,6 @@
 + (void)showFlipAnimatedPopupView:(UIView *)popupView duration:(NSTimeInterval)duration;
 + (void)hideFlipAnimatedPopupView:(UIView *)popupView duration:(NSTimeInterval)duration;
 
-+ (void)showSlideAnimatedPopupView:(UIView*)popupView;
-+ (void)hideSlideAnimatedPopupView:(UIView*)popupView;
++(bool)isAnimationFinished;
 
 @end

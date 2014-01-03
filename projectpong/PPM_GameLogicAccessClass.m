@@ -42,7 +42,7 @@
     if (self) {
         self.gameView = view;
         self.logic = [[PPM_MainLogicClass alloc] initWithGameField:self.gameView];
-        
+
         // View of ball inizialization
         CGSize ballSize = CGSizeMake(20, 20);
         //UIImage *ballImage = [self getImageForKey:@"Ball"];

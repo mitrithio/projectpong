@@ -10,35 +10,42 @@
 
 @implementation ACPopupViewManager
 
+bool animationIsFinished;
+
 + (void)showFlipAnimatedPopupView:(UIView *)popupView duration:(NSTimeInterval)duration
 {
+    animationIsFinished = false;
     [UIView transitionWithView:popupView
                       duration:duration
                        options: UIViewAnimationOptionTransitionFlipFromLeft
                     animations:^(void){
                         [popupView setAlpha:1.0];
-                    }completion:^(BOOL completed){}];
+                    }
+                    completion:^(BOOL completed){
+                        animationIsFinished = true;
+                    }
+     ];
 }
 
 
 + (void)hideFlipAnimatedPopupView:(UIView *)popupView duration:(NSTimeInterval)duration
 {
+    animationIsFinished = false;
     [UIView transitionWithView:popupView
                       duration:duration
                        options: UIViewAnimationOptionTransitionFlipFromRight
                     animations:^(void){
                         [popupView setAlpha:0.0];
-                    }completion:^(BOOL completed){}];
+                    }
+                    completion:^(BOOL completed){
+                        animationIsFinished = true;
+                    }
+     ];
 }
 
-+ (void)showSlideAnimatedPopupView:(UIView*)popupView
++ (bool)isAnimationFinished
 {
-    
-}
-
-+ (void)hideSlideAnimatedPopupView:(UIView*)popupView
-{
-    
+    return animationIsFinished;
 }
 
 @end
