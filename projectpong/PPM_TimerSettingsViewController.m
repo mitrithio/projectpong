@@ -51,9 +51,18 @@
 
 
 - (IBAction)TimerOn:(id)sender {
+    
+    [self.gameSettingsAccess saveTimerOnOff:self.TimerOnOff];
+    
     if (self.TimerSelector.enabled == TRUE){
         self.TimerSelector.enabled = FALSE;}
     else{
         self.TimerSelector.enabled = TRUE;}
 }
+
+- (IBAction)timerSelectorChange:(id)sender {
+    
+    [self.gameSettingsAccess saveTimerSelector:self.TimerSelector];
+}
+
 @end
