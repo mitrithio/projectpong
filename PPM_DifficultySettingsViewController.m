@@ -46,5 +46,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)aiDifficultyChange:(id)sender {
+    [self.gameSettingsAccess saveAIDifficulty:self.AIDifficultySelector];
+    
+}
+
+- (IBAction)ballSpeedChange:(id)sender {
+    [self.gameSettingsAccess saveBallSpeed:self.BallSpeedSelector];
+}
+
 #pragma mark - Table view data source
 @end
