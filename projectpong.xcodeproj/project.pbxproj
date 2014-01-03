@@ -42,8 +42,6 @@
 		982070E6186B8F8D006CD73F /* PPM_SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 982070E5186B8F8D006CD73F /* PPM_SettingsViewController.m */; };
 		9875869F1871DF410076EA89 /* PPM_Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9875869E1871DF410076EA89 /* PPM_Colors.m */; };
 		98E52AB9186A4FCF00EEB419 /* PPM_Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E52AB8186A4FCF00EEB419 /* PPM_Settings.m */; };
-		98EC34901876CD99008B2E17 /* ClassicNumbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 98EC348F1876CD99008B2E17 /* ClassicNumbers.png */; };
-		98EC34921876CDA2008B2E17 /* PlasticNumbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 98EC34911876CDA2008B2E17 /* PlasticNumbers.png */; };
 		98F479BA186A1B920048D3D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F479B9186A1B920048D3D3 /* Foundation.framework */; };
 		98F479BC186A1B920048D3D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F479BB186A1B920048D3D3 /* CoreGraphics.framework */; };
 		98F479BE186A1B920048D3D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F479BD186A1B920048D3D3 /* UIKit.framework */; };
@@ -134,8 +132,6 @@
 		9875869E1871DF410076EA89 /* PPM_Colors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_Colors.m; sourceTree = "<group>"; };
 		98E52AB7186A4FCF00EEB419 /* PPM_Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_Settings.h; sourceTree = "<group>"; };
 		98E52AB8186A4FCF00EEB419 /* PPM_Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_Settings.m; sourceTree = "<group>"; };
-		98EC348F1876CD99008B2E17 /* ClassicNumbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClassicNumbers.png; sourceTree = "<group>"; };
-		98EC34911876CDA2008B2E17 /* PlasticNumbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticNumbers.png; sourceTree = "<group>"; };
 		98F479B6186A1B920048D3D3 /* projectpong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectpong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98F479B9186A1B920048D3D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		98F479BB186A1B920048D3D3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -214,7 +210,6 @@
 		6849B2B41875755B00431F38 /* ClassicTheme */ = {
 			isa = PBXGroup;
 			children = (
-				98EC348F1876CD99008B2E17 /* ClassicNumbers.png */,
 				6849B2D01875BC3D00431F38 /* ClassicBar.png */,
 				6849B2CB1875AD0600431F38 /* ClassicUser.png */,
 				6849B2C1187580D000431F38 /* ClassicBall.png */,
@@ -233,7 +228,6 @@
 		6861DAD4186C847800EDA5EC /* PlasticTheme */ = {
 			isa = PBXGroup;
 			children = (
-				98EC34911876CDA2008B2E17 /* PlasticNumbers.png */,
 				6849B2B71875769600431F38 /* PlasticThemeButton.png */,
 				6861DAD5186C847800EDA5EC /* PlasticBackground.png */,
 				6861DAD6186C847800EDA5EC /* PlasticBall.png */,
@@ -482,7 +476,6 @@
 				6861DAE5186C847800EDA5EC /* PlasticScoreButton.png in Resources */,
 				6849B2BA1875772F00431F38 /* ClassicThemeButton.png in Resources */,
 				6849B2CC1875AD0600431F38 /* ClassicUser.png in Resources */,
-				98EC34901876CD99008B2E17 /* ClassicNumbers.png in Resources */,
 				6849B2C8187580D000431F38 /* ClassicRuleButton.png in Resources */,
 				6861DAE8186C847800EDA5EC /* PlasticUser.png in Resources */,
 				6861DAE6186C847800EDA5EC /* PlasticSettingsButton.png in Resources */,
@@ -508,7 +501,6 @@
 				6849B2C7187580D000431F38 /* ClassicPlayButton.png in Resources */,
 				6861DAE4186C847800EDA5EC /* PlasticRuleButton.png in Resources */,
 				6849B2C9187580D000431F38 /* ClassicScoreButton.png in Resources */,
-				98EC34921876CDA2008B2E17 /* PlasticNumbers.png in Resources */,
 				6861DAE2186C847800EDA5EC /* PlasticGameBackground.png in Resources */,
 				6849B2D11875BC3D00431F38 /* ClassicBar.png in Resources */,
 				98F479C4186A1B920048D3D3 /* InfoPlist.strings in Resources */,
