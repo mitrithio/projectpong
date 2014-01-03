@@ -24,4 +24,9 @@
 
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
 
+
+- (IBAction)addImageFromCameraPressed:(id)sender;
+- (IBAction)addImageFromLibraryPressed:(id)sender;
+- (IBAction)saveButtonPressed:(id)sender;
+
 @end

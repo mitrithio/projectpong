@@ -42,7 +42,7 @@
 	// Do any additional setup after loading the view.
     // pauseMenuView initialization
     [self.pauseMenuView setAlpha:0.0];
-    [ACPopupViewManager showFlipAnimatedPopupView:self.pauseMenuView duration:10];
+    [ACPopupViewManager showFlipAnimatedPopupView:self.pauseMenuView duration:0.5];
     //while (![ACPopupViewManager isAnimationFinished]) {
         
     //}

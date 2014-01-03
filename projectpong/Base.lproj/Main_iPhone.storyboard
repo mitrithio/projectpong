@@ -1030,7 +1030,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="addImageFromCameraPressed:" destination="I0Y-5B-knQ" eventType="touchUpInside" id="skw-5E-dUq"/>
+                                                        <action selector="addImageFromCameraPressed:" destination="I0Y-5B-knQ" eventType="touchUpInside" id="VFv-xQ-N7e"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1051,7 +1051,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="addImageFromLibraryPressed:" destination="I0Y-5B-knQ" eventType="touchUpInside" id="Zvg-Az-068"/>
+                                                        <action selector="addImageFromLibraryPressed:" destination="I0Y-5B-knQ" eventType="touchUpInside" id="7vk-v3-iZO"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1069,7 +1069,7 @@
                     <navigationItem key="navigationItem" id="LRS-jB-GXu">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="dOV-WJ-ace">
                             <connections>
-                                <action selector="saveButtonPressed:" destination="I0Y-5B-knQ" id="alC-n2-2yK"/>
+                                <action selector="saveButtonPressed:" destination="I0Y-5B-knQ" id="CP8-pC-Wi7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
