@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Andrea Cavicchia. All rights reserved.
 //
 
-#import "PPM_iPhoneGameViewController.h"
+#import "PPM_GameViewController.h"
 #import "ACPopupViewManager.h"
 #import "ACCropImages.h"
 #import "PPM_GameLogicAccessClass.h"
@@ -14,7 +14,7 @@
 
 #define PAUSE_PLAY_IMAGE @"button-play-pause.png"
 
-@interface PPM_iPhoneGameViewController ()
+@interface PPM_GameViewController ()
 
 @property (nonatomic) BOOL isGameInPause;
 @property (nonatomic, retain) UIImageView *ballView;
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation PPM_iPhoneGameViewController
+@implementation PPM_GameViewController
 
 
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

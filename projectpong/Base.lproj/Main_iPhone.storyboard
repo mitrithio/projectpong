@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="zOT-QL-vvj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="zOT-QL-vvj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--i Phone Start View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="zAa-Tl-duP">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="dX6-7p-CUR" customClass="PPM_iPhoneStartViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="dX6-7p-CUR" customClass="PPM_StartViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gyj-Xe-rch">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="-503" y="89"/>
         </scene>
-        <!--i Phone Game View Controller - Game-->
+        <!--Game View Controller - Game-->
         <scene sceneID="6fA-gg-LSy">
             <objects>
-                <viewController title="Game" id="qNY-cE-WHv" customClass="PPM_iPhoneGameViewController" sceneMemberID="viewController">
+                <viewController title="Game" id="qNY-cE-WHv" customClass="PPM_GameViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="1Zd-Od-JEc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1029,6 +1029,9 @@
                                                     <state key="normal" title="Add Image from Camera">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="addImageFromCameraPressed:" destination="I0Y-5B-knQ" eventType="touchUpInside" id="skw-5E-dUq"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1047,6 +1050,9 @@
                                                     <state key="normal" title="Add Image from Library">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="addImageFromLibraryPressed:" destination="I0Y-5B-knQ" eventType="touchUpInside" id="Zvg-Az-068"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1061,7 +1067,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="LRS-jB-GXu">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="dOV-WJ-ace"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="dOV-WJ-ace">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="I0Y-5B-knQ" id="alC-n2-2yK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>

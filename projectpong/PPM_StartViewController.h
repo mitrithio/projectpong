@@ -10,7 +10,7 @@
 //#import "PPM_GameLogicAccessClass.h"
 #import "PPM_GameSettingsAccessClass.h"
 
-@interface PPM_iPhoneStartViewController : UIViewController //<NSObject>{
+@interface PPM_StartViewController : UIViewController //<NSObject>{
   //  PPM_GameLogicAccessClass *gameLogicAccess;
 //}
 

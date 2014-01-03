@@ -66,8 +66,8 @@
 		98F47A0B186A1CD60048D3D3 /* PPM_CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F479F9186A1CD60048D3D3 /* PPM_CreditsViewController.m */; };
 		98F47A0C186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F479FB186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m */; };
 		98F47A0D186A1CD60048D3D3 /* PPM_InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F479FD186A1CD60048D3D3 /* PPM_InfoViewController.m */; };
-		98F47A0E186A1CD60048D3D3 /* PPM_iPhoneGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F479FF186A1CD60048D3D3 /* PPM_iPhoneGameViewController.m */; };
-		98F47A0F186A1CD60048D3D3 /* PPM_iPhoneStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F47A01186A1CD60048D3D3 /* PPM_iPhoneStartViewController.m */; };
+		98F47A0E186A1CD60048D3D3 /* PPM_GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F479FF186A1CD60048D3D3 /* PPM_GameViewController.m */; };
+		98F47A0F186A1CD60048D3D3 /* PPM_StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F47A01186A1CD60048D3D3 /* PPM_StartViewController.m */; };
 		98F47A10186A1CD60048D3D3 /* PPM_RICPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F47A03186A1CD60048D3D3 /* PPM_RICPageViewController.m */; };
 		98F47A11186A1CD60048D3D3 /* PPM_RuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F47A05186A1CD60048D3D3 /* PPM_RuleViewController.m */; };
 		98F47A12186A1CD60048D3D3 /* PPM_WebThemesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F47A07186A1CD60048D3D3 /* PPM_WebThemesViewController.m */; };
@@ -129,8 +129,8 @@
 		68BCCDC11876CC8000517892 /* PlasticPlayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticPlayButton.png; sourceTree = "<group>"; };
 		68E1515E186F1661004B5B26 /* PPM_SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_SettingsTableViewController.h; sourceTree = "<group>"; };
 		68E1515F186F1661004B5B26 /* PPM_SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_SettingsTableViewController.m; sourceTree = "<group>"; };
-		982070E1186B8D62006CD73F /* PPM_GameSettingsAccessClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_GameSettingsAccessClass.h; sourceTree = "<group>"; };
-		982070E2186B8D62006CD73F /* PPM_GameSettingsAccessClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_GameSettingsAccessClass.m; sourceTree = "<group>"; };
+		982070E1186B8D62006CD73F /* PPM_GameSettingsAccessClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPM_GameSettingsAccessClass.h; path = ../PPM_GameSettingsAccessClass.h; sourceTree = "<group>"; };
+		982070E2186B8D62006CD73F /* PPM_GameSettingsAccessClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPM_GameSettingsAccessClass.m; path = ../PPM_GameSettingsAccessClass.m; sourceTree = "<group>"; };
 		982070E4186B8F8D006CD73F /* PPM_SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_SettingsViewController.h; sourceTree = "<group>"; };
 		982070E5186B8F8D006CD73F /* PPM_SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_SettingsViewController.m; sourceTree = "<group>"; };
 		9875869D1871DF410076EA89 /* PPM_Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_Colors.h; sourceTree = "<group>"; };
@@ -166,14 +166,14 @@
 		98F479F7186A1CD60048D3D3 /* PPM_MainLogicClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_MainLogicClass.m; sourceTree = "<group>"; };
 		98F479F8186A1CD60048D3D3 /* PPM_CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_CreditsViewController.h; sourceTree = "<group>"; };
 		98F479F9186A1CD60048D3D3 /* PPM_CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_CreditsViewController.m; sourceTree = "<group>"; };
-		98F479FA186A1CD60048D3D3 /* PPM_GameLogicAccessClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_GameLogicAccessClass.h; sourceTree = "<group>"; };
-		98F479FB186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_GameLogicAccessClass.m; sourceTree = "<group>"; };
+		98F479FA186A1CD60048D3D3 /* PPM_GameLogicAccessClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPM_GameLogicAccessClass.h; path = ../PPM_GameLogicAccessClass.h; sourceTree = "<group>"; };
+		98F479FB186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPM_GameLogicAccessClass.m; path = ../PPM_GameLogicAccessClass.m; sourceTree = "<group>"; };
 		98F479FC186A1CD60048D3D3 /* PPM_InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_InfoViewController.h; sourceTree = "<group>"; };
 		98F479FD186A1CD60048D3D3 /* PPM_InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_InfoViewController.m; sourceTree = "<group>"; };
-		98F479FE186A1CD60048D3D3 /* PPM_iPhoneGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_iPhoneGameViewController.h; sourceTree = "<group>"; };
-		98F479FF186A1CD60048D3D3 /* PPM_iPhoneGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_iPhoneGameViewController.m; sourceTree = "<group>"; };
-		98F47A00186A1CD60048D3D3 /* PPM_iPhoneStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_iPhoneStartViewController.h; sourceTree = "<group>"; };
-		98F47A01186A1CD60048D3D3 /* PPM_iPhoneStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_iPhoneStartViewController.m; sourceTree = "<group>"; };
+		98F479FE186A1CD60048D3D3 /* PPM_GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_GameViewController.h; sourceTree = "<group>"; };
+		98F479FF186A1CD60048D3D3 /* PPM_GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_GameViewController.m; sourceTree = "<group>"; };
+		98F47A00186A1CD60048D3D3 /* PPM_StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_StartViewController.h; sourceTree = "<group>"; };
+		98F47A01186A1CD60048D3D3 /* PPM_StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_StartViewController.m; sourceTree = "<group>"; };
 		98F47A02186A1CD60048D3D3 /* PPM_RICPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_RICPageViewController.h; sourceTree = "<group>"; };
 		98F47A03186A1CD60048D3D3 /* PPM_RICPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_RICPageViewController.m; sourceTree = "<group>"; };
 		98F47A04186A1CD60048D3D3 /* PPM_RuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_RuleViewController.h; sourceTree = "<group>"; };
@@ -252,6 +252,17 @@
 			path = PlasticTheme;
 			sourceTree = "<group>";
 		};
+		98EC34971876F451008B2E17 /* StaticLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				98F47A14186A1CE70048D3D3 /* ACCropImages.h */,
+				98F47A15186A1CE70048D3D3 /* ACCropImages.m */,
+				98F47A16186A1CE70048D3D3 /* ACPopupViewManager.h */,
+				98F47A17186A1CE70048D3D3 /* ACPopupViewManager.m */,
+			);
+			name = StaticLibraries;
+			sourceTree = "<group>";
+		};
 		98F479AD186A1B920048D3D3 = {
 			isa = PBXGroup;
 			children = (
@@ -285,50 +296,45 @@
 		98F479BF186A1B920048D3D3 /* projectpong */ = {
 			isa = PBXGroup;
 			children = (
-				6849B2CD1875B6C100431F38 /* PPM_SocialSettingsViewController.h */,
-				6849B2CE1875B6C100431F38 /* PPM_SocialSettingsViewController.m */,
-				98F47A13186A1CE70048D3D3 /* Resources */,
-				98F479F1186A1CD60048D3D3 /* Logic */,
+				98F479D4186A1B920048D3D3 /* Images.xcassets */,
+				98F479CE186A1B920048D3D3 /* Main_iPad.storyboard */,
+				98F479CB186A1B920048D3D3 /* Main_iPhone.storyboard */,
+				98F479C8186A1B920048D3D3 /* PPM_AppDelegate.h */,
+				98F479C9186A1B920048D3D3 /* PPM_AppDelegate.m */,
 				98F479F8186A1CD60048D3D3 /* PPM_CreditsViewController.h */,
 				98F479F9186A1CD60048D3D3 /* PPM_CreditsViewController.m */,
-				98F479FA186A1CD60048D3D3 /* PPM_GameLogicAccessClass.h */,
-				98F479FB186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m */,
+				6861DAD1186C7E4700EDA5EC /* PPM_DifficultySettingsViewController.h */,
+				6861DAD2186C7E4700EDA5EC /* PPM_DifficultySettingsViewController.m */,
 				98F479FC186A1CD60048D3D3 /* PPM_InfoViewController.h */,
 				98F479FD186A1CD60048D3D3 /* PPM_InfoViewController.m */,
-				98F479FE186A1CD60048D3D3 /* PPM_iPhoneGameViewController.h */,
-				98F479FF186A1CD60048D3D3 /* PPM_iPhoneGameViewController.m */,
-				98F47A00186A1CD60048D3D3 /* PPM_iPhoneStartViewController.h */,
-				98F47A01186A1CD60048D3D3 /* PPM_iPhoneStartViewController.m */,
+				98F479FE186A1CD60048D3D3 /* PPM_GameViewController.h */,
+				98F479FF186A1CD60048D3D3 /* PPM_GameViewController.m */,
+				98F47A00186A1CD60048D3D3 /* PPM_StartViewController.h */,
+				98F47A01186A1CD60048D3D3 /* PPM_StartViewController.m */,
 				98F47A02186A1CD60048D3D3 /* PPM_RICPageViewController.h */,
 				98F47A03186A1CD60048D3D3 /* PPM_RICPageViewController.m */,
 				98F47A04186A1CD60048D3D3 /* PPM_RuleViewController.h */,
 				98F47A05186A1CD60048D3D3 /* PPM_RuleViewController.m */,
-				98F47A06186A1CD60048D3D3 /* PPM_WebThemesViewController.h */,
-				98F47A07186A1CD60048D3D3 /* PPM_WebThemesViewController.m */,
-				98F479C8186A1B920048D3D3 /* PPM_AppDelegate.h */,
-				98F479C9186A1B920048D3D3 /* PPM_AppDelegate.m */,
-				98F479CB186A1B920048D3D3 /* Main_iPhone.storyboard */,
-				98F479CE186A1B920048D3D3 /* Main_iPad.storyboard */,
-				98F479D1186A1B920048D3D3 /* PPM_ViewController.h */,
-				98F479D2186A1B920048D3D3 /* PPM_ViewController.m */,
-				98F479D4186A1B920048D3D3 /* Images.xcassets */,
-				98F479C0186A1B920048D3D3 /* Supporting Files */,
-				982070E1186B8D62006CD73F /* PPM_GameSettingsAccessClass.h */,
-				982070E2186B8D62006CD73F /* PPM_GameSettingsAccessClass.m */,
-				982070E4186B8F8D006CD73F /* PPM_SettingsViewController.h */,
-				982070E5186B8F8D006CD73F /* PPM_SettingsViewController.m */,
-				6861DACE186C7E0D00EDA5EC /* PPM_TimerSettingsViewController.h */,
-				6861DACF186C7E0D00EDA5EC /* PPM_TimerSettingsViewController.m */,
-				6861DAD1186C7E4700EDA5EC /* PPM_DifficultySettingsViewController.h */,
-				6861DAD2186C7E4700EDA5EC /* PPM_DifficultySettingsViewController.m */,
-				6861DAE9186C873600EDA5EC /* PPM_ThemeSettingsViewController.h */,
-				6861DAEA186C873600EDA5EC /* PPM_ThemeSettingsViewController.m */,
-				68B4F415186DC12F00C8567E /* PPM_UserAccountPageViewController.h */,
-				68B4F416186DC12F00C8567E /* PPM_UserAccountPageViewController.m */,
 				68E1515E186F1661004B5B26 /* PPM_SettingsTableViewController.h */,
 				68E1515F186F1661004B5B26 /* PPM_SettingsTableViewController.m */,
+				982070E4186B8F8D006CD73F /* PPM_SettingsViewController.h */,
+				982070E5186B8F8D006CD73F /* PPM_SettingsViewController.m */,
+				6849B2CD1875B6C100431F38 /* PPM_SocialSettingsViewController.h */,
+				6849B2CE1875B6C100431F38 /* PPM_SocialSettingsViewController.m */,
+				6861DAE9186C873600EDA5EC /* PPM_ThemeSettingsViewController.h */,
+				6861DAEA186C873600EDA5EC /* PPM_ThemeSettingsViewController.m */,
+				6861DACE186C7E0D00EDA5EC /* PPM_TimerSettingsViewController.h */,
+				6861DACF186C7E0D00EDA5EC /* PPM_TimerSettingsViewController.m */,
+				68B4F415186DC12F00C8567E /* PPM_UserAccountPageViewController.h */,
+				68B4F416186DC12F00C8567E /* PPM_UserAccountPageViewController.m */,
 				68270E53187183F100A071EA /* PPM_UserTableViewController.h */,
 				68270E54187183F100A071EA /* PPM_UserTableViewController.m */,
+				98F479D1186A1B920048D3D3 /* PPM_ViewController.h */,
+				98F479D2186A1B920048D3D3 /* PPM_ViewController.m */,
+				98F47A06186A1CD60048D3D3 /* PPM_WebThemesViewController.h */,
+				98F47A07186A1CD60048D3D3 /* PPM_WebThemesViewController.m */,
+				98F47A13186A1CE70048D3D3 /* Resources */,
+				98F479C0186A1B920048D3D3 /* Supporting Files */,
 			);
 			path = projectpong;
 			sourceTree = "<group>";
@@ -376,16 +382,19 @@
 				9875869D1871DF410076EA89 /* PPM_Colors.h */,
 				9875869E1871DF410076EA89 /* PPM_Colors.m */,
 			);
-			path = Logic;
+			name = Logic;
+			path = ../Logic;
 			sourceTree = "<group>";
 		};
 		98F47A13186A1CE70048D3D3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				98F47A14186A1CE70048D3D3 /* ACCropImages.h */,
-				98F47A15186A1CE70048D3D3 /* ACCropImages.m */,
-				98F47A16186A1CE70048D3D3 /* ACPopupViewManager.h */,
-				98F47A17186A1CE70048D3D3 /* ACPopupViewManager.m */,
+				98F479FA186A1CD60048D3D3 /* PPM_GameLogicAccessClass.h */,
+				98F479FB186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m */,
+				982070E1186B8D62006CD73F /* PPM_GameSettingsAccessClass.h */,
+				982070E2186B8D62006CD73F /* PPM_GameSettingsAccessClass.m */,
+				98EC34971876F451008B2E17 /* StaticLibraries */,
+				98F479F1186A1CD60048D3D3 /* Logic */,
 				98F47A18186A1CE70048D3D3 /* images */,
 			);
 			path = Resources;
@@ -534,7 +543,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98F47A0F186A1CD60048D3D3 /* PPM_iPhoneStartViewController.m in Sources */,
+				98F47A0F186A1CD60048D3D3 /* PPM_StartViewController.m in Sources */,
 				98F47A08186A1CD60048D3D3 /* PPM_Ball.m in Sources */,
 				98F47A0D186A1CD60048D3D3 /* PPM_InfoViewController.m in Sources */,
 				6861DAD3186C7E4700EDA5EC /* PPM_DifficultySettingsViewController.m in Sources */,
@@ -548,7 +557,7 @@
 				68270E55187183F100A071EA /* PPM_UserTableViewController.m in Sources */,
 				68B4F417186DC12F00C8567E /* PPM_UserAccountPageViewController.m in Sources */,
 				98F47A10186A1CD60048D3D3 /* PPM_RICPageViewController.m in Sources */,
-				98F47A0E186A1CD60048D3D3 /* PPM_iPhoneGameViewController.m in Sources */,
+				98F47A0E186A1CD60048D3D3 /* PPM_GameViewController.m in Sources */,
 				98F47A0B186A1CD60048D3D3 /* PPM_CreditsViewController.m in Sources */,
 				6861DAD0186C7E0D00EDA5EC /* PPM_TimerSettingsViewController.m in Sources */,
 				6861DAEB186C873600EDA5EC /* PPM_ThemeSettingsViewController.m in Sources */,

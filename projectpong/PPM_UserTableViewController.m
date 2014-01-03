@@ -58,4 +58,12 @@
 
 #pragma mark - Table view data source
 
+- (IBAction)addImageFromCameraPressed:(id)sender {
+}
+
+- (IBAction)addImageFromLibraryPressed:(id)sender {
+}
+
+- (IBAction)saveButtonPressed:(id)sender {
+}
 @end

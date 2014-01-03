@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Andrea Cavicchia. All rights reserved.
 //
 
-#import "PPM_iPhoneStartViewController.h"
+#import "PPM_StartViewController.h"
 
-@interface PPM_iPhoneStartViewController ()
+@interface PPM_StartViewController ()
 
 @end
 
-@implementation PPM_iPhoneStartViewController
+@implementation PPM_StartViewController
 
 //@synthesize gameLogicAccess;
 @synthesize gameSettingsAccess;

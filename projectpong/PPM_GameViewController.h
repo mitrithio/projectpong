@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PPM_iPhoneGameViewController : UIViewController
+@interface PPM_GameViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIView *pauseMenuView;
 @property (strong, nonatomic) IBOutlet UIView *gameView;
