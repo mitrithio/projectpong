@@ -14,6 +14,8 @@
   //  PPM_GameLogicAccessClass *gameLogicAccess;
 //}
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (weak, nonatomic) IBOutlet UIButton *ruleButton;

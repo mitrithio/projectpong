@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="zOT-QL-vvj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="zOT-QL-vvj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -1080,7 +1080,9 @@
                         <outlet property="addImageFromLibrary" destination="cAx-AC-jJb" id="SE1-g8-ump"/>
                         <outlet property="button2Cell" destination="P5Q-N5-XbT" id="90n-Us-wMz"/>
                         <outlet property="buttonCell" destination="Ekb-Qs-y0k" id="1kV-Xz-LHA"/>
+                        <outlet property="emailTextField" destination="ARp-Pl-XAQ" id="s47-d4-2w3"/>
                         <outlet property="imageCell" destination="8fi-kn-ezf" id="Q4y-Ra-Kg7"/>
+                        <outlet property="nameTextField" destination="d6F-F3-d02" id="9oi-9l-TjZ"/>
                         <outlet property="saveUser" destination="dOV-WJ-ace" id="Mgc-Fp-jP7"/>
                         <outlet property="userImage" destination="4VA-ax-J5z" id="eV1-RE-cdG"/>
                         <outlet property="userTable" destination="hBD-fm-ghE" id="uXC-Tx-krb"/>
