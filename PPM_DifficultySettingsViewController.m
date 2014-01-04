@@ -38,6 +38,39 @@
     self.BallSpeedSelector.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
     
+    switch (self.gameSettingsAccess.settings.aiDifficulty){
+        case easy:
+            [self.AIDifficultySelector setSelectedSegmentIndex:(0)];
+            break;
+        case medium:
+            [self.AIDifficultySelector setSelectedSegmentIndex:(1)];
+            break;
+            
+        case hard:
+            [self.AIDifficultySelector setSelectedSegmentIndex:(2)];
+            break;
+        default:
+            NSLog(@"Error in parsing Theme enumeration");
+            @throw [NSException exceptionWithName:@"themeOutOfRange" reason:@"Error in setting defoult AIdifficulty" userInfo:nil];
+    }
+    /*
+    switch (self.gameSettingsAccess.settings.ballSpeed){
+        case easy:
+            [self.BallSpeedSelector setSelectedSegmentIndex:(0)];
+            break;
+        case medium:
+            [self.BallSpeedSelector setSelectedSegmentIndex:(1)];
+            break;
+            
+        case hard:
+            [self.BallSpeedSelector setSelectedSegmentIndex:(2)];
+            break;
+        default:
+            NSLog(@"Error in parsing Theme enumeration");
+            @throw [NSException exceptionWithName:@"themeOutOfRange" reason:@"Error in setting defoult ballspeed" userInfo:nil];
+    }*/
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

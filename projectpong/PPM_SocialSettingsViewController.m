@@ -7,6 +7,7 @@
 //
 
 #import "PPM_SocialSettingsViewController.h"
+#import <Social/Social.h>
 
 @interface PPM_SocialSettingsViewController ()
 
@@ -43,4 +44,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)LoginOnTwitter:(id)sender {
+    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        //allert you have already an account
+        
+            }
+    else{
+        NSLog(@"you don't have twitter");
+    }
+}
+
+
+//the simulator don't work here... if you ar not logged on the social nettwork the simulator don't show any allet... on device should work.
+- (IBAction)LoginOnFacebook:(id)sender {
+    
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+
+        //allert you have already an account
+        
+    }
+    else{
+        NSLog(@"you don't have facebook");
+    }
+}
 @end

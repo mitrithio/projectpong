@@ -39,6 +39,25 @@
     
     self.TimerSelector.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
 
+    
+    if (self.gameSettingsAccess.settings.isTimerSetted == true){
+    switch (self.gameSettingsAccess.settings.timer){
+        case 30:
+            [self.TimerSelector setSelectedSegmentIndex:(0)];
+            break;
+        case 60:
+            [self.TimerSelector setSelectedSegmentIndex:(1)];
+            break;
+            
+        case 90:
+            [self.TimerSelector setSelectedSegmentIndex:(2)];
+            break;
+        default:
+            NSLog(@"Error in parsing Theme enumeration");
+            @throw [NSException exceptionWithName:@"themeOutOfRange" reason:@"Error in setting defoult AIdifficulty" userInfo:nil];
+    }
+    }
+        
 }
 
 - (void)didReceiveMemoryWarning

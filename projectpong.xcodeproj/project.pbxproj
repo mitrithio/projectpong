@@ -34,6 +34,24 @@
 		6861DAE7186C847800EDA5EC /* PlasticTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6861DADD186C847800EDA5EC /* PlasticTitle.png */; };
 		6861DAE8186C847800EDA5EC /* PlasticUser.png in Resources */ = {isa = PBXBuildFile; fileRef = 6861DADE186C847800EDA5EC /* PlasticUser.png */; };
 		6861DAEB186C873600EDA5EC /* PPM_ThemeSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6861DAEA186C873600EDA5EC /* PPM_ThemeSettingsViewController.m */; };
+		6872665A18771B4B00F120E0 /* PPM_finalGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6872665918771B4B00F120E0 /* PPM_finalGameViewController.m */; };
+		6872665C18771DED00F120E0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6872665B18771DED00F120E0 /* Social.framework */; };
+		6872668F18772EC600F120E0 /* iTunesProjectPong.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872667F18772EC600F120E0 /* iTunesProjectPong.png */; };
+		6872669018772EC600F120E0 /* iTunesProjectPong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872668018772EC600F120E0 /* iTunesProjectPong@2x.png */; };
+		6872669118772EC600F120E0 /* ProjectPong29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872668118772EC600F120E0 /* ProjectPong29x29.png */; };
+		6872669218772EC600F120E0 /* ProjectPong29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872668218772EC600F120E0 /* ProjectPong29x29@2x.png */; };
+		6872669318772EC600F120E0 /* ProjectPong40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872668318772EC600F120E0 /* ProjectPong40x40.png */; };
+		6872669418772EC600F120E0 /* ProjectPong40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872668418772EC600F120E0 /* ProjectPong40x40@2x.png */; };
+		6872669518772EC600F120E0 /* ProjectPong50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872668518772EC600F120E0 /* ProjectPong50x50.png */; };
+		6872669618772EC600F120E0 /* ProjectPong50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872668618772EC600F120E0 /* ProjectPong50x50@2x.png */; };
+		6872669718772EC600F120E0 /* ProjectPong57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872668718772EC600F120E0 /* ProjectPong57x57.png */; };
+		6872669818772EC600F120E0 /* ProjectPong57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872668818772EC600F120E0 /* ProjectPong57x57@2x.png */; };
+		6872669918772EC600F120E0 /* ProjectPong60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872668918772EC600F120E0 /* ProjectPong60x60.png */; };
+		6872669A18772EC600F120E0 /* ProjectPong60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872668A18772EC600F120E0 /* ProjectPong60x60@2x.png */; };
+		6872669B18772EC600F120E0 /* ProjectPong72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872668B18772EC600F120E0 /* ProjectPong72x72.png */; };
+		6872669C18772EC600F120E0 /* ProjectPong72x72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872668C18772EC600F120E0 /* ProjectPong72x72@2x.png */; };
+		6872669D18772EC600F120E0 /* ProjectPong76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872668D18772EC600F120E0 /* ProjectPong76x76.png */; };
+		6872669E18772EC600F120E0 /* ProjectPong76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6872668E18772EC600F120E0 /* ProjectPong76x76@2x.png */; };
 		689D7DD51872D054008949B5 /* facebookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 689D7DD31872D054008949B5 /* facebookIcon.png */; };
 		689D7DD61872D054008949B5 /* twitterICon.png in Resources */ = {isa = PBXBuildFile; fileRef = 689D7DD41872D054008949B5 /* twitterICon.png */; };
 		68B4F417186DC12F00C8567E /* PPM_UserAccountPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B4F416186DC12F00C8567E /* PPM_UserAccountPageViewController.m */; };
@@ -121,6 +139,25 @@
 		6861DADE186C847800EDA5EC /* PlasticUser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticUser.png; sourceTree = "<group>"; };
 		6861DAE9186C873600EDA5EC /* PPM_ThemeSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_ThemeSettingsViewController.h; sourceTree = "<group>"; };
 		6861DAEA186C873600EDA5EC /* PPM_ThemeSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_ThemeSettingsViewController.m; sourceTree = "<group>"; };
+		6872665818771B4B00F120E0 /* PPM_finalGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_finalGameViewController.h; sourceTree = "<group>"; };
+		6872665918771B4B00F120E0 /* PPM_finalGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_finalGameViewController.m; sourceTree = "<group>"; };
+		6872665B18771DED00F120E0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		6872667F18772EC600F120E0 /* iTunesProjectPong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesProjectPong.png; sourceTree = "<group>"; };
+		6872668018772EC600F120E0 /* iTunesProjectPong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesProjectPong@2x.png"; sourceTree = "<group>"; };
+		6872668118772EC600F120E0 /* ProjectPong29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectPong29x29.png; sourceTree = "<group>"; };
+		6872668218772EC600F120E0 /* ProjectPong29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectPong29x29@2x.png"; sourceTree = "<group>"; };
+		6872668318772EC600F120E0 /* ProjectPong40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectPong40x40.png; sourceTree = "<group>"; };
+		6872668418772EC600F120E0 /* ProjectPong40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectPong40x40@2x.png"; sourceTree = "<group>"; };
+		6872668518772EC600F120E0 /* ProjectPong50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectPong50x50.png; sourceTree = "<group>"; };
+		6872668618772EC600F120E0 /* ProjectPong50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectPong50x50@2x.png"; sourceTree = "<group>"; };
+		6872668718772EC600F120E0 /* ProjectPong57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectPong57x57.png; sourceTree = "<group>"; };
+		6872668818772EC600F120E0 /* ProjectPong57x57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectPong57x57@2x.png"; sourceTree = "<group>"; };
+		6872668918772EC600F120E0 /* ProjectPong60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectPong60x60.png; sourceTree = "<group>"; };
+		6872668A18772EC600F120E0 /* ProjectPong60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectPong60x60@2x.png"; sourceTree = "<group>"; };
+		6872668B18772EC600F120E0 /* ProjectPong72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectPong72x72.png; sourceTree = "<group>"; };
+		6872668C18772EC600F120E0 /* ProjectPong72x72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectPong72x72@2x.png"; sourceTree = "<group>"; };
+		6872668D18772EC600F120E0 /* ProjectPong76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectPong76x76.png; sourceTree = "<group>"; };
+		6872668E18772EC600F120E0 /* ProjectPong76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectPong76x76@2x.png"; sourceTree = "<group>"; };
 		689D7DD31872D054008949B5 /* facebookIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookIcon.png; sourceTree = "<group>"; };
 		689D7DD41872D054008949B5 /* twitterICon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterICon.png; sourceTree = "<group>"; };
 		68B4F415186DC12F00C8567E /* PPM_UserAccountPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_UserAccountPageViewController.h; sourceTree = "<group>"; };
@@ -194,6 +231,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6872665C18771DED00F120E0 /* Social.framework in Frameworks */,
 				98F479BC186A1B920048D3D3 /* CoreGraphics.framework in Frameworks */,
 				98F479BE186A1B920048D3D3 /* UIKit.framework in Frameworks */,
 				98F479BA186A1B920048D3D3 /* Foundation.framework in Frameworks */,
@@ -252,6 +290,30 @@
 			path = PlasticTheme;
 			sourceTree = "<group>";
 		};
+		6872667E18772EC600F120E0 /* ProjectPongIcon */ = {
+			isa = PBXGroup;
+			children = (
+				6872667F18772EC600F120E0 /* iTunesProjectPong.png */,
+				6872668018772EC600F120E0 /* iTunesProjectPong@2x.png */,
+				6872668118772EC600F120E0 /* ProjectPong29x29.png */,
+				6872668218772EC600F120E0 /* ProjectPong29x29@2x.png */,
+				6872668318772EC600F120E0 /* ProjectPong40x40.png */,
+				6872668418772EC600F120E0 /* ProjectPong40x40@2x.png */,
+				6872668518772EC600F120E0 /* ProjectPong50x50.png */,
+				6872668618772EC600F120E0 /* ProjectPong50x50@2x.png */,
+				6872668718772EC600F120E0 /* ProjectPong57x57.png */,
+				6872668818772EC600F120E0 /* ProjectPong57x57@2x.png */,
+				6872668918772EC600F120E0 /* ProjectPong60x60.png */,
+				6872668A18772EC600F120E0 /* ProjectPong60x60@2x.png */,
+				6872668B18772EC600F120E0 /* ProjectPong72x72.png */,
+				6872668C18772EC600F120E0 /* ProjectPong72x72@2x.png */,
+				6872668D18772EC600F120E0 /* ProjectPong76x76.png */,
+				6872668E18772EC600F120E0 /* ProjectPong76x76@2x.png */,
+			);
+			name = ProjectPongIcon;
+			path = ../../../../../../Desktop/ProjectPongIcon;
+			sourceTree = "<group>";
+		};
 		98EC34971876F451008B2E17 /* StaticLibraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +347,7 @@
 		98F479B8186A1B920048D3D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6872665B18771DED00F120E0 /* Social.framework */,
 				98F479B9186A1B920048D3D3 /* Foundation.framework */,
 				98F479BB186A1B920048D3D3 /* CoreGraphics.framework */,
 				98F479BD186A1B920048D3D3 /* UIKit.framework */,
@@ -335,6 +398,8 @@
 				98F47A07186A1CD60048D3D3 /* PPM_WebThemesViewController.m */,
 				98F47A13186A1CE70048D3D3 /* Resources */,
 				98F479C0186A1B920048D3D3 /* Supporting Files */,
+				6872665818771B4B00F120E0 /* PPM_finalGameViewController.h */,
+				6872665918771B4B00F120E0 /* PPM_finalGameViewController.m */,
 			);
 			path = projectpong;
 			sourceTree = "<group>";
@@ -403,6 +468,7 @@
 		98F47A18186A1CE70048D3D3 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6872667E18772EC600F120E0 /* ProjectPongIcon */,
 				6849B2B41875755B00431F38 /* ClassicTheme */,
 				689D7DD31872D054008949B5 /* facebookIcon.png */,
 				689D7DD41872D054008949B5 /* twitterICon.png */,
@@ -496,19 +562,28 @@
 				6849B2CC1875AD0600431F38 /* ClassicUser.png in Resources */,
 				68BCCDC01876CC6800517892 /* ClassicNumbers.png in Resources */,
 				6849B2C8187580D000431F38 /* ClassicRuleButton.png in Resources */,
+				6872669918772EC600F120E0 /* ProjectPong60x60.png in Resources */,
+				6872669D18772EC600F120E0 /* ProjectPong76x76.png in Resources */,
+				6872669E18772EC600F120E0 /* ProjectPong76x76@2x.png in Resources */,
+				6872669218772EC600F120E0 /* ProjectPong29x29@2x.png in Resources */,
 				6861DAE8186C847800EDA5EC /* PlasticUser.png in Resources */,
+				6872669618772EC600F120E0 /* ProjectPong50x50@2x.png in Resources */,
+				6872669C18772EC600F120E0 /* ProjectPong72x72@2x.png in Resources */,
 				6861DAE6186C847800EDA5EC /* PlasticSettingsButton.png in Resources */,
 				98F47A2B186A1CE70048D3D3 /* button-play-pause.png in Resources */,
 				98F479D0186A1B920048D3D3 /* Main_iPad.storyboard in Resources */,
 				6849B2C018757B9B00431F38 /* ClassicGameBackground.png in Resources */,
+				6872669118772EC600F120E0 /* ProjectPong29x29.png in Resources */,
 				6849B2CA187580D000431F38 /* ClassicSettingsButton.png in Resources */,
 				68BCCDC21876CC8000517892 /* PlasticPlayButton.png in Resources */,
 				6861DADF186C847800EDA5EC /* PlasticBackground.png in Resources */,
 				6849B2BD18757A3E00431F38 /* ClassicBackground.png in Resources */,
+				6872668F18772EC600F120E0 /* iTunesProjectPong.png in Resources */,
 				98F479D5186A1B920048D3D3 /* Images.xcassets in Resources */,
 				6849B2B81875769600431F38 /* PlasticThemeButton.png in Resources */,
 				6849B2B61875755B00431F38 /* ClassicTitle.png in Resources */,
 				98EC34941876D5A6008B2E17 /* PlasticNumbers.png in Resources */,
+				6872669A18772EC600F120E0 /* ProjectPong60x60@2x.png in Resources */,
 				6861DAE3186C847800EDA5EC /* PlasticPlayButton.png in Resources */,
 				6861DAE7186C847800EDA5EC /* PlasticTitle.png in Resources */,
 				98F479CD186A1B920048D3D3 /* Main_iPhone.storyboard in Resources */,
@@ -516,12 +591,19 @@
 				98F47A37186A1CE70048D3D3 /* LocalIcon.png in Resources */,
 				689D7DD51872D054008949B5 /* facebookIcon.png in Resources */,
 				6861DAE0186C847800EDA5EC /* PlasticBall.png in Resources */,
+				6872669518772EC600F120E0 /* ProjectPong50x50.png in Resources */,
+				6872669B18772EC600F120E0 /* ProjectPong72x72.png in Resources */,
 				689D7DD61872D054008949B5 /* twitterICon.png in Resources */,
+				6872669818772EC600F120E0 /* ProjectPong57x57@2x.png in Resources */,
 				6861DAE1186C847800EDA5EC /* PlasticBar.png in Resources */,
 				6849B2C6187580D000431F38 /* ClassicBall.png in Resources */,
+				6872669718772EC600F120E0 /* ProjectPong57x57.png in Resources */,
+				6872669418772EC600F120E0 /* ProjectPong40x40@2x.png in Resources */,
 				6849B2C7187580D000431F38 /* ClassicPlayButton.png in Resources */,
 				6861DAE4186C847800EDA5EC /* PlasticRuleButton.png in Resources */,
 				6849B2C9187580D000431F38 /* ClassicScoreButton.png in Resources */,
+				6872669318772EC600F120E0 /* ProjectPong40x40.png in Resources */,
+				6872669018772EC600F120E0 /* iTunesProjectPong@2x.png in Resources */,
 				6861DAE2186C847800EDA5EC /* PlasticGameBackground.png in Resources */,
 				6849B2D11875BC3D00431F38 /* ClassicBar.png in Resources */,
 				98F479C4186A1B920048D3D3 /* InfoPlist.strings in Resources */,
@@ -566,6 +648,7 @@
 				98F479D3186A1B920048D3D3 /* PPM_ViewController.m in Sources */,
 				98F47A12186A1CD60048D3D3 /* PPM_WebThemesViewController.m in Sources */,
 				98F47A0A186A1CD60048D3D3 /* PPM_MainLogicClass.m in Sources */,
+				6872665A18771B4B00F120E0 /* PPM_finalGameViewController.m in Sources */,
 				98F47A2A186A1CE70048D3D3 /* ACPopupViewManager.m in Sources */,
 				6849B2CF1875B6C100431F38 /* PPM_SocialSettingsViewController.m in Sources */,
 				98F47A29186A1CE70048D3D3 /* ACCropImages.m in Sources */,

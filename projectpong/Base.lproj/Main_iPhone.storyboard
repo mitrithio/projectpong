@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="zOT-QL-vvj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="zOT-QL-vvj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -154,7 +154,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="zOT-QL-vvj" kind="modal" animates="NO" id="FpL-Ny-uf0"/>
+                                            <segue destination="YFF-8D-1O3" kind="modal" modalTransitionStyle="crossDissolve" id="tW7-5m-LV4"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RvB-d5-imA">
@@ -1080,7 +1080,9 @@
                         <outlet property="addImageFromLibrary" destination="cAx-AC-jJb" id="SE1-g8-ump"/>
                         <outlet property="button2Cell" destination="P5Q-N5-XbT" id="90n-Us-wMz"/>
                         <outlet property="buttonCell" destination="Ekb-Qs-y0k" id="1kV-Xz-LHA"/>
+                        <outlet property="emailTextField" destination="ARp-Pl-XAQ" id="s47-d4-2w3"/>
                         <outlet property="imageCell" destination="8fi-kn-ezf" id="Q4y-Ra-Kg7"/>
+                        <outlet property="nameTextField" destination="d6F-F3-d02" id="9oi-9l-TjZ"/>
                         <outlet property="saveUser" destination="dOV-WJ-ace" id="Mgc-Fp-jP7"/>
                         <outlet property="userImage" destination="4VA-ax-J5z" id="eV1-RE-cdG"/>
                         <outlet property="userTable" destination="hBD-fm-ghE" id="uXC-Tx-krb"/>
@@ -1114,6 +1116,9 @@
                                 <state key="normal" image="facebookIcon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="LoginOnFacebook:" destination="y8x-ZR-lKu" eventType="touchUpInside" id="sPg-ty-FGg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9pF-E0-qti">
                                 <rect key="frame" x="-7" y="129" width="335" height="61"/>
@@ -1121,6 +1126,9 @@
                                 <state key="normal" image="twitterICon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="LoginOnTwitter:" destination="y8x-ZR-lKu" eventType="touchUpInside" id="gbh-qK-AbB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1135,7 +1143,90 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xl0-VP-a7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1496" y="273"/>
+            <point key="canvasLocation" x="1502" y="266"/>
+        </scene>
+        <!--final Game View Controller-->
+        <scene sceneID="0Xn-0G-4YE">
+            <objects>
+                <viewController id="YFF-8D-1O3" customClass="PPM_finalGameViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9da-vT-1nF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ceq-93-4Zn">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Gr7-YM-XCl">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D1c-7e-rSr">
+                                        <rect key="frame" x="78" y="487" width="165" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="facebookIcon.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="postOnFacebook:" destination="YFF-8D-1O3" eventType="touchUpInside" id="tKL-P1-bM6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YqO-JB-bUE">
+                                        <rect key="frame" x="78" y="444" width="165" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="twitterICon.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="postOnTwitter:" destination="YFF-8D-1O3" eventType="touchUpInside" id="fiz-ko-EG9"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="post the result on:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rJ2-rY-JBz">
+                                        <rect key="frame" x="20" y="402" width="280" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VeG-Ya-iIe">
+                                        <rect key="frame" x="7" y="347" width="293" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="BACK TO MAIN MENÙ">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="zOT-QL-vvj" kind="modal" modalTransitionStyle="crossDissolve" id="SQn-5X-kBE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OEo-xk-AbW">
+                                        <rect key="frame" x="20" y="299" width="280" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="PLAY AGAIN">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="qNY-cE-WHv" kind="modal" modalTransitionStyle="crossDissolve" id="VCc-Wd-laI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="FinalBackground" destination="Gr7-YM-XCl" id="GJp-zl-WCw"/>
+                        <outlet property="backToMainMenuButton" destination="VeG-Ya-iIe" id="GZC-io-Cll"/>
+                        <outlet property="playAgainButton" destination="OEo-xk-AbW" id="mzv-H2-vJk"/>
+                        <outlet property="postResultLable" destination="rJ2-rY-JBz" id="5ED-AR-nWQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l2M-uV-NKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="594" y="-2306"/>
         </scene>
         <!--Web Themes View Controller-->
         <scene sceneID="nIA-4p-t0C">
