@@ -13,16 +13,11 @@
 
 -(void)animateTheBall;
 
--(id)initWithGameView:(UIView*)view
+-(id)initWithFieldView:(UIImageView*)field
           orientation:(UIInterfaceOrientation)orientation;
 
 -(void)setGameInPause:(BOOL)pause;
 
 -(void)setScoreAway:(UILabel*)away andHome:(UILabel*)home;
-
-//Bisogna togliere solo da .h i seguenti metodi.
--(void)setBackgroundForView:(UIImageView*)view withKey:(NSString *)key;
-
-
 
 @end

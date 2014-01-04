@@ -54,8 +54,9 @@
     
     self.settingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
     [self.settingsAccess setBackgroundForUIObject:self.fieldView withKey:@"GameBackground"];
+    [self.settingsAccess setBackgroundForUIObject:self.view withKey:@"Background"];
     
-    self.logic = [[PPM_GameLogicAccessClass alloc] initWithGameView:self.fieldView orientation:[[UIDevice currentDevice] orientation]];
+    self.logic = [[PPM_GameLogicAccessClass alloc] initWithFieldView:self.fieldView orientation:[[UIDevice currentDevice] orientation]];
     [self.logic setScoreAway:self.awayScore andHome:self.homeScore];
 }
 

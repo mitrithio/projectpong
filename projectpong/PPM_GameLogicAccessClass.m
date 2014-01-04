@@ -13,7 +13,7 @@
 @interface PPM_GameLogicAccessClass ()
 
 @property (nonatomic, retain) PPM_MainLogicClass *logic;
-@property (nonatomic, retain) UIView * gameView;
+@property (nonatomic, retain) UIView * fieldView;
 @property (nonatomic, retain) UIImageView * ballView;
 @property (nonatomic, retain) UIImageView * enemyBarView;
 @property (nonatomic, retain) UIImageView * userBarView;
@@ -30,30 +30,37 @@
 
 - (id)init
 {
-    NSLog(@"Don't use init. Use initWithGameView");
+    NSLog(@"Don't use init. Use initWithFieldView");
     return self;
 }
 
 
--(id)initWithGameView:(UIView*)view
+-(id)initWithFieldView:(UIImageView*)field
           orientation:(UIInterfaceOrientation)orientation
 {
     self = [super init];
     if (self) {
-        self.gameView = view;
-        self.logic = [[PPM_MainLogicClass alloc] initWithGameField:self.gameView];
+        self.fieldView = field;
+        self.logic = [[PPM_MainLogicClass alloc] initWithGameField:self.fieldView];
 
         // View of ball inizialization
         CGSize ballSize = CGSizeMake(20, 20);
         //UIImage *ballImage = [self getImageForKey:@"Ball"];
         UIImage *ballImage = [self getThemeImageForKey:@"Ball"];
-        CGPoint initialTopLeftBall = CGPointMake(self.gameView.center.x - (ballSize.width/2), self.gameView.center.y - (ballSize.height/2));
-        self.ballView = [[UIImageView alloc] init];
-        //[self.ballView setImage:ballImage];
+        CGPoint initialTopLeftBall = CGPointMake(self.fieldView.center.x - (ballSize.width/2), self.fieldView.center.y - (ballSize.height/2));
+        self.ballView = [[UIImageView alloc] initWithFrame:CGRectMake(initialTopLeftBall.x, initialTopLeftBall.y, ballSize.width, ballSize.height)];
+        
         [self setBackgroundForView:self.ballView withKey:@"Ball"];
         [self.ballView setAlpha:1.0];
-        [self.ballView setFrame:CGRectMake(initialTopLeftBall.x, initialTopLeftBall.y, ballSize.width, ballSize.height)];
-        [self.gameView addSubview:self.ballView];
+        //[self.ballView setFrame:CGRectMake(initialTopLeftBall.x, initialTopLeftBall.y, ballSize.width, ballSize.height)];
+        
+        CGPoint __D_fieldViewCenter = self.fieldView.center;
+        CGPoint __D_ballViewCenter = self.ballView.center;
+        
+        [self.ballView setCenter:CGPointMake(initialTopLeftBall.x, initialTopLeftBall.y)];
+        
+        
+        CGPoint __D_ballCenter = self.ballView.center;
         
         [self.logic setBallImage:ballImage InitialPosition:initialTopLeftBall Size:ballSize];
         
@@ -65,7 +72,7 @@
         //UIImage *barImage = [UIImage imageNamed:@"pongbartest.png"];
         
         // Enemy Bar initialization
-        CGPoint initialTopLeftEnemyBar = CGPointMake(self.gameView.center.x - (barSize.width/2), self.gameView.frame.origin.y + 20);
+        CGPoint initialTopLeftEnemyBar = CGPointMake(self.fieldView.center.x - (barSize.width/2), self.fieldView.frame.origin.y + 20);
         self.enemyBarView = [[UIImageView alloc] init];
         [self.enemyBarView setImage:barImage];
         [self.enemyBarView setAlpha:1.0];
@@ -74,7 +81,7 @@
         [self.logic setEnemyBarImage:barImage InitialPosition:initialTopLeftEnemyBar Size:barSize];
         
         // User Bar initialization
-        CGPoint initialTopLeftUserBar = CGPointMake(self.gameView.center.x - (barSize.width/2), self.gameView.frame.size.height - barSize.height/2 - 20);
+        CGPoint initialTopLeftUserBar = CGPointMake(self.fieldView.center.x - (barSize.width/2), self.fieldView.frame.size.height - barSize.height/2 - 20);
         self.userBarView = [[UIImageView alloc] init];
         [self.userBarView setImage:barImage];
         [self.userBarView setAlpha:1.0];
@@ -82,10 +89,10 @@
         
         [self.logic setUserBarImage:barImage InitialPosition:initialTopLeftUserBar Size:barSize];
         
-        [self.gameView addSubview:self.ballView];
-        [self.gameView sendSubviewToBack:self.ballView];
-        [self.gameView addSubview:self.userBarView];
-        [self.gameView addSubview:self.enemyBarView];
+        [self.fieldView addSubview:self.ballView];
+        [self.fieldView addSubview:self.userBarView];
+        [self.fieldView addSubview:self.enemyBarView];
+        [self.fieldView sendSubviewToBack:self.ballView];
         
     }
     else
