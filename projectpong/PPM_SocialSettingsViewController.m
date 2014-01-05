@@ -35,7 +35,7 @@
     
     [self.gameSettingsAccess setBackgroundForUIObject:self.socialBackground withKey:@"Background"];
     
-    self.socialLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    self.socialLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,15 +45,21 @@
 }
 
 
+
 - (IBAction)LoginOnTwitter:(id)sender {
     
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
-        //allert you have already an account
-        
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Twitter Account"
+                           message:[NSString stringWithFormat:@"Don't worry you already have an account configured"] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
             }
     else{
-        NSLog(@"you don't have twitter");
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Facebook Account"
+                              message:[NSString stringWithFormat:@"You don't have an account configured go to settings and do it"] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
     }
 }
 
@@ -63,11 +69,17 @@
     
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
 
-        //allert you have already an account
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Facebook Account"
+                              message:[NSString stringWithFormat:@"Don't worry you already have an account configured"] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
         
     }
     else{
-        NSLog(@"you don't have facebook");
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Facebook Account"
+                              message:[NSString stringWithFormat:@"You don't have an account configured go to settings and do it"] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
     }
 }
 @end

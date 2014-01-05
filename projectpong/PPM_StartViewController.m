@@ -49,8 +49,7 @@
      
     
     [self.gameSettingsAccess setBackgroundForUIObject:self.startBackground withKey:@"Background"];
-    
-    
+
     self.userLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
     //if UserImage is Empty

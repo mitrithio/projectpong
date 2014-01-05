@@ -41,6 +41,11 @@
     self.backToMainMenuButton.titleLabel.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
     self.postResultLable.textColor =[self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
+
+    [self.gameSettingsAccess setBackgroundForUIObject:self.userImage withKey:@"User"];
+
+    //if user name not set
+    self.userLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,7 +67,10 @@
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
     else{
-         NSLog(@"you don't have twitter");
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Facebook Account"
+                              message:[NSString stringWithFormat:@"You don't have an account configured go to settings and do it"] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
     }
 }
 
@@ -77,7 +85,10 @@
         [self presentViewController:controller animated:YES completion:Nil];
     }
     else{
-        NSLog(@"you don't have facebook");
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Facebook Account"
+                              message:[NSString stringWithFormat:@"You don't have an account configured go to settings and do it"] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
     }
 }
 @end

@@ -68,6 +68,16 @@
                                 <rect key="frame" x="19" y="87" width="280" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="s9F-79-Jma">
+                                <rect key="frame" x="235" y="479" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0X3-Zy-Q4s">
+                                <rect key="frame" x="24" y="501" width="203" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -81,8 +91,8 @@
                         <outlet property="settingsButton" destination="SaE-nc-P9A" id="d2N-4Q-Ul4"/>
                         <outlet property="startBackground" destination="wFy-c3-72d" id="jLs-qv-21Y"/>
                         <outlet property="titleImage" destination="KRB-r9-7gj" id="oqh-3P-w8X"/>
-                        <outlet property="userImage" destination="oY3-V5-2k8" id="VhK-u9-vjy"/>
-                        <outlet property="userLable" destination="Apt-Gw-p5n" id="nJP-iE-8Vc"/>
+                        <outlet property="userImage" destination="s9F-79-Jma" id="ahZ-8y-AdL"/>
+                        <outlet property="userLable" destination="0X3-Zy-Q4s" id="UpH-SU-WR2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2b-uu-EAC" sceneMemberID="firstResponder"/>
@@ -1059,7 +1069,7 @@
                     <navigationItem key="navigationItem" id="LRS-jB-GXu">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="dOV-WJ-ace">
                             <connections>
-                                <action selector="saveButtonPressed:" destination="I0Y-5B-knQ" id="CP8-pC-Wi7"/>
+                                <action selector="saveButtonPressed:" destination="I0Y-5B-knQ" id="V03-cJ-dFD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1148,7 +1158,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D1c-7e-rSr">
-                                <rect key="frame" x="157.99999961830639" y="469" width="142" height="36"/>
+                                <rect key="frame" x="157.99999940816969" y="469" width="142" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="facebookIcon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1168,7 +1178,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="post the result on:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rJ2-rY-JBz">
-                                <rect key="frame" x="20" y="424" width="279.99999961830639" height="41"/>
+                                <rect key="frame" x="20" y="424" width="279.99999940816969" height="41"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -1241,6 +1251,8 @@
                         <outlet property="backToMainMenuButton" destination="VeG-Ya-iIe" id="GZC-io-Cll"/>
                         <outlet property="playAgainButton" destination="OEo-xk-AbW" id="mzv-H2-vJk"/>
                         <outlet property="postResultLable" destination="rJ2-rY-JBz" id="5ED-AR-nWQ"/>
+                        <outlet property="userImage" destination="oY3-V5-2k8" id="rUG-c2-VQu"/>
+                        <outlet property="userLable" destination="Apt-Gw-p5n" id="VjF-cT-Btz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2M-uV-NKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1451,7 +1463,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="VCc-Wd-laI"/>
         <segue reference="SQn-5X-kBE"/>
+        <segue reference="VCc-Wd-laI"/>
     </inferredMetricsTieBreakers>
 </document>

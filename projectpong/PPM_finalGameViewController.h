@@ -19,6 +19,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *postResultLable;
 
+@property (weak, nonatomic) IBOutlet UIImageView *userImage;
+
+@property (weak, nonatomic) IBOutlet UILabel *userLable;
+
 - (IBAction)postOnTwitter:(id)sender;
 
 - (IBAction)postOnFacebook:(id)sender;

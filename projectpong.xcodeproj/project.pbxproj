@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		681242761879B27500B3009F /* iTunesProjectPong.png in Resources */ = {isa = PBXBuildFile; fileRef = 681242661879B27500B3009F /* iTunesProjectPong.png */; };
+		681242771879B27500B3009F /* iTunesProjectPong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 681242671879B27500B3009F /* iTunesProjectPong@2x.png */; };
+		681242781879B27500B3009F /* ProjectPong29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 681242681879B27500B3009F /* ProjectPong29x29.png */; };
+		681242791879B27500B3009F /* ProjectPong29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 681242691879B27500B3009F /* ProjectPong29x29@2x.png */; };
+		6812427A1879B27500B3009F /* ProjectPong40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 6812426A1879B27500B3009F /* ProjectPong40x40.png */; };
+		6812427B1879B27500B3009F /* ProjectPong40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6812426B1879B27500B3009F /* ProjectPong40x40@2x.png */; };
+		6812427C1879B27500B3009F /* ProjectPong50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = 6812426C1879B27500B3009F /* ProjectPong50x50.png */; };
+		6812427D1879B27500B3009F /* ProjectPong50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6812426D1879B27500B3009F /* ProjectPong50x50@2x.png */; };
+		6812427E1879B27500B3009F /* ProjectPong57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 6812426E1879B27500B3009F /* ProjectPong57x57.png */; };
+		6812427F1879B27500B3009F /* ProjectPong57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6812426F1879B27500B3009F /* ProjectPong57x57@2x.png */; };
+		681242801879B27500B3009F /* ProjectPong60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 681242701879B27500B3009F /* ProjectPong60x60.png */; };
+		681242811879B27500B3009F /* ProjectPong60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 681242711879B27500B3009F /* ProjectPong60x60@2x.png */; };
+		681242821879B27500B3009F /* ProjectPong72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 681242721879B27500B3009F /* ProjectPong72x72.png */; };
+		681242831879B27500B3009F /* ProjectPong72x72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 681242731879B27500B3009F /* ProjectPong72x72@2x.png */; };
+		681242841879B27500B3009F /* ProjectPong76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 681242741879B27500B3009F /* ProjectPong76x76.png */; };
+		681242851879B27500B3009F /* ProjectPong76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 681242751879B27500B3009F /* ProjectPong76x76@2x.png */; };
 		68270E55187183F100A071EA /* PPM_UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68270E54187183F100A071EA /* PPM_UserTableViewController.m */; };
 		6849B2B61875755B00431F38 /* ClassicTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6849B2B51875755B00431F38 /* ClassicTitle.png */; };
 		6849B2B81875769600431F38 /* PlasticThemeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6849B2B71875769600431F38 /* PlasticThemeButton.png */; };
@@ -38,22 +54,6 @@
 		686D416D18799AC20085E6B4 /* PlasticWin.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D416B18799AC20085E6B4 /* PlasticWin.png */; };
 		686D417018799AD50085E6B4 /* ClassicLost.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D416E18799AD50085E6B4 /* ClassicLost.png */; };
 		686D417118799AD50085E6B4 /* ClassicWin.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D416F18799AD50085E6B4 /* ClassicWin.png */; };
-		686D41A218799CD60085E6B4 /* iTunesProjectPong.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D419218799CD60085E6B4 /* iTunesProjectPong.png */; };
-		686D41A318799CD60085E6B4 /* iTunesProjectPong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D419318799CD60085E6B4 /* iTunesProjectPong@2x.png */; };
-		686D41A418799CD60085E6B4 /* ProjectPong29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D419418799CD60085E6B4 /* ProjectPong29x29.png */; };
-		686D41A518799CD60085E6B4 /* ProjectPong29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D419518799CD60085E6B4 /* ProjectPong29x29@2x.png */; };
-		686D41A618799CD60085E6B4 /* ProjectPong40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D419618799CD60085E6B4 /* ProjectPong40x40.png */; };
-		686D41A718799CD60085E6B4 /* ProjectPong40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D419718799CD60085E6B4 /* ProjectPong40x40@2x.png */; };
-		686D41A818799CD60085E6B4 /* ProjectPong50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D419818799CD60085E6B4 /* ProjectPong50x50.png */; };
-		686D41A918799CD60085E6B4 /* ProjectPong50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D419918799CD60085E6B4 /* ProjectPong50x50@2x.png */; };
-		686D41AA18799CD60085E6B4 /* ProjectPong57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D419A18799CD60085E6B4 /* ProjectPong57x57.png */; };
-		686D41AB18799CD60085E6B4 /* ProjectPong57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D419B18799CD60085E6B4 /* ProjectPong57x57@2x.png */; };
-		686D41AC18799CD60085E6B4 /* ProjectPong60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D419C18799CD60085E6B4 /* ProjectPong60x60.png */; };
-		686D41AD18799CD60085E6B4 /* ProjectPong60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D419D18799CD60085E6B4 /* ProjectPong60x60@2x.png */; };
-		686D41AE18799CD60085E6B4 /* ProjectPong72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D419E18799CD60085E6B4 /* ProjectPong72x72.png */; };
-		686D41AF18799CD60085E6B4 /* ProjectPong72x72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D419F18799CD60085E6B4 /* ProjectPong72x72@2x.png */; };
-		686D41B018799CD60085E6B4 /* ProjectPong76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D41A018799CD60085E6B4 /* ProjectPong76x76.png */; };
-		686D41B118799CD60085E6B4 /* ProjectPong76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 686D41A118799CD60085E6B4 /* ProjectPong76x76@2x.png */; };
 		6872665A18771B4B00F120E0 /* PPM_finalGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6872665918771B4B00F120E0 /* PPM_finalGameViewController.m */; };
 		6872665C18771DED00F120E0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6872665B18771DED00F120E0 /* Social.framework */; };
 		689D7DD51872D054008949B5 /* facebookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 689D7DD31872D054008949B5 /* facebookIcon.png */; };
@@ -111,6 +111,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		681242661879B27500B3009F /* iTunesProjectPong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesProjectPong.png; sourceTree = "<group>"; };
+		681242671879B27500B3009F /* iTunesProjectPong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesProjectPong@2x.png"; sourceTree = "<group>"; };
+		681242681879B27500B3009F /* ProjectPong29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectPong29x29.png; sourceTree = "<group>"; };
+		681242691879B27500B3009F /* ProjectPong29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectPong29x29@2x.png"; sourceTree = "<group>"; };
+		6812426A1879B27500B3009F /* ProjectPong40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectPong40x40.png; sourceTree = "<group>"; };
+		6812426B1879B27500B3009F /* ProjectPong40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectPong40x40@2x.png"; sourceTree = "<group>"; };
+		6812426C1879B27500B3009F /* ProjectPong50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectPong50x50.png; sourceTree = "<group>"; };
+		6812426D1879B27500B3009F /* ProjectPong50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectPong50x50@2x.png"; sourceTree = "<group>"; };
+		6812426E1879B27500B3009F /* ProjectPong57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectPong57x57.png; sourceTree = "<group>"; };
+		6812426F1879B27500B3009F /* ProjectPong57x57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectPong57x57@2x.png"; sourceTree = "<group>"; };
+		681242701879B27500B3009F /* ProjectPong60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectPong60x60.png; sourceTree = "<group>"; };
+		681242711879B27500B3009F /* ProjectPong60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectPong60x60@2x.png"; sourceTree = "<group>"; };
+		681242721879B27500B3009F /* ProjectPong72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectPong72x72.png; sourceTree = "<group>"; };
+		681242731879B27500B3009F /* ProjectPong72x72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectPong72x72@2x.png"; sourceTree = "<group>"; };
+		681242741879B27500B3009F /* ProjectPong76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectPong76x76.png; sourceTree = "<group>"; };
+		681242751879B27500B3009F /* ProjectPong76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectPong76x76@2x.png"; sourceTree = "<group>"; };
 		68270E53187183F100A071EA /* PPM_UserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_UserTableViewController.h; sourceTree = "<group>"; };
 		68270E54187183F100A071EA /* PPM_UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_UserTableViewController.m; sourceTree = "<group>"; };
 		6849B2B51875755B00431F38 /* ClassicTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClassicTitle.png; sourceTree = "<group>"; };
@@ -147,22 +163,6 @@
 		686D416B18799AC20085E6B4 /* PlasticWin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticWin.png; sourceTree = "<group>"; };
 		686D416E18799AD50085E6B4 /* ClassicLost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClassicLost.png; sourceTree = "<group>"; };
 		686D416F18799AD50085E6B4 /* ClassicWin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClassicWin.png; sourceTree = "<group>"; };
-		686D419218799CD60085E6B4 /* iTunesProjectPong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesProjectPong.png; path = "../../Master CGD/Mobile/projectpong/projectpong/Resources/images/ProjectPongIcon/iTunesProjectPong.png"; sourceTree = "<group>"; };
-		686D419318799CD60085E6B4 /* iTunesProjectPong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iTunesProjectPong@2x.png"; path = "projectpong/Resources/images/ProjectPongIcon/iTunesProjectPong@2x.png"; sourceTree = SOURCE_ROOT; };
-		686D419418799CD60085E6B4 /* ProjectPong29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProjectPong29x29.png; path = "../../Master CGD/Mobile/projectpong/projectpong/Resources/images/ProjectPongIcon/ProjectPong29x29.png"; sourceTree = "<group>"; };
-		686D419518799CD60085E6B4 /* ProjectPong29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ProjectPong29x29@2x.png"; path = "../../Master CGD/Mobile/projectpong/projectpong/Resources/images/ProjectPongIcon/ProjectPong29x29@2x.png"; sourceTree = "<group>"; };
-		686D419618799CD60085E6B4 /* ProjectPong40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProjectPong40x40.png; path = "../../Master CGD/Mobile/projectpong/projectpong/Resources/images/ProjectPongIcon/ProjectPong40x40.png"; sourceTree = "<group>"; };
-		686D419718799CD60085E6B4 /* ProjectPong40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ProjectPong40x40@2x.png"; path = "../../Master CGD/Mobile/projectpong/projectpong/Resources/images/ProjectPongIcon/ProjectPong40x40@2x.png"; sourceTree = "<group>"; };
-		686D419818799CD60085E6B4 /* ProjectPong50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProjectPong50x50.png; path = "../../Master CGD/Mobile/projectpong/projectpong/Resources/images/ProjectPongIcon/ProjectPong50x50.png"; sourceTree = "<group>"; };
-		686D419918799CD60085E6B4 /* ProjectPong50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ProjectPong50x50@2x.png"; path = "../../Master CGD/Mobile/projectpong/projectpong/Resources/images/ProjectPongIcon/ProjectPong50x50@2x.png"; sourceTree = "<group>"; };
-		686D419A18799CD60085E6B4 /* ProjectPong57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProjectPong57x57.png; path = "../../Master CGD/Mobile/projectpong/projectpong/Resources/images/ProjectPongIcon/ProjectPong57x57.png"; sourceTree = "<group>"; };
-		686D419B18799CD60085E6B4 /* ProjectPong57x57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ProjectPong57x57@2x.png"; path = "../../Master CGD/Mobile/projectpong/projectpong/Resources/images/ProjectPongIcon/ProjectPong57x57@2x.png"; sourceTree = "<group>"; };
-		686D419C18799CD60085E6B4 /* ProjectPong60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProjectPong60x60.png; path = "../../Master CGD/Mobile/projectpong/projectpong/Resources/images/ProjectPongIcon/ProjectPong60x60.png"; sourceTree = "<group>"; };
-		686D419D18799CD60085E6B4 /* ProjectPong60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ProjectPong60x60@2x.png"; path = "../../Master CGD/Mobile/projectpong/projectpong/Resources/images/ProjectPongIcon/ProjectPong60x60@2x.png"; sourceTree = "<group>"; };
-		686D419E18799CD60085E6B4 /* ProjectPong72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProjectPong72x72.png; path = "../../Master CGD/Mobile/projectpong/projectpong/Resources/images/ProjectPongIcon/ProjectPong72x72.png"; sourceTree = "<group>"; };
-		686D419F18799CD60085E6B4 /* ProjectPong72x72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ProjectPong72x72@2x.png"; path = "../../Master CGD/Mobile/projectpong/projectpong/Resources/images/ProjectPongIcon/ProjectPong72x72@2x.png"; sourceTree = "<group>"; };
-		686D41A018799CD60085E6B4 /* ProjectPong76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProjectPong76x76.png; path = "../../Master CGD/Mobile/projectpong/projectpong/Resources/images/ProjectPongIcon/ProjectPong76x76.png"; sourceTree = "<group>"; };
-		686D41A118799CD60085E6B4 /* ProjectPong76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ProjectPong76x76@2x.png"; path = "../../Master CGD/Mobile/projectpong/projectpong/Resources/images/ProjectPongIcon/ProjectPong76x76@2x.png"; sourceTree = "<group>"; };
 		6872665818771B4B00F120E0 /* PPM_finalGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_finalGameViewController.h; sourceTree = "<group>"; };
 		6872665918771B4B00F120E0 /* PPM_finalGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_finalGameViewController.m; sourceTree = "<group>"; };
 		6872665B18771DED00F120E0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -259,6 +259,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		681242651879B27500B3009F /* ProjectPongIcon */ = {
+			isa = PBXGroup;
+			children = (
+				681242661879B27500B3009F /* iTunesProjectPong.png */,
+				681242671879B27500B3009F /* iTunesProjectPong@2x.png */,
+				681242681879B27500B3009F /* ProjectPong29x29.png */,
+				681242691879B27500B3009F /* ProjectPong29x29@2x.png */,
+				6812426A1879B27500B3009F /* ProjectPong40x40.png */,
+				6812426B1879B27500B3009F /* ProjectPong40x40@2x.png */,
+				6812426C1879B27500B3009F /* ProjectPong50x50.png */,
+				6812426D1879B27500B3009F /* ProjectPong50x50@2x.png */,
+				6812426E1879B27500B3009F /* ProjectPong57x57.png */,
+				6812426F1879B27500B3009F /* ProjectPong57x57@2x.png */,
+				681242701879B27500B3009F /* ProjectPong60x60.png */,
+				681242711879B27500B3009F /* ProjectPong60x60@2x.png */,
+				681242721879B27500B3009F /* ProjectPong72x72.png */,
+				681242731879B27500B3009F /* ProjectPong72x72@2x.png */,
+				681242741879B27500B3009F /* ProjectPong76x76.png */,
+				681242751879B27500B3009F /* ProjectPong76x76@2x.png */,
+			);
+			path = ProjectPongIcon;
+			sourceTree = "<group>";
+		};
 		6849B2B41875755B00431F38 /* ClassicTheme */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,30 +323,6 @@
 				6861DADE186C847800EDA5EC /* PlasticUser.png */,
 			);
 			path = PlasticTheme;
-			sourceTree = "<group>";
-		};
-		6872667E18772EC600F120E0 /* ProjectPongIcon */ = {
-			isa = PBXGroup;
-			children = (
-				686D419218799CD60085E6B4 /* iTunesProjectPong.png */,
-				686D419318799CD60085E6B4 /* iTunesProjectPong@2x.png */,
-				686D419418799CD60085E6B4 /* ProjectPong29x29.png */,
-				686D419518799CD60085E6B4 /* ProjectPong29x29@2x.png */,
-				686D419618799CD60085E6B4 /* ProjectPong40x40.png */,
-				686D419718799CD60085E6B4 /* ProjectPong40x40@2x.png */,
-				686D419818799CD60085E6B4 /* ProjectPong50x50.png */,
-				686D419918799CD60085E6B4 /* ProjectPong50x50@2x.png */,
-				686D419A18799CD60085E6B4 /* ProjectPong57x57.png */,
-				686D419B18799CD60085E6B4 /* ProjectPong57x57@2x.png */,
-				686D419C18799CD60085E6B4 /* ProjectPong60x60.png */,
-				686D419D18799CD60085E6B4 /* ProjectPong60x60@2x.png */,
-				686D419E18799CD60085E6B4 /* ProjectPong72x72.png */,
-				686D419F18799CD60085E6B4 /* ProjectPong72x72@2x.png */,
-				686D41A018799CD60085E6B4 /* ProjectPong76x76.png */,
-				686D41A118799CD60085E6B4 /* ProjectPong76x76@2x.png */,
-			);
-			name = ProjectPongIcon;
-			path = ../../../../../../Desktop/ProjectPongIcon;
 			sourceTree = "<group>";
 		};
 		98EC34971876F451008B2E17 /* StaticLibraries */ = {
@@ -480,7 +479,7 @@
 		98F47A18186A1CE70048D3D3 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				6872667E18772EC600F120E0 /* ProjectPongIcon */,
+				681242651879B27500B3009F /* ProjectPongIcon */,
 				6849B2B41875755B00431F38 /* ClassicTheme */,
 				689D7DD31872D054008949B5 /* facebookIcon.png */,
 				689D7DD41872D054008949B5 /* twitterICon.png */,
@@ -570,7 +569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6861DAE5186C847800EDA5EC /* PlasticScoreButton.png in Resources */,
-				686D41B118799CD60085E6B4 /* ProjectPong76x76@2x.png in Resources */,
+				681242851879B27500B3009F /* ProjectPong76x76@2x.png in Resources */,
 				6849B2BA1875772F00431F38 /* ClassicThemeButton.png in Resources */,
 				6849B2CC1875AD0600431F38 /* ClassicUser.png in Resources */,
 				68BCCDC01876CC6800517892 /* ClassicNumbers.png in Resources */,
@@ -579,16 +578,16 @@
 				686D417018799AD50085E6B4 /* ClassicLost.png in Resources */,
 				6861DAE6186C847800EDA5EC /* PlasticSettingsButton.png in Resources */,
 				98F47A2B186A1CE70048D3D3 /* button-play-pause.png in Resources */,
-				686D41AA18799CD60085E6B4 /* ProjectPong57x57.png in Resources */,
-				686D41A918799CD60085E6B4 /* ProjectPong50x50@2x.png in Resources */,
-				686D41AD18799CD60085E6B4 /* ProjectPong60x60@2x.png in Resources */,
-				686D41A818799CD60085E6B4 /* ProjectPong50x50.png in Resources */,
-				686D41AF18799CD60085E6B4 /* ProjectPong72x72@2x.png in Resources */,
-				686D41A418799CD60085E6B4 /* ProjectPong29x29.png in Resources */,
-				686D41AC18799CD60085E6B4 /* ProjectPong60x60.png in Resources */,
+				6812427E1879B27500B3009F /* ProjectPong57x57.png in Resources */,
+				6812427D1879B27500B3009F /* ProjectPong50x50@2x.png in Resources */,
+				681242811879B27500B3009F /* ProjectPong60x60@2x.png in Resources */,
+				6812427C1879B27500B3009F /* ProjectPong50x50.png in Resources */,
+				681242831879B27500B3009F /* ProjectPong72x72@2x.png in Resources */,
+				681242781879B27500B3009F /* ProjectPong29x29.png in Resources */,
+				681242801879B27500B3009F /* ProjectPong60x60.png in Resources */,
 				98F479D0186A1B920048D3D3 /* Main_iPad.storyboard in Resources */,
 				6849B2C018757B9B00431F38 /* ClassicGameBackground.png in Resources */,
-				686D41AB18799CD60085E6B4 /* ProjectPong57x57@2x.png in Resources */,
+				6812427F1879B27500B3009F /* ProjectPong57x57@2x.png in Resources */,
 				6849B2CA187580D000431F38 /* ClassicSettingsButton.png in Resources */,
 				68BCCDC21876CC8000517892 /* PlasticPlayButton.png in Resources */,
 				6861DADF186C847800EDA5EC /* PlasticBackground.png in Resources */,
@@ -602,27 +601,27 @@
 				6861DAE7186C847800EDA5EC /* PlasticTitle.png in Resources */,
 				98F479CD186A1B920048D3D3 /* Main_iPhone.storyboard in Resources */,
 				686D416D18799AC20085E6B4 /* PlasticWin.png in Resources */,
-				686D41A318799CD60085E6B4 /* iTunesProjectPong@2x.png in Resources */,
-				686D41A218799CD60085E6B4 /* iTunesProjectPong.png in Resources */,
+				681242771879B27500B3009F /* iTunesProjectPong@2x.png in Resources */,
+				681242761879B27500B3009F /* iTunesProjectPong.png in Resources */,
 				98F47A39186A1CE70048D3D3 /* SocialIcon.png in Resources */,
 				98F47A37186A1CE70048D3D3 /* LocalIcon.png in Resources */,
-				686D41A518799CD60085E6B4 /* ProjectPong29x29@2x.png in Resources */,
+				681242791879B27500B3009F /* ProjectPong29x29@2x.png in Resources */,
 				689D7DD51872D054008949B5 /* facebookIcon.png in Resources */,
-				686D41A618799CD60085E6B4 /* ProjectPong40x40.png in Resources */,
+				6812427A1879B27500B3009F /* ProjectPong40x40.png in Resources */,
 				6861DAE0186C847800EDA5EC /* PlasticBall.png in Resources */,
 				686D417118799AD50085E6B4 /* ClassicWin.png in Resources */,
 				689D7DD61872D054008949B5 /* twitterICon.png in Resources */,
 				6861DAE1186C847800EDA5EC /* PlasticBar.png in Resources */,
 				6849B2C6187580D000431F38 /* ClassicBall.png in Resources */,
 				6849B2C7187580D000431F38 /* ClassicPlayButton.png in Resources */,
-				686D41AE18799CD60085E6B4 /* ProjectPong72x72.png in Resources */,
+				681242821879B27500B3009F /* ProjectPong72x72.png in Resources */,
 				6861DAE4186C847800EDA5EC /* PlasticRuleButton.png in Resources */,
 				6849B2C9187580D000431F38 /* ClassicScoreButton.png in Resources */,
-				686D41B018799CD60085E6B4 /* ProjectPong76x76.png in Resources */,
+				681242841879B27500B3009F /* ProjectPong76x76.png in Resources */,
 				6861DAE2186C847800EDA5EC /* PlasticGameBackground.png in Resources */,
 				6849B2D11875BC3D00431F38 /* ClassicBar.png in Resources */,
 				98F479C4186A1B920048D3D3 /* InfoPlist.strings in Resources */,
-				686D41A718799CD60085E6B4 /* ProjectPong40x40@2x.png in Resources */,
+				6812427B1879B27500B3009F /* ProjectPong40x40@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

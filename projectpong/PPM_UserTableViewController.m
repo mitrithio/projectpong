@@ -48,9 +48,9 @@
     //if UserImage is Empty
     [self.gameSettingsAccess setBackgroundForUIObject:self.userImage withKey:@"User"];
     
-    [self.emailTextField setDelegate:self];
+   // [self.emailTextField setDelegate:self];
     
-    [self.nameTextField setDelegate:self];
+    //[self.nameTextField setDelegate:self];
 
     }
 
@@ -67,6 +67,15 @@
 
 #pragma mark - Table view data source
 
+- (IBAction)saveButtonPressed:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Saving"
+                          message:[NSString stringWithFormat:@"saving the current information"] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alert show];
+    
+}
+
+
 - (IBAction)addImageFromCameraPressed:(id)sender{
 
 if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera])
@@ -81,6 +90,13 @@ if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourc
     [self presentViewController:imagePicker
                        animated:YES completion:nil];
     _newMedia = YES;
+}
+else{
+
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Camera"
+                          message:[NSString stringWithFormat:@"You don't have a camera on this device"] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
     
@@ -150,6 +166,4 @@ finishedSavingWithError:(NSError *)error
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)saveButtonPressed:(id)sender {
-}
 @end
