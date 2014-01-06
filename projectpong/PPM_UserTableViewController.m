@@ -14,6 +14,7 @@
 
 @implementation PPM_UserTableViewController
 
+
 @synthesize gameSettingsAccess;
 
 
@@ -48,9 +49,7 @@
     //if UserImage is Empty
     [self.gameSettingsAccess setBackgroundForUIObject:self.userImage withKey:@"User"];
     
-   // [self.emailTextField setDelegate:self];
-    
-    //[self.nameTextField setDelegate:self];
+    [self.nameTextField setDelegate:self];
 
     }
 
@@ -72,6 +71,7 @@
                           initWithTitle:@"Saving"
                           message:[NSString stringWithFormat:@"saving the current information"] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
     [alert show];
+    
     
 }
 

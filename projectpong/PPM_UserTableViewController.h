@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "PPM_GameSettingsAccessClass.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
@@ -27,12 +28,15 @@ UINavigationControllerDelegate>
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
 
 @property (strong, nonatomic) IBOutlet UITextField *nameTextField;
-@property (strong, nonatomic) IBOutlet UITextField *emailTextField;
+
+
 
 - (IBAction)addImageFromCameraPressed:(id)sender;
 - (IBAction)addImageFromLibraryPressed:(id)sender;
 - (IBAction)saveButtonPressed:(id)sender;
 
 @property BOOL newMedia;
+
+
 
 @end
