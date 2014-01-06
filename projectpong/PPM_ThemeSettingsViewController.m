@@ -74,19 +74,14 @@
 #pragma mark - Table view data source
 
 - (IBAction)plasticThemeActivator:(id)sender {
-    /*
-    [self.plasticCell setAccessoryType:(UITableViewCellAccessoryCheckmark)];
-    [self.classicCell setAccessoryType:(UITableViewCellAccessoryNone)];
-    */
+  
     [self.gameSettingsAccess saveTheme:self.plasticTheme];
     
     
 }
 
 - (IBAction)classicThemeActivator:(id)sender {
-    /*[self.classicCell setAccessoryType:(UITableViewCellAccessoryCheckmark)];
-    [self.plasticCell setAccessoryType:(UITableViewCellAccessoryNone)];
-    */
+
     [self.gameSettingsAccess saveTheme:self.classicTheme];
 }
 
