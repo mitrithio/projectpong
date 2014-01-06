@@ -29,6 +29,8 @@
 -(NSString*)getCurrentTheme;
 -(BOOL)getCurrentTimerOnOff;
 -(int)getCurrentTimerSelector;
+-(UIImage*)getCurrentUserImage;
+-(NSString*)getCurrentUserName;
 
 
 // ******* SAVING-TIME METHODS ********
@@ -37,6 +39,7 @@
 -(void)saveTimerOnOff:(UISwitch*)timerOnOff;
 -(void)saveTimerSelector:(UISegmentedControl*)timerSelector;
 -(void)saveTheme:(UIButton*)currentThemeSetted;
--(void)saveUserImage:(UIImage*)userImage;
+-(void)saveUserImage:(UIImageView*)userImage;
+-(void)saveUserName:(UITextField*)nameTextField;
 
 @end

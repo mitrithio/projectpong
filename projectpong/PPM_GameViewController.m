@@ -52,9 +52,6 @@
     [self.pauseButton setImage:[ACCropImages cropImage:[UIImage imageNamed:PAUSE_PLAY_IMAGE] originX:0 originY:80 dimX:40 dimY:40] forState:UIControlStateHighlighted];
     self.isGameInPause = TRUE;
     
-    self.settingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
-    [self.settingsAccess setBackgroundForUIObject:self.gameView withKey:@"GameBackground"];
-    [self.gameView setBounds:CGRectMake(0, 0, 320, 568)];
     //[self.settingsAccess setBackgroundForUIObject:self.view withKey:@"Background"];
     
     self.logic = [[PPM_GameLogicAccessClass alloc] initWithFieldView:self.gameView orientation:[[UIDevice currentDevice] orientation]];

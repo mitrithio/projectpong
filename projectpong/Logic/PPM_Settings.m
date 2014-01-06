@@ -9,12 +9,13 @@
 #import "PPM_Settings.h"
 #import "PPM_Colors.h"
 
-#define DIFFICULTY @"difficultySetted"
-#define BALLSPEED @"ballSpeedSetted"
+#define DIFFICULTY  @"difficultySetted"
+#define BALLSPEED   @"ballSpeedSetted"
 #define THEMESETTED @"themeSetted"
-#define ISTIMER @"isTimerSetted"
-#define TIMER @"timerSetted"
-#define IMAGE @"image"
+#define ISTIMER     @"isTimerSetted"
+#define TIMER       @"timerSetted"
+#define IMAGE       @"image"
+#define USERNAME    @"username"
 
 @interface PPM_Settings ()
 
@@ -417,7 +418,46 @@
 
 -(void)saveUserImage:(UIImage*)image
 {
-    [self.userDefaults setObject:image forKey:IMAGE];
+    UIImage *userImageSettedInDefaults = [[UIImage alloc] init];
+    userImageSettedInDefaults = [[self.userDefaults objectForKey:IMAGE] mutableCopy];
+    if (!userImageSettedInDefaults)
+    {
+        [self.userDefaults setObject:image forKey:IMAGE];
+    }
+    else
+    {
+        [self.userDefaults removeObjectForKey:IMAGE];
+        [self.userDefaults setObject:image forKey:IMAGE];
+    }
+    [self.userDefaults synchronize];
+}
+
+-(NSString*)takeSettedUserName
+{
+    NSString *usernameSettedInDefaults = [[NSString alloc] init];
+    usernameSettedInDefaults = [[self.userDefaults objectForKey:USERNAME] mutableCopy];
+    if (!usernameSettedInDefaults)
+    {
+        usernameSettedInDefaults = @"User";
+    }
+    
+    return  usernameSettedInDefaults;
+}
+
+-(void)saveUserName:(NSString*)username
+{
+    NSString *defaults = [self.userDefaults objectForKey:USERNAME];
+    if (!defaults)
+    {
+        [self.userDefaults setObject:username forKey:USERNAME];
+    }
+    else
+    {
+        [self.userDefaults removeObjectForKey:USERNAME];
+        [self.userDefaults setObject:username forKey:USERNAME];
+    }
+    [self.userDefaults synchronize];
+    [self takeSettedAIDifficulty];
 }
 
 @end

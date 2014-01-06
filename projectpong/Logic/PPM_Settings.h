@@ -74,6 +74,11 @@ typedef enum themeEnumerator {
  */
 -(UIImage*)takeSettedUserImage;
 
+/*!
+ \return the NSString of the current user name if it is saved in user defaults, else this method the string @"User".
+ */
+-(NSString*)takeSettedUserName;
+
 
 // --------------------------------------------------- \\
 
@@ -116,6 +121,12 @@ typedef enum themeEnumerator {
  \param the UIImage of the user.
  */
 -(void)saveUserImage:(UIImage*)image;
+
+/*!
+ this method saves the name of the current user in user defaults.
+ \param the NSString of the user name.
+ */
+-(void)saveUserName:(NSString*)username;
 
 /*! DON'T USE - ONLY FOR TESTS
  this method saves all the settings at once.

@@ -134,7 +134,9 @@
     else if ([object isKindOfClass:[UIView class]])
     {
         UIView *view = object;
+        UIColor *color = [UIColor colorWithPatternImage:[self getThemeImageForKey:key]];
         [view setBackgroundColor:[UIColor colorWithPatternImage:[self getThemeImageForKey:key]]];
+        
     }
     else if ([object isKindOfClass:[UITableView class]])
     {
@@ -181,9 +183,9 @@
     return [self.settings timer];
 }
 
--(void)saveUserImage:(UIImage*)userImage
+-(void)saveUserImage:(UIImageView*)userImage
 {
-    [self.settings saveUserImage:userImage];
+    [self.settings saveUserImage:userImage.image];
 }
 
 -(UIImage*)getCurrentUserImage
@@ -202,6 +204,16 @@
     }
     
     return currentUserImage;
+}
+
+-(void)saveUserName:(UITextField*)nameTextField
+{
+    [self.settings saveUserName:nameTextField.text];
+}
+
+-(NSString*)getCurrentUserName
+{
+    return [self.settings takeSettedUserName];
 }
 
 @end

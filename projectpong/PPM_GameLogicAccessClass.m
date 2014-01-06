@@ -8,6 +8,7 @@
 
 #import "PPM_GameLogicAccessClass.h"
 #import "PPM_MainLogicClass.h"
+#import "PPM_GameSettingsAccessClass.h"
 
 
 @interface PPM_GameLogicAccessClass ()
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) NSTimer *timerForAnimation;
 @property (nonatomic, retain) NSTimer *timerFor2Animation;
 
+@property (nonatomic, retain) PPM_GameSettingsAccessClass *settingsAccess;
 @end
 
 
@@ -42,6 +44,10 @@
     if (self) {
         self.fieldView = field;
         self.logic = [[PPM_MainLogicClass alloc] initWithGameField:self.fieldView];
+        
+        self.settingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
+        
+        [self.settingsAccess setBackgroundForUIObject:self.fieldView withKey:@"GameBackground"];
 
         // View of ball inizialization
         CGSize ballSize = CGSizeMake(20, 20);
