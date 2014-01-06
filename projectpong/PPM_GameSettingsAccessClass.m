@@ -8,6 +8,12 @@
 
 #import "PPM_GameSettingsAccessClass.h"
 
+@interface PPM_GameSettingsAccessClass ()
+
+//@property (nonatomic) PPM_Settings *settings;
+
+@end
+
 @implementation PPM_GameSettingsAccessClass
 
 @synthesize settings = _settings;
@@ -175,5 +181,27 @@
     return [self.settings timer];
 }
 
+-(void)saveUserImage:(UIImage*)userImage
+{
+    [self.settings saveUserImage:userImage];
+}
+
+-(UIImage*)getCurrentUserImage
+{
+    UIImage *currentUserImage = [[UIImage alloc] init];
+    @try {
+        currentUserImage = [self.settings takeSettedUserImage];
+    }
+    @catch (NSException *exception) {
+        if ([exception.name isEqualToString:@"ImageNotFound"]) {
+            currentUserImage = [self getThemeImageForKey:@"User"];
+        }
+        else {
+            @throw [NSException exceptionWithName:@"ImageError" reason:@"Error in retrieve Image" userInfo:nil];
+        }
+    }
+    
+    return currentUserImage;
+}
 
 @end

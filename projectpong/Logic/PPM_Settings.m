@@ -14,6 +14,7 @@
 #define THEMESETTED @"themeSetted"
 #define ISTIMER @"isTimerSetted"
 #define TIMER @"timerSetted"
+#define IMAGE @"image"
 
 @interface PPM_Settings ()
 
@@ -403,9 +404,20 @@
     return themeColor;
 }
 
--(void)getColorsForLabel:(UILabel*)label
+-(UIImage*)takeSettedUserImage
 {
-    //devo farla?? settando background color, text color, tint color e cos'altro?
+    UIImage *userImageSettedInDefaults = [[UIImage alloc] init];
+    userImageSettedInDefaults = [[self.userDefaults objectForKey:IMAGE] mutableCopy];
+    if (!userImageSettedInDefaults)
+    {
+        @throw [NSException exceptionWithName:@"ImageNotFound" reason:@"No saved image in user defaults" userInfo:nil];
+    }
+    return userImageSettedInDefaults;
+}
+
+-(void)saveUserImage:(UIImage*)image
+{
+    [self.userDefaults setObject:image forKey:IMAGE];
 }
 
 @end

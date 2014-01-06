@@ -69,6 +69,12 @@ typedef enum themeEnumerator {
 -(void)takeSettedTimer;
 
 
+/*!
+ \return the UIImage of the current user if it is saved in user defaults, else this method throw an exception called "ImageNotFound".
+ */
+-(UIImage*)takeSettedUserImage;
+
+
 // --------------------------------------------------- \\
 
 
@@ -103,6 +109,13 @@ typedef enum themeEnumerator {
  \param the value of timer. Use only 30, 60 or 90.
  */
 -(void)saveTimer:(int)timer;
+
+
+/*!
+ this method saves the image of the current user in user defaults.
+ \param the UIImage of the user.
+ */
+-(void)saveUserImage:(UIImage*)image;
 
 /*! DON'T USE - ONLY FOR TESTS
  this method saves all the settings at once.

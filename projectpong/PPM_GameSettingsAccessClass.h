@@ -37,5 +37,6 @@
 -(void)saveTimerOnOff:(UISwitch*)timerOnOff;
 -(void)saveTimerSelector:(UISegmentedControl*)timerSelector;
 -(void)saveTheme:(UIButton*)currentThemeSetted;
+-(void)saveUserImage:(UIImage*)userImage;
 
 @end
