@@ -15,7 +15,7 @@
 @property (nonatomic, strong) PPM_Ball *ball;
 @property (nonatomic, strong) PPM_Bar *enemyBar;
 @property (nonatomic, strong) PPM_Bar *userBar;
-@property (nonatomic) UIView *field;
+@property (nonatomic) UIImageView *field;
 
 @end
 
@@ -26,7 +26,7 @@
     @throw [NSException exceptionWithName:@"wrongInit" reason:@"Don't use this init. Use initWithGameField:" userInfo:nil];
 }
 
-- (id)initWithGameField:(UIView*)field
+- (id)initWithGameField:(UIImageView*)field
 {
     self = [super init];
     if (self) {
@@ -191,23 +191,24 @@ float arrivingParallelCoordinatePoint;
 
 -(void)updateEnemyBarPositionForView:(UIImageView*)enemyBarView
 {
+    CGFloat barDelta = self.getBarSpeed * 0.01;
     if (arrivingParallelCoordinatePoint < self.enemyBar.center) {
-        [self.enemyBar setPosition:CGPointMake(self.enemyBar.position.x - self.enemyBar.speed, self.enemyBar.position.y)];
+        [self.enemyBar setPosition:CGPointMake(self.enemyBar.position.x - barDelta, self.enemyBar.position.y)];
         [enemyBarView setFrame:CGRectMake(self.enemyBar.position.x, self.enemyBar.position.y, self.enemyBar.size.width, self.enemyBar.size.height)];
     }
     else if (arrivingParallelCoordinatePoint > self.enemyBar.center)
     {
-        [self.enemyBar setPosition:CGPointMake(self.enemyBar.position.x + self.enemyBar.speed, self.enemyBar.position.y)];
+        [self.enemyBar setPosition:CGPointMake(self.enemyBar.position.x + barDelta, self.enemyBar.position.y)];
         [enemyBarView setFrame:CGRectMake(self.enemyBar.position.x, self.enemyBar.position.y, self.enemyBar.size.width, self.enemyBar.size.height)];
     }
-    if (self.enemyBar.center > arrivingParallelCoordinatePoint - self.getBarSpeed && self.enemyBar.center < arrivingParallelCoordinatePoint + self.getBarSpeed)
+    if (self.enemyBar.center > arrivingParallelCoordinatePoint - barDelta && self.enemyBar.center < arrivingParallelCoordinatePoint + barDelta)
         arrivingParallelCoordinatePoint = self.enemyBar.center;
     
 }
 
 -(CGFloat)getBallSpeed
 {
-    switch ([self.settings aiDifficulty]) {
+    switch ([self.settings ballSpeed]) {
         case easy:
             return 5 + 0;
         case medium:
@@ -222,7 +223,7 @@ float arrivingParallelCoordinatePoint;
 
 -(CGFloat)getBarSpeed
 {
-    return 5;
+    return self.field.bounds.size.width/2;
 }
 
 -(int)getBarDelta

@@ -14,7 +14,7 @@
 @interface PPM_GameLogicAccessClass ()
 
 @property (nonatomic, retain) PPM_MainLogicClass *logic;
-@property (nonatomic, retain) UIView * fieldView;
+@property (nonatomic, retain) UIImageView * fieldView;
 @property (nonatomic, retain) UIImageView * ballView;
 @property (nonatomic, retain) UIImageView * enemyBarView;
 @property (nonatomic, retain) UIImageView * userBarView;
@@ -37,7 +37,7 @@
 }
 
 
--(id)initWithFieldView:(UIView*)field
+-(id)initWithFieldView:(UIImageView*)field
           orientation:(UIInterfaceOrientation)orientation
 {
     self = [super init];
@@ -47,47 +47,38 @@
         
         self.settingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
         
+        // Field view initialization
         [self.settingsAccess setBackgroundForUIObject:self.fieldView withKey:@"GameBackground"];
+        [self.fieldView setFrame:CGRectMake(self.fieldView.superview.bounds.origin.x + 20, self.fieldView.superview.bounds.origin.y + 20, self.fieldView.superview.bounds.size.width - 40, self.fieldView.superview.bounds.size.height - 40)];
+        [self.settingsAccess setBackgroundForUIObject:self.fieldView.superview withKey:@"Background"];
 
         // View of ball inizialization
         CGSize ballSize = CGSizeMake(20, 20);
-        //UIImage *ballImage = [self getImageForKey:@"Ball"];
-        UIImage *ballImage = [self getThemeImageForKey:@"Ball"];
-        CGPoint initialTopLeftBall = CGPointMake(self.fieldView.center.x - (ballSize.width/2), self.fieldView.center.y - (ballSize.height/2));
+        CGPoint initialTopLeftBall = CGPointMake((self.fieldView.bounds.size.width - ballSize.width)/2, (self.fieldView.bounds.size.height - ballSize.height)/2);
         self.ballView = [[UIImageView alloc] initWithFrame:CGRectMake(initialTopLeftBall.x, initialTopLeftBall.y, ballSize.width, ballSize.height)];
-        
-        [self setBackgroundForView:self.ballView withKey:@"Ball"];
+        [self.settingsAccess setBackgroundForUIObject:self.ballView withKey:@"Ball"];
+        UIImage *ballImage = self.ballView.image;
         [self.ballView setAlpha:1.0];
-        //[self.ballView setFrame:CGRectMake(initialTopLeftBall.x, initialTopLeftBall.y, ballSize.width, ballSize.height)];
-        
-        CGPoint __D_fieldViewCenter = self.fieldView.center;
-        CGPoint __D_ballViewCenter = self.ballView.center;
-        
-        [self.ballView setCenter:CGPointMake(initialTopLeftBall.x, initialTopLeftBall.y)];
-        
-        
-        CGPoint __D_ballCenter = self.ballView.center;
         
         [self.logic setBallImage:ballImage InitialPosition:initialTopLeftBall Size:ballSize];
+
+        
         
         // View of bars
         CGSize barSize = CGSizeMake(60, 20);
-        
-        //DEBUG
         UIImage *barImage = [self getThemeImageForKey:@"Bar"];
-        //UIImage *barImage = [UIImage imageNamed:@"pongbartest.png"];
         
         // Enemy Bar initialization
-        CGPoint initialTopLeftEnemyBar = CGPointMake(self.fieldView.center.x - (barSize.width/2), self.fieldView.frame.origin.y + 20);
+        CGPoint initialTopLeftEnemyBar = CGPointMake((self.fieldView.bounds.size.width - barSize.width)/2, self.fieldView.bounds.origin.y + 20);
         self.enemyBarView = [[UIImageView alloc] init];
         [self.enemyBarView setImage:barImage];
         [self.enemyBarView setAlpha:1.0];
         [self.enemyBarView setFrame:CGRectMake(initialTopLeftEnemyBar.x, initialTopLeftEnemyBar.y, barSize.width, barSize.height)];
-        
+
         [self.logic setEnemyBarImage:barImage InitialPosition:initialTopLeftEnemyBar Size:barSize];
         
         // User Bar initialization
-        CGPoint initialTopLeftUserBar = CGPointMake(self.fieldView.center.x - (barSize.width/2), self.fieldView.frame.size.height - barSize.height/2 - 20);
+        CGPoint initialTopLeftUserBar = CGPointMake((self.fieldView.bounds.size.width - barSize.width)/2, self.fieldView.bounds.size.height - barSize.height - 20);
         self.userBarView = [[UIImageView alloc] init];
         [self.userBarView setImage:barImage];
         [self.userBarView setAlpha:1.0];
@@ -98,7 +89,6 @@
         [self.fieldView addSubview:self.ballView];
         [self.fieldView addSubview:self.userBarView];
         [self.fieldView addSubview:self.enemyBarView];
-        [self.fieldView sendSubviewToBack:self.ballView];
         
     }
     else
@@ -274,11 +264,6 @@ bool isArrivedToPoint = true;
     {
         [self.timerForAnimation invalidate];
     }
-}
-
--(void)setBackgroundForView:(UIImageView*)view withKey:(NSString *)key
-{
-    [view setImage:[self getThemeImageForKey:key]];
 }
 
 -(UIImage*)getThemeImageForKey:(NSString*)key

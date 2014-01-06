@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
 @property (weak, nonatomic) IBOutlet UILabel *homeScore;
 @property (weak, nonatomic) IBOutlet UILabel *awayScore;
-@property (weak, nonatomic) IBOutlet UIImageView *fieldView;
+
 
 - (IBAction)pauseMenuPressed:(id)sender;
 

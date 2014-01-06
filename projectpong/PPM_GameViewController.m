@@ -17,13 +17,18 @@
 @interface PPM_GameViewController ()
 
 @property (nonatomic) BOOL isGameInPause;
-@property (nonatomic, retain) UIImageView *ballView;
-@property (nonatomic, strong) PPM_GameLogicAccessClass *logic;
+@property (retain, nonatomic) UIImageView *fieldView;
+@property (nonatomic, strong) PPM_GameLogicAccessClass *logicAccess;
 @property (nonatomic, strong) PPM_GameSettingsAccessClass *settingsAccess;
 
 @end
 
 @implementation PPM_GameViewController
+
+@synthesize fieldView = _fieldView;
+@synthesize logicAccess = _logicAccess;
+@synthesize settingsAccess = _settingsAccess;
+@synthesize isGameInPause = _isGameInPause;
 
 
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -43,19 +48,17 @@
     // pauseMenuView initialization
     [self.pauseMenuView setAlpha:0.0];
     [ACPopupViewManager showFlipAnimatedPopupView:self.pauseMenuView duration:0.5];
-    //while (![ACPopupViewManager isAnimationFinished]) {
-        
-    //}
     
     // pause/play button
     [self.pauseButton setImage:[ACCropImages cropImage:[UIImage imageNamed:PAUSE_PLAY_IMAGE] originX:0 originY:0 dimX:40 dimY:40] forState:UIControlStateNormal];
     [self.pauseButton setImage:[ACCropImages cropImage:[UIImage imageNamed:PAUSE_PLAY_IMAGE] originX:0 originY:80 dimX:40 dimY:40] forState:UIControlStateHighlighted];
     self.isGameInPause = TRUE;
     
-    //[self.settingsAccess setBackgroundForUIObject:self.view withKey:@"Background"];
-    
-    self.logic = [[PPM_GameLogicAccessClass alloc] initWithFieldView:self.gameView orientation:[[UIDevice currentDevice] orientation]];
-    [self.logic setScoreAway:self.awayScore andHome:self.homeScore];
+    self.fieldView = [[UIImageView alloc] init];
+    [self.gameView addSubview:self.fieldView];
+    [self.gameView sendSubviewToBack:self.fieldView];
+    self.logicAccess = [[PPM_GameLogicAccessClass alloc] initWithFieldView:_fieldView orientation:[[UIDevice currentDevice] orientation]];
+    [self.logicAccess setScoreAway:self.awayScore andHome:self.homeScore];
 }
 
 
@@ -76,7 +79,7 @@
             [self.pauseButton setImage:[ACCropImages cropImage:[UIImage imageNamed:PAUSE_PLAY_IMAGE] originX:40 originY:80 dimX:40 dimY:40] forState:UIControlStateHighlighted];
             
             self.isGameInPause = FALSE;
-            [self.logic setGameInPause:self.isGameInPause];
+            [self.logicAccess setGameInPause:self.isGameInPause];
         }
         else
         {
@@ -87,7 +90,7 @@
             
             [self.pauseButton setImage:[ACCropImages cropImage:[UIImage imageNamed:PAUSE_PLAY_IMAGE] originX:0 originY:80 dimX:40 dimY:40] forState:UIControlStateHighlighted];
             self.isGameInPause = TRUE;
-            [self.logic setGameInPause:self.isGameInPause];
+            [self.logicAccess setGameInPause:self.isGameInPause];
         }
     }
 }

@@ -22,6 +22,11 @@
     return self;
 }
 
+- (id)init
+{
+    @throw [NSException exceptionWithName:@"CantInitThisClass" reason:@"Wrong initialization of PPM_Bar. Use initWithImage:initialPosition:speed:size method." userInfo:nil];
+}
+
 -(float)center
 {
     return (self.position.x + self.size.width/2);
