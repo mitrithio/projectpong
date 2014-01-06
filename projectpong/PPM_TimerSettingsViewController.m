@@ -40,22 +40,43 @@
     self.TimerSelector.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
 
     
-    if (self.gameSettingsAccess.settings.isTimerSetted == true){
-    switch (self.gameSettingsAccess.settings.timer){
-        case 30:
-            [self.TimerSelector setSelectedSegmentIndex:(0)];
-            break;
-        case 60:
-            [self.TimerSelector setSelectedSegmentIndex:(1)];
-            break;
-            
-        case 90:
-            [self.TimerSelector setSelectedSegmentIndex:(2)];
-            break;
-        default:
-            NSLog(@"Error in parsing Theme enumeration");
-            @throw [NSException exceptionWithName:@"themeOutOfRange" reason:@"Error in setting defoult AIdifficulty" userInfo:nil];
+    if (self.gameSettingsAccess.settings.isTimerSetted){
+        [self.TimerOnOff setSelected:TRUE];
+        switch (self.gameSettingsAccess.settings.timer){
+            case 30:
+                [self.TimerSelector setSelectedSegmentIndex:(0)];
+                break;
+            case 60:
+                [self.TimerSelector setSelectedSegmentIndex:(1)];
+                break;
+                
+            case 120:
+                [self.TimerSelector setSelectedSegmentIndex:(2)];
+                break;
+            default:
+                NSLog(@"Error in parsing Theme enumeration");
+                @throw [NSException exceptionWithName:@"themeOutOfRange" reason:@"Error in setting defoult AIdifficulty" userInfo:nil];
+        }
     }
+    else
+    {
+        [self.TimerOnOff setOn:FALSE];
+        [self.TimerSelector setEnabled:FALSE];
+        switch (self.gameSettingsAccess.settings.timer){
+            case 30:
+                [self.TimerSelector setSelectedSegmentIndex:(0)];
+                break;
+            case 60:
+                [self.TimerSelector setSelectedSegmentIndex:(1)];
+                break;
+                
+            case 120:
+                [self.TimerSelector setSelectedSegmentIndex:(2)];
+                break;
+            default:
+                NSLog(@"Error in parsing Theme enumeration");
+                @throw [NSException exceptionWithName:@"themeOutOfRange" reason:@"Error in setting defoult AIdifficulty" userInfo:nil];
+        }
     }
         
 }
@@ -72,7 +93,7 @@
 - (IBAction)TimerOn:(id)sender {
     
     [self.gameSettingsAccess saveTimerOnOff:self.TimerOnOff];
-    
+
     if (self.TimerSelector.enabled == TRUE){
         self.TimerSelector.enabled = FALSE;}
     else{

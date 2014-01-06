@@ -53,10 +53,11 @@
     self.isGameInPause = TRUE;
     
     self.settingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
-    [self.settingsAccess setBackgroundForUIObject:self.fieldView withKey:@"GameBackground"];
-    [self.settingsAccess setBackgroundForUIObject:self.view withKey:@"Background"];
+    [self.settingsAccess setBackgroundForUIObject:self.gameView withKey:@"GameBackground"];
+    [self.gameView setBounds:CGRectMake(0, 0, 320, 568)];
+    //[self.settingsAccess setBackgroundForUIObject:self.view withKey:@"Background"];
     
-    self.logic = [[PPM_GameLogicAccessClass alloc] initWithFieldView:self.fieldView orientation:[[UIDevice currentDevice] orientation]];
+    self.logic = [[PPM_GameLogicAccessClass alloc] initWithFieldView:self.gameView orientation:[[UIDevice currentDevice] orientation]];
     [self.logic setScoreAway:self.awayScore andHome:self.homeScore];
 }
 

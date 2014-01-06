@@ -97,7 +97,7 @@
     }
     else if ([parserStringForTimerSelector isEqualToString:[timerSelector titleForSegmentAtIndex:2]])
     {
-        timeSelectorToInt = 90;
+        timeSelectorToInt = 120;
     }
     else
     {

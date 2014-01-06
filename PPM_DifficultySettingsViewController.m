@@ -53,7 +53,7 @@
             NSLog(@"Error in parsing Theme enumeration");
             @throw [NSException exceptionWithName:@"themeOutOfRange" reason:@"Error in setting defoult AIdifficulty" userInfo:nil];
     }
-    /*
+    
     switch (self.gameSettingsAccess.settings.ballSpeed){
         case easy:
             [self.BallSpeedSelector setSelectedSegmentIndex:(0)];
@@ -68,7 +68,7 @@
         default:
             NSLog(@"Error in parsing Theme enumeration");
             @throw [NSException exceptionWithName:@"themeOutOfRange" reason:@"Error in setting defoult ballspeed" userInfo:nil];
-    }*/
+    }
     
     
 }

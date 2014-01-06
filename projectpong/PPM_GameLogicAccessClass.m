@@ -35,7 +35,7 @@
 }
 
 
--(id)initWithFieldView:(UIImageView*)field
+-(id)initWithFieldView:(UIView*)field
           orientation:(UIInterfaceOrientation)orientation
 {
     self = [super init];

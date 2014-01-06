@@ -40,6 +40,7 @@
         [self takeSettedTheme];
         [self takeSettedIsTimer];
         [self takeSettedTimer];
+        [self takeSettedBallSpeed];
         self.colors = [[PPM_Colors alloc] init];
     }
     return self;
@@ -280,9 +281,9 @@
         {
             _timer = 60;
         }
-        else if ([timerSettedInDefaults isEqualToString:@"90"])
+        else if ([timerSettedInDefaults isEqualToString:@"120"])
         {
-            _timer = 90;
+            _timer = 120;
         }
         else
         {
@@ -307,9 +308,9 @@
     {
         [self.userDefaults setObject:@"60" forKey:TIMER];
     }
-    else if (timer == 90)
+    else if (timer == 120)
     {
-        [self.userDefaults setObject:@"60" forKey:TIMER];
+        [self.userDefaults setObject:@"120" forKey:TIMER];
     }
     else
     {
