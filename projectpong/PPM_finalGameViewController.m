@@ -48,6 +48,10 @@
     [self.gameSettingsAccess setBackgroundForUIObject:self.userImage withKey:@"User"];
 
     self.userLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
+    
+    self.userLable.text = [self.gameSettingsAccess getCurrentUserName];
+    
+    self.userImage.image = [self.gameSettingsAccess getCurrentUserImage];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,7 +68,9 @@
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:@"User + winning/loosing + result + on project pong"];
+        
+        NSString * twitterText = [NSString stringWithFormat:@"%@ %@ %@ %@ %@", [self.gameSettingsAccess getCurrentUserName], @"have" ,@"winning/loosing", @"result" , @"on project pong"];
+        [tweetSheet setInitialText:twitterText];
         [tweetSheet addImage:[UIImage imageNamed:@"iTunesProjectPong.png"]];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
@@ -82,7 +88,8 @@
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
         SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        [controller setInitialText:@"User + winning/loosing + result + on project pong"];
+        NSString * facebookText = [NSString stringWithFormat:@"%@ %@ %@ %@ %@", [self.gameSettingsAccess getCurrentUserName], @"have" ,@"winning/loosing", @"result" , @"on project pong"];
+        [controller setInitialText:facebookText];
         [controller addImage:[UIImage imageNamed:@"iTunesProjectPong.png"]];
         [self presentViewController:controller animated:YES completion:Nil];
     }

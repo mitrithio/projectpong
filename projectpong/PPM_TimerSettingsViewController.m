@@ -40,9 +40,9 @@
     self.TimerSelector.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
 
     
-    if (self.gameSettingsAccess.settings.isTimerSetted){
+    if ([self.gameSettingsAccess getCurrentTimerOnOff]){
         [self.TimerOnOff setSelected:TRUE];
-        switch (self.gameSettingsAccess.settings.timer){
+        switch ([self.gameSettingsAccess getCurrentTimerSelector]){
             case 30:
                 [self.TimerSelector setSelectedSegmentIndex:(0)];
                 break;
@@ -62,7 +62,7 @@
     {
         [self.TimerOnOff setOn:FALSE];
         [self.TimerSelector setEnabled:FALSE];
-        switch (self.gameSettingsAccess.settings.timer){
+        switch ([self.gameSettingsAccess getCurrentTimerSelector]){
             case 30:
                 [self.TimerSelector setSelectedSegmentIndex:(0)];
                 break;

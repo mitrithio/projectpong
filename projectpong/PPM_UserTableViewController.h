@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "PPM_GameSettingsAccessClass.h"
+
 #import <MobileCoreServices/MobileCoreServices.h>
 
 @interface PPM_UserTableViewController : UITableViewController <UIImagePickerControllerDelegate,
@@ -26,6 +27,7 @@ UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveUser;
 
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
+
 
 @property (strong, nonatomic) IBOutlet UITextField *nameTextField;
 

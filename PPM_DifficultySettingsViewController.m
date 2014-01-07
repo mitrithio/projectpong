@@ -38,7 +38,7 @@
     self.BallSpeedSelector.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
     
-    switch (self.gameSettingsAccess.settings.aiDifficulty){
+    switch ([self.gameSettingsAccess getCurrentAIDifficulty]){
         case easy:
             [self.AIDifficultySelector setSelectedSegmentIndex:(0)];
             break;
@@ -54,7 +54,7 @@
             @throw [NSException exceptionWithName:@"themeOutOfRange" reason:@"Error in setting defoult AIdifficulty" userInfo:nil];
     }
     
-    switch (self.gameSettingsAccess.settings.ballSpeed){
+    switch ([self.gameSettingsAccess getCurrentBallSpeed]){
         case easy:
             [self.BallSpeedSelector setSelectedSegmentIndex:(0)];
             break;

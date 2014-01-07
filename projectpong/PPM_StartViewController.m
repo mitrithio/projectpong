@@ -51,10 +51,12 @@
     
     [self.gameSettingsAccess setBackgroundForUIObject:self.startBackground withKey:@"Background"];
 
+    
+    self.userLable.text = [self.gameSettingsAccess getCurrentUserName];
     self.userLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
-    //if UserImage is Empty
-    [self.gameSettingsAccess setBackgroundForUIObject:self.userImage withKey:@"User"];
+    self.userImage.image = [self.gameSettingsAccess getCurrentUserImage];
+    //[self.gameSettingsAccess setBackgroundForUIObject:self.userImage withKey:@"User"];
     
     
     NSLog(@"ViewDidLoad loaded");

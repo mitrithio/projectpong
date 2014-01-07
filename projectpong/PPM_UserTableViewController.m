@@ -36,10 +36,6 @@
     
      [self.gameSettingsAccess setBackgroundForUIObject:self.userTable withKey:@"Background"];
     
-    self.imageCell.backgroundColor = [UIColor clearColor];
-    self.button2Cell.backgroundColor = [UIColor clearColor];
-    self.buttonCell.backgroundColor = [UIColor clearColor];
-    
     self.addImageFromCamera.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
     self.addImageFromLibrary.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
@@ -49,6 +45,7 @@
     //if UserImage is Empty
     [self.gameSettingsAccess setBackgroundForUIObject:self.userImage withKey:@"User"];
     
+    self.nameTextField.text = [self.gameSettingsAccess getCurrentUserName];
     [self.nameTextField setDelegate:self];
 
     }
@@ -69,10 +66,13 @@
 - (IBAction)saveButtonPressed:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc]
                           initWithTitle:@"Saving"
-                          message:[NSString stringWithFormat:@"saving the current information"] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                          message:[NSString stringWithFormat:@"saving the current information"] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
     [alert show];
     
+    //[self.gameSettingsAccess saveUserImage:self.userImage];
     
+    [self.gameSettingsAccess saveUserName:self.nameTextField];
+
 }
 
 
