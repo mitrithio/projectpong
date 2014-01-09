@@ -32,7 +32,7 @@
 
 - (id)init
 {
-    NSLog(@"Don't use init. Use initWithFieldView");
+    NSLog(@"Don't use init. Use initWithFieldView:orientation:");
     return self;
 }
 

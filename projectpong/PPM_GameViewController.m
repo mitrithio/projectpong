@@ -44,6 +44,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view.
     // pauseMenuView initialization
     [self.pauseMenuView setAlpha:0.0];

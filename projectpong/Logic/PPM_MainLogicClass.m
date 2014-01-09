@@ -107,19 +107,19 @@ bool isABarHitted = false;
 {
     [self.ball setPosition:CGPointMake(self.ball.position.x + deltaX, self.ball.position.y + deltaY)];
     [ballView setFrame:CGRectMake(self.ball.position.x, self.ball.position.y, self.ball.size.width, self.ball.size.height)];
-    if (ballView.frame.origin.x <= ballView.superview.frame.origin.x)
+    if (ballView.frame.origin.x <= ballView.superview.bounds.origin.x)
     {
         @throw [NSException exceptionWithName:@"hitLeft" reason:@"hit the left" userInfo:nil];
     }
-    if (ballView.frame.origin.y <= ballView.superview.frame.origin.y)
+    if (ballView.frame.origin.y <= ballView.superview.bounds.origin.y)
     {
         @throw [NSException exceptionWithName:@"hitUp" reason:@"hit the up" userInfo:nil];
     }
-    if ((ballView.frame.origin.x + ballView.frame.size.width) >= (ballView.superview.frame.origin.x + ballView.superview.frame.size.width))
+    if ((ballView.frame.origin.x + ballView.frame.size.width) >= (ballView.superview.bounds.origin.x + ballView.superview.bounds.size.width))
     {
         @throw [NSException exceptionWithName:@"hitRight" reason:@"hit the right" userInfo:nil];
     }
-    if ((ballView.frame.origin.y + ballView.frame.size.height) >= (ballView.superview.frame.origin.y + ballView.superview.frame.size.height))
+    if ((ballView.frame.origin.y + ballView.frame.size.height) >= (ballView.superview.bounds.origin.y + ballView.superview.bounds.size.height))
     {
         @throw [NSException exceptionWithName:@"hitDown" reason:@"hit the down" userInfo:nil];
     }
