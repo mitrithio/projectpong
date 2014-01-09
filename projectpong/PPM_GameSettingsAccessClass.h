@@ -26,7 +26,7 @@
 // ******* RETRIEVING INFORMATION TIME ******
 -(Difficulty)getCurrentAIDifficulty;
 -(Difficulty)getCurrentBallSpeed;
--(NSString*)getCurrentTheme;
+-(Theme)getCurrentTheme;
 -(BOOL)getCurrentTimerOnOff;
 -(int)getCurrentTimerSelector;
 -(UIImage*)getCurrentUserImage;

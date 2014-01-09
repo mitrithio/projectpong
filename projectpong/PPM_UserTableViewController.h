@@ -13,7 +13,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 
 @interface PPM_UserTableViewController : UITableViewController <UIImagePickerControllerDelegate,
-UINavigationControllerDelegate>
+UINavigationControllerDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *userTable;
 

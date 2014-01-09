@@ -63,7 +63,6 @@
 		68BCCDC21876CC8000517892 /* PlasticPlayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 68BCCDC11876CC8000517892 /* PlasticPlayButton.png */; };
 		68E15160186F1661004B5B26 /* PPM_SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E1515F186F1661004B5B26 /* PPM_SettingsTableViewController.m */; };
 		982070E3186B8D62006CD73F /* PPM_GameSettingsAccessClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 982070E2186B8D62006CD73F /* PPM_GameSettingsAccessClass.m */; };
-		982070E6186B8F8D006CD73F /* PPM_SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 982070E5186B8F8D006CD73F /* PPM_SettingsViewController.m */; };
 		9875869F1871DF410076EA89 /* PPM_Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9875869E1871DF410076EA89 /* PPM_Colors.m */; };
 		98E52AB9186A4FCF00EEB419 /* PPM_Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E52AB8186A4FCF00EEB419 /* PPM_Settings.m */; };
 		98EC34941876D5A6008B2E17 /* PlasticNumbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 98EC34931876D5A6008B2E17 /* PlasticNumbers.png */; };
@@ -176,8 +175,6 @@
 		68E1515F186F1661004B5B26 /* PPM_SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_SettingsTableViewController.m; sourceTree = "<group>"; };
 		982070E1186B8D62006CD73F /* PPM_GameSettingsAccessClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPM_GameSettingsAccessClass.h; path = ../PPM_GameSettingsAccessClass.h; sourceTree = "<group>"; };
 		982070E2186B8D62006CD73F /* PPM_GameSettingsAccessClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPM_GameSettingsAccessClass.m; path = ../PPM_GameSettingsAccessClass.m; sourceTree = "<group>"; };
-		982070E4186B8F8D006CD73F /* PPM_SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_SettingsViewController.h; sourceTree = "<group>"; };
-		982070E5186B8F8D006CD73F /* PPM_SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_SettingsViewController.m; sourceTree = "<group>"; };
 		9875869D1871DF410076EA89 /* PPM_Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_Colors.h; sourceTree = "<group>"; };
 		9875869E1871DF410076EA89 /* PPM_Colors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_Colors.m; sourceTree = "<group>"; };
 		98E52AB7186A4FCF00EEB419 /* PPM_Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_Settings.h; sourceTree = "<group>"; };
@@ -391,8 +388,6 @@
 				98F47A05186A1CD60048D3D3 /* PPM_RuleViewController.m */,
 				68E1515E186F1661004B5B26 /* PPM_SettingsTableViewController.h */,
 				68E1515F186F1661004B5B26 /* PPM_SettingsTableViewController.m */,
-				982070E4186B8F8D006CD73F /* PPM_SettingsViewController.h */,
-				982070E5186B8F8D006CD73F /* PPM_SettingsViewController.m */,
 				6849B2CD1875B6C100431F38 /* PPM_SocialSettingsViewController.h */,
 				6849B2CE1875B6C100431F38 /* PPM_SocialSettingsViewController.m */,
 				6861DAE9186C873600EDA5EC /* PPM_ThemeSettingsViewController.h */,
@@ -647,7 +642,6 @@
 				982070E3186B8D62006CD73F /* PPM_GameSettingsAccessClass.m in Sources */,
 				9875869F1871DF410076EA89 /* PPM_Colors.m in Sources */,
 				98F47A11186A1CD60048D3D3 /* PPM_RuleViewController.m in Sources */,
-				982070E6186B8F8D006CD73F /* PPM_SettingsViewController.m in Sources */,
 				98E52AB9186A4FCF00EEB419 /* PPM_Settings.m in Sources */,
 				68E15160186F1661004B5B26 /* PPM_SettingsTableViewController.m in Sources */,
 				98F47A0C186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m in Sources */,

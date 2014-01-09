@@ -43,7 +43,8 @@
     self.saveUser.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
     //if UserImage is Empty
-    [self.gameSettingsAccess setBackgroundForUIObject:self.userImage withKey:@"User"];
+    //[self.gameSettingsAccess setBackgroundForUIObject:self.userImage withKey:@"User"];
+    self.userImage.image = [self.gameSettingsAccess getCurrentUserImage];
     
     self.nameTextField.text = [self.gameSettingsAccess getCurrentUserName];
     [self.nameTextField setDelegate:self];
@@ -69,7 +70,7 @@
                           message:[NSString stringWithFormat:@"saving the current information"] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
     [alert show];
     
-    //[self.gameSettingsAccess saveUserImage:self.userImage];
+    [self.gameSettingsAccess saveUserImage:self.userImage];
     
     [self.gameSettingsAccess saveUserName:self.nameTextField];
 

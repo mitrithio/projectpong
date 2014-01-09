@@ -134,7 +134,6 @@
     else if ([object isKindOfClass:[UIView class]])
     {
         UIView *view = object;
-        UIColor *color = [UIColor colorWithPatternImage:[self getThemeImageForKey:key]];
         [view setBackgroundColor:[UIColor colorWithPatternImage:[self getThemeImageForKey:key]]];
         
     }
@@ -168,9 +167,9 @@
     return self.settings.ballSpeed;
 }
 
--(NSString*)getCurrentTheme
+-(Theme)getCurrentTheme
 {
-    return [self.settings settedThemeToString];
+    return [self.settings theme];
 }
 
 -(BOOL)getCurrentTimerOnOff

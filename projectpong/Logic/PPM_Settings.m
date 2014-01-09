@@ -407,8 +407,9 @@
 
 -(UIImage*)takeSettedUserImage
 {
+    NSData *imageData = [self.userDefaults objectForKey:IMAGE];
     UIImage *userImageSettedInDefaults = [[UIImage alloc] init];
-    userImageSettedInDefaults = [[self.userDefaults objectForKey:IMAGE] mutableCopy];
+    userImageSettedInDefaults = [UIImage imageWithData:imageData];
     if (!userImageSettedInDefaults)
     {
         @throw [NSException exceptionWithName:@"ImageNotFound" reason:@"No saved image in user defaults" userInfo:nil];
@@ -422,12 +423,12 @@
     userImageSettedInDefaults = [[self.userDefaults objectForKey:IMAGE] mutableCopy];
     if (!userImageSettedInDefaults)
     {
-        [self.userDefaults setObject:image forKey:IMAGE];
+        [self.userDefaults setObject:UIImagePNGRepresentation(image) forKey:IMAGE];
     }
     else
     {
         [self.userDefaults removeObjectForKey:IMAGE];
-        [self.userDefaults setObject:image forKey:IMAGE];
+        [self.userDefaults setObject:UIImagePNGRepresentation(image) forKey:IMAGE];
     }
     [self.userDefaults synchronize];
 }
@@ -457,7 +458,6 @@
         [self.userDefaults setObject:username forKey:USERNAME];
     }
     [self.userDefaults synchronize];
-    [self takeSettedAIDifficulty];
 }
 
 @end
