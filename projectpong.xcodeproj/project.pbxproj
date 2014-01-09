@@ -61,6 +61,22 @@
 		68B4F417186DC12F00C8567E /* PPM_UserAccountPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B4F416186DC12F00C8567E /* PPM_UserAccountPageViewController.m */; };
 		68BCCDC01876CC6800517892 /* ClassicNumbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 68BCCDBF1876CC6800517892 /* ClassicNumbers.png */; };
 		68BCCDC21876CC8000517892 /* PlasticPlayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 68BCCDC11876CC8000517892 /* PlasticPlayButton.png */; };
+		68DCA3DE187F0931005B980C /* ClassicAlertSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68DCA3CF187F0931005B980C /* ClassicAlertSound.wav */; };
+		68DCA3DF187F0931005B980C /* ClassicBall1Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68DCA3D0187F0931005B980C /* ClassicBall1Sound.wav */; };
+		68DCA3E0187F0931005B980C /* ClassicBall2Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68DCA3D1187F0931005B980C /* ClassicBall2Sound.wav */; };
+		68DCA3E1187F0931005B980C /* ClassicMainSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68DCA3D2187F0931005B980C /* ClassicMainSound.mp3 */; };
+		68DCA3E2187F0931005B980C /* ClassicScoreSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68DCA3D3187F0931005B980C /* ClassicScoreSound.wav */; };
+		68DCA3E3187F0931005B980C /* ClassicWinSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68DCA3D4187F0931005B980C /* ClassicWinSound.wav */; };
+		68DCA3E4187F0931005B980C /* GameOverSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68DCA3D5187F0931005B980C /* GameOverSound.wav */; };
+		68DCA3E5187F0931005B980C /* GameStartSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68DCA3D6187F0931005B980C /* GameStartSound.wav */; };
+		68DCA3E6187F0931005B980C /* PlasticAlertSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68DCA3D8187F0931005B980C /* PlasticAlertSound.wav */; };
+		68DCA3E7187F0931005B980C /* PlasticBall1Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68DCA3D9187F0931005B980C /* PlasticBall1Sound.wav */; };
+		68DCA3E8187F0931005B980C /* PlasticBall2Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68DCA3DA187F0931005B980C /* PlasticBall2Sound.wav */; };
+		68DCA3E9187F0931005B980C /* PlasticMainSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68DCA3DB187F0931005B980C /* PlasticMainSound.wav */; };
+		68DCA3EA187F0931005B980C /* PlasticScoreSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68DCA3DC187F0931005B980C /* PlasticScoreSound.wav */; };
+		68DCA3EB187F0931005B980C /* PlasticWinSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68DCA3DD187F0931005B980C /* PlasticWinSound.wav */; };
+		68DCA3EE187F0CD7005B980C /* PPM_LocalScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DCA3ED187F0CD7005B980C /* PPM_LocalScoreViewController.m */; };
+		68DCA3F1187F0CE6005B980C /* PPM_SocialScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DCA3F0187F0CE6005B980C /* PPM_SocialScoreViewController.m */; };
 		68E15160186F1661004B5B26 /* PPM_SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E1515F186F1661004B5B26 /* PPM_SettingsTableViewController.m */; };
 		982070E3186B8D62006CD73F /* PPM_GameSettingsAccessClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 982070E2186B8D62006CD73F /* PPM_GameSettingsAccessClass.m */; };
 		9875869F1871DF410076EA89 /* PPM_Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9875869E1871DF410076EA89 /* PPM_Colors.m */; };
@@ -171,6 +187,24 @@
 		68B4F416186DC12F00C8567E /* PPM_UserAccountPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_UserAccountPageViewController.m; sourceTree = "<group>"; };
 		68BCCDBF1876CC6800517892 /* ClassicNumbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClassicNumbers.png; sourceTree = "<group>"; };
 		68BCCDC11876CC8000517892 /* PlasticPlayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticPlayButton.png; sourceTree = "<group>"; };
+		68DCA3CF187F0931005B980C /* ClassicAlertSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ClassicAlertSound.wav; sourceTree = "<group>"; };
+		68DCA3D0187F0931005B980C /* ClassicBall1Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ClassicBall1Sound.wav; sourceTree = "<group>"; };
+		68DCA3D1187F0931005B980C /* ClassicBall2Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ClassicBall2Sound.wav; sourceTree = "<group>"; };
+		68DCA3D2187F0931005B980C /* ClassicMainSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ClassicMainSound.mp3; sourceTree = "<group>"; };
+		68DCA3D3187F0931005B980C /* ClassicScoreSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ClassicScoreSound.wav; sourceTree = "<group>"; };
+		68DCA3D4187F0931005B980C /* ClassicWinSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ClassicWinSound.wav; sourceTree = "<group>"; };
+		68DCA3D5187F0931005B980C /* GameOverSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GameOverSound.wav; sourceTree = "<group>"; };
+		68DCA3D6187F0931005B980C /* GameStartSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GameStartSound.wav; sourceTree = "<group>"; };
+		68DCA3D8187F0931005B980C /* PlasticAlertSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PlasticAlertSound.wav; sourceTree = "<group>"; };
+		68DCA3D9187F0931005B980C /* PlasticBall1Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PlasticBall1Sound.wav; sourceTree = "<group>"; };
+		68DCA3DA187F0931005B980C /* PlasticBall2Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PlasticBall2Sound.wav; sourceTree = "<group>"; };
+		68DCA3DB187F0931005B980C /* PlasticMainSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PlasticMainSound.wav; sourceTree = "<group>"; };
+		68DCA3DC187F0931005B980C /* PlasticScoreSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PlasticScoreSound.wav; sourceTree = "<group>"; };
+		68DCA3DD187F0931005B980C /* PlasticWinSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PlasticWinSound.wav; sourceTree = "<group>"; };
+		68DCA3EC187F0CD7005B980C /* PPM_LocalScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_LocalScoreViewController.h; sourceTree = "<group>"; };
+		68DCA3ED187F0CD7005B980C /* PPM_LocalScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_LocalScoreViewController.m; sourceTree = "<group>"; };
+		68DCA3EF187F0CE6005B980C /* PPM_SocialScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_SocialScoreViewController.h; sourceTree = "<group>"; };
+		68DCA3F0187F0CE6005B980C /* PPM_SocialScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_SocialScoreViewController.m; sourceTree = "<group>"; };
 		68E1515E186F1661004B5B26 /* PPM_SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_SettingsTableViewController.h; sourceTree = "<group>"; };
 		68E1515F186F1661004B5B26 /* PPM_SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_SettingsTableViewController.m; sourceTree = "<group>"; };
 		982070E1186B8D62006CD73F /* PPM_GameSettingsAccessClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPM_GameSettingsAccessClass.h; path = ../PPM_GameSettingsAccessClass.h; sourceTree = "<group>"; };
@@ -322,6 +356,43 @@
 			path = PlasticTheme;
 			sourceTree = "<group>";
 		};
+		68DCA3CD187F0931005B980C /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				68DCA3CE187F0931005B980C /* ClassicSound */,
+				68DCA3D5187F0931005B980C /* GameOverSound.wav */,
+				68DCA3D6187F0931005B980C /* GameStartSound.wav */,
+				68DCA3D7187F0931005B980C /* PlasticSound */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		68DCA3CE187F0931005B980C /* ClassicSound */ = {
+			isa = PBXGroup;
+			children = (
+				68DCA3CF187F0931005B980C /* ClassicAlertSound.wav */,
+				68DCA3D0187F0931005B980C /* ClassicBall1Sound.wav */,
+				68DCA3D1187F0931005B980C /* ClassicBall2Sound.wav */,
+				68DCA3D2187F0931005B980C /* ClassicMainSound.mp3 */,
+				68DCA3D3187F0931005B980C /* ClassicScoreSound.wav */,
+				68DCA3D4187F0931005B980C /* ClassicWinSound.wav */,
+			);
+			path = ClassicSound;
+			sourceTree = "<group>";
+		};
+		68DCA3D7187F0931005B980C /* PlasticSound */ = {
+			isa = PBXGroup;
+			children = (
+				68DCA3D8187F0931005B980C /* PlasticAlertSound.wav */,
+				68DCA3D9187F0931005B980C /* PlasticBall1Sound.wav */,
+				68DCA3DA187F0931005B980C /* PlasticBall2Sound.wav */,
+				68DCA3DB187F0931005B980C /* PlasticMainSound.wav */,
+				68DCA3DC187F0931005B980C /* PlasticScoreSound.wav */,
+				68DCA3DD187F0931005B980C /* PlasticWinSound.wav */,
+			);
+			path = PlasticSound;
+			sourceTree = "<group>";
+		};
 		98EC34971876F451008B2E17 /* StaticLibraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +477,10 @@
 				98F479C0186A1B920048D3D3 /* Supporting Files */,
 				6872665818771B4B00F120E0 /* PPM_finalGameViewController.h */,
 				6872665918771B4B00F120E0 /* PPM_finalGameViewController.m */,
+				68DCA3EC187F0CD7005B980C /* PPM_LocalScoreViewController.h */,
+				68DCA3ED187F0CD7005B980C /* PPM_LocalScoreViewController.m */,
+				68DCA3EF187F0CE6005B980C /* PPM_SocialScoreViewController.h */,
+				68DCA3F0187F0CE6005B980C /* PPM_SocialScoreViewController.m */,
 			);
 			path = projectpong;
 			sourceTree = "<group>";
@@ -460,6 +535,7 @@
 		98F47A13186A1CE70048D3D3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				68DCA3CD187F0931005B980C /* Sound */,
 				98F479FA186A1CD60048D3D3 /* PPM_GameLogicAccessClass.h */,
 				98F479FB186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m */,
 				982070E1186B8D62006CD73F /* PPM_GameSettingsAccessClass.h */,
@@ -563,9 +639,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68DCA3DF187F0931005B980C /* ClassicBall1Sound.wav in Resources */,
 				6861DAE5186C847800EDA5EC /* PlasticScoreButton.png in Resources */,
 				681242851879B27500B3009F /* ProjectPong76x76@2x.png in Resources */,
 				6849B2BA1875772F00431F38 /* ClassicThemeButton.png in Resources */,
+				68DCA3E3187F0931005B980C /* ClassicWinSound.wav in Resources */,
 				6849B2CC1875AD0600431F38 /* ClassicUser.png in Resources */,
 				68BCCDC01876CC6800517892 /* ClassicNumbers.png in Resources */,
 				6849B2C8187580D000431F38 /* ClassicRuleButton.png in Resources */,
@@ -582,9 +660,17 @@
 				681242801879B27500B3009F /* ProjectPong60x60.png in Resources */,
 				98F479D0186A1B920048D3D3 /* Main_iPad.storyboard in Resources */,
 				6849B2C018757B9B00431F38 /* ClassicGameBackground.png in Resources */,
+				68DCA3E5187F0931005B980C /* GameStartSound.wav in Resources */,
+				68DCA3EB187F0931005B980C /* PlasticWinSound.wav in Resources */,
+				68DCA3E9187F0931005B980C /* PlasticMainSound.wav in Resources */,
+				68DCA3E7187F0931005B980C /* PlasticBall1Sound.wav in Resources */,
+				68DCA3DE187F0931005B980C /* ClassicAlertSound.wav in Resources */,
+				68DCA3EA187F0931005B980C /* PlasticScoreSound.wav in Resources */,
 				6812427F1879B27500B3009F /* ProjectPong57x57@2x.png in Resources */,
 				6849B2CA187580D000431F38 /* ClassicSettingsButton.png in Resources */,
+				68DCA3E6187F0931005B980C /* PlasticAlertSound.wav in Resources */,
 				68BCCDC21876CC8000517892 /* PlasticPlayButton.png in Resources */,
+				68DCA3E8187F0931005B980C /* PlasticBall2Sound.wav in Resources */,
 				6861DADF186C847800EDA5EC /* PlasticBackground.png in Resources */,
 				6849B2BD18757A3E00431F38 /* ClassicBackground.png in Resources */,
 				98F479D5186A1B920048D3D3 /* Images.xcassets in Resources */,
@@ -595,6 +681,8 @@
 				6861DAE3186C847800EDA5EC /* PlasticPlayButton.png in Resources */,
 				6861DAE7186C847800EDA5EC /* PlasticTitle.png in Resources */,
 				98F479CD186A1B920048D3D3 /* Main_iPhone.storyboard in Resources */,
+				68DCA3E0187F0931005B980C /* ClassicBall2Sound.wav in Resources */,
+				68DCA3E2187F0931005B980C /* ClassicScoreSound.wav in Resources */,
 				686D416D18799AC20085E6B4 /* PlasticWin.png in Resources */,
 				681242771879B27500B3009F /* iTunesProjectPong@2x.png in Resources */,
 				681242761879B27500B3009F /* iTunesProjectPong.png in Resources */,
@@ -605,11 +693,13 @@
 				6812427A1879B27500B3009F /* ProjectPong40x40.png in Resources */,
 				6861DAE0186C847800EDA5EC /* PlasticBall.png in Resources */,
 				686D417118799AD50085E6B4 /* ClassicWin.png in Resources */,
+				68DCA3E4187F0931005B980C /* GameOverSound.wav in Resources */,
 				689D7DD61872D054008949B5 /* twitterICon.png in Resources */,
 				6861DAE1186C847800EDA5EC /* PlasticBar.png in Resources */,
 				6849B2C6187580D000431F38 /* ClassicBall.png in Resources */,
 				6849B2C7187580D000431F38 /* ClassicPlayButton.png in Resources */,
 				681242821879B27500B3009F /* ProjectPong72x72.png in Resources */,
+				68DCA3E1187F0931005B980C /* ClassicMainSound.mp3 in Resources */,
 				6861DAE4186C847800EDA5EC /* PlasticRuleButton.png in Resources */,
 				6849B2C9187580D000431F38 /* ClassicScoreButton.png in Resources */,
 				681242841879B27500B3009F /* ProjectPong76x76.png in Resources */,
@@ -650,6 +740,7 @@
 				98F47A10186A1CD60048D3D3 /* PPM_RICPageViewController.m in Sources */,
 				98F47A0E186A1CD60048D3D3 /* PPM_GameViewController.m in Sources */,
 				98F47A0B186A1CD60048D3D3 /* PPM_CreditsViewController.m in Sources */,
+				68DCA3EE187F0CD7005B980C /* PPM_LocalScoreViewController.m in Sources */,
 				6861DAD0186C7E0D00EDA5EC /* PPM_TimerSettingsViewController.m in Sources */,
 				6861DAEB186C873600EDA5EC /* PPM_ThemeSettingsViewController.m in Sources */,
 				98F479CA186A1B920048D3D3 /* PPM_AppDelegate.m in Sources */,
@@ -659,6 +750,7 @@
 				98F47A0A186A1CD60048D3D3 /* PPM_MainLogicClass.m in Sources */,
 				6872665A18771B4B00F120E0 /* PPM_finalGameViewController.m in Sources */,
 				98F47A2A186A1CE70048D3D3 /* ACPopupViewManager.m in Sources */,
+				68DCA3F1187F0CE6005B980C /* PPM_SocialScoreViewController.m in Sources */,
 				6849B2CF1875B6C100431F38 /* PPM_SocialSettingsViewController.m in Sources */,
 				98F47A29186A1CE70048D3D3 /* ACCropImages.m in Sources */,
 				98F479C6186A1B920048D3D3 /* main.m in Sources */,
