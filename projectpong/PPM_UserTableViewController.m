@@ -66,8 +66,8 @@
 
 - (IBAction)saveButtonPressed:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:@"Saving"
-                          message:[NSString stringWithFormat:@"saving the current information"] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+                          initWithTitle:@"Save"
+                          message:[NSString stringWithFormat:@"I have saved the current information"] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
     [alert show];
     
     [self.gameSettingsAccess saveUserImage:self.userImage];
