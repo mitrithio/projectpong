@@ -124,7 +124,7 @@
                 <viewController title="Game" id="qNY-cE-WHv" customClass="PPM_GameViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="1Zd-Od-JEc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="R6Q-qf-CEY">
                                 <rect key="frame" x="295" y="0.0" width="25" height="25"/>
@@ -137,46 +137,6 @@
                                     <action selector="pauseMenuPressed:" destination="qNY-cE-WHv" eventType="touchUpInside" id="f7P-SW-osl"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" id="cBg-1Y-UG0">
-                                <rect key="frame" x="20" y="135" width="280" height="275"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oZp-Jd-fH8">
-                                        <rect key="frame" x="99" y="225" width="83" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="end game">
-                                            <color key="titleColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="YFF-8D-1O3" kind="modal" modalTransitionStyle="crossDissolve" id="tW7-5m-LV4"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RvB-d5-imA">
-                                        <rect key="frame" x="20" y="20" width="91" height="47"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                        <color key="textColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7fO-iM-blx">
-                                        <rect key="frame" x="170" y="20" width="90" height="47"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                        <color key="textColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gXD-e4-iTy">
-                                        <rect key="frame" x="115" y="20" width="51" height="47"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                        <color key="textColor" red="0.97520041469999996" green="0.0" blue="0.01149630236" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.37937330159999999" green="0.37937330159999999" blue="0.37937330159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99900363910000001" blue="0.99799009780000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -184,59 +144,15 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="awayScore" destination="7fO-iM-blx" id="sIQ-EH-PaF"/>
                         <outlet property="gameView" destination="1Zd-Od-JEc" id="HUT-55-h8m"/>
-                        <outlet property="homeScore" destination="RvB-d5-imA" id="Oz0-RY-DsU"/>
                         <outlet property="pauseButton" destination="R6Q-qf-CEY" id="Shw-bF-xq6"/>
-                        <outlet property="pauseMenuView" destination="cBg-1Y-UG0" id="ePG-1r-8AP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWj-Gj-X3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="600" y="-1600"/>
         </scene>
-        <!--Field Portrait View Controller - Game-->
-        <scene sceneID="QGU-8E-VH1">
-            <objects>
-                <viewController title="Game" id="7AF-Kw-FyB" customClass="PPM_FieldPortraitViewController" sceneMemberID="viewController">
-                    <view key="view" autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" id="468-js-VwG">
-                        <rect key="frame" x="0.0" y="0.0" width="280" height="528"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="0rG-io-wLG">
-                                <rect key="frame" x="0.0" y="-15" width="280" height="558"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bBU-bw-AfO">
-                                <rect key="frame" x="110" y="20" width="60" height="20"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="7GH-N9-swE">
-                                <rect key="frame" x="110" y="488" width="60" height="20"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Xd3-QU-fLh">
-                                <rect key="frame" x="130" y="254" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="0.99900363910000001" blue="0.99799009780000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <connections>
-                        <outlet property="gameView" destination="468-js-VwG" id="DEY-tv-txF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xoc-jn-HJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="167" y="-2266"/>
-        </scene>
-        <!--View Controller - Local-->
+        <!--Local Score View Controller - Local-->
         <scene sceneID="z7Z-uv-PYq">
             <objects>
                 <viewController id="nlJ-c7-vfb" customClass="PPM_LocalScoreViewController" sceneMemberID="viewController">
@@ -1036,7 +952,7 @@
         <!--final Game View Controller-->
         <scene sceneID="0Xn-0G-4YE">
             <objects>
-                <viewController id="YFF-8D-1O3" customClass="PPM_finalGameViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EndGameID" id="YFF-8D-1O3" customClass="PPM_finalGameViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9da-vT-1nF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1355,7 +1271,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="XdL-gz-SW9"/>
-        <segue reference="pFc-y7-gBG"/>
+        <segue reference="SQn-5X-kBE"/>
+        <segue reference="VCc-Wd-laI"/>
     </inferredMetricsTieBreakers>
 </document>

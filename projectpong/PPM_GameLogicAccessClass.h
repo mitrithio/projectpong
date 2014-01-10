@@ -13,7 +13,7 @@
 
 -(void)animateTheBall;
 
--(id)initWithFieldView:(UIImageView*)field;
+-(id)initWithGameView:(UIView*)gameView;
 
 -(void)setGameInPause:(BOOL)pause;
 

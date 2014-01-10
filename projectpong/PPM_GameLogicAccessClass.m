@@ -14,7 +14,7 @@
 @interface PPM_GameLogicAccessClass ()
 
 @property (nonatomic, retain) PPM_MainLogicClass *logic;
-@property (nonatomic, retain) UIImageView * fieldView;
+@property (nonatomic, retain) UIImageView * fieldPortraitView;
 @property (nonatomic, retain) UIImageView * ballView;
 @property (nonatomic, retain) UIImageView * enemyBarView;
 @property (nonatomic, retain) UIImageView * userBarView;
@@ -37,27 +37,29 @@
 }
 
 
--(id)initWithFieldView:(UIImageView*)field
+-(id)initWithGameView:(UIView*)gameView
 {
     self = [super init];
     if (self) {
-        self.fieldView = field;
-        self.logic = [[PPM_MainLogicClass alloc] initWithGameField:self.fieldView];
+        self.fieldPortraitView = [[UIImageView alloc] init];
+        [gameView addSubview:self.fieldPortraitView];
+        [gameView sendSubviewToBack:self.fieldPortraitView];
+        self.logic = [[PPM_MainLogicClass alloc] initWithGameField:self.fieldPortraitView];
         
         self.settingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
         
-        [self.settingsAccess setBackgroundForUIObject:self.fieldView.superview withKey:@"Background"];
+        [self.settingsAccess setBackgroundForUIObject:gameView withKey:@"Background"];
         
         self.ballView = [[UIImageView alloc] init];
         self.enemyBarView = [[UIImageView alloc] init];
         self.userBarView = [[UIImageView alloc] init];
         
-            [self.fieldView setFrame:CGRectMake(self.fieldView.superview.bounds.origin.x + 20, self.fieldView.superview.bounds.origin.y + 20, self.fieldView.superview.bounds.size.width - 40, self.fieldView.superview.bounds.size.height - 40)];
-            [self.settingsAccess setBackgroundForUIObject:self.fieldView withKey:@"GameBackground"];
+            [self.fieldPortraitView setFrame:CGRectMake(self.fieldPortraitView.superview.bounds.origin.x + 20, self.fieldPortraitView.superview.bounds.origin.y + 20, self.fieldPortraitView.superview.bounds.size.width - 40, self.fieldPortraitView.superview.bounds.size.height - 40)];
+            [self.settingsAccess setBackgroundForUIObject:self.fieldPortraitView withKey:@"GameBackground"];
         
             // View of ball inizialization
             CGSize ballSize = CGSizeMake(20, 20);
-            CGPoint initialTopLeftBall = CGPointMake((self.fieldView.bounds.size.width - ballSize.width)/2, (self.fieldView.bounds.size.height - ballSize.height)/2);
+            CGPoint initialTopLeftBall = CGPointMake((self.fieldPortraitView.bounds.size.width - ballSize.width)/2, (self.fieldPortraitView.bounds.size.height - ballSize.height)/2);
             self.ballView = [[UIImageView alloc] initWithFrame:CGRectMake(initialTopLeftBall.x, initialTopLeftBall.y, ballSize.width, ballSize.height)];
             [self.settingsAccess setBackgroundForUIObject:self.ballView withKey:@"Ball"];
             UIImage *ballImage = self.ballView.image;
@@ -72,7 +74,7 @@
             UIImage *barImage = [self getThemeImageForKey:@"Bar"];
             
             // Enemy Bar initialization
-            CGPoint initialTopLeftEnemyBar = CGPointMake((self.fieldView.bounds.size.width - barSize.width)/2, self.fieldView.bounds.origin.y + 20);
+            CGPoint initialTopLeftEnemyBar = CGPointMake((self.fieldPortraitView.bounds.size.width - barSize.width)/2, self.fieldPortraitView.bounds.origin.y + 20);
             self.enemyBarView = [[UIImageView alloc] init];
             [self.enemyBarView setImage:barImage];
             [self.enemyBarView setAlpha:1.0];
@@ -81,7 +83,7 @@
             [self.logic setEnemyBarImage:barImage InitialPosition:initialTopLeftEnemyBar Size:barSize];
             
             // User Bar initialization
-            CGPoint initialTopLeftUserBar = CGPointMake((self.fieldView.bounds.size.width - barSize.width)/2, self.fieldView.bounds.size.height - barSize.height - 20);
+            CGPoint initialTopLeftUserBar = CGPointMake((self.fieldPortraitView.bounds.size.width - barSize.width)/2, self.fieldPortraitView.bounds.size.height - barSize.height - 20);
             self.userBarView = [[UIImageView alloc] init];
             [self.userBarView setImage:barImage];
             [self.userBarView setAlpha:1.0];
@@ -89,9 +91,9 @@
             
             [self.logic setUserBarImage:barImage InitialPosition:initialTopLeftUserBar Size:barSize];
         
-        [self.fieldView addSubview:self.ballView];
-        [self.fieldView addSubview:self.userBarView];
-        [self.fieldView addSubview:self.enemyBarView];
+        [self.fieldPortraitView addSubview:self.ballView];
+        [self.fieldPortraitView addSubview:self.userBarView];
+        [self.fieldPortraitView addSubview:self.enemyBarView];
         
     }
     else
