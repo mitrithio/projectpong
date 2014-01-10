@@ -243,7 +243,7 @@ float arrivingParallelCoordinatePoint;
 
 -(void)reloadBallInCenter:(UIImageView *)ballView
 {
-    [self.ball setPosition:CGPointMake(ballView.superview.center.x - (self.ball.size.width/2), ballView.superview.center.y - (self.ball.size.height/2))];
+    [self.ball setPosition:CGPointMake((ballView.superview.bounds.size.width - self.ball.size.width)/2, (ballView.superview.bounds.size.height - self.ball.size.height)/2)];
     [ballView setFrame:CGRectMake(self.ball.position.x, self.ball.position.y, self.ball.size.width, self.ball.size.height)];
 }
 

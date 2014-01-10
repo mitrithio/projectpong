@@ -22,7 +22,7 @@
 @property (nonatomic, retain) UILabel *homeScore;
 
 @property (nonatomic, retain) NSTimer *timerForAnimation;
-@property (nonatomic, retain) NSTimer *timerFor2Animation;
+@property (nonatomic, retain) NSTimer *timerForTimer;
 
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *settingsAccess;
 @end
@@ -38,7 +38,6 @@
 
 
 -(id)initWithFieldView:(UIImageView*)field
-          orientation:(UIInterfaceOrientation)orientation
 {
     self = [super init];
     if (self) {
@@ -47,44 +46,48 @@
         
         self.settingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
         
-        // Field view initialization
-        [self.settingsAccess setBackgroundForUIObject:self.fieldView withKey:@"GameBackground"];
-        [self.fieldView setFrame:CGRectMake(self.fieldView.superview.bounds.origin.x + 20, self.fieldView.superview.bounds.origin.y + 20, self.fieldView.superview.bounds.size.width - 40, self.fieldView.superview.bounds.size.height - 40)];
         [self.settingsAccess setBackgroundForUIObject:self.fieldView.superview withKey:@"Background"];
-
-        // View of ball inizialization
-        CGSize ballSize = CGSizeMake(20, 20);
-        CGPoint initialTopLeftBall = CGPointMake((self.fieldView.bounds.size.width - ballSize.width)/2, (self.fieldView.bounds.size.height - ballSize.height)/2);
-        self.ballView = [[UIImageView alloc] initWithFrame:CGRectMake(initialTopLeftBall.x, initialTopLeftBall.y, ballSize.width, ballSize.height)];
-        [self.settingsAccess setBackgroundForUIObject:self.ballView withKey:@"Ball"];
-        UIImage *ballImage = self.ballView.image;
-        [self.ballView setAlpha:1.0];
         
-        [self.logic setBallImage:ballImage InitialPosition:initialTopLeftBall Size:ballSize];
-
-        
-        
-        // View of bars
-        CGSize barSize = CGSizeMake(60, 20);
-        UIImage *barImage = [self getThemeImageForKey:@"Bar"];
-        
-        // Enemy Bar initialization
-        CGPoint initialTopLeftEnemyBar = CGPointMake((self.fieldView.bounds.size.width - barSize.width)/2, self.fieldView.bounds.origin.y + 20);
+        self.ballView = [[UIImageView alloc] init];
         self.enemyBarView = [[UIImageView alloc] init];
-        [self.enemyBarView setImage:barImage];
-        [self.enemyBarView setAlpha:1.0];
-        [self.enemyBarView setFrame:CGRectMake(initialTopLeftEnemyBar.x, initialTopLeftEnemyBar.y, barSize.width, barSize.height)];
-
-        [self.logic setEnemyBarImage:barImage InitialPosition:initialTopLeftEnemyBar Size:barSize];
-        
-        // User Bar initialization
-        CGPoint initialTopLeftUserBar = CGPointMake((self.fieldView.bounds.size.width - barSize.width)/2, self.fieldView.bounds.size.height - barSize.height - 20);
         self.userBarView = [[UIImageView alloc] init];
-        [self.userBarView setImage:barImage];
-        [self.userBarView setAlpha:1.0];
-        [self.userBarView setFrame:CGRectMake(initialTopLeftUserBar.x, initialTopLeftUserBar.y, barSize.width, barSize.height)];
         
-        [self.logic setUserBarImage:barImage InitialPosition:initialTopLeftUserBar Size:barSize];
+            [self.fieldView setFrame:CGRectMake(self.fieldView.superview.bounds.origin.x + 20, self.fieldView.superview.bounds.origin.y + 20, self.fieldView.superview.bounds.size.width - 40, self.fieldView.superview.bounds.size.height - 40)];
+            [self.settingsAccess setBackgroundForUIObject:self.fieldView withKey:@"GameBackground"];
+        
+            // View of ball inizialization
+            CGSize ballSize = CGSizeMake(20, 20);
+            CGPoint initialTopLeftBall = CGPointMake((self.fieldView.bounds.size.width - ballSize.width)/2, (self.fieldView.bounds.size.height - ballSize.height)/2);
+            self.ballView = [[UIImageView alloc] initWithFrame:CGRectMake(initialTopLeftBall.x, initialTopLeftBall.y, ballSize.width, ballSize.height)];
+            [self.settingsAccess setBackgroundForUIObject:self.ballView withKey:@"Ball"];
+            UIImage *ballImage = self.ballView.image;
+            [self.ballView setAlpha:1.0];
+            
+            [self.logic setBallImage:ballImage InitialPosition:initialTopLeftBall Size:ballSize];
+            
+            
+            
+            // View of bars
+            CGSize barSize = CGSizeMake(60, 20);
+            UIImage *barImage = [self getThemeImageForKey:@"Bar"];
+            
+            // Enemy Bar initialization
+            CGPoint initialTopLeftEnemyBar = CGPointMake((self.fieldView.bounds.size.width - barSize.width)/2, self.fieldView.bounds.origin.y + 20);
+            self.enemyBarView = [[UIImageView alloc] init];
+            [self.enemyBarView setImage:barImage];
+            [self.enemyBarView setAlpha:1.0];
+            [self.enemyBarView setFrame:CGRectMake(initialTopLeftEnemyBar.x, initialTopLeftEnemyBar.y, barSize.width, barSize.height)];
+            
+            [self.logic setEnemyBarImage:barImage InitialPosition:initialTopLeftEnemyBar Size:barSize];
+            
+            // User Bar initialization
+            CGPoint initialTopLeftUserBar = CGPointMake((self.fieldView.bounds.size.width - barSize.width)/2, self.fieldView.bounds.size.height - barSize.height - 20);
+            self.userBarView = [[UIImageView alloc] init];
+            [self.userBarView setImage:barImage];
+            [self.userBarView setAlpha:1.0];
+            [self.userBarView setFrame:CGRectMake(initialTopLeftUserBar.x, initialTopLeftUserBar.y, barSize.width, barSize.height)];
+            
+            [self.logic setUserBarImage:barImage InitialPosition:initialTopLeftUserBar Size:barSize];
         
         [self.fieldView addSubview:self.ballView];
         [self.fieldView addSubview:self.userBarView];
@@ -128,20 +131,6 @@ float angle;
     
     
     @try {
-//        if (firstBall) {
-//            UIImageView *ballViewForInvocation = self.ballView;
-//            NSInvocation *invocationTimer = [NSInvocation invocationWithMethodSignature:[NSMethodSignature instanceMethodSignatureForSelector:@selector(updateBallPositionForView:)]];
-//            [invocationTimer setTarget:self.logic];
-//            [invocationTimer setSelector:@selector(updateBallPositionForView:)];
-//            [invocationTimer setArgument:&ballViewForInvocation atIndex:2];
-//            self.timerFor2Animation = [NSTimer scheduledTimerWithTimeInterval:1.0 invocation:invocationTimer repeats:FALSE];
-//        }
-//        else
-//        {
-//            [self.timerFor2Animation invalidate];
-//            [self.logic updateBallPositionForView:self.ballView];
-//        }
-        
         [self.logic updateBallPositionForView:self.ballView];
     }
     @catch (NSException *exception) {
@@ -168,11 +157,17 @@ float angle;
         {
             NSLog(@"Punto User");
             [self pointSigned:@"User"];
+            //[self setGameInPause:TRUE];
+            [self.timerForAnimation invalidate];
+            self.timerForTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startTimer) userInfo:nil repeats:NO];
         }
         else if ([exception.name isEqualToString:@"hitDown"])
         {
             NSLog(@"Punto Enemy");
             [self pointSigned:@"Enemy"];
+            //[self setGameInPause:TRUE];
+            [self.timerForAnimation invalidate];
+            self.timerForTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startTimer) userInfo:nil repeats:NO];
         }
         [self.logic calculateDeltasForAngle:angle];
     }
@@ -243,7 +238,6 @@ bool isArrivedToPoint = true;
 {
     if (firstBall)
     {
-        //self.timerFor2Animation = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(animateTheBall) userInfo:nil repeats:FALSE];
         [self animateTheBall];
         [self animateEnemyBar];
         firstBall = false;
@@ -258,12 +252,19 @@ bool isArrivedToPoint = true;
 -(void)setGameInPause:(BOOL)pause
 {
     if (!pause) {
-        self.timerForAnimation = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(animateAll) userInfo:nil repeats:TRUE];
+        self.timerForTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startTimer) userInfo:nil repeats:NO];
     }
     else
     {
+        [self.timerForTimer invalidate];
         [self.timerForAnimation invalidate];
     }
+}
+
+-(void)startTimer
+{
+    [self.timerForAnimation invalidate];
+    self.timerForAnimation = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(animateAll) userInfo:nil repeats:YES];
 }
 
 -(UIImage*)getThemeImageForKey:(NSString*)key
@@ -277,6 +278,5 @@ bool isArrivedToPoint = true;
     self.awayScore = away;
     self.homeScore = home;
 }
-
 
 @end

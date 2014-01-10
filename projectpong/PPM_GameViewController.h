@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PPM_GameLogicAccessClass.h"
 
 @interface PPM_GameViewController : UIViewController
 
@@ -18,5 +19,7 @@
 
 
 - (IBAction)pauseMenuPressed:(id)sender;
+
+-(void)setLogicAccess:(PPM_GameLogicAccessClass *)logicAccess;
 
 @end

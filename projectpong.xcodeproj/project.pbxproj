@@ -64,6 +64,11 @@
 		68E15160186F1661004B5B26 /* PPM_SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E1515F186F1661004B5B26 /* PPM_SettingsTableViewController.m */; };
 		982070E3186B8D62006CD73F /* PPM_GameSettingsAccessClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 982070E2186B8D62006CD73F /* PPM_GameSettingsAccessClass.m */; };
 		9875869F1871DF410076EA89 /* PPM_Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9875869E1871DF410076EA89 /* PPM_Colors.m */; };
+		98D5CD4818802C6E00503DE2 /* ClassicGameLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 98D5CD4718802C6E00503DE2 /* ClassicGameLandscape.png */; };
+		98D5CD4A18802C7C00503DE2 /* PlasticGameLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 98D5CD4918802C7C00503DE2 /* PlasticGameLandscape.png */; };
+		98D5CD4C188034D800503DE2 /* ClassicBarLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 98D5CD4B188034D800503DE2 /* ClassicBarLandscape.png */; };
+		98D5CD4E188034EA00503DE2 /* PlasticBarLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 98D5CD4D188034EA00503DE2 /* PlasticBarLandscape.png */; };
+		98D5CD5118804BAE00503DE2 /* PPM_FieldPortraitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D5CD5018804BAE00503DE2 /* PPM_FieldPortraitViewController.m */; };
 		98E52AB9186A4FCF00EEB419 /* PPM_Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E52AB8186A4FCF00EEB419 /* PPM_Settings.m */; };
 		98EC34941876D5A6008B2E17 /* PlasticNumbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 98EC34931876D5A6008B2E17 /* PlasticNumbers.png */; };
 		98F479BA186A1B920048D3D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F479B9186A1B920048D3D3 /* Foundation.framework */; };
@@ -177,6 +182,12 @@
 		982070E2186B8D62006CD73F /* PPM_GameSettingsAccessClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPM_GameSettingsAccessClass.m; path = ../PPM_GameSettingsAccessClass.m; sourceTree = "<group>"; };
 		9875869D1871DF410076EA89 /* PPM_Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_Colors.h; sourceTree = "<group>"; };
 		9875869E1871DF410076EA89 /* PPM_Colors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_Colors.m; sourceTree = "<group>"; };
+		98D5CD4718802C6E00503DE2 /* ClassicGameLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClassicGameLandscape.png; sourceTree = "<group>"; };
+		98D5CD4918802C7C00503DE2 /* PlasticGameLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticGameLandscape.png; sourceTree = "<group>"; };
+		98D5CD4B188034D800503DE2 /* ClassicBarLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClassicBarLandscape.png; sourceTree = "<group>"; };
+		98D5CD4D188034EA00503DE2 /* PlasticBarLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticBarLandscape.png; sourceTree = "<group>"; };
+		98D5CD4F18804BAE00503DE2 /* PPM_FieldPortraitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_FieldPortraitViewController.h; sourceTree = "<group>"; };
+		98D5CD5018804BAE00503DE2 /* PPM_FieldPortraitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_FieldPortraitViewController.m; sourceTree = "<group>"; };
 		98E52AB7186A4FCF00EEB419 /* PPM_Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_Settings.h; sourceTree = "<group>"; };
 		98E52AB8186A4FCF00EEB419 /* PPM_Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_Settings.m; sourceTree = "<group>"; };
 		98EC34931876D5A6008B2E17 /* PlasticNumbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticNumbers.png; sourceTree = "<group>"; };
@@ -283,9 +294,11 @@
 			isa = PBXGroup;
 			children = (
 				686D416E18799AD50085E6B4 /* ClassicLost.png */,
+				98D5CD4718802C6E00503DE2 /* ClassicGameLandscape.png */,
 				686D416F18799AD50085E6B4 /* ClassicWin.png */,
 				68BCCDBF1876CC6800517892 /* ClassicNumbers.png */,
 				6849B2D01875BC3D00431F38 /* ClassicBar.png */,
+				98D5CD4B188034D800503DE2 /* ClassicBarLandscape.png */,
 				6849B2CB1875AD0600431F38 /* ClassicUser.png */,
 				6849B2C1187580D000431F38 /* ClassicBall.png */,
 				6849B2C2187580D000431F38 /* ClassicPlayButton.png */,
@@ -304,6 +317,8 @@
 			isa = PBXGroup;
 			children = (
 				686D416A18799AC20085E6B4 /* PlasticLost.png */,
+				98D5CD4918802C7C00503DE2 /* PlasticGameLandscape.png */,
+				98D5CD4D188034EA00503DE2 /* PlasticBarLandscape.png */,
 				686D416B18799AC20085E6B4 /* PlasticWin.png */,
 				98EC34931876D5A6008B2E17 /* PlasticNumbers.png */,
 				68BCCDC11876CC8000517892 /* PlasticPlayButton.png */,
@@ -406,6 +421,8 @@
 				98F479C0186A1B920048D3D3 /* Supporting Files */,
 				6872665818771B4B00F120E0 /* PPM_finalGameViewController.h */,
 				6872665918771B4B00F120E0 /* PPM_finalGameViewController.m */,
+				98D5CD4F18804BAE00503DE2 /* PPM_FieldPortraitViewController.h */,
+				98D5CD5018804BAE00503DE2 /* PPM_FieldPortraitViewController.m */,
 			);
 			path = projectpong;
 			sourceTree = "<group>";
@@ -568,13 +585,16 @@
 				6849B2BA1875772F00431F38 /* ClassicThemeButton.png in Resources */,
 				6849B2CC1875AD0600431F38 /* ClassicUser.png in Resources */,
 				68BCCDC01876CC6800517892 /* ClassicNumbers.png in Resources */,
+				98D5CD4C188034D800503DE2 /* ClassicBarLandscape.png in Resources */,
 				6849B2C8187580D000431F38 /* ClassicRuleButton.png in Resources */,
 				6861DAE8186C847800EDA5EC /* PlasticUser.png in Resources */,
+				98D5CD4818802C6E00503DE2 /* ClassicGameLandscape.png in Resources */,
 				686D417018799AD50085E6B4 /* ClassicLost.png in Resources */,
 				6861DAE6186C847800EDA5EC /* PlasticSettingsButton.png in Resources */,
 				98F47A2B186A1CE70048D3D3 /* button-play-pause.png in Resources */,
 				6812427E1879B27500B3009F /* ProjectPong57x57.png in Resources */,
 				6812427D1879B27500B3009F /* ProjectPong50x50@2x.png in Resources */,
+				98D5CD4E188034EA00503DE2 /* PlasticBarLandscape.png in Resources */,
 				681242811879B27500B3009F /* ProjectPong60x60@2x.png in Resources */,
 				6812427C1879B27500B3009F /* ProjectPong50x50.png in Resources */,
 				681242831879B27500B3009F /* ProjectPong72x72@2x.png in Resources */,
@@ -602,6 +622,7 @@
 				98F47A37186A1CE70048D3D3 /* LocalIcon.png in Resources */,
 				681242791879B27500B3009F /* ProjectPong29x29@2x.png in Resources */,
 				689D7DD51872D054008949B5 /* facebookIcon.png in Resources */,
+				98D5CD4A18802C7C00503DE2 /* PlasticGameLandscape.png in Resources */,
 				6812427A1879B27500B3009F /* ProjectPong40x40.png in Resources */,
 				6861DAE0186C847800EDA5EC /* PlasticBall.png in Resources */,
 				686D417118799AD50085E6B4 /* ClassicWin.png in Resources */,
@@ -638,6 +659,7 @@
 				98F47A0F186A1CD60048D3D3 /* PPM_StartViewController.m in Sources */,
 				98F47A08186A1CD60048D3D3 /* PPM_Ball.m in Sources */,
 				98F47A0D186A1CD60048D3D3 /* PPM_InfoViewController.m in Sources */,
+				98D5CD5118804BAE00503DE2 /* PPM_FieldPortraitViewController.m in Sources */,
 				6861DAD3186C7E4700EDA5EC /* PPM_DifficultySettingsViewController.m in Sources */,
 				982070E3186B8D62006CD73F /* PPM_GameSettingsAccessClass.m in Sources */,
 				9875869F1871DF410076EA89 /* PPM_Colors.m in Sources */,

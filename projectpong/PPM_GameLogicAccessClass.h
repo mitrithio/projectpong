@@ -13,8 +13,7 @@
 
 -(void)animateTheBall;
 
--(id)initWithFieldView:(UIImageView*)field
-          orientation:(UIInterfaceOrientation)orientation;
+-(id)initWithFieldView:(UIImageView*)field;
 
 -(void)setGameInPause:(BOOL)pause;
 
