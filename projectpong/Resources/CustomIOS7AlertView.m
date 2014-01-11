@@ -319,21 +319,21 @@ CGFloat buttonSpacerHeight = 0;
         return;
     }
 
-    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+    UIDeviceOrientation interfaceOrientation = [[UIDevice currentDevice] orientation];
 
     CGFloat startRotation = [[self valueForKeyPath:@"layer.transform.rotation.z"] floatValue];
     CGAffineTransform rotation;
 
     switch (interfaceOrientation) {
-        case UIInterfaceOrientationLandscapeLeft:
+        case UIDeviceOrientationLandscapeRight:
             rotation = CGAffineTransformMakeRotation(-startRotation + M_PI * 270.0 / 180.0);
             break;
 
-        case UIInterfaceOrientationLandscapeRight:
+        case UIDeviceOrientationLandscapeLeft:
             rotation = CGAffineTransformMakeRotation(-startRotation + M_PI * 90.0 / 180.0);
             break;
 
-        case UIInterfaceOrientationPortraitUpsideDown:
+        case UIDeviceOrientationPortraitUpsideDown:
             rotation = CGAffineTransformMakeRotation(-startRotation + M_PI * 180.0 / 180.0);
             break;
 
@@ -349,7 +349,7 @@ CGFloat buttonSpacerHeight = 0;
 					 completion:^(BOOL finished){
                          // fix errors caused by being rotated one too many times
                          dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                             UIInterfaceOrientation endInterfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+                             UIDeviceOrientation endInterfaceOrientation = [[UIDevice currentDevice] orientation];
                              if (interfaceOrientation != endInterfaceOrientation) {
                                  // TODO user moved phone again before than animation ended: rotation animation can introduce errors here
                              }

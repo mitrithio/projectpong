@@ -21,6 +21,8 @@
  */
 -(void)setBackgroundForUIObject:(id)view withKey:(NSString*)key;
 
+-(UIImage*)getThemeImageForKey:(NSString*)key;
+
 
 
 // ******* RETRIEVING INFORMATION TIME ******

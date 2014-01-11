@@ -18,9 +18,10 @@
 
 @interface PPM_GameViewController ()
 
-@property (nonatomic) BOOL isGameInPause;
 @property (nonatomic, strong) PPM_GameLogicAccessClass *logicAccess;
 @property (nonatomic, strong) PPM_GameSettingsAccessClass *settingsAccess;
+
+@property (nonatomic) UIDeviceOrientation currentOrientation;
 
 
 @end
@@ -29,51 +30,22 @@
 
 @synthesize logicAccess = _logicAccess;
 @synthesize settingsAccess = _settingsAccess;
-@synthesize isGameInPause = _isGameInPause;
-
-
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        // Custom initialization
-//
-//    }
-//    return self;
-//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-	// Do any additional setup after loading the view.
-    
-    // pauseMenuView initialization
-    //[self.pauseMenuView setAlpha:0.0];
-    //[ACPopupViewManager showFlipAnimatedPopupView:self.pauseMenuView duration:0.5];
-    
-    
+	// Do any additional setup after loading the view
     
     [self.pauseButton setImage:nil forState:UIControlStateHighlighted];
     [self.pauseButton setImage:nil forState:UIControlStateNormal];
-//    UIAlertView *alert = [[UIAlertView alloc]
-//                          initWithTitle:@"PAUSE"
-//                          message:[NSString stringWithFormat:@"You don't have an account configured go to settings and do it"] delegate:self cancelButtonTitle:@"Resume" otherButtonTitles:@"End Game", nil];
-    
-    [self showPauseAlert:PPM_PauseAlertTypeBegin];
-    
-//    TSAlertView *alert = [[TSAlertView alloc]
-//                          initWithTitle:@"PAUSE"
-//                          message:[NSString stringWithFormat:@"You don't have an account configured go to settings and do it"] delegate:self cancelButtonTitle:@"Resume" otherButtonTitles:@"End Game", nil];
-//    [alert setStyle:TSAlertViewStyleNormal];
-//    [alert setFrame:CGRectMake(self.gameView.bounds.size.width/2 - 60, self.gameView.bounds.size.height/2 - 40, 120, 80)];
-//    [alert show];
-    
-    self.isGameInPause = TRUE;
     
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     self.logicAccess = [[PPM_GameLogicAccessClass alloc] initWithGameView:self.gameView];
-    //[self.logicAccess setScoreAway:self.awayScore andHome:self.homeScore];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    
+    [self showPauseAlert:PPM_PauseAlertTypeBegin];
 }
 
 - (void)didReceiveMemoryWarning
@@ -170,14 +142,16 @@
 -(UIView *)createResultView
 {
     UIView *view = [[UIView alloc] init];
-    [view setFrame:CGRectMake(0, 0, 200, 57)];
+    [view setFrame:CGRectMake(0, 0, 210, 57)];
     
     UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:view.frame];
     [self.settingsAccess setBackgroundForUIObject:backgroundView withKey:@"Background"];
     
-    UIImageView *userScore = [[UIImageView alloc] initWithImage:[ACCropImages cropImage:[UIImage imageNamed:@"PlasticNumbers.png"] originX:850-85 originY:0 dimX:80 dimY:57]];
+    UIImageView *userScore = [[UIImageView alloc] initWithFrame:CGRectMake(view.bounds.origin.x, view.bounds.origin.y, 85, 57)];
     
-    UIImageView *pcScore = [[UIImageView alloc] initWithImage:[ACCropImages cropImage:[UIImage imageNamed:@"PlasticNumbers.png"] originX:850-85 originY:0 dimX:80 dimY:57]];
+    UIImageView *pcScore = [[UIImageView alloc] initWithFrame:CGRectMake(view.bounds.origin.x + 125, view.bounds.origin.y, 85, 57)];
+    
+    [self.logicAccess getScoreForUser:userScore andPC:pcScore];
     
     [view addSubview:backgroundView];
     [view addSubview:pcScore];
@@ -189,4 +163,47 @@
     return view;
 }
 
+-(void)deviceOrientationDidChange:(NSNotification*)notification
+{
+    UIDeviceOrientation newOrientation = [[UIDevice currentDevice] orientation];
+    CGSize viewSize = self.gameView.bounds.size;
+    switch (newOrientation) {
+        case UIDeviceOrientationPortrait:
+            [self.pauseButton setFrame:CGRectMake(viewSize.width - self.pauseButton.bounds.size.width, 0, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height)];
+            break;
+        case UIDeviceOrientationLandscapeLeft:
+            [self.pauseButton setFrame:CGRectMake(viewSize.width - self.pauseButton.bounds.size.width, viewSize.height - self.pauseButton.bounds.size.height, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height)];
+            break;
+        case UIDeviceOrientationLandscapeRight:
+            [self.pauseButton setFrame:CGRectMake(0, 0, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height)];
+            break;
+        default:
+            break;
+    }
+    
+    if (self.currentOrientation != newOrientation && newOrientation != UIDeviceOrientationPortraitUpsideDown && !((self.currentOrientation == UIDeviceOrientationLandscapeLeft && newOrientation == UIDeviceOrientationLandscapeRight) || (self.currentOrientation == UIDeviceOrientationLandscapeRight && newOrientation == UIDeviceOrientationLandscapeLeft))) {
+        
+        NSString *zRotationKeyPath = @"transform.rotation.z";
+        
+        CGFloat currentAngle = [[self.pauseButton.layer valueForKeyPath:zRotationKeyPath] floatValue];
+        CGFloat angleToAdd   = M_PI/2; // 90 deg = pi/2
+        [self.pauseButton.layer setValue:@(currentAngle+angleToAdd) forKeyPath:zRotationKeyPath];
+        
+        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:zRotationKeyPath];
+        animation.duration = 0.02;
+        
+        animation.toValue = @(0.0);
+        animation.byValue = @(angleToAdd);
+        
+        [self.pauseButton.layer addAnimation:animation forKey:nil];
+        
+        self.currentOrientation = newOrientation;
+    }
+}
+
+- (IBAction)tapGestureRecognizer:(UIGestureRecognizer*)gesture {
+    
+    [self.logicAccess touchInFieldView:gesture];
+    
+}
 @end

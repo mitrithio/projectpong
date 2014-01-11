@@ -84,6 +84,7 @@
 		9875869F1871DF410076EA89 /* PPM_Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9875869E1871DF410076EA89 /* PPM_Colors.m */; };
 		988F1DED188098B1008C929E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F1DEC188098B1008C929E /* QuartzCore.framework */; };
 		988F1DFE1880AC31008C929E /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F1DFD1880AC31008C929E /* CustomIOS7AlertView.m */; };
+		98BBC37E1881C3F900D55D99 /* UIView+FindUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BBC37D1881C3F900D55D99 /* UIView+FindUIViewController.m */; };
 		98D5CD4818802C6E00503DE2 /* ClassicGameLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 98D5CD4718802C6E00503DE2 /* ClassicGameLandscape.png */; };
 		98D5CD4A18802C7C00503DE2 /* PlasticGameLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 98D5CD4918802C7C00503DE2 /* PlasticGameLandscape.png */; };
 		98D5CD4C188034D800503DE2 /* ClassicBarLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 98D5CD4B188034D800503DE2 /* ClassicBarLandscape.png */; };
@@ -224,6 +225,8 @@
 		988F1DEC188098B1008C929E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		988F1DFC1880AC31008C929E /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOS7AlertView.h; sourceTree = "<group>"; };
 		988F1DFD1880AC31008C929E /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOS7AlertView.m; sourceTree = "<group>"; };
+		98BBC37C1881C3F900D55D99 /* UIView+FindUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FindUIViewController.h"; sourceTree = "<group>"; };
+		98BBC37D1881C3F900D55D99 /* UIView+FindUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FindUIViewController.m"; sourceTree = "<group>"; };
 		98D5CD4718802C6E00503DE2 /* ClassicGameLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClassicGameLandscape.png; sourceTree = "<group>"; };
 		98D5CD4918802C7C00503DE2 /* PlasticGameLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticGameLandscape.png; sourceTree = "<group>"; };
 		98D5CD4B188034D800503DE2 /* ClassicBarLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClassicBarLandscape.png; sourceTree = "<group>"; };
@@ -578,6 +581,8 @@
 				98EC34971876F451008B2E17 /* StaticLibraries */,
 				98F479F1186A1CD60048D3D3 /* Logic */,
 				98F47A18186A1CE70048D3D3 /* images */,
+				98BBC37C1881C3F900D55D99 /* UIView+FindUIViewController.h */,
+				98BBC37D1881C3F900D55D99 /* UIView+FindUIViewController.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -794,6 +799,7 @@
 				98F47A2A186A1CE70048D3D3 /* ACPopupViewManager.m in Sources */,
 				68DCA3F1187F0CE6005B980C /* PPM_SocialScoreViewController.m in Sources */,
 				6849B2CF1875B6C100431F38 /* PPM_SocialSettingsViewController.m in Sources */,
+				98BBC37E1881C3F900D55D99 /* UIView+FindUIViewController.m in Sources */,
 				98F47A29186A1CE70048D3D3 /* ACCropImages.m in Sources */,
 				98F479C6186A1B920048D3D3 /* main.m in Sources */,
 			);

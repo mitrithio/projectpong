@@ -26,9 +26,11 @@
 
 -(void)calculateDeltasForAngle:(float)angle;
 -(void)updateBallPositionForView:(UIImageView*)ballView;
--(void)calculateArrivingParallelCoordinatePointForAngle:(float)angle;
+-(void)calculateEnemyArrivingPointForAngle:(float)angle;
 
 -(void)updateEnemyBarPositionForView:(UIImageView*)enemyBarView;
+
+-(void)updateUserBarPositionForView:(UIImageView*)userBarView toNewPosition:(CGFloat*)newPosition;
 
 -(void)reloadBallInCenter:(UIImageView*)ballView;
 
