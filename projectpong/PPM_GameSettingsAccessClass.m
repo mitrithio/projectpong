@@ -8,6 +8,7 @@
 
 #import "PPM_GameSettingsAccessClass.h"
 
+
 @interface PPM_GameSettingsAccessClass ()
 
 //@property (nonatomic) PPM_Settings *settings;
@@ -151,6 +152,14 @@
     }
 }
 
+-(NSString*)setUrlForSoundWithKey:(NSString *)key
+{
+    NSString *path = [NSString stringWithFormat:@"%@%@",[self.settings settedThemeToString],key];
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: path ofType: @"mp3"];
+    
+    return soundFilePath;
+}
+
 -(UIImage*)getThemeImageForKey:(NSString*)key
 {
     NSString *prova = [NSString stringWithFormat:@"%@%@.png",[self.settings settedThemeToString],key];
@@ -213,6 +222,36 @@
 -(NSString*)getCurrentUserName
 {
     return [self.settings takeSettedUserName];
+}
+
+-(void)saveBackgoundSoundOnOff:(UISwitch*)BackgroundSoundOnOff;
+{
+    BOOL isBackgroundSoundOn = FALSE;
+    if ([BackgroundSoundOnOff isOn])
+    {
+        isBackgroundSoundOn = TRUE;
+    }
+    [self.settings saveIsBackgroundSoundSetted:isBackgroundSoundOn];
+}
+
+-(BOOL)getCurrentBackgroundSoundOnOff
+{
+    return [self.settings isBackgroundSoundOn];
+}
+
+-(void)saveGameSoundOnOff:(UISwitch*)GameSoundOnOff;
+{
+    BOOL isGameSoundOn = FALSE;
+    if ([GameSoundOnOff isOn])
+    {
+        isGameSoundOn = TRUE;
+    }
+    [self.settings saveIsGameSoundSetted:isGameSoundOn];
+}
+
+-(BOOL)getCurrentGameSoundOnOff
+{
+    return [self.settings isGameSoundOn];
 }
 
 @end

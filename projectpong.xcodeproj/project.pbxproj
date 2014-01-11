@@ -23,6 +23,8 @@
 		681242831879B27500B3009F /* ProjectPong72x72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 681242731879B27500B3009F /* ProjectPong72x72@2x.png */; };
 		681242841879B27500B3009F /* ProjectPong76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 681242741879B27500B3009F /* ProjectPong76x76.png */; };
 		681242851879B27500B3009F /* ProjectPong76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 681242751879B27500B3009F /* ProjectPong76x76@2x.png */; };
+		6821A876188190A8001F701F /* PPM_SoundTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821A875188190A8001F701F /* PPM_SoundTableViewController.m */; };
+		6821A8781881AFD2001F701F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6821A8771881AFD2001F701F /* AVFoundation.framework */; };
 		68270E55187183F100A071EA /* PPM_UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68270E54187183F100A071EA /* PPM_UserTableViewController.m */; };
 		6849B2B61875755B00431F38 /* ClassicTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6849B2B51875755B00431F38 /* ClassicTitle.png */; };
 		6849B2B81875769600431F38 /* PlasticThemeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6849B2B71875769600431F38 /* PlasticThemeButton.png */; };
@@ -151,6 +153,9 @@
 		681242731879B27500B3009F /* ProjectPong72x72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectPong72x72@2x.png"; sourceTree = "<group>"; };
 		681242741879B27500B3009F /* ProjectPong76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectPong76x76.png; sourceTree = "<group>"; };
 		681242751879B27500B3009F /* ProjectPong76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectPong76x76@2x.png"; sourceTree = "<group>"; };
+		6821A874188190A8001F701F /* PPM_SoundTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_SoundTableViewController.h; sourceTree = "<group>"; };
+		6821A875188190A8001F701F /* PPM_SoundTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_SoundTableViewController.m; sourceTree = "<group>"; };
+		6821A8771881AFD2001F701F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		68270E53187183F100A071EA /* PPM_UserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_UserTableViewController.h; sourceTree = "<group>"; };
 		68270E54187183F100A071EA /* PPM_UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_UserTableViewController.m; sourceTree = "<group>"; };
 		6849B2B51875755B00431F38 /* ClassicTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClassicTitle.png; sourceTree = "<group>"; };
@@ -290,6 +295,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6821A8781881AFD2001F701F /* AVFoundation.framework in Frameworks */,
 				988F1DED188098B1008C929E /* QuartzCore.framework in Frameworks */,
 				6872665C18771DED00F120E0 /* Social.framework in Frameworks */,
 				98F479BC186A1B920048D3D3 /* CoreGraphics.framework in Frameworks */,
@@ -410,10 +416,10 @@
 		68DCA3D7187F0931005B980C /* PlasticSound */ = {
 			isa = PBXGroup;
 			children = (
+				68C99F35188028AB004F507A /* PlasticMainSound.mp3 */,
+				68C99F34188028AB004F507A /* PlasticBall2Sound.mp3 */,
 				68C99F32188028AB004F507A /* PlasticAlertSound.mp3 */,
 				68C99F33188028AB004F507A /* PlasticBall1Sound.mp3 */,
-				68C99F34188028AB004F507A /* PlasticBall2Sound.mp3 */,
-				68C99F35188028AB004F507A /* PlasticMainSound.mp3 */,
 				68C99F36188028AB004F507A /* PlasticScoreSound.mp3 */,
 				68C99F37188028AB004F507A /* PlasticWinSound.mp3 */,
 			);
@@ -462,6 +468,7 @@
 		98F479B8186A1B920048D3D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6821A8771881AFD2001F701F /* AVFoundation.framework */,
 				988F1DEC188098B1008C929E /* QuartzCore.framework */,
 				6872665B18771DED00F120E0 /* Social.framework */,
 				98F479B9186A1B920048D3D3 /* Foundation.framework */,
@@ -518,6 +525,8 @@
 				68DCA3ED187F0CD7005B980C /* PPM_LocalScoreViewController.m */,
 				68DCA3EF187F0CE6005B980C /* PPM_SocialScoreViewController.h */,
 				68DCA3F0187F0CE6005B980C /* PPM_SocialScoreViewController.m */,
+				6821A874188190A8001F701F /* PPM_SoundTableViewController.h */,
+				6821A875188190A8001F701F /* PPM_SoundTableViewController.m */,
 			);
 			path = projectpong;
 			sourceTree = "<group>";
@@ -786,6 +795,7 @@
 				68B4F417186DC12F00C8567E /* PPM_UserAccountPageViewController.m in Sources */,
 				98F47A10186A1CD60048D3D3 /* PPM_RICPageViewController.m in Sources */,
 				98F47A0E186A1CD60048D3D3 /* PPM_GameViewController.m in Sources */,
+				6821A876188190A8001F701F /* PPM_SoundTableViewController.m in Sources */,
 				98F47A0B186A1CD60048D3D3 /* PPM_CreditsViewController.m in Sources */,
 				68DCA3EE187F0CD7005B980C /* PPM_LocalScoreViewController.m in Sources */,
 				6861DAD0186C7E0D00EDA5EC /* PPM_TimerSettingsViewController.m in Sources */,

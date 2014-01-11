@@ -42,6 +42,9 @@
     
     self.gameTimerLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
+    self.soundLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    
+    
     self.userLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
     self.socialLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];

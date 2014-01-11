@@ -17,6 +17,7 @@
 @implementation PPM_ThemeSettingsViewController
 
 @synthesize gameSettingsAccess;
+@synthesize startViewController;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -33,8 +34,10 @@
     [super viewDidLoad];
 
     self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
+    self.startViewController = [[PPM_StartViewController alloc] init];
     
     [self.gameSettingsAccess setBackgroundForUIObject:self.themeTable withKey:@"Background"];
+    self.themeTable.separatorColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
     
     self.plasticTheme.titleLabel.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
@@ -77,12 +80,16 @@
   
     [self.gameSettingsAccess saveTheme:self.plasticTheme];
     
+    [self.startViewController.audioPlayer stop];
+    
     
 }
 
 - (IBAction)classicThemeActivator:(id)sender {
 
     [self.gameSettingsAccess saveTheme:self.classicTheme];
+    
+    [self.startViewController.audioPlayer stop];
 }
 
 @end

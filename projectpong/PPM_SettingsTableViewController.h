@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *gameTimerLable;
 @property (weak, nonatomic) IBOutlet UILabel *userLable;
 @property (weak, nonatomic) IBOutlet UILabel *socialLable;
+@property (weak, nonatomic) IBOutlet UILabel *soundLable;
 
 @property (strong, nonatomic) IBOutlet UITableView *settingsTable;
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
