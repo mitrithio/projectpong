@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PPM_GameSettingsAccessClass.h"
+#import "PPM_StartViewController.h"
 
 @interface PPM_ThemeSettingsViewController : UITableViewController
 
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *classicCell;
 
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
+@property (nonatomic, retain) PPM_StartViewController *startViewController;
 
 - (IBAction)plasticThemeActivator:(id)sender;
 - (IBAction)classicThemeActivator:(id)sender;

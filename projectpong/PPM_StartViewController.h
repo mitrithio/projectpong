@@ -10,6 +10,8 @@
 //#import "PPM_GameLogicAccessClass.h"
 #import "PPM_GameSettingsAccessClass.h"
 
+#import <AVFoundation/AVFoundation.h>
+
 @interface PPM_StartViewController : UIViewController //<NSObject>{
   //  PPM_GameLogicAccessClass *gameLogicAccess;
 //}
@@ -27,4 +29,5 @@
 //@property (nonatomic, retain) PPM_GameLogicAccessClass *gameLogicAccess; //da cancellare a meno che non servano espliciti riferimenti alla logica
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
 
+@property (nonatomic) AVAudioPlayer *audioPlayer;
 @end

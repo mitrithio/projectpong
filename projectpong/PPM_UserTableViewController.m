@@ -36,6 +36,8 @@
     
      [self.gameSettingsAccess setBackgroundForUIObject:self.userTable withKey:@"Background"];
     
+    self.userTable.separatorColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
+    
     self.addImageFromCamera.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
     self.addImageFromLibrary.tintColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];

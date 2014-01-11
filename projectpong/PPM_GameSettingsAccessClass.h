@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PPM_MainLogicClass.h"
 
+
 @interface PPM_GameSettingsAccessClass : NSObject
 
 @property (nonatomic) PPM_Settings *settings;
@@ -20,6 +21,7 @@
  \see PPM_Settings for theme settings.
  */
 -(void)setBackgroundForUIObject:(id)view withKey:(NSString*)key;
+-(NSString*)setUrlForSoundWithKey:(NSString *)key;
 
 
 
@@ -31,6 +33,8 @@
 -(int)getCurrentTimerSelector;
 -(UIImage*)getCurrentUserImage;
 -(NSString*)getCurrentUserName;
+-(BOOL)getCurrentBackgroundSoundOnOff;
+-(BOOL)getCurrentGameSoundOnOff;
 
 
 // ******* SAVING-TIME METHODS ********
@@ -41,5 +45,6 @@
 -(void)saveTheme:(UIButton*)currentThemeSetted;
 -(void)saveUserImage:(UIImageView*)userImage;
 -(void)saveUserName:(UITextField*)nameTextField;
-
+-(void)saveBackgoundSoundOnOff:(UISwitch*)BackgroundSoundOnOff;
+-(void)saveGameSoundOnOff:(UISwitch*)GameSoundOnOff;
 @end

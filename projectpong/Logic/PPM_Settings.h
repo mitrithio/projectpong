@@ -38,6 +38,8 @@ typedef enum themeEnumerator {
 @property (nonatomic, readonly) Theme theme;
 @property (nonatomic, readonly) BOOL isTimerSetted;
 @property (nonatomic, readonly) int timer;
+@property (nonatomic, readonly) BOOL isBackgroundSoundOn;
+@property (nonatomic, readonly) BOOL isGameSoundOn;
 
 -(NSString*)settedThemeToString;
 
@@ -78,6 +80,16 @@ typedef enum themeEnumerator {
  \return the NSString of the current user name if it is saved in user defaults, else this method the string @"User".
  */
 -(NSString*)takeSettedUserName;
+
+/*!
+ set the isBackgroundSoundOn property as saved in user defaults. If in user defaults isBackgroundSoundOn is not setted, the property is authomatically setted as false.
+ */
+-(void)takeSettedBackgrounSound;
+
+/*!
+ set the isGameSoundOn property as saved in user defaults. If in user defaults isGameSoundOn is not setted, the property is authomatically setted as false.
+ */
+-(void)takeSettedGameSound;
 
 
 // --------------------------------------------------- \\
@@ -127,6 +139,18 @@ typedef enum themeEnumerator {
  \param the NSString of the user name.
  */
 -(void)saveUserName:(NSString*)username;
+
+/*!
+ this method saves the isBackgoundSoundOn property in user defaults.
+ \param the value of isTimerSetted.
+ */
+-(void)saveIsBackgroundSoundSetted:(BOOL)isBackgroundSoundOn;
+
+/*!
+ this method saves the isTimerSetted property in user defaults.
+ \param the value of isTimerSetted.
+ */
+-(void)saveIsGameSoundSetted:(BOOL)isGameSoundOn;
 
 /*! DON'T USE - ONLY FOR TESTS
  this method saves all the settings at once.

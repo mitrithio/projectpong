@@ -16,6 +16,8 @@
 #define TIMER       @"timerSetted"
 #define IMAGE       @"image"
 #define USERNAME    @"username"
+#define BACKSOUNDON @"isBackgroundSoundOn"
+#define GAMESOUNDON @"isGameSoundOn"
 
 @interface PPM_Settings ()
 
@@ -31,6 +33,8 @@
 @synthesize aiDifficulty = _aiDifficulty;
 @synthesize isTimerSetted = _isTimerSetted;
 @synthesize timer = _timer;
+@synthesize isBackgroundSoundOn = _isBackgroundSoundOn;
+@synthesize isGameSoundOn = _isGameSoundOn;
 
 
 - (id)init
@@ -43,6 +47,8 @@
         [self takeSettedIsTimer];
         [self takeSettedTimer];
         [self takeSettedBallSpeed];
+        [self takeSettedBackgrounSound];
+        [self takeSettedGameSound];
         self.colors = [[PPM_Colors alloc] init];
     }
     return self;
@@ -459,5 +465,90 @@
     }
     [self.userDefaults synchronize];
 }
+
+-(void)saveIsBackgroundSoundSetted:(BOOL)isBackgroundSoundOn
+{
+    NSString *defaults = [self.userDefaults objectForKey:BACKSOUNDON];
+    if (defaults)
+    {
+        [self.userDefaults removeObjectForKey:BACKSOUNDON];
+    }
+    if (isBackgroundSoundOn) {
+        [self.userDefaults setObject:@"true" forKey:BACKSOUNDON];
+    } else {
+        [self.userDefaults setObject:@"false" forKey:BACKSOUNDON];
+    }
+    [self.userDefaults synchronize];
+    [self takeSettedBackgrounSound];
+}
+
+-(void)takeSettedBackgrounSound
+{
+    NSString *isBackSoundSettedInDefaults = [[NSString alloc] init];
+    isBackSoundSettedInDefaults = [[self.userDefaults objectForKey:BACKSOUNDON] mutableCopy];
+    if (!isBackSoundSettedInDefaults)
+    {
+        _isTimerSetted = FALSE;
+    }
+    else
+    {
+        if ([isBackSoundSettedInDefaults isEqualToString:@"true"])
+        {
+            _isBackgroundSoundOn = TRUE;
+        }
+        else if ([isBackSoundSettedInDefaults isEqualToString:@"false"])
+        {
+            _isBackgroundSoundOn = FALSE;
+        }
+        else
+        {
+            NSLog(@"Error in parsing if sound is setted or not");
+            @throw [NSException exceptionWithName:@"DontKnowIfBackSoundSetted" reason:@"Error in setting the sound" userInfo:nil];
+        }
+    }
+}
+
+-(void)saveIsGameSoundSetted:(BOOL)isGameSoundOn
+{
+    NSString *defaults = [self.userDefaults objectForKey:GAMESOUNDON];
+    if (defaults)
+    {
+        [self.userDefaults removeObjectForKey:GAMESOUNDON];
+    }
+    if (isGameSoundOn) {
+        [self.userDefaults setObject:@"true" forKey:GAMESOUNDON];
+    } else {
+        [self.userDefaults setObject:@"false" forKey:GAMESOUNDON];
+    }
+    [self.userDefaults synchronize];
+    [self takeSettedGameSound];
+}
+
+-(void)takeSettedGameSound
+{
+    NSString *isGameSoundSettedInDefaults = [[NSString alloc] init];
+    isGameSoundSettedInDefaults = [[self.userDefaults objectForKey:GAMESOUNDON] mutableCopy];
+    if (!isGameSoundSettedInDefaults)
+    {
+        _isTimerSetted = FALSE;
+    }
+    else
+    {
+        if ([isGameSoundSettedInDefaults isEqualToString:@"true"])
+        {
+            _isGameSoundOn = TRUE;
+        }
+        else if ([isGameSoundSettedInDefaults isEqualToString:@"false"])
+        {
+            _isGameSoundOn = FALSE;
+        }
+        else
+        {
+            NSLog(@"Error in parsing if sound is setted or not");
+            @throw [NSException exceptionWithName:@"DontKnowIfGameSoundSetted" reason:@"Error in setting the sound" userInfo:nil];
+        }
+    }
+}
+
 
 @end

@@ -8,7 +8,9 @@
 
 #import "PPM_StartViewController.h"
 
+
 @interface PPM_StartViewController ()
+
 
 
 @end
@@ -33,6 +35,8 @@
    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    [self.audioPlayer stop];
  
     
     self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
@@ -58,9 +62,15 @@
     self.userImage.image = [self.gameSettingsAccess getCurrentUserImage];
     //[self.gameSettingsAccess setBackgroundForUIObject:self.userImage withKey:@"User"];
     
+    if ([self.gameSettingsAccess getCurrentBackgroundSoundOnOff]){
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[self.gameSettingsAccess setUrlForSoundWithKey:@"MainSound"]] error:NULL];
+    [self.audioPlayer setVolume:0.3];
+    [self.audioPlayer setNumberOfLoops:0];
+    [self.audioPlayer play];
+    }
     
     NSLog(@"ViewDidLoad loaded");
-
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,5 +78,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

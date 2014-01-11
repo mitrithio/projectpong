@@ -34,6 +34,8 @@
     
     [self.gameSettingsAccess setBackgroundForUIObject:self.LocalScoreBackground withKey:@"Background"];
     
+    self.LocalScoreTable.separatorColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
+    
     self.LocalScoreLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
 }
 

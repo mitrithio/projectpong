@@ -14,6 +14,8 @@
 
 @implementation PPM_TimerSettingsViewController
 
+@synthesize gameSettingsAccess;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
