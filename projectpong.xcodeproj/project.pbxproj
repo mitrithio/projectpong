@@ -69,13 +69,11 @@
 		68C99F2E1880289D004F507A /* ClassicBall1Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68C99F291880289D004F507A /* ClassicBall1Sound.mp3 */; };
 		68C99F2F1880289D004F507A /* ClassicBall2Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68C99F2A1880289D004F507A /* ClassicBall2Sound.mp3 */; };
 		68C99F301880289D004F507A /* ClassicScoreSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68C99F2B1880289D004F507A /* ClassicScoreSound.mp3 */; };
-		68C99F311880289D004F507A /* ClassicWinSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68C99F2C1880289D004F507A /* ClassicWinSound.mp3 */; };
 		68C99F38188028AB004F507A /* PlasticAlertSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68C99F32188028AB004F507A /* PlasticAlertSound.mp3 */; };
 		68C99F39188028AB004F507A /* PlasticBall1Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68C99F33188028AB004F507A /* PlasticBall1Sound.mp3 */; };
 		68C99F3A188028AB004F507A /* PlasticBall2Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68C99F34188028AB004F507A /* PlasticBall2Sound.mp3 */; };
 		68C99F3B188028AB004F507A /* PlasticMainSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68C99F35188028AB004F507A /* PlasticMainSound.mp3 */; };
 		68C99F3C188028AB004F507A /* PlasticScoreSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68C99F36188028AB004F507A /* PlasticScoreSound.mp3 */; };
-		68C99F3D188028AB004F507A /* PlasticWinSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68C99F37188028AB004F507A /* PlasticWinSound.mp3 */; };
 		68C99F3F18802CD8004F507A /* ClassicPlayPouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 68C99F3E18802CD8004F507A /* ClassicPlayPouse.png */; };
 		68C99F4118802CE4004F507A /* PlasticPlayPouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 68C99F4018802CE4004F507A /* PlasticPlayPouse.png */; };
 		68DCA3E1187F0931005B980C /* ClassicMainSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68DCA3D2187F0931005B980C /* ClassicMainSound.mp3 */; };
@@ -207,13 +205,11 @@
 		68C99F291880289D004F507A /* ClassicBall1Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ClassicBall1Sound.mp3; sourceTree = "<group>"; };
 		68C99F2A1880289D004F507A /* ClassicBall2Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ClassicBall2Sound.mp3; sourceTree = "<group>"; };
 		68C99F2B1880289D004F507A /* ClassicScoreSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ClassicScoreSound.mp3; sourceTree = "<group>"; };
-		68C99F2C1880289D004F507A /* ClassicWinSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ClassicWinSound.mp3; sourceTree = "<group>"; };
 		68C99F32188028AB004F507A /* PlasticAlertSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PlasticAlertSound.mp3; sourceTree = "<group>"; };
 		68C99F33188028AB004F507A /* PlasticBall1Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PlasticBall1Sound.mp3; sourceTree = "<group>"; };
 		68C99F34188028AB004F507A /* PlasticBall2Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PlasticBall2Sound.mp3; sourceTree = "<group>"; };
 		68C99F35188028AB004F507A /* PlasticMainSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PlasticMainSound.mp3; sourceTree = "<group>"; };
 		68C99F36188028AB004F507A /* PlasticScoreSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PlasticScoreSound.mp3; sourceTree = "<group>"; };
-		68C99F37188028AB004F507A /* PlasticWinSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PlasticWinSound.mp3; sourceTree = "<group>"; };
 		68C99F3E18802CD8004F507A /* ClassicPlayPouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClassicPlayPouse.png; sourceTree = "<group>"; };
 		68C99F4018802CE4004F507A /* PlasticPlayPouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticPlayPouse.png; sourceTree = "<group>"; };
 		68DCA3D2187F0931005B980C /* ClassicMainSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ClassicMainSound.mp3; sourceTree = "<group>"; };
@@ -407,7 +403,6 @@
 				68C99F291880289D004F507A /* ClassicBall1Sound.mp3 */,
 				68C99F2A1880289D004F507A /* ClassicBall2Sound.mp3 */,
 				68C99F2B1880289D004F507A /* ClassicScoreSound.mp3 */,
-				68C99F2C1880289D004F507A /* ClassicWinSound.mp3 */,
 				68DCA3D2187F0931005B980C /* ClassicMainSound.mp3 */,
 			);
 			path = ClassicSound;
@@ -421,7 +416,6 @@
 				68C99F32188028AB004F507A /* PlasticAlertSound.mp3 */,
 				68C99F33188028AB004F507A /* PlasticBall1Sound.mp3 */,
 				68C99F36188028AB004F507A /* PlasticScoreSound.mp3 */,
-				68C99F37188028AB004F507A /* PlasticWinSound.mp3 */,
 			);
 			path = PlasticSound;
 			sourceTree = "<group>";
@@ -701,7 +695,6 @@
 				6861DAE8186C847800EDA5EC /* PlasticUser.png in Resources */,
 				98D5CD4818802C6E00503DE2 /* ClassicGameLandscape.png in Resources */,
 				686D417018799AD50085E6B4 /* ClassicLost.png in Resources */,
-				68C99F311880289D004F507A /* ClassicWinSound.mp3 in Resources */,
 				6861DAE6186C847800EDA5EC /* PlasticSettingsButton.png in Resources */,
 				68C99F3A188028AB004F507A /* PlasticBall2Sound.mp3 in Resources */,
 				98F47A2B186A1CE70048D3D3 /* button-play-pause.png in Resources */,
@@ -754,7 +747,6 @@
 				6849B2C7187580D000431F38 /* ClassicPlayButton.png in Resources */,
 				681242821879B27500B3009F /* ProjectPong72x72.png in Resources */,
 				68DCA3E1187F0931005B980C /* ClassicMainSound.mp3 in Resources */,
-				68C99F3D188028AB004F507A /* PlasticWinSound.mp3 in Resources */,
 				6861DAE4186C847800EDA5EC /* PlasticRuleButton.png in Resources */,
 				6849B2C9187580D000431F38 /* ClassicScoreButton.png in Resources */,
 				681242841879B27500B3009F /* ProjectPong76x76.png in Resources */,
