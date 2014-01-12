@@ -349,6 +349,9 @@ float angle;
         ++pcScore;
         UIImage *numbers = [self.settingsAccess getThemeImageForKey:@"Numbers"];
         [self.pcScoreView setImage:[ACCropImages cropImage:numbers originX:(85*(pcScore - 1)) originY:0 dimX:85 dimY:57]];
+        if (pcScore == 4) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"ppm_EnemyScoreFourthPoint" object:nil userInfo:nil];
+        }
     }
     
     [self.logic reloadBallInCenter:self.ballView];

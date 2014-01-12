@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *line;
 @property (weak, nonatomic) IBOutlet UIImageView *resultImage;
 @property (weak, nonatomic) IBOutlet UILabel *finalScore;
+@property (weak, nonatomic) IBOutlet UILabel *yourScore;
 
 @property (nonatomic) NSTimer *timerForViewingScore;
 
@@ -88,7 +89,8 @@ int finalScore;
         [self.gameSettingsAccess setBackgroundForUIObject:self.resultImage withKey:@"Lost"];
     }
     
-    
+    self.finalScore.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    self.yourScore.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
     [self.view addSubview:userImageView];
     [self.view addSubview:pcImageView];

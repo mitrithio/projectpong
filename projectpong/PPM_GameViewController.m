@@ -57,6 +57,8 @@
     
     self.initialOrientation = [[UIDevice currentDevice] orientation];
     self.pauseButton.frame = [self putPauseButtonForOrientation:self.initialOrientation];
+    
+    gameStarted = false;
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,6 +78,8 @@
     [self.pauseButton setImage:nil forState:UIControlStateNormal];
     [self showPauseAlert:PPM_PauseAlertTypePause];
 }
+
+bool gameStarted;
 
 -(void)showPauseAlert:(enum pauseAlertType)pauseAlertType
 {
@@ -105,6 +109,10 @@
             
             [self.pauseButton setImage:[ACCropImages cropImage:[UIImage imageNamed:PAUSE_PLAY_IMAGE] originX:40 originY:80 dimX:40 dimY:40] forState:UIControlStateHighlighted];
             [self.logicAccess setGameInPause:NO];
+            if (!gameStarted) {
+                gameStarted = true;
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"ppm_StartGameNotification" object:nil userInfo:nil];
+            }
         }
     }];
     

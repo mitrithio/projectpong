@@ -123,7 +123,7 @@
         [self.backgroundSoundPlayer stop];}
     
     if ([self.gameSettingsAccess getCurrentGameSoundOnOff]){
-        [self.gameSoundPlayer stop];
+        //[self.gameSoundPlayer stop];
         self.gameSoundPlayer = [AVAudioPlayer alloc];
         NSString *path = @"GameStartSound";
         NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: path ofType: @"mp3"];
