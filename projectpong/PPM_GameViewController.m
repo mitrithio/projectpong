@@ -11,6 +11,7 @@
 #import "ACCropImages.h"
 #import "PPM_GameLogicAccessClass.h"
 #import "PPM_GameSettingsAccessClass.h"
+#import "PPM_finalGameViewController.h"
 
 #import "CustomIOS7AlertView.h"
 
@@ -23,6 +24,7 @@
 
 @property (nonatomic) UIDeviceOrientation currentOrientation;
 
+@property (nonatomic) PPM_finalGameViewController *resultsViewController;
 
 @end
 
@@ -36,14 +38,19 @@
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view
+    if (!_resultsViewController) {
+        _resultsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"EndGameID"];
+    }
+    
     
     [self.pauseButton setImage:nil forState:UIControlStateHighlighted];
     [self.pauseButton setImage:nil forState:UIControlStateNormal];
     
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    self.logicAccess = [[PPM_GameLogicAccessClass alloc] initWithGameView:self.gameView];
+    _logicAccess = [[PPM_GameLogicAccessClass alloc] initWithGameView:self.gameView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(winnerNotificationThrown:) name:@"PPM_WinnerNotification" object:nil];
     
     [self showPauseAlert:PPM_PauseAlertTypeBegin];
 }
@@ -64,6 +71,7 @@
     if (buttonIndex == 1) {
         UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"EndGameID"];
         [vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+        [self.logicAccess endGamePressed];
         [self presentViewController:vc animated:YES completion:nil];
     }
     if (buttonIndex == 0) {
@@ -126,6 +134,7 @@
         if (buttonIndex == 1) {
             UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"EndGameID"];
             [vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+            [self.logicAccess endGamePressed];
             [self presentViewController:vc animated:YES completion:nil];
         }
         if (buttonIndex == 0) {
@@ -201,9 +210,23 @@
     }
 }
 
+- (void)winnerNotificationThrown:(NSNotification *)notification
+{
+    [self.resultsViewController setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+
+    if ([self.resultsViewController isViewLoaded]) {
+        [self.navigationController pushViewController:self.resultsViewController animated:NO];
+    }
+    else{
+        [self presentViewController:self.resultsViewController animated:YES completion:^void{
+        }];
+    }
+}
+
 - (IBAction)tapGestureRecognizer:(UIGestureRecognizer*)gesture {
     
     [self.logicAccess touchInFieldView:gesture];
     
 }
+
 @end

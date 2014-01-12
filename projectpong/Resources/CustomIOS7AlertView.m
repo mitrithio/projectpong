@@ -85,17 +85,17 @@ CGFloat buttonSpacerHeight = 0;
 
     // Attached to the top most window (make sure we are using the right orientation):
     } else {
-        UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+        UIDeviceOrientation interfaceOrientation = [[UIDevice currentDevice] orientation];
         switch (interfaceOrientation) {
-            case UIInterfaceOrientationLandscapeLeft:
+            case UIDeviceOrientationLandscapeRight:
                 self.transform = CGAffineTransformMakeRotation(M_PI * 270.0 / 180.0);
                 break;
                 
-            case UIInterfaceOrientationLandscapeRight:
+            case UIDeviceOrientationLandscapeLeft:
                 self.transform = CGAffineTransformMakeRotation(M_PI * 90.0 / 180.0);
                 break;
 
-            case UIInterfaceOrientationPortraitUpsideDown:
+            case UIDeviceOrientationPortraitUpsideDown:
                 self.transform = CGAffineTransformMakeRotation(M_PI * 180.0 / 180.0);
                 break;
 
@@ -269,8 +269,8 @@ CGFloat buttonSpacerHeight = 0;
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
 
-    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-    if (UIInterfaceOrientationIsLandscape(interfaceOrientation)) {
+    UIDeviceOrientation interfaceOrientation = [[UIDevice currentDevice] orientation];
+    if (UIDeviceOrientationIsLandscape(interfaceOrientation)) {
         CGFloat tmp = screenWidth;
         screenWidth = screenHeight;
         screenHeight = tmp;
@@ -366,8 +366,8 @@ CGFloat buttonSpacerHeight = 0;
     CGSize dialogSize = [self countDialogSize];
     CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
 
-    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-    if (UIInterfaceOrientationIsLandscape(interfaceOrientation)) {
+    UIDeviceOrientation interfaceOrientation = [[UIDevice currentDevice] orientation];
+    if (UIDeviceOrientationIsLandscape(interfaceOrientation)) {
         CGFloat tmp = keyboardSize.height;
         keyboardSize.height = keyboardSize.width;
         keyboardSize.width = tmp;

@@ -9,14 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "PPM_GameSettingsAccessClass.h"
 
-@interface PPM_LocalScoreViewController : UIViewController
+@interface PPM_LocalScoreViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *LocalScoreBackground;
 @property (weak, nonatomic) IBOutlet UILabel *LocalScoreLable;
 @property (weak, nonatomic) IBOutlet UITableView *LocalScoreTable;
 
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
-
 
 
 @end

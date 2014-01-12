@@ -37,6 +37,7 @@
 -(NSString*)getCurrentUserName;
 -(BOOL)getCurrentBackgroundSoundOnOff;
 -(BOOL)getCurrentGameSoundOnOff;
+-(NSArray*)getScores;
 
 
 // ******* SAVING-TIME METHODS ********
@@ -49,4 +50,5 @@
 -(void)saveUserName:(UITextField*)nameTextField;
 -(void)saveBackgoundSoundOnOff:(UISwitch*)BackgroundSoundOnOff;
 -(void)saveGameSoundOnOff:(UISwitch*)GameSoundOnOff;
+-(void)saveFinalScore:(int)finalScore;
 @end

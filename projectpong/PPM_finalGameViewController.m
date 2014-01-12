@@ -7,24 +7,40 @@
 //
 
 #import "PPM_finalGameViewController.h"
+#import "ACCropImages.h"
 
 #import <Social/Social.h>
 
 
 @interface PPM_finalGameViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *pcScore;
+@property (weak, nonatomic) IBOutlet UILabel *userScore;
+@property (weak, nonatomic) IBOutlet UILabel *line;
+@property (weak, nonatomic) IBOutlet UIImageView *resultImage;
+@property (weak, nonatomic) IBOutlet UILabel *finalScore;
+
+@property (nonatomic) NSTimer *timerForViewingScore;
+
 @end
 
 @implementation PPM_finalGameViewController
 
-@synthesize gameSettingsAccess;
+bool userIsWinner;
+int pcScore;
+int userScore;
+int timerScore;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+int finalScore;
+
+
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithCoder:aDecoder];
     if (self) {
-        // Custom initialization
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateScores:) name:@"PPM_WinnerNotification" object:nil];
     }
+
     return self;
 }
 
@@ -41,9 +57,44 @@
     
     self.backToMainMenuButton.titleLabel.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
+    self.line.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+    
     self.postResultLable.textColor =[self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
     
-        
+    
+    UIImage *numbers = [self.gameSettingsAccess getThemeImageForKey:@"Numbers"];
+    CGRect frameForScore = self.userScore.frame;
+    UIImageView *userImageView = [[UIImageView alloc] initWithFrame:frameForScore];
+    if (userScore == 0) {
+            [userImageView setImage:[ACCropImages cropImage:numbers originX:85*9 originY:0 dimX:85 dimY:57]];
+        }
+        else{
+            [userImageView setImage:[ACCropImages cropImage:numbers originX:85*(userScore-1) originY:0 dimX:85 dimY:57]];
+        }
+    
+    frameForScore = self.pcScore.frame;
+    UIImageView *pcImageView = [[UIImageView alloc] initWithFrame:frameForScore];
+    if (pcScore == 0) {
+            [pcImageView setImage:[ACCropImages cropImage:numbers originX:85*9 originY:0 dimX:85 dimY:57]];
+        }
+        else{
+            [pcImageView setImage:[ACCropImages cropImage:numbers originX:85*(pcScore-1) originY:0 dimX:85 dimY:57]];
+        }
+    
+    if (userIsWinner) {
+        [self.gameSettingsAccess setBackgroundForUIObject:self.resultImage withKey:@"Win"];
+    }
+    else{
+        [self.gameSettingsAccess setBackgroundForUIObject:self.resultImage withKey:@"Lost"];
+    }
+    
+    
+    
+    [self.view addSubview:userImageView];
+    [self.view addSubview:pcImageView];
+    self.pcScore.text = @"";
+    self.userScore.text = @"";
+    
     //if User Image not Set
     [self.gameSettingsAccess setBackgroundForUIObject:self.userImage withKey:@"User"];
 
@@ -52,12 +103,63 @@
     self.userLable.text = [self.gameSettingsAccess getCurrentUserName];
     
     self.userImage.image = [self.gameSettingsAccess getCurrentUserImage];
+
+    [self.gameSettingsAccess saveFinalScore:finalScore];
+    
+    tempScore = 0;
+    self.timerForViewingScore = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(updateFinalScoreOnView) userInfo:nil repeats:TRUE];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)updateScores:(NSNotification*)notification
+{
+    NSDictionary *notificationDictionary = [notification userInfo];
+    pcScore = [[notificationDictionary objectForKey:@"pcScore"] intValue];
+    userScore = [[notificationDictionary objectForKey:@"userScore"] intValue];
+    timerScore = [[notificationDictionary objectForKey:@"timerScore"] intValue];
+    if ([[notification object] isEqualToString:@"pc"])
+    {
+        userIsWinner = false;
+    }
+    else if ([[notification object] isEqualToString:@"user"])
+    {
+        userIsWinner = true;
+    }
+    [self calcFinalScore];
+}
+
+-(void)calcFinalScore
+{
+    if (userIsWinner) {
+        finalScore = userScore*153 - pcScore*78 - timerScore*3;
+    }
+    else
+    {
+        finalScore = userScore*153 - pcScore*78 + timerScore*3;
+    }
+}
+
+int tempScore;
+-(void)updateFinalScoreOnView
+{
+    if (tempScore == finalScore) {
+        [self.timerForViewingScore invalidate];
+    }
+    self.finalScore.text = [NSString stringWithFormat:@"%d",tempScore];
+    if (finalScore > 0)
+    {
+        tempScore += 1;
+    }
+    else
+    {
+        tempScore -= 1;
+    }
 }
 
 
@@ -69,7 +171,7 @@
         SLComposeViewController *tweetSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
         
-        NSString * twitterText = [NSString stringWithFormat:@"%@ %@ %@ %@ %@", [self.gameSettingsAccess getCurrentUserName], @"have" ,@"winning/loosing", @"result" , @"on project pong"];
+        NSString * twitterText = [NSString stringWithFormat:@"%@ has %@ %d vs %d on Project Pong scoring %d", [self.gameSettingsAccess getCurrentUserName], userIsWinner ? @"won" : @"lost", userScore, pcScore, finalScore];
         [tweetSheet setInitialText:twitterText];
         [tweetSheet addImage:[UIImage imageNamed:@"iTunesProjectPong.png"]];
         [self presentViewController:tweetSheet animated:YES completion:nil];
@@ -88,7 +190,7 @@
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
         SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        NSString * facebookText = [NSString stringWithFormat:@"%@ %@ %@ %@ %@", [self.gameSettingsAccess getCurrentUserName], @"have" ,@"winning/loosing", @"result" , @"on project pong"];
+        NSString * facebookText = [NSString stringWithFormat:@"%@ has %@ %d vs %d on Project Pong scoring %d", [self.gameSettingsAccess getCurrentUserName], userIsWinner ? @"won" : @"lost", userScore, pcScore, finalScore];
         [controller setInitialText:facebookText];
         [controller addImage:[UIImage imageNamed:@"iTunesProjectPong.png"]];
         [self presentViewController:controller animated:YES completion:Nil];

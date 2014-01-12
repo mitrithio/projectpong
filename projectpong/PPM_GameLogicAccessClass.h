@@ -20,4 +20,6 @@
 -(void)getScoreForUser:(UIImageView*)user andPC:(UIImageView*)pc;
 
 -(void)touchInFieldView: (UIGestureRecognizer*)gestureRecognizer;
+
+-(void)endGamePressed;
 @end

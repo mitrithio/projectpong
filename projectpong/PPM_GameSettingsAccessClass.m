@@ -254,4 +254,49 @@
     return [self.settings isGameSoundOn];
 }
 
+-(void)saveFinalScore:(int)finalScore
+{
+    NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *scores = [[userDef objectForKey:@"bestScores"] mutableCopy];
+    
+    NSString *finalScoreAsString = [NSString stringWithFormat:@"%d",finalScore];
+    
+    if (!scores) {
+        scores = [[NSMutableArray alloc] initWithObjects:finalScoreAsString, nil];
+        [userDef setObject:scores forKey:@"bestScores"];
+    }
+    else
+    {
+        [scores addObject:finalScoreAsString];
+        [scores sortUsingComparator:^NSComparisonResult(id a, id b)
+         {
+             //Default compare, to protect against cast
+             if (![a isKindOfClass:[NSString class]] || ![b isKindOfClass:[NSString class]]) {
+                 return ([a compare:b]);
+             }
+             else {
+                 NSString *aString = (NSString*) a;
+                 NSString *bString = (NSString*) b;
+                 NSNumber *aInt = [NSNumber numberWithInt:[aString intValue]];
+                 NSNumber *bInt = [NSNumber numberWithInt:[bString intValue]];
+                 return (NSComparisonResult)[aInt compare:bInt];
+             }
+         }];
+        if ([scores count] > 9) {
+            [scores removeObjectAtIndex:0];
+        }
+        [userDef removeObjectForKey:@"bestScores"];
+        [userDef setObject:scores forKey:@"bestScores"];
+    }
+    
+    [userDef synchronize];
+}
+
+-(NSArray*)getScores
+{
+    NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
+    NSArray *scores = [userDef objectForKey:@"bestScores"];
+    return scores;
+}
+
 @end
