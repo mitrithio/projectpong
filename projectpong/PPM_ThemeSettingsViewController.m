@@ -80,7 +80,7 @@
   
     [self.gameSettingsAccess saveTheme:self.plasticTheme];
     
-    [self.startViewController.audioPlayer stop];
+    //[self.startViewController.audioPlayer stop];
     
     
 }
@@ -89,7 +89,7 @@
 
     [self.gameSettingsAccess saveTheme:self.classicTheme];
     
-    [self.startViewController.audioPlayer stop];
+   // [self.startViewController.audioPlayer stop];
 }
 
 @end
