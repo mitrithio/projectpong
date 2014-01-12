@@ -29,7 +29,7 @@
     
     UIImage *backgrndImage = [self.gameSettingsAccess getThemeImageForKey:@"Background"];
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:backgrndImage];
-    self.LocalScoreTable.separatorColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
+    self.tableView.separatorColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Element"];
     
     self.LocalScoreLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     self.scores = [[NSArray alloc]init];
@@ -72,6 +72,7 @@
     cell.backgroundColor = [UIColor clearColor];
     cell.backgroundView = [UIView new];
     cell.selectedBackgroundView = [UIView new];
+    
     return cell;
 }
 

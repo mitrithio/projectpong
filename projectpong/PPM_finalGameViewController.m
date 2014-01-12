@@ -109,6 +109,8 @@ int finalScore;
     tempScore = 0;
     self.timerForViewingScore = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(updateFinalScoreOnView) userInfo:nil repeats:TRUE];
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ppm_FinalScoreVisualizeNotification" object:nil userInfo:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -171,7 +173,7 @@ int tempScore;
         SLComposeViewController *tweetSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
         
-        NSString * twitterText = [NSString stringWithFormat:@"%@ has %@ %d vs %d on Project Pong scoring %d", [self.gameSettingsAccess getCurrentUserName], userIsWinner ? @"won" : @"lost", userScore, pcScore, finalScore];
+        NSString * twitterText = [NSString stringWithFormat:@"%@ has %@ %d vs %d on Project Pong scoring %d points!", [self.gameSettingsAccess getCurrentUserName], userIsWinner ? @"won" : @"lost", userScore, pcScore, finalScore];
         [tweetSheet setInitialText:twitterText];
         [tweetSheet addImage:[UIImage imageNamed:@"iTunesProjectPong.png"]];
         [self presentViewController:tweetSheet animated:YES completion:nil];
@@ -190,7 +192,7 @@ int tempScore;
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
         SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        NSString * facebookText = [NSString stringWithFormat:@"%@ has %@ %d vs %d on Project Pong scoring %d", [self.gameSettingsAccess getCurrentUserName], userIsWinner ? @"won" : @"lost", userScore, pcScore, finalScore];
+        NSString * facebookText = [NSString stringWithFormat:@"%@ has %@ %d vs %d on Project Pong scoring %d points!", [self.gameSettingsAccess getCurrentUserName], userIsWinner ? @"won" : @"lost", userScore, pcScore, finalScore];
         [controller setInitialText:facebookText];
         [controller addImage:[UIImage imageNamed:@"iTunesProjectPong.png"]];
         [self presentViewController:controller animated:YES completion:Nil];
