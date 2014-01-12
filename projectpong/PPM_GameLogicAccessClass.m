@@ -31,6 +31,9 @@
 
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *settingsAccess;
 @property (nonatomic) UIDeviceOrientation currentOrientation;
+
+@property (nonatomic) UILabel *timerLabel;
+
 @end
 
 
@@ -39,6 +42,9 @@
 int pcScore;
 int userScore;
 int timerScore;
+int gameTimer;
+int timerTics;
+int timePassed;
 CGFloat locationToGo;
 
 - (id)init
@@ -55,6 +61,8 @@ CGFloat locationToGo;
         pcScore = 0;
         userScore = 0;
         timerScore = 0;
+        timerTics = 0;
+        timePassed = 0;
         
         self.fieldView = [[UIImageView alloc] init];
         [gameView addSubview:self.fieldView];
@@ -62,6 +70,8 @@ CGFloat locationToGo;
         self.logic = [[PPM_MainLogicClass alloc] initWithGameField:self.fieldView];
         
         self.settingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
+        
+        
         
         UIImage *numbers = [[UIImage alloc] init];
         numbers = [self.settingsAccess getThemeImageForKey:@"Numbers"];
@@ -83,8 +93,7 @@ CGFloat locationToGo;
         
         switch (self.currentOrientation) {
             case UIDeviceOrientationPortrait:
-                //self.fieldView.transform = CGAffineTransformMakeRotation(0);
-                [self.fieldView setFrame:CGRectMake(20, 20, /*[[UIScreen mainScreen] bounds].size.width - 40, [[UIScreen mainScreen] bounds].size.height - 40*/self.fieldView.superview.bounds.size.width - 40, self.fieldView.superview.bounds.size.height - 40)];
+                [self.fieldView setFrame:CGRectMake(20, 20, self.fieldView.superview.bounds.size.width - 40, self.fieldView.superview.bounds.size.height - 40)];
                 break;
             case UIDeviceOrientationLandscapeRight:
             case UIDeviceOrientationLandscapeLeft:
@@ -93,6 +102,48 @@ CGFloat locationToGo;
                 break;
             default:
                 break;
+        }
+        
+        if ([self.settingsAccess getCurrentTimerOnOff]){
+            self.timerLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.fieldView.bounds.size.width - 18)/2, (self.fieldView.bounds.size.height - 100)/2, 200, 100)];
+            switch ([self.settingsAccess getCurrentTimerSelector]){
+                case 30:
+                    gameTimer = 30;
+                    self.timerLabel.text = @"30";
+                    break;
+                case 60:
+                    gameTimer = 60;
+                    self.timerLabel.text = @"60";
+                    break;
+                case 120:
+                    gameTimer = 120;
+                    self.timerLabel.text = @"120";
+                    break;
+                default:
+                    NSLog(@"Error in parsing Theme enumeration");
+                    @throw [NSException exceptionWithName:@"themeOutOfRange" reason:@"Error in setting defoult AIdifficulty" userInfo:nil];
+            }
+            self.timerLabel.textColor = [self.settingsAccess.settings getThemeColorLabelForKey:@"Primary"];
+            self.timerLabel.textAlignment = NSTextAlignmentCenter;
+            self.timerLabel.font = [self.timerLabel.font fontWithSize:50];
+            
+            if (self.currentOrientation == UIDeviceOrientationLandscapeLeft || self.currentOrientation == UIDeviceOrientationLandscapeRight)
+            {
+                NSString *zRotationKeyPath = @"transform.rotation.z";
+                
+                CGFloat currentAngle = [[self.timerLabel.layer valueForKeyPath:zRotationKeyPath] floatValue];
+                CGFloat angleToAdd   = -M_PI_2;
+                [self.timerLabel.layer setValue:@(currentAngle+angleToAdd) forKeyPath:zRotationKeyPath];
+                
+                CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:zRotationKeyPath];
+                animation.duration = 0.5;
+                
+                animation.toValue = @(0.0);
+                animation.byValue = @(angleToAdd);
+                
+                [self.timerLabel.layer addAnimation:animation forKey:nil];
+            }
+            [self.fieldView addSubview:self.timerLabel];
         }
         
         [self.settingsAccess setBackgroundForUIObject:self.fieldView withKey:@"GameBackground"];
@@ -327,6 +378,9 @@ bool isArrivedToPoint = true;
         [self animateEnemyBar];
         [self animateUserBar];
         [self calcWhoIsWinning];
+        ++timerTics;
+        timePassed = timerTics/100;
+        self.timerLabel.text = [NSString stringWithFormat:@"%d", gameTimer - timePassed];
         firstBall = false;
     }
     else
@@ -335,7 +389,38 @@ bool isArrivedToPoint = true;
         [self animateEnemyBar];
         [self animateUserBar];
         [self calcWhoIsWinning];
+        ++timerTics;
+        timePassed = timerTics/100;
+        self.timerLabel.text = [NSString stringWithFormat:@"%d", gameTimer - timePassed];
     }
+}
+
+-(BOOL)isGameTimeFinished
+{
+    
+    if ([self.settingsAccess getCurrentTimerOnOff]){
+        switch ([self.settingsAccess getCurrentTimerSelector]){
+            case 30:
+                if (timePassed == 30)
+                    return true;
+                else return false;
+                break;
+            case 60:
+                if (timePassed == 60)
+                    return true;
+                else return false;
+                break;
+            case 120:
+                if (timePassed == 120)
+                    return true;
+                else return false;
+                break;
+            default:
+                NSLog(@"Error in parsing Theme enumeration");
+                @throw [NSException exceptionWithName:@"themeOutOfRange" reason:@"Error in setting defoult AIdifficulty" userInfo:nil];
+        }
+    }
+    return false;
 }
 
 -(void)setGameInPause:(BOOL)pause
@@ -380,7 +465,7 @@ bool isArrivedToPoint = true;
         animation.byValue = @(angleToAdd);
         
         [self.fieldView.layer addAnimation:animation forKey:nil];
-        self.currentOrientation = newOrientation;
+        //self.currentOrientation = newOrientation;
     }
     
     if (self.currentOrientation == UIDeviceOrientationLandscapeLeft && (newOrientation == UIDeviceOrientationPortrait || newOrientation == UIDeviceOrientationLandscapeRight)) {
@@ -398,12 +483,49 @@ bool isArrivedToPoint = true;
         animation.byValue = @(angleToAdd);
         
         [self.fieldView.layer addAnimation:animation forKey:nil];
+        //self.currentOrientation = newOrientation;
+    }
+    
+    if ((self.currentOrientation == UIDeviceOrientationPortrait && newOrientation == UIDeviceOrientationLandscapeRight) || (self.currentOrientation == UIDeviceOrientationPortrait && newOrientation == UIDeviceOrientationLandscapeLeft))
+    {
+        NSString *zRotationKeyPath = @"transform.rotation.z";
+        
+        CGFloat currentAngle = [[self.timerLabel.layer valueForKeyPath:zRotationKeyPath] floatValue];
+        CGFloat angleToAdd   = -M_PI_2;
+        [self.timerLabel.layer setValue:@(currentAngle+angleToAdd) forKeyPath:zRotationKeyPath];
+        
+        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:zRotationKeyPath];
+        animation.duration = 0.5;
+        
+        animation.toValue = @(0.0);
+        animation.byValue = @(angleToAdd);
+        
+        [self.timerLabel.layer addAnimation:animation forKey:nil];
+        self.currentOrientation = newOrientation;
+    }
+    
+    if ((self.currentOrientation == UIDeviceOrientationLandscapeRight && newOrientation == UIDeviceOrientationPortrait) || (self.currentOrientation == UIDeviceOrientationLandscapeLeft && newOrientation == UIDeviceOrientationPortrait))
+    {
+        NSString *zRotationKeyPath = @"transform.rotation.z";
+        
+        CGFloat currentAngle = [[self.timerLabel.layer valueForKeyPath:zRotationKeyPath] floatValue];
+        CGFloat angleToAdd   = M_PI_2;
+        [self.timerLabel.layer setValue:@(currentAngle+angleToAdd) forKeyPath:zRotationKeyPath];
+        
+        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:zRotationKeyPath];
+        animation.duration = 0.5;
+        
+        animation.toValue = @(0.0);
+        animation.byValue = @(angleToAdd);
+        
+        [self.timerLabel.layer addAnimation:animation forKey:nil];
         self.currentOrientation = newOrientation;
     }
     
     if (newOrientation != self.currentOrientation && newOrientation != UIDeviceOrientationPortraitUpsideDown) {
         self.currentOrientation = newOrientation;
     }
+        
 }
 
 -(void)touchInFieldView: (UIGestureRecognizer*)gestureRecognizer
@@ -419,6 +541,8 @@ bool isArrivedToPoint = true;
 -(void)calcWhoIsWinning
 {
     if (pcScore == 5) {
+        timePassed = 0;
+        timerTics = 0;
         [self.timerForAnimation invalidate];
         [self.timerForTimer invalidate];
         
@@ -430,6 +554,9 @@ bool isArrivedToPoint = true;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"PPM_WinnerNotification" object:@"pc" userInfo:resultDictionary];
     }
     if (userScore == 5) {
+        
+        timePassed = 0;
+        timerTics = 0;
         [self.timerForAnimation invalidate];
         [self.timerForTimer invalidate];
         NSString *userScoreString = [NSString stringWithFormat:@"%d",userScore];
@@ -438,6 +565,23 @@ bool isArrivedToPoint = true;
         
         NSDictionary *resultDictionary = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:userScoreString,pcScoreString,timerScoreString, nil] forKeys:[NSArray arrayWithObjects:@"userScore",@"pcScore",@"timerScore", nil]];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"PPM_WinnerNotification" object:@"user" userInfo:resultDictionary];
+    }
+    
+    if ([self isGameTimeFinished])
+    {
+        timePassed = 0;
+        timerTics = 0;
+        [self.timerForAnimation invalidate];
+        [self.timerForTimer invalidate];
+        NSString *userScoreString = [NSString stringWithFormat:@"%d",userScore];
+        NSString *pcScoreString = [NSString stringWithFormat:@"%d",pcScore];
+        NSString *timerScoreString = [NSString stringWithFormat:@"%d",timerScore];
+        
+        NSDictionary *resultDictionary = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:userScoreString,pcScoreString,timerScoreString, nil] forKeys:[NSArray arrayWithObjects:@"userScore",@"pcScore",@"timerScore", nil]];
+        if (pcScore > userScore)
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"PPM_WinnerNotification" object:@"pc" userInfo:resultDictionary];
+        else
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"PPM_WinnerNotification" object:@"user" userInfo:resultDictionary];
     }
 }
 

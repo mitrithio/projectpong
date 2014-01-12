@@ -23,6 +23,7 @@
 @property (nonatomic, strong) PPM_GameSettingsAccessClass *settingsAccess;
 
 @property (nonatomic) UIDeviceOrientation currentOrientation;
+@property (nonatomic) UIDeviceOrientation initialOrientation;
 
 @property (nonatomic) PPM_finalGameViewController *resultsViewController;
 
@@ -51,8 +52,11 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(winnerNotificationThrown:) name:@"PPM_WinnerNotification" object:nil];
-    
+
     [self showPauseAlert:PPM_PauseAlertTypeBegin];
+    
+    self.initialOrientation = [[UIDevice currentDevice] orientation];
+    self.pauseButton.frame = [self putPauseButtonForOrientation:self.initialOrientation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,48 +70,7 @@
     return NO;
 }
 
--(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1) {
-        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"EndGameID"];
-        [vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-        [self.logicAccess endGamePressed];
-        [self presentViewController:vc animated:YES completion:nil];
-    }
-    if (buttonIndex == 0) {
-        [self.pauseButton setImage:[ACCropImages cropImage:[UIImage imageNamed:PAUSE_PLAY_IMAGE] originX:40 originY:0 dimX:40 dimY:40] forState:UIControlStateNormal];
-        
-        [self.pauseButton setImage:[ACCropImages cropImage:[UIImage imageNamed:PAUSE_PLAY_IMAGE] originX:40 originY:80 dimX:40 dimY:40] forState:UIControlStateHighlighted];
-    }
-}
-
 - (IBAction)pauseMenuPressed:(id)sender {
-//    if ([ACPopupViewManager isAnimationFinished])
-//    {
-//        if (self.isGameInPause)
-//        {
-//            
-//            [ACPopupViewManager hideFlipAnimatedPopupView:self.pauseMenuView duration:0.2];
-//            [self.pauseButton setImage:[ACCropImages cropImage:[UIImage imageNamed:PAUSE_PLAY_IMAGE] originX:40 originY:0 dimX:40 dimY:40] forState:UIControlStateNormal];
-//            
-//            [self.pauseButton setImage:[ACCropImages cropImage:[UIImage imageNamed:PAUSE_PLAY_IMAGE] originX:40 originY:80 dimX:40 dimY:40] forState:UIControlStateHighlighted];
-//            
-//            self.isGameInPause = FALSE;
-//            [self.logicAccess setGameInPause:FALSE];
-//        }
-//        else
-//        {
-//            // visualize the popup view
-//            [ACPopupViewManager showFlipAnimatedPopupView:self.pauseMenuView duration:0.5];
-//            
-//            [self.pauseButton setImage:[ACCropImages cropImage:[UIImage imageNamed:PAUSE_PLAY_IMAGE] originX:0 originY:0 dimX:40 dimY:40] forState:UIControlStateNormal];
-//            
-//            [self.pauseButton setImage:[ACCropImages cropImage:[UIImage imageNamed:PAUSE_PLAY_IMAGE] originX:0 originY:80 dimX:40 dimY:40] forState:UIControlStateHighlighted];
-//            self.isGameInPause = TRUE;
-//            [self.logicAccess setGameInPause:TRUE];
-//        }
-//    }
-    
     [self.logicAccess setGameInPause:YES];
     [self.pauseButton setImage:nil forState:UIControlStateHighlighted];
     [self.pauseButton setImage:nil forState:UIControlStateNormal];
@@ -172,22 +135,71 @@
     return view;
 }
 
+-(CGRect)putPauseButtonForOrientation:(UIDeviceOrientation)orientation
+{
+    CGRect rect = self.pauseButton.frame;
+    switch (orientation) {
+        case UIDeviceOrientationPortrait:
+            rect = CGRectMake(0, 0, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height);
+        case UIDeviceOrientationLandscapeLeft:
+            rect = CGRectMake(self.view.bounds.size.height - self.pauseButton.bounds.size.width, self.view.bounds.size.width - self.pauseButton.bounds.size.height, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height);
+        case UIDeviceOrientationLandscapeRight:
+            rect = CGRectMake(0, 0, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height);
+        default:
+            break;
+    }
+    return rect;
+}
+
 -(void)deviceOrientationDidChange:(NSNotification*)notification
 {
     UIDeviceOrientation newOrientation = [[UIDevice currentDevice] orientation];
     CGSize viewSize = self.gameView.bounds.size;
-    switch (newOrientation) {
-        case UIDeviceOrientationPortrait:
-            [self.pauseButton setFrame:CGRectMake(viewSize.width - self.pauseButton.bounds.size.width, 0, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height)];
-            break;
-        case UIDeviceOrientationLandscapeLeft:
-            [self.pauseButton setFrame:CGRectMake(viewSize.width - self.pauseButton.bounds.size.width, viewSize.height - self.pauseButton.bounds.size.height, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height)];
-            break;
-        case UIDeviceOrientationLandscapeRight:
-            [self.pauseButton setFrame:CGRectMake(0, 0, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height)];
-            break;
-        default:
-            break;
+    if (self.initialOrientation == UIDeviceOrientationPortrait){
+        switch (newOrientation) {
+            case UIDeviceOrientationPortrait:
+                [self.pauseButton setFrame:CGRectMake(viewSize.width - self.pauseButton.bounds.size.width, 0, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height)];
+                break;
+            case UIDeviceOrientationLandscapeLeft:
+                [self.pauseButton setFrame:CGRectMake(viewSize.width - self.pauseButton.bounds.size.width, viewSize.height - self.pauseButton.bounds.size.height, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height)];
+                break;
+            case UIDeviceOrientationLandscapeRight:
+                [self.pauseButton setFrame:CGRectMake(0, 0, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height)];
+                break;
+            default:
+                break;
+        }
+    }
+    else if (self.initialOrientation == UIDeviceOrientationLandscapeRight){
+        switch (newOrientation) {
+            case UIDeviceOrientationPortrait:
+                [self.pauseButton setFrame:CGRectMake(viewSize.width - self.pauseButton.bounds.size.width, viewSize.height - self.pauseButton.bounds.size.height, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height)];
+                break;
+            case UIDeviceOrientationLandscapeLeft:
+                [self.pauseButton setFrame:CGRectMake(0, viewSize.height - self.pauseButton.bounds.size.height, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height)];
+                break;
+           case UIDeviceOrientationLandscapeRight:
+                [self.pauseButton setFrame:CGRectMake(viewSize.width - self.pauseButton.bounds.size.width, 0, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height)];
+                break;
+            default:
+                break;
+        }
+    }
+    
+    else if (self.initialOrientation == UIDeviceOrientationLandscapeLeft){
+        switch (newOrientation) {
+            case UIDeviceOrientationPortrait:
+                [self.pauseButton setFrame:CGRectMake(0, 0, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height)];
+                break;
+            case UIDeviceOrientationLandscapeLeft:
+                [self.pauseButton setFrame:CGRectMake(viewSize.width - self.pauseButton.bounds.size.width, 0, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height)];
+                break;
+            case UIDeviceOrientationLandscapeRight:
+                [self.pauseButton setFrame:CGRectMake(0, viewSize.height - self.pauseButton.bounds.size.height, self.pauseButton.bounds.size.width, self.pauseButton.bounds.size.height)];
+                break;
+            default:
+                break;
+        }
     }
     
     if (self.currentOrientation != newOrientation && newOrientation != UIDeviceOrientationPortraitUpsideDown && !((self.currentOrientation == UIDeviceOrientationLandscapeLeft && newOrientation == UIDeviceOrientationLandscapeRight) || (self.currentOrientation == UIDeviceOrientationLandscapeRight && newOrientation == UIDeviceOrientationLandscapeLeft))) {
@@ -195,7 +207,7 @@
         NSString *zRotationKeyPath = @"transform.rotation.z";
         
         CGFloat currentAngle = [[self.pauseButton.layer valueForKeyPath:zRotationKeyPath] floatValue];
-        CGFloat angleToAdd   = M_PI/2; // 90 deg = pi/2
+        CGFloat angleToAdd   = M_PI/2;
         [self.pauseButton.layer setValue:@(currentAngle+angleToAdd) forKeyPath:zRotationKeyPath];
         
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:zRotationKeyPath];

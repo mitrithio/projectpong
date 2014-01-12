@@ -214,11 +214,11 @@ CGFloat destination;
     
     if (*newPosition > (self.field.bounds.size.width - (self.userBar.size.width/2)))
     {
-        *newPosition = self.field.bounds.size.width - (self.userBar.size.width);
+        *newPosition = self.field.bounds.size.width - (self.userBar.size.width/2);
     }
     else if (*newPosition < (self.field.bounds.origin.x + (self.userBar.size.width/2)))
     {
-        *newPosition = (self.field.bounds.origin.x + (self.userBar.size.width));
+        *newPosition = (self.field.bounds.origin.x + (self.userBar.size.width/2));
     }
     
     
@@ -243,9 +243,9 @@ CGFloat destination;
         case easy:
             return 3 + 0;
         case medium:
-            return 3 + 2;
+            return 3 + 1;
         case hard:
-            return 3 + 4;
+            return 3 + 2;
         default:
             NSLog(@"Error in parsing Difficulty enumeration");
             @throw [NSException exceptionWithName:@"difficultyOutOfRange" reason:@"Error in setting the difficulty" userInfo:nil];
@@ -254,7 +254,17 @@ CGFloat destination;
 
 -(CGFloat)getBarSpeed
 {
-    return 3;
+    switch ([self.settings ballSpeed]) {
+        case easy:
+            return 3 + 0;
+        case medium:
+            return 3 + 1;
+        case hard:
+            return 3 + 2;
+        default:
+            NSLog(@"Error in parsing Difficulty enumeration");
+            @throw [NSException exceptionWithName:@"difficultyOutOfRange" reason:@"Error in setting the difficulty" userInfo:nil];
+    }
 }
 
 -(int)getBarDelta
