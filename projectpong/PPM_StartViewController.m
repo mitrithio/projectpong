@@ -30,14 +30,24 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        // Custom initialization
+        self.audioPlayer = [AVAudioPlayer alloc];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [self.audioPlayer stop];
- 
+    
+
     
     self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
     
@@ -62,10 +72,18 @@
     self.userImage.image = [self.gameSettingsAccess getCurrentUserImage];
     //[self.gameSettingsAccess setBackgroundForUIObject:self.userImage withKey:@"User"];
     
+    //[self.audioPlayer stop];
+    
+//    if (self.audioPlayer != nil) {
+//        self.audioPlayer = nil;
+//    }
+    
+    
+    
     if ([self.gameSettingsAccess getCurrentBackgroundSoundOnOff]){
-    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[self.gameSettingsAccess setUrlForSoundWithKey:@"MainSound"]] error:NULL];
+    self.audioPlayer = [self.audioPlayer initWithContentsOfURL:[NSURL fileURLWithPath:[self.gameSettingsAccess setUrlForSoundWithKey:@"Ball2Sound"]] error:NULL];
     [self.audioPlayer setVolume:0.3];
-    [self.audioPlayer setNumberOfLoops:0];
+    [self.audioPlayer setNumberOfLoops:-1];
     [self.audioPlayer play];
     }
     
