@@ -17,6 +17,7 @@
 
 -(void)setGameInPause:(BOOL)pause;
 
--(void)setScoreAway:(UILabel*)away andHome:(UILabel*)home;
+-(void)getScoreForUser:(UIImageView*)user andPC:(UIImageView*)pc;
 
+-(void)touchInFieldView: (UIGestureRecognizer*)gestureRecognizer;
 @end

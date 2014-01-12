@@ -152,7 +152,7 @@ bool isABarHitted = false;
 
 float arrivingParallelCoordinatePoint;
 
--(void)calculateArrivingParallelCoordinatePointForAngle:(float)angle
+-(void)calculateEnemyArrivingPointForAngle:(float)angle
 {
     if (angle != M_PI_2 && angle != 3*M_PI_4)
     {
@@ -175,46 +175,77 @@ float arrivingParallelCoordinatePoint;
         arrivingParallelCoordinatePoint -= randomDeltaArrivingPoint;
     }
     
-    if (arrivingParallelCoordinatePoint >= (self.field.frame.size.width - (self.enemyBar.size.width/2)))
+    if (arrivingParallelCoordinatePoint >= (self.field.bounds.size.width - (self.enemyBar.size.width/2)))
     {
-        arrivingParallelCoordinatePoint = self.field.frame.size.width - (self.enemyBar.size.width/2) - randomDeltaArrivingPoint;
+        arrivingParallelCoordinatePoint = self.field.bounds.size.width - (self.enemyBar.size.width/2) - randomDeltaArrivingPoint;
     }
-    else if (arrivingParallelCoordinatePoint <= (self.field.frame.origin.x + (self.enemyBar.size.width/2)))
+    else if (arrivingParallelCoordinatePoint <= (self.field.bounds.origin.x + (self.enemyBar.size.width/2)))
     {
-        arrivingParallelCoordinatePoint = (self.field.frame.origin.x + (self.enemyBar.size.width/2)) + randomDeltaArrivingPoint;
-    }
-    else
-    {
-        
+        arrivingParallelCoordinatePoint = (self.field.bounds.origin.x + (self.enemyBar.size.width/2)) + randomDeltaArrivingPoint;
     }
 }
 
 -(void)updateEnemyBarPositionForView:(UIImageView*)enemyBarView
 {
-    CGFloat barDelta = self.getBarSpeed * 0.01;
+    CGFloat barSpeed = self.getBarSpeed;
     if (arrivingParallelCoordinatePoint < self.enemyBar.center) {
-        [self.enemyBar setPosition:CGPointMake(self.enemyBar.position.x - barDelta, self.enemyBar.position.y)];
+        [self.enemyBar setPosition:CGPointMake(self.enemyBar.position.x - barSpeed, self.enemyBar.position.y)];
         [enemyBarView setFrame:CGRectMake(self.enemyBar.position.x, self.enemyBar.position.y, self.enemyBar.size.width, self.enemyBar.size.height)];
     }
     else if (arrivingParallelCoordinatePoint > self.enemyBar.center)
     {
-        [self.enemyBar setPosition:CGPointMake(self.enemyBar.position.x + barDelta, self.enemyBar.position.y)];
+        [self.enemyBar setPosition:CGPointMake(self.enemyBar.position.x + barSpeed, self.enemyBar.position.y)];
         [enemyBarView setFrame:CGRectMake(self.enemyBar.position.x, self.enemyBar.position.y, self.enemyBar.size.width, self.enemyBar.size.height)];
     }
-    if (self.enemyBar.center > arrivingParallelCoordinatePoint - barDelta && self.enemyBar.center < arrivingParallelCoordinatePoint + barDelta)
+    if (self.enemyBar.center > arrivingParallelCoordinatePoint - barSpeed && self.enemyBar.center < arrivingParallelCoordinatePoint + barSpeed)
         arrivingParallelCoordinatePoint = self.enemyBar.center;
     
+}
+
+CGFloat destination;
+
+-(void)updateUserBarPositionForView:(UIImageView*)userBarView toNewPosition:(CGFloat*)newPosition
+{
+    CGFloat barSpeed = self.getBarSpeed;
+    
+//    if (destination == self.userBar.center || newPosition < destination - 5 || newPosition > destination + 5) {
+//        destination = newPosition;
+//    }
+    
+    if (*newPosition > (self.field.bounds.size.width - (self.userBar.size.width/2)))
+    {
+        *newPosition = self.field.bounds.size.width - (self.userBar.size.width);
+    }
+    else if (*newPosition < (self.field.bounds.origin.x + (self.userBar.size.width/2)))
+    {
+        *newPosition = (self.field.bounds.origin.x + (self.userBar.size.width));
+    }
+    
+    
+    if (*newPosition < self.userBar.center) {
+        [self.userBar setPosition:CGPointMake(self.userBar.position.x - barSpeed, self.userBar.position.y)];
+        [userBarView setFrame:CGRectMake(self.userBar.position.x, self.userBar.position.y, self.userBar.size.width, self.userBar.size.height)];
+    }
+    else if (*newPosition > self.userBar.center)
+    {
+        [self.userBar setPosition:CGPointMake(self.userBar.position.x + barSpeed, self.userBar.position.y)];
+        [userBarView setFrame:CGRectMake(self.userBar.position.x, self.userBar.position.y, self.userBar.size.width, self.userBar.size.height)];
+    }
+    if (self.userBar.center > *newPosition - barSpeed && self.userBar.center < *newPosition + barSpeed)
+    {
+        *newPosition = self.userBar.center;
+    }
 }
 
 -(CGFloat)getBallSpeed
 {
     switch ([self.settings ballSpeed]) {
         case easy:
-            return 5 + 0;
+            return 3 + 0;
         case medium:
-            return 5 + 2;
+            return 3 + 2;
         case hard:
-            return 5 + 4;
+            return 3 + 4;
         default:
             NSLog(@"Error in parsing Difficulty enumeration");
             @throw [NSException exceptionWithName:@"difficultyOutOfRange" reason:@"Error in setting the difficulty" userInfo:nil];
@@ -223,7 +254,7 @@ float arrivingParallelCoordinatePoint;
 
 -(CGFloat)getBarSpeed
 {
-    return self.field.bounds.size.width/2;
+    return 3;
 }
 
 -(int)getBarDelta

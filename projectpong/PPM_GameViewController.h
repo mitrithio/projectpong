@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "PPM_GameLogicAccessClass.h"
 
-enum pauseAlertType {
+typedef enum pauseAlertType {
     PPM_PauseAlertTypeBegin = 0,
     PPM_PauseAlertTypePause = 1
-    }PPM_PauseAlertType;
+}PPM_PauseAlertType;
 
 @interface PPM_GameViewController : UIViewController
 
@@ -25,5 +25,7 @@ enum pauseAlertType {
 - (IBAction)pauseMenuPressed:(id)sender;
 
 -(void)setLogicAccess:(PPM_GameLogicAccessClass *)logicAccess;
+
+- (IBAction)tapGestureRecognizer:(UIGestureRecognizer*)gesture;
 
 @end

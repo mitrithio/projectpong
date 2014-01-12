@@ -9,6 +9,11 @@
 #import "PPM_GameLogicAccessClass.h"
 #import "PPM_MainLogicClass.h"
 #import "PPM_GameSettingsAccessClass.h"
+#import "ACCropImages.h"
+
+
+#import <QuartzCore/QuartzCore.h>
+#import "UIView+FindUIViewController.h"
 
 
 @interface PPM_GameLogicAccessClass ()
@@ -18,21 +23,27 @@
 @property (nonatomic, retain) UIImageView * ballView;
 @property (nonatomic, retain) UIImageView * enemyBarView;
 @property (nonatomic, retain) UIImageView * userBarView;
-@property (nonatomic, retain) UILabel *awayScore;
-@property (nonatomic, retain) UILabel *homeScore;
+@property (nonatomic, retain) UIImageView *pcScoreView;
+@property (nonatomic, retain) UIImageView *userScoreView;
 
 @property (nonatomic, retain) NSTimer *timerForAnimation;
 @property (nonatomic, retain) NSTimer *timerForTimer;
 
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *settingsAccess;
+@property (nonatomic) UIDeviceOrientation currentOrientation;
 @end
 
 
 @implementation PPM_GameLogicAccessClass
 
+int pcScore;
+int userScore;
+int timerScore;
+CGFloat locationToGo;
+
 - (id)init
 {
-    NSLog(@"Don't use init. Use initWithFieldView:orientation:");
+    NSLog(@"Don't use init. Use initWithFieldView");
     return self;
 }
 
@@ -46,7 +57,19 @@
         [gameView sendSubviewToBack:self.fieldPortraitView];
         self.logic = [[PPM_MainLogicClass alloc] initWithGameField:self.fieldPortraitView];
         
+        
+       // UITapGestureRecognizer *tapOnFieldView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(touchInFieldView:)];
+        
+       // [self.fieldPortraitView addGestureRecognizer:tapOnFieldView];
+    
         self.settingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
+        
+        UIImage *numbers = [[UIImage alloc] init];
+        numbers = [self.settingsAccess getThemeImageForKey:@"Numbers"];
+        self.pcScoreView = [[UIImageView alloc] init];
+        self.userScoreView = [[UIImageView alloc] init];
+        [self.pcScoreView setImage:[ACCropImages cropImage:numbers originX:(85*9) originY:0 dimX:85 dimY:57]];
+        [self.userScoreView setImage:[ACCropImages cropImage:numbers originX:(85*9) originY:0 dimX:85 dimY:57]];
         
         [self.settingsAccess setBackgroundForUIObject:gameView withKey:@"Background"];
         
@@ -54,6 +77,22 @@
         self.enemyBarView = [[UIImageView alloc] init];
         self.userBarView = [[UIImageView alloc] init];
         
+        self.currentOrientation = [[UIDevice currentDevice] orientation];
+        
+        switch (self.currentOrientation) {
+            case UIDeviceOrientationLandscapeRight:
+                
+                break;
+            case UIDeviceOrientationLandscapeLeft:
+                
+                break;
+            case UIDeviceOrientationPortrait:
+                
+                break;
+            default:
+                NSLog(@"Orientation not supported");
+                break;
+        }
             [self.fieldPortraitView setFrame:CGRectMake(self.fieldPortraitView.superview.bounds.origin.x + 20, self.fieldPortraitView.superview.bounds.origin.y + 20, self.fieldPortraitView.superview.bounds.size.width - 40, self.fieldPortraitView.superview.bounds.size.height - 40)];
             [self.settingsAccess setBackgroundForUIObject:self.fieldPortraitView withKey:@"GameBackground"];
         
@@ -71,7 +110,7 @@
             
             // View of bars
             CGSize barSize = CGSizeMake(60, 20);
-            UIImage *barImage = [self getThemeImageForKey:@"Bar"];
+            UIImage *barImage = [self.settingsAccess getThemeImageForKey:@"Bar"];
             
             // Enemy Bar initialization
             CGPoint initialTopLeftEnemyBar = CGPointMake((self.fieldPortraitView.bounds.size.width - barSize.width)/2, self.fieldPortraitView.bounds.origin.y + 20);
@@ -94,6 +133,11 @@
         [self.fieldPortraitView addSubview:self.ballView];
         [self.fieldPortraitView addSubview:self.userBarView];
         [self.fieldPortraitView addSubview:self.enemyBarView];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+        
+        //locationToGo = initialTopLeftUserBar.x + self.userBarView.center.x;
+        locationToGo = -1;
         
     }
     else
@@ -139,21 +183,21 @@ float angle;
         if ([exception.name isEqualToString:@"hitRight"])
         {
             angle = M_PI - angle;
-            [self.logic calculateArrivingParallelCoordinatePointForAngle:angle];
+            [self.logic calculateEnemyArrivingPointForAngle:angle];
         }
         else if ([exception.name isEqualToString:@"hitLeft"])
         {
             angle = M_PI - angle;
-            [self.logic calculateArrivingParallelCoordinatePointForAngle:angle];
+            [self.logic calculateEnemyArrivingPointForAngle:angle];
         }
         else if ([exception.name isEqualToString:@"hitUser"])
         {
-            angle = [self newAngleFromHittedUserBar];
-            [self.logic calculateArrivingParallelCoordinatePointForAngle:angle]; //da togliere quando implementiamo il movimento dell'user e il rimbalzo giusto sulla sua barretta
+            angle = 2*M_PI - angle;
+            [self.logic calculateEnemyArrivingPointForAngle:angle]; //da togliere quando implementiamo il movimento dell'user e il rimbalzo giusto sulla sua barretta
         }
         else if ([exception.name isEqualToString:@"hitEnemy"])
         {
-            angle = [self newAngleFromHittedEnemyBar];
+            angle = 2*M_PI - angle;
         }
         else if ([exception.name isEqualToString:@"hitUp"])
         {
@@ -178,10 +222,9 @@ float angle;
 -(float)newAngleFromHittedUserBar
 {
     float newAngle = 0;
-    CGFloat ballX = self.ballView.frame.origin.x + self.ballView.frame.size.width/2;
+    CGFloat ballX = self.ballView.frame.origin.x;
     CGFloat barX = self.userBarView.frame.origin.x;
-    CGFloat hitPointX = ballX - barX;
-    if (hitPointX < 0 || hitPointX > self.userBarView.frame.size.width)
+    if (ballX < barX || ballX + self.ballView.bounds.size.width > barX + self.userBarView.bounds.size.width)
     {
         newAngle = M_PI - angle;
     }
@@ -198,7 +241,7 @@ float angle;
     CGFloat ballX = self.ballView.frame.origin.x + self.ballView.frame.size.width/2;
     CGFloat barX = self.enemyBarView.frame.origin.x;
     CGFloat hitPointX = ballX - barX;
-    if (hitPointX < 0 || hitPointX > self.enemyBarView.frame.size.width)
+    if (hitPointX <= 0 || hitPointX >= self.enemyBarView.frame.size.width)
     {
         newAngle = M_PI - angle;
     }
@@ -214,13 +257,17 @@ float angle;
     firstBall = TRUE;
     if ([whoSigned isEqualToString:@"User"])
     {
-        NSLog(@"%i",[self.homeScore.text intValue]);
-        self.homeScore.text = [NSString stringWithFormat:@"%i",[self.homeScore.text intValue] + 1];
+        NSLog(@"%i",userScore);
+        ++userScore;
+        UIImage *numbers = [self.settingsAccess getThemeImageForKey:@"Numbers"];
+        [self.userScoreView setImage:[ACCropImages cropImage:numbers originX:(85*(userScore - 1)) originY:0 dimX:85 dimY:57]];
     }
     else
     {
-        NSLog(@"%i",[self.awayScore.text intValue]);
-        self.awayScore.text = [NSString stringWithFormat:@"%i",[self.awayScore.text intValue] + 1];
+        NSLog(@"%i",pcScore);
+        ++pcScore;
+        UIImage *numbers = [self.settingsAccess getThemeImageForKey:@"Numbers"];
+        [self.pcScoreView setImage:[ACCropImages cropImage:numbers originX:(85*(pcScore - 1)) originY:0 dimX:85 dimY:57]];
     }
     
     [self.logic reloadBallInCenter:self.ballView];
@@ -231,9 +278,15 @@ bool isArrivedToPoint = true;
 -(void)animateEnemyBar
 {
     if (firstBall) { //da fare solo se la palla va verso la barra nemica se abbiamo tempo
-        [self.logic calculateArrivingParallelCoordinatePointForAngle:angle];
+        [self.logic calculateEnemyArrivingPointForAngle:angle];
     }
     [self.logic updateEnemyBarPositionForView:self.enemyBarView];
+}
+
+-(void)animateUserBar
+{
+    if (locationToGo != -1)
+        [self.logic updateUserBarPositionForView:self.userBarView toNewPosition:&locationToGo];
 }
 
 -(void)animateAll
@@ -242,12 +295,16 @@ bool isArrivedToPoint = true;
     {
         [self animateTheBall];
         [self animateEnemyBar];
+        [self animateUserBar];
+        [self calcIfWinner];
         firstBall = false;
     }
     else
     {
         [self animateTheBall];
         [self animateEnemyBar];
+        [self animateUserBar];
+        [self calcIfWinner];
     }
 }
 
@@ -269,16 +326,127 @@ bool isArrivedToPoint = true;
     self.timerForAnimation = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(animateAll) userInfo:nil repeats:YES];
 }
 
--(UIImage*)getThemeImageForKey:(NSString*)key
+-(void)getScoreForUser:(UIImageView*)user andPC:(UIImageView*)pc
 {
-    NSString *prova = [NSString stringWithFormat:@"%@%@.png",[self.logic.settings settedThemeToString],key];
-    return [UIImage imageNamed:prova];
+    [user setImage:self.userScoreView.image];
+    [pc setImage:self.pcScoreView.image];
 }
 
--(void)setScoreAway:(UILabel*)away andHome:(UILabel*)home
+-(void)deviceOrientationDidChange:(NSNotification *)notification
 {
-    self.awayScore = away;
-    self.homeScore = home;
+    UIDeviceOrientation newOrientation = [[UIDevice currentDevice] orientation];
+    if ((self.currentOrientation == UIDeviceOrientationPortrait || self.currentOrientation == UIDeviceOrientationLandscapeRight) && newOrientation == UIDeviceOrientationLandscapeLeft) {
+        
+        NSString *zRotationKeyPath = @"transform.rotation.z";
+        
+        CGFloat currentAngle = [[self.fieldPortraitView.layer valueForKeyPath:zRotationKeyPath] floatValue];
+        CGFloat angleToAdd   = M_PI;
+        [self.fieldPortraitView.layer setValue:@(currentAngle+angleToAdd) forKeyPath:zRotationKeyPath];
+        
+        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:zRotationKeyPath];
+        animation.duration = 0.5;
+        
+        animation.toValue = @(0.0);
+        animation.byValue = @(angleToAdd);
+        
+        [self.fieldPortraitView.layer addAnimation:animation forKey:nil];
+        self.currentOrientation = newOrientation;
+    }
+    
+    if (self.currentOrientation == UIDeviceOrientationLandscapeLeft && (newOrientation == UIDeviceOrientationPortrait || newOrientation == UIDeviceOrientationLandscapeRight)) {
+        
+        NSString *zRotationKeyPath = @"transform.rotation.z";
+        
+        CGFloat currentAngle = [[self.fieldPortraitView.layer valueForKeyPath:zRotationKeyPath] floatValue];
+        CGFloat angleToAdd   = -M_PI;
+        [self.fieldPortraitView.layer setValue:@(currentAngle+angleToAdd) forKeyPath:zRotationKeyPath];
+        
+        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:zRotationKeyPath];
+        animation.duration = 0.5;
+        
+        animation.toValue = @(0.0);
+        animation.byValue = @(angleToAdd);
+        
+        [self.fieldPortraitView.layer addAnimation:animation forKey:nil];
+        self.currentOrientation = newOrientation;
+    }
+    
+    if (newOrientation != self.currentOrientation && newOrientation != UIDeviceOrientationPortraitUpsideDown) {
+        self.currentOrientation = newOrientation;
+    }
+}
+
+-(void)touchInFieldView: (UIGestureRecognizer*)gestureRecognizer
+{
+    CGPoint tapLocation = [gestureRecognizer locationInView:self.fieldPortraitView];
+    locationToGo = tapLocation.x;
+//    if (locationToGo < 0)
+//        locationToGo = 0;
+//    if (locationToGo > self.fieldPortraitView.bounds.size.width)
+//        locationToGo = self.fieldPortraitView.bounds.size.width;
+}
+
+-(void)calcIfWinner
+{
+    if (pcScore == 5) {
+        [self.timerForAnimation invalidate];
+        UIViewController *fieldVC = self.fieldPortraitView.firstAvailableUIViewController;
+        
+        UIViewController *vc = [fieldVC.storyboard instantiateViewControllerWithIdentifier:@"EndGameID"];
+        [vc setValue:@"pc" forKey:@"winner"];
+        [vc setValue:[NSString stringWithFormat:@"%d",pcScore] forKey:@"pcScore"];
+        [vc setValue:[NSString stringWithFormat:@"%d",userScore] forKey:@"userScore"];
+        [vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+        [fieldVC presentViewController:vc animated:YES completion:nil];
+    }
+    if (userScore == 5) {
+        [self.timerForAnimation invalidate];
+        UIViewController *fieldVC = self.fieldPortraitView.firstAvailableUIViewController;
+        UIViewController *vc = [fieldVC.storyboard instantiateViewControllerWithIdentifier:@"EndGameID"];
+        [vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+        [fieldVC presentViewController:vc animated:YES completion:nil];
+    }
+}
+
+-(void)resultInUserDefaultsWithWinner:(NSString*)winner
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *oldWinner = [userDefaults objectForKey:@"winner"];
+    if (oldWinner)
+    {
+        [userDefaults removeObjectForKey:@"winner"];
+    }
+    else
+    {
+        [userDefaults setObject:winner forKey:@"winner"];
+    }
+    NSString *oldPCScore = [userDefaults objectForKey:@"pcScore"];
+    if (oldPCScore)
+    {
+        [userDefaults removeObjectForKey:@"pcScore"];
+    }
+    else
+    {
+        [userDefaults setObject:[NSString stringWithFormat:@"%d",pcScore] forKey:@"pcScore"];
+    }
+    NSString *oldUserScore = [userDefaults objectForKey:@"userScore"];
+    if (oldUserScore)
+    {
+        [userDefaults removeObjectForKey:@"userScore"];
+    }
+    else
+    {
+        [userDefaults setObject:[NSString stringWithFormat:@"%d",userScore] forKey:@"userScore"];
+    }
+    NSString *oldTimerScore = [userDefaults objectForKey:@"timerScore"];
+    if (oldTimerScore)
+    {
+        [userDefaults removeObjectForKey:@"timerScore"];
+    }
+    else
+    {
+        [userDefaults setObject:[NSString stringWithFormat:@"%d",timerScore] forKey:@"timerScore"];
+    }
 }
 
 @end
