@@ -29,5 +29,5 @@
 //@property (nonatomic, retain) PPM_GameLogicAccessClass *gameLogicAccess; //da cancellare a meno che non servano espliciti riferimenti alla logica
 @property (nonatomic, retain) PPM_GameSettingsAccessClass *gameSettingsAccess;
 
-@property (nonatomic) AVAudioPlayer *audioPlayer;
+
 @end

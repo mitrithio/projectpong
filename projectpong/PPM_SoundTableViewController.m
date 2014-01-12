@@ -74,14 +74,15 @@
 
 - (IBAction)BackSoundOn:(id)sender {
     [self.gameSettingsAccess saveBackgoundSoundOnOff:self.backSoundOnOff];
-    [self.startViewController.audioPlayer stop];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ppm_BackgroundSoundOff" object:nil userInfo:nil];
 
     
 
 }
+
 - (IBAction)GameSoundOn:(id)sender {
     [self.gameSettingsAccess saveGameSoundOnOff:self.gameSoundOnOff];
-    [self.startViewController.audioPlayer stop];
 
 }
 

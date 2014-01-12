@@ -8,13 +8,38 @@
 
 #import "PPM_AppDelegate.h"
 
+#import <AVFoundation/AVFoundation.h>
+
+@interface PPM_AppDelegate ()
+
+@property (nonatomic) AVAudioPlayer *audioPlayer;
+
+@end
+
 @implementation PPM_AppDelegate
+
+@synthesize gameSettingsAccess;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [application setStatusBarHidden:YES withAnimation:NO];
     
     // Override point for customization after application launch.
+    self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
+    
+    if ([self.gameSettingsAccess getCurrentBackgroundSoundOnOff]){
+    self.audioPlayer = [AVAudioPlayer alloc];
+    self.audioPlayer = [self.audioPlayer initWithContentsOfURL:[NSURL fileURLWithPath:[self.gameSettingsAccess setUrlForSoundWithKey:@"MainSound"]] error:NULL];
+    
+    
+    }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startPlaySound:) name:@"ppm_StartPlaySound" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(themeChangeNotification:) name:@"ppm_ThemeChanged" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backgroundSoundNotification:) name:@"ppm_BackgroundSoundOff" object:nil];
+    
     return YES;
 }
 							
@@ -45,4 +70,34 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+-(void)themeChangeNotification:(NSNotification*)notification
+{
+      self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
+    if ([self.gameSettingsAccess getCurrentBackgroundSoundOnOff]){
+    [self.audioPlayer stop];
+    self.audioPlayer = [AVAudioPlayer alloc];
+    self.audioPlayer = [self.audioPlayer initWithContentsOfURL:[NSURL fileURLWithPath:[self.gameSettingsAccess setUrlForSoundWithKey:@"MainSound"]] error:NULL];
+    }
+}
+
+-(void)backgroundSoundNotification:(NSNotification*)notification
+{
+    self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
+    if ([self.audioPlayer isPlaying]){
+        [self.audioPlayer stop]; }
+    else{
+        [self.audioPlayer stop];
+        self.audioPlayer = [AVAudioPlayer alloc];
+        self.audioPlayer = [self.audioPlayer initWithContentsOfURL:[NSURL fileURLWithPath:[self.gameSettingsAccess setUrlForSoundWithKey:@"MainSound"]] error:NULL];
+        [self.audioPlayer setVolume:0.3];
+        [self.audioPlayer setNumberOfLoops:-1];
+        [self.audioPlayer play];}
+}
+
+-(void)startPlaySound:(NSNotification*)notification
+{
+    [self.audioPlayer setVolume:0.3];
+    [self.audioPlayer setNumberOfLoops:-1];
+    [self.audioPlayer play];
+}
 @end

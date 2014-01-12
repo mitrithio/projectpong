@@ -80,7 +80,7 @@
   
     [self.gameSettingsAccess saveTheme:self.plasticTheme];
     
-    //[self.startViewController.audioPlayer stop];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ppm_ThemeChanged" object:nil userInfo:nil];
     
     
 }
@@ -89,7 +89,7 @@
 
     [self.gameSettingsAccess saveTheme:self.classicTheme];
     
-   // [self.startViewController.audioPlayer stop];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ppm_ThemeChanged" object:nil userInfo:nil];
 }
 
 @end

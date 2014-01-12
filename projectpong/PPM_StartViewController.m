@@ -35,7 +35,6 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         // Custom initialization
-        self.audioPlayer = [AVAudioPlayer alloc];
     }
     return self;
 }
@@ -46,6 +45,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ppm_StartPlaySound" object:nil userInfo:nil];
+
     
 
     
@@ -70,22 +71,9 @@
     self.userLable.textColor = [self.gameSettingsAccess.settings getThemeColorLabelForKey:@"Primary"];
     
     self.userImage.image = [self.gameSettingsAccess getCurrentUserImage];
-    //[self.gameSettingsAccess setBackgroundForUIObject:self.userImage withKey:@"User"];
     
-    //[self.audioPlayer stop];
+
     
-//    if (self.audioPlayer != nil) {
-//        self.audioPlayer = nil;
-//    }
-    
-    
-    
-    if ([self.gameSettingsAccess getCurrentBackgroundSoundOnOff]){
-    self.audioPlayer = [self.audioPlayer initWithContentsOfURL:[NSURL fileURLWithPath:[self.gameSettingsAccess setUrlForSoundWithKey:@"Ball2Sound"]] error:NULL];
-    [self.audioPlayer setVolume:0.3];
-    [self.audioPlayer setNumberOfLoops:-1];
-    [self.audioPlayer play];
-    }
     
     NSLog(@"ViewDidLoad loaded");
     
