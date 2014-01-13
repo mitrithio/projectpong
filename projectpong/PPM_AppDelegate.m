@@ -13,7 +13,7 @@
 @interface PPM_AppDelegate ()
 
 @property (nonatomic) AVAudioPlayer *backgroundSoundPlayer;
-
+@property (nonatomic) AVAudioPlayer *hitSoundPlayer;
 @property (nonatomic) AVAudioPlayer *gameSoundPlayer;
 
 @end
@@ -29,14 +29,11 @@
     // Override point for customization after application launch.
     self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
     
-    if ([self.gameSettingsAccess getCurrentBackgroundSoundOnOff]){
     self.backgroundSoundPlayer = [AVAudioPlayer alloc];
     self.backgroundSoundPlayer = [self.backgroundSoundPlayer initWithContentsOfURL:[NSURL fileURLWithPath:[self.gameSettingsAccess setUrlForSoundWithKey:@"MainSound"]] error:NULL];
-    }
     
-    if ([self.gameSettingsAccess getCurrentGameSoundOnOff]){
-        self.gameSoundPlayer = [AVAudioPlayer alloc];
-    }
+    
+    //self.gameSoundPlayer = [AVAudioPlayer alloc];
     
     //backgroundSound notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startPlaySound:) name:@"ppm_StartPlaySound" object:nil];
@@ -54,6 +51,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hitSomethingNotification:) name:@"ppm_HitSomethingNotification" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enemyScoreFourthPoint:) name:@"ppm_EnemyScoreFourthPoint" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterInGameViewNotification:) name:@"ppm_EnterInGameViewNotification" object:nil];
+    
 
     return YES;
 }
@@ -87,48 +87,57 @@
 
 -(void)themeChangeNotification:(NSNotification*)notification
 {
-      self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
-    if ([self.gameSettingsAccess getCurrentBackgroundSoundOnOff]){
-    [self.backgroundSoundPlayer stop];
-    self.backgroundSoundPlayer = [AVAudioPlayer alloc];
-    self.backgroundSoundPlayer = [self.backgroundSoundPlayer initWithContentsOfURL:[NSURL fileURLWithPath:[self.gameSettingsAccess setUrlForSoundWithKey:@"MainSound"]] error:NULL];
+
+    self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
+    if ([self.gameSettingsAccess getCurrentBackgroundSoundOnOff])
+    {
+        self.backgroundSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[self.gameSettingsAccess setUrlForSoundWithKey:@"MainSound"]] error:NULL];
     }
 }
 
 -(void)backgroundSoundNotification:(NSNotification*)notification
 {
-    self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
-    if ([self.backgroundSoundPlayer isPlaying]){
-        [self.backgroundSoundPlayer stop]; }
-    else{
+    if ([self.backgroundSoundPlayer isPlaying])
+    {
         [self.backgroundSoundPlayer stop];
-        self.backgroundSoundPlayer = [AVAudioPlayer alloc];
-        self.backgroundSoundPlayer = [self.backgroundSoundPlayer initWithContentsOfURL:[NSURL fileURLWithPath:[self.gameSettingsAccess setUrlForSoundWithKey:@"MainSound"]] error:NULL];
+    }
+    else
+    {
+        self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
+        self.backgroundSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[self.gameSettingsAccess setUrlForSoundWithKey:@"MainSound"]] error:NULL];
         [self.backgroundSoundPlayer setVolume:0.3];
         [self.backgroundSoundPlayer setNumberOfLoops:-1];
-        [self.backgroundSoundPlayer play];}
+        [self.backgroundSoundPlayer play];
+    }
 }
 
 -(void)startPlaySound:(NSNotification*)notification
 {
-    [self.backgroundSoundPlayer setVolume:0.3];
-    [self.backgroundSoundPlayer setNumberOfLoops:-1];
-    [self.backgroundSoundPlayer play];
+    self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
+    if ([self.gameSettingsAccess getCurrentBackgroundSoundOnOff])
+    {
+        [self.backgroundSoundPlayer setVolume:0.3];
+        [self.backgroundSoundPlayer setNumberOfLoops:-1];
+        [self.backgroundSoundPlayer play];
+    }
+}
+
+-(void)enterInGameViewNotification:(NSNotification*)notification
+{
+    if ([self.backgroundSoundPlayer isPlaying])
+    {
+        [self.backgroundSoundPlayer stop];
+    }
 }
 
 -(void)startGameNotification:(NSNotification*)notification
 {
     self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
-    if ([self.backgroundSoundPlayer isPlaying]){
-        [self.backgroundSoundPlayer stop];}
-    
-    if ([self.gameSettingsAccess getCurrentGameSoundOnOff]){
-        //[self.gameSoundPlayer stop];
-        self.gameSoundPlayer = [AVAudioPlayer alloc];
+    if ([self.gameSettingsAccess getCurrentGameSoundOnOff])
+    {
         NSString *path = @"GameStartSound";
         NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: path ofType: @"mp3"];
-        self.gameSoundPlayer = [self.gameSoundPlayer initWithContentsOfURL:[NSURL fileURLWithPath:soundFilePath] error:NULL];
-        //[self.backgroundSoundPlayer setVolume:0.3];
+        self.gameSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:soundFilePath] error:NULL];
         [self.gameSoundPlayer setNumberOfLoops:0];
         [self.gameSoundPlayer play];
     }
@@ -136,17 +145,18 @@
 
 -(void)finalScoreVisualizeNotification:(NSNotification*)notification
 {
-    self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
-    if ([self.gameSoundPlayer isPlaying]){
-        [self.gameSoundPlayer stop];}
+    if (self.gameSoundPlayer)
+    {
+        if ([self.gameSoundPlayer isPlaying]) {
+            [self.gameSoundPlayer stop];
+        }
+    }
     
+    self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
     if ([self.gameSettingsAccess getCurrentGameSoundOnOff]){
-       [self.gameSoundPlayer stop];
-        self.gameSoundPlayer = [AVAudioPlayer alloc];
         NSString *path = @"GameOverSound";
         NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: path ofType: @"mp3"];
-        self.gameSoundPlayer = [self.gameSoundPlayer initWithContentsOfURL:[NSURL fileURLWithPath:soundFilePath] error:NULL];
-        //[self.backgroundSoundPlayer setVolume:0.3];
+        self.gameSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:soundFilePath] error:NULL];
         [self.gameSoundPlayer setNumberOfLoops:0];
         [self.gameSoundPlayer play];
     }
@@ -156,13 +166,10 @@
 {
     self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
     if ([self.gameSettingsAccess getCurrentGameSoundOnOff]){
-        [self.gameSoundPlayer stop];
-        self.gameSoundPlayer = [AVAudioPlayer alloc];
         NSString *keyForSound = [notification object];
-        self.gameSoundPlayer = [self.gameSoundPlayer initWithContentsOfURL:[NSURL fileURLWithPath:[self.gameSettingsAccess setUrlForSoundWithKey:keyForSound]] error:NULL];
-        //[self.backgroundSoundPlayer setVolume:0.3];
-        [self.gameSoundPlayer setNumberOfLoops:-1];
-        [self.gameSoundPlayer play];
+        self.hitSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[self.gameSettingsAccess setUrlForSoundWithKey:keyForSound]] error:NULL];
+        [self.hitSoundPlayer setNumberOfLoops:0];
+        [self.hitSoundPlayer play];
     }
 }
 
@@ -170,11 +177,15 @@
 {
     self.gameSettingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
     if ([self.gameSettingsAccess getCurrentGameSoundOnOff]){
-        [self.gameSoundPlayer stop];
-        self.gameSoundPlayer = [AVAudioPlayer alloc];
-        self.gameSoundPlayer = [self.gameSoundPlayer initWithContentsOfURL:[NSURL fileURLWithPath:[self.gameSettingsAccess setUrlForSoundWithKey:@"AlertSound"]] error:NULL];
-        //[self.backgroundSoundPlayer setVolume:0.3];
+        if (self.gameSoundPlayer)
+        {
+            if ([self.gameSoundPlayer isPlaying]) {
+                [self.gameSoundPlayer stop];
+            }
+        }
+        self.gameSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[self.gameSettingsAccess setUrlForSoundWithKey:@"AlertSound"]] error:NULL];
         [self.gameSoundPlayer setNumberOfLoops:-1];
+        [self.gameSoundPlayer setVolume:0.2];
         [self.gameSoundPlayer play];
     }
 }

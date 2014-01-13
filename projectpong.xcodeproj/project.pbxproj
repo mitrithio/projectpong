@@ -60,7 +60,6 @@
 		6872665C18771DED00F120E0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6872665B18771DED00F120E0 /* Social.framework */; };
 		689D7DD51872D054008949B5 /* facebookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 689D7DD31872D054008949B5 /* facebookIcon.png */; };
 		689D7DD61872D054008949B5 /* twitterICon.png in Resources */ = {isa = PBXBuildFile; fileRef = 689D7DD41872D054008949B5 /* twitterICon.png */; };
-		68B4F417186DC12F00C8567E /* PPM_UserAccountPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B4F416186DC12F00C8567E /* PPM_UserAccountPageViewController.m */; };
 		68BCCDC01876CC6800517892 /* ClassicNumbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 68BCCDBF1876CC6800517892 /* ClassicNumbers.png */; };
 		68BCCDC21876CC8000517892 /* PlasticPlayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 68BCCDC11876CC8000517892 /* PlasticPlayButton.png */; };
 		68C99F261880288B004F507A /* GameOverSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68C99F241880288B004F507A /* GameOverSound.mp3 */; };
@@ -84,7 +83,6 @@
 		9875869F1871DF410076EA89 /* PPM_Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9875869E1871DF410076EA89 /* PPM_Colors.m */; };
 		988F1DED188098B1008C929E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F1DEC188098B1008C929E /* QuartzCore.framework */; };
 		988F1DFE1880AC31008C929E /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F1DFD1880AC31008C929E /* CustomIOS7AlertView.m */; };
-		98BBC37E1881C3F900D55D99 /* UIView+FindUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BBC37D1881C3F900D55D99 /* UIView+FindUIViewController.m */; };
 		98D5CD4818802C6E00503DE2 /* ClassicGameLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 98D5CD4718802C6E00503DE2 /* ClassicGameLandscape.png */; };
 		98D5CD4A18802C7C00503DE2 /* PlasticGameLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 98D5CD4918802C7C00503DE2 /* PlasticGameLandscape.png */; };
 		98D5CD4C188034D800503DE2 /* ClassicBarLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 98D5CD4B188034D800503DE2 /* ClassicBarLandscape.png */; };
@@ -119,7 +117,6 @@
 		98F47A12186A1CD60048D3D3 /* PPM_WebThemesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F47A07186A1CD60048D3D3 /* PPM_WebThemesViewController.m */; };
 		98F47A29186A1CE70048D3D3 /* ACCropImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F47A15186A1CE70048D3D3 /* ACCropImages.m */; };
 		98F47A2A186A1CE70048D3D3 /* ACPopupViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F47A17186A1CE70048D3D3 /* ACPopupViewManager.m */; };
-		98F47A2B186A1CE70048D3D3 /* button-play-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A19186A1CE70048D3D3 /* button-play-pause.png */; };
 		98F47A37186A1CE70048D3D3 /* LocalIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A26186A1CE70048D3D3 /* LocalIcon.png */; };
 		98F47A39186A1CE70048D3D3 /* SocialIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F47A28186A1CE70048D3D3 /* SocialIcon.png */; };
 /* End PBXBuildFile section */
@@ -195,8 +192,6 @@
 		6872665B18771DED00F120E0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		689D7DD31872D054008949B5 /* facebookIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookIcon.png; sourceTree = "<group>"; };
 		689D7DD41872D054008949B5 /* twitterICon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterICon.png; sourceTree = "<group>"; };
-		68B4F415186DC12F00C8567E /* PPM_UserAccountPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPM_UserAccountPageViewController.h; sourceTree = "<group>"; };
-		68B4F416186DC12F00C8567E /* PPM_UserAccountPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPM_UserAccountPageViewController.m; sourceTree = "<group>"; };
 		68BCCDBF1876CC6800517892 /* ClassicNumbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClassicNumbers.png; sourceTree = "<group>"; };
 		68BCCDC11876CC8000517892 /* PlasticPlayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticPlayButton.png; sourceTree = "<group>"; };
 		68C99F241880288B004F507A /* GameOverSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameOverSound.mp3; sourceTree = "<group>"; };
@@ -226,8 +221,6 @@
 		988F1DEC188098B1008C929E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		988F1DFC1880AC31008C929E /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOS7AlertView.h; sourceTree = "<group>"; };
 		988F1DFD1880AC31008C929E /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOS7AlertView.m; sourceTree = "<group>"; };
-		98BBC37C1881C3F900D55D99 /* UIView+FindUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FindUIViewController.h"; sourceTree = "<group>"; };
-		98BBC37D1881C3F900D55D99 /* UIView+FindUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FindUIViewController.m"; sourceTree = "<group>"; };
 		98D5CD4718802C6E00503DE2 /* ClassicGameLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClassicGameLandscape.png; sourceTree = "<group>"; };
 		98D5CD4918802C7C00503DE2 /* PlasticGameLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlasticGameLandscape.png; sourceTree = "<group>"; };
 		98D5CD4B188034D800503DE2 /* ClassicBarLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClassicBarLandscape.png; sourceTree = "<group>"; };
@@ -281,7 +274,6 @@
 		98F47A15186A1CE70048D3D3 /* ACCropImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACCropImages.m; sourceTree = "<group>"; };
 		98F47A16186A1CE70048D3D3 /* ACPopupViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPopupViewManager.h; sourceTree = "<group>"; };
 		98F47A17186A1CE70048D3D3 /* ACPopupViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPopupViewManager.m; sourceTree = "<group>"; };
-		98F47A19186A1CE70048D3D3 /* button-play-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-play-pause.png"; sourceTree = "<group>"; };
 		98F47A26186A1CE70048D3D3 /* LocalIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LocalIcon.png; sourceTree = "<group>"; };
 		98F47A28186A1CE70048D3D3 /* SocialIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SocialIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -429,6 +421,13 @@
 			name = CustomIOS7Alert;
 			sourceTree = "<group>";
 		};
+		98D6744518847277001EAA54 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		98EC34971876F451008B2E17 /* StaticLibraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,26 +484,32 @@
 				98F479F9186A1CD60048D3D3 /* PPM_CreditsViewController.m */,
 				6861DAD1186C7E4700EDA5EC /* PPM_DifficultySettingsViewController.h */,
 				6861DAD2186C7E4700EDA5EC /* PPM_DifficultySettingsViewController.m */,
-				98F479FC186A1CD60048D3D3 /* PPM_InfoViewController.h */,
-				98F479FD186A1CD60048D3D3 /* PPM_InfoViewController.m */,
+				6872665818771B4B00F120E0 /* PPM_finalGameViewController.h */,
+				6872665918771B4B00F120E0 /* PPM_finalGameViewController.m */,
 				98F479FE186A1CD60048D3D3 /* PPM_GameViewController.h */,
 				98F479FF186A1CD60048D3D3 /* PPM_GameViewController.m */,
-				98F47A00186A1CD60048D3D3 /* PPM_StartViewController.h */,
-				98F47A01186A1CD60048D3D3 /* PPM_StartViewController.m */,
+				98F479FC186A1CD60048D3D3 /* PPM_InfoViewController.h */,
+				98F479FD186A1CD60048D3D3 /* PPM_InfoViewController.m */,
+				68DCA3EC187F0CD7005B980C /* PPM_LocalScoreViewController.h */,
+				68DCA3ED187F0CD7005B980C /* PPM_LocalScoreViewController.m */,
 				98F47A02186A1CD60048D3D3 /* PPM_RICPageViewController.h */,
 				98F47A03186A1CD60048D3D3 /* PPM_RICPageViewController.m */,
 				98F47A04186A1CD60048D3D3 /* PPM_RuleViewController.h */,
 				98F47A05186A1CD60048D3D3 /* PPM_RuleViewController.m */,
 				68E1515E186F1661004B5B26 /* PPM_SettingsTableViewController.h */,
 				68E1515F186F1661004B5B26 /* PPM_SettingsTableViewController.m */,
+				68DCA3EF187F0CE6005B980C /* PPM_SocialScoreViewController.h */,
+				68DCA3F0187F0CE6005B980C /* PPM_SocialScoreViewController.m */,
 				6849B2CD1875B6C100431F38 /* PPM_SocialSettingsViewController.h */,
 				6849B2CE1875B6C100431F38 /* PPM_SocialSettingsViewController.m */,
+				6821A874188190A8001F701F /* PPM_SoundTableViewController.h */,
+				6821A875188190A8001F701F /* PPM_SoundTableViewController.m */,
+				98F47A00186A1CD60048D3D3 /* PPM_StartViewController.h */,
+				98F47A01186A1CD60048D3D3 /* PPM_StartViewController.m */,
 				6861DAE9186C873600EDA5EC /* PPM_ThemeSettingsViewController.h */,
 				6861DAEA186C873600EDA5EC /* PPM_ThemeSettingsViewController.m */,
 				6861DACE186C7E0D00EDA5EC /* PPM_TimerSettingsViewController.h */,
 				6861DACF186C7E0D00EDA5EC /* PPM_TimerSettingsViewController.m */,
-				68B4F415186DC12F00C8567E /* PPM_UserAccountPageViewController.h */,
-				68B4F416186DC12F00C8567E /* PPM_UserAccountPageViewController.m */,
 				68270E53187183F100A071EA /* PPM_UserTableViewController.h */,
 				68270E54187183F100A071EA /* PPM_UserTableViewController.m */,
 				98F479D1186A1B920048D3D3 /* PPM_ViewController.h */,
@@ -512,15 +517,8 @@
 				98F47A06186A1CD60048D3D3 /* PPM_WebThemesViewController.h */,
 				98F47A07186A1CD60048D3D3 /* PPM_WebThemesViewController.m */,
 				98F47A13186A1CE70048D3D3 /* Resources */,
+				98D6744518847277001EAA54 /* iPad */,
 				98F479C0186A1B920048D3D3 /* Supporting Files */,
-				6872665818771B4B00F120E0 /* PPM_finalGameViewController.h */,
-				6872665918771B4B00F120E0 /* PPM_finalGameViewController.m */,
-				68DCA3EC187F0CD7005B980C /* PPM_LocalScoreViewController.h */,
-				68DCA3ED187F0CD7005B980C /* PPM_LocalScoreViewController.m */,
-				68DCA3EF187F0CE6005B980C /* PPM_SocialScoreViewController.h */,
-				68DCA3F0187F0CE6005B980C /* PPM_SocialScoreViewController.m */,
-				6821A874188190A8001F701F /* PPM_SoundTableViewController.h */,
-				6821A875188190A8001F701F /* PPM_SoundTableViewController.m */,
 			);
 			path = projectpong;
 			sourceTree = "<group>";
@@ -584,8 +582,6 @@
 				98EC34971876F451008B2E17 /* StaticLibraries */,
 				98F479F1186A1CD60048D3D3 /* Logic */,
 				98F47A18186A1CE70048D3D3 /* images */,
-				98BBC37C1881C3F900D55D99 /* UIView+FindUIViewController.h */,
-				98BBC37D1881C3F900D55D99 /* UIView+FindUIViewController.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -598,7 +594,6 @@
 				689D7DD31872D054008949B5 /* facebookIcon.png */,
 				689D7DD41872D054008949B5 /* twitterICon.png */,
 				6861DAD4186C847800EDA5EC /* PlasticTheme */,
-				98F47A19186A1CE70048D3D3 /* button-play-pause.png */,
 				98F47A26186A1CE70048D3D3 /* LocalIcon.png */,
 				98F47A28186A1CE70048D3D3 /* SocialIcon.png */,
 			);
@@ -658,7 +653,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 98F479B1186A1B920048D3D3 /* Build configuration list for PBXProject "projectpong" */;
+			buildConfigurationList = 98F479B1186A1B920048D3D3 /* Build configuration list for PBXProject "ProjectPong" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -697,7 +692,6 @@
 				686D417018799AD50085E6B4 /* ClassicLost.png in Resources */,
 				6861DAE6186C847800EDA5EC /* PlasticSettingsButton.png in Resources */,
 				68C99F3A188028AB004F507A /* PlasticBall2Sound.mp3 in Resources */,
-				98F47A2B186A1CE70048D3D3 /* button-play-pause.png in Resources */,
 				68C99F271880288B004F507A /* GameStartSound.mp3 in Resources */,
 				6812427E1879B27500B3009F /* ProjectPong57x57.png in Resources */,
 				6812427D1879B27500B3009F /* ProjectPong50x50@2x.png in Resources */,
@@ -784,7 +778,6 @@
 				68E15160186F1661004B5B26 /* PPM_SettingsTableViewController.m in Sources */,
 				98F47A0C186A1CD60048D3D3 /* PPM_GameLogicAccessClass.m in Sources */,
 				68270E55187183F100A071EA /* PPM_UserTableViewController.m in Sources */,
-				68B4F417186DC12F00C8567E /* PPM_UserAccountPageViewController.m in Sources */,
 				98F47A10186A1CD60048D3D3 /* PPM_RICPageViewController.m in Sources */,
 				98F47A0E186A1CD60048D3D3 /* PPM_GameViewController.m in Sources */,
 				6821A876188190A8001F701F /* PPM_SoundTableViewController.m in Sources */,
@@ -801,7 +794,6 @@
 				98F47A2A186A1CE70048D3D3 /* ACPopupViewManager.m in Sources */,
 				68DCA3F1187F0CE6005B980C /* PPM_SocialScoreViewController.m in Sources */,
 				6849B2CF1875B6C100431F38 /* PPM_SocialSettingsViewController.m in Sources */,
-				98BBC37E1881C3F900D55D99 /* UIView+FindUIViewController.m in Sources */,
 				98F47A29186A1CE70048D3D3 /* ACCropImages.m in Sources */,
 				98F479C6186A1B920048D3D3 /* main.m in Sources */,
 			);
@@ -878,7 +870,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -897,7 +889,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -918,7 +910,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -930,7 +922,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -943,7 +935,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "projectpong/projectpong-Prefix.pch";
 				INFOPLIST_FILE = "projectpong/projectpong-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -956,7 +950,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "projectpong/projectpong-Prefix.pch";
 				INFOPLIST_FILE = "projectpong/projectpong-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1006,7 +1002,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		98F479B1186A1B920048D3D3 /* Build configuration list for PBXProject "projectpong" */ = {
+		98F479B1186A1B920048D3D3 /* Build configuration list for PBXProject "ProjectPong" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				98F479E9186A1B920048D3D3 /* Debug */,

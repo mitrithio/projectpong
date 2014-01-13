@@ -75,6 +75,10 @@
     [self.gameSettingsAccess saveUserImage:self.userImage];
     
     [self.gameSettingsAccess saveUserName:self.nameTextField];
+    
+    UIViewController *vc = [self.storyboard instantiateInitialViewController];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self.navigationController presentViewController:vc animated:YES completion:nil];
 
 }
 

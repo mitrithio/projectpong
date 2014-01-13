@@ -15,7 +15,7 @@
 
 #import "CustomIOS7AlertView.h"
 
-#define PAUSE_PLAY_IMAGE @"button-play-pause.png"
+#define PAUSE_PLAY_IMAGE @"PlayPouse"
 
 @interface PPM_GameViewController ()
 
@@ -56,9 +56,11 @@
     [self showPauseAlert:PPM_PauseAlertTypeBegin];
     
     self.initialOrientation = [[UIDevice currentDevice] orientation];
-    self.pauseButton.frame = [self putPauseButtonForOrientation:self.initialOrientation];
+    //self.pauseButton.frame = [self putPauseButtonForOrientation:self.initialOrientation];
     
     gameStarted = false;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ppm_EnterInGameViewNotification" object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,9 +107,12 @@ bool gameStarted;
             [self presentViewController:vc animated:YES completion:nil];
         }
         if (buttonIndex == 0) {
-            [self.pauseButton setImage:[ACCropImages cropImage:[UIImage imageNamed:PAUSE_PLAY_IMAGE] originX:40 originY:0 dimX:40 dimY:40] forState:UIControlStateNormal];
+            if (!self.settingsAccess) {
+                self.settingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
+            }
+            [self.pauseButton setImage:[ACCropImages cropImage:[self.settingsAccess getThemeImageForKey:PAUSE_PLAY_IMAGE] originX:40 originY:0 dimX:40 dimY:40] forState:UIControlStateNormal];
             
-            [self.pauseButton setImage:[ACCropImages cropImage:[UIImage imageNamed:PAUSE_PLAY_IMAGE] originX:40 originY:80 dimX:40 dimY:40] forState:UIControlStateHighlighted];
+            [self.pauseButton setImage:[ACCropImages cropImage:[self.settingsAccess getThemeImageForKey:PAUSE_PLAY_IMAGE] originX:40 originY:80 dimX:40 dimY:40] forState:UIControlStateHighlighted];
             [self.logicAccess setGameInPause:NO];
             if (!gameStarted) {
                 gameStarted = true;
@@ -121,15 +126,19 @@ bool gameStarted;
 
 -(UIView *)createResultView
 {
+    if (!self.settingsAccess) {
+        self.settingsAccess = [[PPM_GameSettingsAccessClass alloc] init];
+    }
+    
     UIView *view = [[UIView alloc] init];
     [view setFrame:CGRectMake(0, 0, 210, 57)];
     
     UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:view.frame];
     [self.settingsAccess setBackgroundForUIObject:backgroundView withKey:@"Background"];
     
-    UIImageView *userScore = [[UIImageView alloc] initWithFrame:CGRectMake(view.bounds.origin.x, view.bounds.origin.y, 85, 57)];
+    UIImageView *userScore = [[UIImageView alloc] initWithFrame:CGRectMake(view.bounds.origin.x + 10, view.bounds.origin.y + 10, 85, 57)];
     
-    UIImageView *pcScore = [[UIImageView alloc] initWithFrame:CGRectMake(view.bounds.origin.x + 125, view.bounds.origin.y, 85, 57)];
+    UIImageView *pcScore = [[UIImageView alloc] initWithFrame:CGRectMake(view.bounds.origin.x + 115, view.bounds.origin.y + 10, 85, 57)];
     
     [self.logicAccess getScoreForUser:userScore andPC:pcScore];
     

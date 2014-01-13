@@ -208,10 +208,6 @@ CGFloat destination;
 {
     CGFloat barSpeed = self.getBarSpeed;
     
-//    if (destination == self.userBar.center || newPosition < destination - 5 || newPosition > destination + 5) {
-//        destination = newPosition;
-//    }
-    
     if (*newPosition > (self.field.bounds.size.width - (self.userBar.size.width/2)))
     {
         *newPosition = self.field.bounds.size.width - (self.userBar.size.width/2);
@@ -258,9 +254,9 @@ CGFloat destination;
         case easy:
             return 3 + 0;
         case medium:
-            return 3 + 1;
-        case hard:
             return 3 + 2;
+        case hard:
+            return 3 + 4;
         default:
             NSLog(@"Error in parsing Difficulty enumeration");
             @throw [NSException exceptionWithName:@"difficultyOutOfRange" reason:@"Error in setting the difficulty" userInfo:nil];

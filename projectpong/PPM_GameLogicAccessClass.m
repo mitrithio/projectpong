@@ -13,7 +13,6 @@
 
 
 #import <QuartzCore/QuartzCore.h>
-#import "UIView+FindUIViewController.h"
 
 
 @interface PPM_GameLogicAccessClass ()
@@ -249,26 +248,31 @@ float angle;
         [self.logic updateBallPositionForView:self.ballView];
     }
     @catch (NSException *exception) {
+        NSString *sound = [[NSString alloc] init];
         if ([exception.name isEqualToString:@"hitRight"])
         {
             angle = M_PI - angle;
             [self.logic calculateEnemyArrivingPointForAngle:angle];
+            sound = @"Ball1Sound";
         }
         else if ([exception.name isEqualToString:@"hitLeft"])
         {
             angle = M_PI - angle;
             [self.logic calculateEnemyArrivingPointForAngle:angle];
+            sound = @"Ball1Sound";
         }
         else if ([exception.name isEqualToString:@"hitUser"])
         {
             //angle = 2*M_PI - angle;
             angle = [self newAngleFromHittedUserBar];
             [self.logic calculateEnemyArrivingPointForAngle:angle]; //da togliere quando implementiamo il movimento dell'user e il rimbalzo giusto sulla sua barretta
+            sound = @"Ball2Sound";
         }
         else if ([exception.name isEqualToString:@"hitEnemy"])
         {
             //angle = 2*M_PI - angle;
             angle = [self newAngleFromHittedEnemyBar];
+            sound = @"Ball2Sound";
         }
         else if ([exception.name isEqualToString:@"hitUp"])
         {
@@ -277,6 +281,7 @@ float angle;
             //[self setGameInPause:TRUE];
             [self.timerForAnimation invalidate];
             self.timerForTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startTimer) userInfo:nil repeats:NO];
+            sound = @"ScoreSound";
         }
         else if ([exception.name isEqualToString:@"hitDown"])
         {
@@ -285,7 +290,9 @@ float angle;
             //[self setGameInPause:TRUE];
             [self.timerForAnimation invalidate];
             self.timerForTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startTimer) userInfo:nil repeats:NO];
+            sound = @"ScoreSound";
         }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ppm_HitSomethingNotification" object:sound];
         [self.logic calculateDeltasForAngle:angle];
     }
 }
